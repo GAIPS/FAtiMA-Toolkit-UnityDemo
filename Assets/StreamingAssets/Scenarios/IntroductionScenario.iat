@@ -3,11 +3,15 @@
 		{
 			"classId": 0,
 			"ScenarioName": "Introduction",
-			"Description": "This scenario illustrates what the RPC is able to do.",
+			"Description": "This is a scenario to showcase what the toolkit is able to do.",
 			"Characters": [
 				{
+					"Name": "Jane",
+					"Source": "SingleResponseRPC-3D.rpc"
+				}, 
+				{
 					"Name": "Mary",
-					"Source": "SingleResponseRPC.rpc"
+					"Source": "SingleResponseRPC-2D.rpc"
 				}],
 			"PlayerDialogues": [
 				{
@@ -68,18 +72,11 @@
 					"Utterance": "The same is true for my voice, my embodiment, and the dialogues that are available to me."
 				}, 
 				{
-					"CurrentState": "A8",
-					"NextState": "A9",
-					"Meaning": ["M8"],
-					"Style": ["-"],
-					"Utterance": "For instance, this is me talking with a different text to speech voice."
-				}, 
-				{
 					"CurrentState": "A9",
 					"NextState": "A10",
 					"Meaning": ["M9"],
 					"Style": ["-"],
-					"Utterance": "And this is me with a two dimensional embodiment."
+					"Utterance": "..."
 				}, 
 				{
 					"CurrentState": "A11",
@@ -101,6 +98,20 @@
 					"Meaning": ["M6"],
 					"Style": ["-"],
 					"Utterance": "Also, all of my emotional reactions and decisions can be configured using a dedicated authoring tool without changing the game code."
+				}, 
+				{
+					"CurrentState": "A8",
+					"NextState": "A9",
+					"Meaning": ["M8"],
+					"Style": ["-"],
+					"Utterance": "For instance, this is me talking with a different text to speech voice."
+				}, 
+				{
+					"CurrentState": "A13",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["-"],
+					"Utterance": "..."
 				}]
 		},
 	"types": [

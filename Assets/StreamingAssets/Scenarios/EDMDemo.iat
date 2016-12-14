@@ -3,6 +3,7 @@
 		{
 			"classId": 0,
 			"ScenarioName": "Emotional Decision Making Demo",
+			"Description": "This scenario show 2 examples of how the Emotional Decision Makingl Asset can be configured.",
 			"Characters": [
 				{
 					"Name": "Emotionally Congruent",

@@ -2,7 +2,8 @@
 	"root":
 		{
 			"classId": 0,
-			"ScenarioName": "SpaceModulesScenarioA",
+			"ScenarioName": "SpaceModules",
+			"Description": "This scenario is a template for the situations the player encounters in the serious game \"Space Modules Inc\" being developed by Playgen.",
 			"Characters": [
 				{
 					"Name": "Mary",

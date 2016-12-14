@@ -3,6 +3,7 @@
 		{
 			"classId": 0,
 			"ScenarioName": "Emotional Appraisal Demo",
+			"Description": "This scenario contains three examples of how the Emotional Appraisal Asset can be configured.",
 			"Characters": [
 				{
 					"Name": "Emotionless Client",

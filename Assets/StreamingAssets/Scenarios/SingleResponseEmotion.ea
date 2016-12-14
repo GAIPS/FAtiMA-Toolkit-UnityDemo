@@ -56,8 +56,16 @@
 								{
 									"Set": []
 								},
-							"Desirability": 9
-						},
+							"Desirability": 5
+						}, 
+						{
+							"EventName": "Event(Action-Start, Self, Speak(A13, *, *, *), *)",
+							"Conditions":
+								{
+									"Set": []
+								},
+							"Desirability": 5
+						}, 
 						{
 							"EventName": "Event(Action-Start, Self, Speak(A3, *, *, *), *)",
 							"Conditions":
@@ -66,18 +74,9 @@
 								},
 							"Desirability": -6,
 							"Praiseworthiness": -6
-						},						
+						}, 
 						{
 							"EventName": "Event(Action-Start, Self, Speak(A4, *, *, *), *)",
-							"Conditions":
-								{
-									"Set": []
-								},
-							"Desirability": 9,
-							"Praiseworthiness": 9
-						},
-						{
-							"EventName": "Event(Action-Start, Self, Speak(A13, *, *, *), *)",
 							"Conditions":
 								{
 									"Set": []

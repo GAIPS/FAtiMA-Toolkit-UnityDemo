@@ -1,0 +1,15 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"_emotionalAppraisalAssetSource": "Neutral.ea",
+			"_emotionalDecisionMakingAssetSource": "Client.edm",
+			"BodyName": "Female",
+			"CharacterName": "Emotionally Congruent"
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

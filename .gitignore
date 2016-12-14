@@ -1,0 +1,10 @@
+/packages
+build
+*.csproj
+*.suo
+*.sln
+*.userprefs
+*.bat
+/Library
+/Temp
+/Assets/StreamingAssets/Output/

@@ -1,0 +1,15 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"_emotionalAppraisalAssetSource": "Angry.ea",
+			"_emotionalDecisionMakingAssetSource": "Client.edm",
+			"CharacterName": "Initial Negative Mood Client",
+			"BodyName": "Female"
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

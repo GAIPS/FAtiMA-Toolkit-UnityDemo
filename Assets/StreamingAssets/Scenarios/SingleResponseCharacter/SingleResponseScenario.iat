@@ -1,0 +1,17 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "SingleResponse",
+			"Characters": [
+				{
+					"Name": "Mary",
+					"Source": "\\C:\\Git\\rage-demos\\Third Demo\\Assets\\StreamingAssets\\Scenarios\\SingleResponseCharacter\\SingleResponseRPC.rpc"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

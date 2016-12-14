@@ -1,0 +1,268 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "SpaceModulesScenarioA",
+			"Characters": [
+				{
+					"Name": "Mary",
+					"Source": "SpaceModulesRPC.rpc"
+				}, 
+				{
+					"Name": "Jane",
+					"Source": "SpaceModulesRPC2.rpc"
+				}],
+			"PlayerDialogues": [
+				{
+					"CurrentState": "Greeting",
+					"NextState": "Problem",
+					"Meaning": ["-"],
+					"Style": ["Rude"],
+					"Utterance": "Hi there. Problems?"
+				}, 
+				{
+					"CurrentState": "FindSolution",
+					"NextState": "Waiting",
+					"Meaning": ["-"],
+					"Style": ["Polite"],
+					"Utterance": "I understand. Let me see if I can find a solution."
+				}, 
+				{
+					"CurrentState": "FindSolution",
+					"NextState": "Waiting",
+					"Meaning": ["-"],
+					"Style": ["Rude"],
+					"Utterance": "Hold on, I will take a look."
+				}, 
+				{
+					"CurrentState": "Solution",
+					"NextState": "CallExpert",
+					"Meaning": ["-"],
+					"Style": ["-"],
+					"Utterance": "Sorry, this is a new problem. You will have to call our expert at 555-873412"
+				}, 
+				{
+					"CurrentState": "Solution",
+					"NextState": "SolveWrong",
+					"Meaning": ["-"],
+					"Style": ["-"],
+					"Utterance": "<WrongSolution>"
+				}, 
+				{
+					"CurrentState": "Greeting",
+					"NextState": "Problem",
+					"Meaning": ["-"],
+					"Style": ["Polite"],
+					"Utterance": "Good morning, how can I be of service?"
+				}, 
+				{
+					"CurrentState": "Sorry",
+					"NextState": "CallExpert",
+					"Meaning": ["-"],
+					"Style": ["Polite"],
+					"Utterance": "Ohh, I was sure that would work. Sorry, but I will have to direct you to our expert. You can call him at 555-873412"
+				}, 
+				{
+					"CurrentState": "Sorry",
+					"NextState": "CallExpert",
+					"Meaning": ["-"],
+					"Style": ["Rude"],
+					"Utterance": "Then I don't know. Better call the expert at 555-873412"
+				}, 
+				{
+					"CurrentState": "Closing",
+					"NextState": "Goodbye1",
+					"Meaning": ["-"],
+					"Style": ["Polite"],
+					"Utterance": "Glad that helped! Anything else that I can do for you?"
+				}, 
+				{
+					"CurrentState": "Closing",
+					"NextState": "Goodbye2",
+					"Meaning": ["-"],
+					"Style": ["Rude"],
+					"Utterance": "Ok. Till next time then."
+				}, 
+				{
+					"CurrentState": "Solution",
+					"NextState": "SolveRight",
+					"Meaning": ["-"],
+					"Style": ["-"],
+					"Utterance": "<GoodSolution>"
+				}],
+			"AgentDialogues": [
+				{
+					"CurrentState": "Goodbye1",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Neutral"],
+					"Utterance": "No, that’s ok. Bye."
+				}, 
+				{
+					"CurrentState": "Goodbye1",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Positive"],
+					"Utterance": "No, all is fine. Thanks again and have a nice day."
+				}, 
+				{
+					"CurrentState": "Goodbye1",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Negative"],
+					"Utterance": "No, never mind. Bye"
+				}, 
+				{
+					"CurrentState": "Goodbye2",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Negative"],
+					"Utterance": "Hmm... you could be more polite I think... Bye."
+				}, 
+				{
+					"CurrentState": "SolveRight",
+					"NextState": "Closing",
+					"Meaning": ["ProblemSolved"],
+					"Style": ["Neutral"],
+					"Utterance": "Right... let me try... Yep... that seems to be the trick!"
+				}, 
+				{
+					"CurrentState": "CallExpert",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Positive"],
+					"Utterance": "Ok, will do. Hope he can help then. Thanks and bye."
+				}, 
+				{
+					"CurrentState": "SolveWrong",
+					"NextState": "Sorry",
+					"Meaning": ["ProblemPersists"],
+					"Style": ["Negative"],
+					"Utterance": "Ok... doing that... Shit... still the same"
+				}, 
+				{
+					"CurrentState": "CallExpert",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Negative"],
+					"Utterance": "I hope he can help me better then. Bye."
+				}, 
+				{
+					"CurrentState": "SolveRight",
+					"NextState": "Closing",
+					"Meaning": ["ProblemSolved"],
+					"Style": ["Positive"],
+					"Utterance": "Ahh, ok... I will do that right now... Yes! Working again!"
+				}, 
+				{
+					"CurrentState": "Goodbye2",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Neutral"],
+					"Utterance": "Ok. Bye."
+				}, 
+				{
+					"CurrentState": "Goodbye2",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Positive"],
+					"Utterance": "Yeah, till next time."
+				}, 
+				{
+					"CurrentState": "Problem",
+					"NextState": "FindSolution",
+					"Meaning": ["-"],
+					"Style": ["Neutral"],
+					"Utterance": "This \"device\" is giving me trouble. It has this \"symptom\"."
+				}, 
+				{
+					"CurrentState": "Problem",
+					"NextState": "FindSolution",
+					"Meaning": ["-"],
+					"Style": ["Positive"],
+					"Utterance": "Well, I have a problem with this \"device\". It has this \"symptom\"."
+				}, 
+				{
+					"CurrentState": "SolveRight",
+					"NextState": "Closing",
+					"Meaning": ["ProblemSolved"],
+					"Style": ["Negative"],
+					"Utterance": "Ok... doing that... well, what do you know? It worked!"
+				}, 
+				{
+					"CurrentState": "Waiting",
+					"NextState": "Solution",
+					"Meaning": ["-"],
+					"Style": ["Negative"],
+					"Utterance": "Yeah, yeah... I'll wait..."
+				}, 
+				{
+					"CurrentState": "Waiting",
+					"NextState": "Solution",
+					"Meaning": ["-"],
+					"Style": ["Neutral"],
+					"Utterance": "Ok"
+				}, 
+				{
+					"CurrentState": "Waiting",
+					"NextState": "Solution",
+					"Meaning": ["-"],
+					"Style": ["Positive"],
+					"Utterance": "Sure"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Greeting",
+					"Meaning": ["-"],
+					"Style": ["Negative"],
+					"Utterance": "Finally! Someone picks up!"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Greeting",
+					"Meaning": ["-"],
+					"Style": ["Neutral"],
+					"Utterance": "Hi"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Greeting",
+					"Meaning": ["-"],
+					"Style": ["Positive"],
+					"Utterance": "Hi, good morning"
+				}, 
+				{
+					"CurrentState": "SolveWrong",
+					"NextState": "Sorry",
+					"Meaning": ["ProblemPersists"],
+					"Style": ["Neutral"],
+					"Utterance": "Right... let me try... Nope... not working"
+				}, 
+				{
+					"CurrentState": "SolveWrong",
+					"NextState": "Sorry",
+					"Meaning": ["ProblemPersists"],
+					"Style": ["Positive"],
+					"Utterance": "Ahh, ok... I will do that right now... Sorry, no effect..."
+				}, 
+				{
+					"CurrentState": "Problem",
+					"NextState": "FindSolution",
+					"Meaning": ["-"],
+					"Style": ["Negative"],
+					"Utterance": "It's that damned \"device\" again. It has this \"symptom\"."
+				}, 
+				{
+					"CurrentState": "CallExpert",
+					"NextState": "End",
+					"Meaning": ["-"],
+					"Style": ["Neutral"],
+					"Utterance": "Oh... right. Bye then."
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

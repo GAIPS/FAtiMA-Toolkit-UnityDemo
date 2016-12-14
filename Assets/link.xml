@@ -1,0 +1,14 @@
+<linker>
+	<assembly fullname="ActionLibrary" preserve="all"/>
+	<assembly fullname="GAIPS.Serialization" preserve="all"/>
+	<assembly fullname="GAIPS.Rage" preserve="all"/>
+	<assembly fullname="IntegratedAuthoringTool" preserve="all"/>
+	<assembly fullname="RolePlayCharacter" preserve="all"/>
+	<assembly fullname="AutobiographicMemory" preserve="all"/>
+	<assembly fullname="KnowledgeBase" preserve="all"/>
+	<assembly fullname="Utilities" preserve="all"/>
+	<assembly fullname="EmotionalAppraisal" preserve="all"/>
+	<assembly fullname="EmotionalDecisionMaking" preserve="all"/>
+	<assembly fullname="WellFormedNames" preserve="all"/>
+	<assembly fullname="Conditions" preserve="all"/>
+</linker>

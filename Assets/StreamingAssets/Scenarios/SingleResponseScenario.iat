@@ -1,0 +1,110 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "SingleResponse",
+			"Characters": [
+				{
+					"Name": "Mary",
+					"Source": "SingleResponseRPC.rpc"
+				}],
+			"PlayerDialogues": [
+				{
+					"CurrentState": "Start",
+					"NextState": "A1",
+					"Meaning": ["Greeting"],
+					"Style": ["Formal"],
+					"Utterance": "Hi!"
+				}],
+			"AgentDialogues": [
+				{
+					"CurrentState": "A2",
+					"NextState": "A3",
+					"Meaning": ["M2"],
+					"Style": ["-"],
+					"Utterance": "I have a dynamic emotional state that I can convey through facial expressions."
+				}, 
+				{
+					"CurrentState": "A1",
+					"NextState": "A2",
+					"Meaning": ["M1"],
+					"Style": ["-"],
+					"Utterance": "Hi, nice to meet you! I am a character created with the help of the Role Play Virtual Character asset."
+				}, 
+				{
+					"CurrentState": "A3",
+					"NextState": "A4",
+					"Meaning": ["M3"],
+					"Style": ["-"],
+					"Utterance": "For instance, this is me feeling anger."
+				}, 
+				{
+					"CurrentState": "A4",
+					"NextState": "A5",
+					"Meaning": ["M4"],
+					"Style": ["-"],
+					"Utterance": "And this is me feeling joy."
+				}, 
+				{
+					"CurrentState": "A5",
+					"NextState": "A6",
+					"Meaning": ["M5"],
+					"Style": ["-"],
+					"Utterance": "This helps me to be more believable and engaging to players that interact with me."
+				}, 
+				{
+					"CurrentState": "A10",
+					"NextState": "A11",
+					"Meaning": ["M11"],
+					"Style": ["-"],
+					"Utterance": "All this flexibility promotes a closer collaboration between teachers and game developers."
+				}, 
+				{
+					"CurrentState": "A7",
+					"NextState": "A8",
+					"Meaning": ["M7"],
+					"Style": ["-"],
+					"Utterance": "The same is true for my voice, my embodiment, and the dialogues that are available to me."
+				}, 
+				{
+					"CurrentState": "A8",
+					"NextState": "A9",
+					"Meaning": ["M8"],
+					"Style": ["-"],
+					"Utterance": "For instance, this is me talking with a different text to speech voice."
+				}, 
+				{
+					"CurrentState": "A9",
+					"NextState": "A10",
+					"Meaning": ["M9"],
+					"Style": ["-"],
+					"Utterance": "And this is me with a two dimensional embodiment."
+				}, 
+				{
+					"CurrentState": "A11",
+					"NextState": "A12",
+					"Meaning": ["A11"],
+					"Style": ["-"],
+					"Utterance": "I hope this was informative to you, for more information please check our website."
+				}, 
+				{
+					"CurrentState": "A12",
+					"NextState": "A13",
+					"Meaning": ["M12"],
+					"Style": ["-"],
+					"Utterance": "Thank you for listening. Have a nice day!"
+				}, 
+				{
+					"CurrentState": "A6",
+					"NextState": "A7",
+					"Meaning": ["M6"],
+					"Style": ["-"],
+					"Utterance": "Also, all of my emotional reactions and decisions can be configured using a dedicated authoring tool without changing the game code."
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

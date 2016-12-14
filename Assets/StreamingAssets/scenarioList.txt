@@ -1,0 +1,10 @@
+\Scenarios\EADemo.iat
+	EA-Demo
+\Scenarios\EDMDemo.iat
+	EDM-Demo
+\Scenarios\SIDemo.iat
+	EDM-Demo
+\Scenarios\SingleResponseScenario.iat
+	SI-Demo
+\Scenarios\SpaceModules\SpaceModulesScenarioA.iat
+	SpaceModules

@@ -8,3 +8,5 @@
 	SI-Demo
 \Scenarios\SpaceModules\SpaceModulesScenarioA.iat
 	SpaceModules
+\Scenarios\SpaceModulesProblem\MinSysKnwNov.iat
+	SpaceModulesProblemDemo

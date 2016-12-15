@@ -1,0 +1,608 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "",
+			"Description": "",
+			"Characters": [
+				{
+					"Name": "Mary",
+					"Source": "..\\..\\..\\..\\..\\..\\ThirdDemo\\Third Demo\\Assets\\StreamingAssets\\Scenarios\\SpaceModules\\SpaceModulesRPC.rpc"
+				}],
+			"PlayerDialogues": [
+				{
+					"CurrentState": "Start",
+					"NextState": "Opening1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Good Morning, this is Space Modules Inc. How can I be of service?"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Opening1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Hi, Space Modules Inc. Go ahead"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Opening2",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Hi, what's up?"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "AnswerVague",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I am sorry to hear that,. Can you tell me what the problem is?"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "AnswerVague",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What is the problem then?"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "AnswerType1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Can you tell me the type number?"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "AnswerType1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Type number?"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "DealAnger1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I can hear you are angry, which I can totally understand. I would like to help you to solve this problem as quickly as possible."
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "DealAnger2",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I can't help you when you are angry. It is best if you calm down first."
+				}, 
+				{
+					"CurrentState": "InquireFurther",
+					"NextState": "AnswerType2",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Can you tell me the type number?"
+				}, 
+				{
+					"CurrentState": "InquireFurther",
+					"NextState": "AnswerType2",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Type number?"
+				}, 
+				{
+					"CurrentState": "InquireFurther",
+					"NextState": "WaitForAnswer",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I will look it up for you"
+				}, 
+				{
+					"CurrentState": "InquireFurther",
+					"NextState": "Reroute",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Unfortunately I have to redirect you to our Engines specialist. The phonenumber is 999-452345"
+				}, 
+				{
+					"CurrentState": "SecondChance",
+					"NextState": "DealAnger1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I can hear you are angry, which I can totally understand. I would like to help you to solve this problem as quickly as possible."
+				}, 
+				{
+					"CurrentState": "SecondChance",
+					"NextState": "DealAnger2",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I can't help you when you are angry. It is best if you calm down first."
+				}, 
+				{
+					"CurrentState": "SecondChance",
+					"NextState": "BadFinish",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Well, if you don't answer my questions I can't help you"
+				}, 
+				{
+					"CurrentState": "SecondChance",
+					"NextState": "Reroute",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I will give you the number of our Engine specialist. He will help you further! The phonenumber is 999-452345"
+				}, 
+				{
+					"CurrentState": "AskProblem1",
+					"NextState": "AnswerVague",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I am sorry to hear that,. Can you tell me what the problem is?"
+				}, 
+				{
+					"CurrentState": "AskProblem1",
+					"NextState": "AnswerVague",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What is the problem then?"
+				}, 
+				{
+					"CurrentState": "AskProblem1",
+					"NextState": "AnswerType1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Can you tell me the type number?"
+				}, 
+				{
+					"CurrentState": "AskProblem1",
+					"NextState": "AnswerType1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Type number?"
+				}, 
+				{
+					"CurrentState": "AskProblem2",
+					"NextState": "WaitForAnswer",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I will look it up for you..."
+				}, 
+				{
+					"CurrentState": "AskProblem2",
+					"NextState": "AnswerDetails",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What exactly is the problem with <Device>?"
+				}, 
+				{
+					"CurrentState": "AskProblem2",
+					"NextState": "Reroute",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Unfortunately I have to redirect you to our <Device> specialist. The phonenumber is 999-452345"
+				}, 
+				{
+					"CurrentState": "AskDetails",
+					"NextState": "WaitForAnswer",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I will look it up to you"
+				}, 
+				{
+					"CurrentState": "AskDetails",
+					"NextState": "AnswerDetails",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What exactly is the problem with Engine?"
+				}, 
+				{
+					"CurrentState": "AskDetails",
+					"NextState": "Reroute",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Unfortunately I have to redirect you to our Engine specialist. The phonenumber is 999-452345"
+				}, 
+				{
+					"CurrentState": "DataCollected",
+					"NextState": "WaitForAnswer",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I will look it up to you"
+				}, 
+				{
+					"CurrentState": "DataCollected",
+					"NextState": "Reroute",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Unfortunately I have to redirect you to our Engine specialist. The phonenumber is 999-452345"
+				}, 
+				{
+					"CurrentState": "DataCollected",
+					"NextState": "AnswerType3",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What was the type number again?"
+				}, 
+				{
+					"CurrentState": "FaqResponse",
+					"NextState": "TrySolutionFail",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "<DeviceAnswerError>"
+				}, 
+				{
+					"CurrentState": "FaqResponse",
+					"NextState": "TrySolutionOK",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "<DeviceAnswerCorrect>"
+				}, 
+				{
+					"CurrentState": "FaqResponse",
+					"NextState": "Reroute",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Unfortunately I have to redirect you to our Engine specialist. The phonenumber is 999-452345. He can help you further"
+				}, 
+				{
+					"CurrentState": "SolutionFailed",
+					"NextState": "WaitForAnswer",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Too bad. I will look again for you."
+				}, 
+				{
+					"CurrentState": "SolutionFailed",
+					"NextState": "Reroute",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Unfortunately I have to redirect you to our Engine specialist. The phonenumber is 999-452345"
+				}, 
+				{
+					"CurrentState": "SolutionFailed",
+					"NextState": "WaitForAnswer",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Wait... I will look again..."
+				}, 
+				{
+					"CurrentState": "Closure",
+					"NextState": "Goodbye1",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Fine. Is there anything else I can do for you?"
+				}, 
+				{
+					"CurrentState": "Closure",
+					"NextState": "Goodbye2",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Fine. Have a nice day"
+				}, 
+				{
+					"CurrentState": "Closure",
+					"NextState": "Goodbye2",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Bye now."
+				}],
+			"AgentDialogues": [
+				{
+					"CurrentState": "Opening1",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Hi there, I'm having trouble with the Engines"
+				}, 
+				{
+					"CurrentState": "Opening1",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Hi, I'm having trouble with the Engines again"
+				}, 
+				{
+					"CurrentState": "Opening1",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "That worthless the Engines has failed again! What mind of junk do you guys sell anyway?"
+				}, 
+				{
+					"CurrentState": "Opening2",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Hi there, I'm having trouble with the Engines"
+				}, 
+				{
+					"CurrentState": "Opening2",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Hi, I'm having trouble with the Engines again"
+				}, 
+				{
+					"CurrentState": "Opening2",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "What's up? What's up?! That worthless Power Cell has failed once again!!"
+				}, 
+				{
+					"CurrentState": "AnswerVague",
+					"NextState": "InquireFurther",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Ha! Well... the Warp drive stops every hour"
+				}, 
+				{
+					"CurrentState": "AnswerVague",
+					"NextState": "InquireFurther",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Well...the Warp drive stops every hour"
+				}, 
+				{
+					"CurrentState": "AnswerVague",
+					"NextState": "SecondChance",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Like I said...it's broken!!"
+				}, 
+				{
+					"CurrentState": "DealAnger1",
+					"NextState": "AskProblem1",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Good to hear, but I'm not angry, you know"
+				}, 
+				{
+					"CurrentState": "DealAnger1",
+					"NextState": "AskProblem1",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Good to hear..."
+				}, 
+				{
+					"CurrentState": "DealAnger1",
+					"NextState": "AskProblem1",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "I hope so too, because it's quite annoying"
+				}, 
+				{
+					"CurrentState": "DealAnger2",
+					"NextState": "AskProblem1",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "What kind of remark is that? I'm not angry at all, but ok..."
+				}, 
+				{
+					"CurrentState": "DealAnger2",
+					"NextState": "AskProblem1",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "This is a good way to make me angry, yeah... Can you help me or not?"
+				}, 
+				{
+					"CurrentState": "DealAnger2",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Well, that's up to me insn't it? I will call your boss instead"
+				}, 
+				{
+					"CurrentState": "AnswerType1",
+					"NextState": "AskProblem2",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "But of course, just a moment...it's JD-09-BBXS"
+				}, 
+				{
+					"CurrentState": "AnswerType1",
+					"NextState": "AskProblem2",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Let me look...it's JD-09-BBXS"
+				}, 
+				{
+					"CurrentState": "AnswerType1",
+					"NextState": "SecondChance",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Type number?! Type number is worthless, that is it!"
+				}, 
+				{
+					"CurrentState": "AnswerType2",
+					"NextState": "AskDetails",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "But of course, just a moment...it's JD-09-BBXS"
+				}, 
+				{
+					"CurrentState": "AnswerType2",
+					"NextState": "AskDetails",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Let me look...it's JD-09-BBXS"
+				}, 
+				{
+					"CurrentState": "AnswerType2",
+					"NextState": "SecondChance",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Type number?! Type number is worthless, that is it!"
+				}, 
+				{
+					"CurrentState": "WaitForAnswer",
+					"NextState": "FaqResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Ok, I'll wait patiently"
+				}, 
+				{
+					"CurrentState": "WaitForAnswer",
+					"NextState": "FaqResponse",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "If it doesn't take too long..."
+				}, 
+				{
+					"CurrentState": "WaitForAnswer",
+					"NextState": "FaqResponse",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Pff, So be it..."
+				}, 
+				{
+					"CurrentState": "Reroute",
+					"NextState": "Closure",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Too bad, but ok. I will call that specialist. Thanks"
+				}, 
+				{
+					"CurrentState": "Reroute",
+					"NextState": "Closure",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Ok, right. Bye then and I'll call that specialist"
+				}, 
+				{
+					"CurrentState": "Reroute",
+					"NextState": "Closure",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Pfff, this really helps! Thanks a lot..."
+				}, 
+				{
+					"CurrentState": "AnswerDetails",
+					"NextState": "DataCollected",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Temperature raises, which shuts down the engine. Firmware 3.2 fixed that"
+				}, 
+				{
+					"CurrentState": "AnswerDetails",
+					"NextState": "DataCollected",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Temperature raises, which shuts down the engine. Firmware 3.2 fixed that"
+				}, 
+				{
+					"CurrentState": "AnswerType3",
+					"NextState": "DataCollected",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "O, bad memory? It's JD-09-BBXS"
+				}, 
+				{
+					"CurrentState": "AnswerType3",
+					"NextState": "DataCollected",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "You had already asked that...it's JD-09-BBXS"
+				}, 
+				{
+					"CurrentState": "AnswerType3",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Well, I'm sorry but I already gave you that! I will try another of your employees!"
+				}, 
+				{
+					"CurrentState": "TrySolutionFail",
+					"NextState": "SolutionFailed",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Ok, let me try...No, no effect unfortunately"
+				}, 
+				{
+					"CurrentState": "TrySolutionFail",
+					"NextState": "SolutionFailed",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Ok, doing that now...Nope, still not working..."
+				}, 
+				{
+					"CurrentState": "TrySolutionFail",
+					"NextState": "SolutionFailed",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Wait...no...no effect, as expected!"
+				}, 
+				{
+					"CurrentState": "TrySolutionOK",
+					"NextState": "Closure",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Ok, let me try...Yes, it works! Great, you're an ace!"
+				}, 
+				{
+					"CurrentState": "TrySolutionOK",
+					"NextState": "Closure",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Ok, doing that now..Yep, it's working again!"
+				}, 
+				{
+					"CurrentState": "TrySolutionOK",
+					"NextState": "Closure",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Wait...yes...what d'ya know? It works..."
+				}, 
+				{
+					"CurrentState": "Goodbye1",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "No, thanks for asking. Have a good day."
+				}, 
+				{
+					"CurrentState": "Goodbye1",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "No, thanks. It's fine. Bye."
+				}, 
+				{
+					"CurrentState": "Goodbye1",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "No, this has taken long enough time already! Bye."
+				}, 
+				{
+					"CurrentState": "Goodbye2",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Thanks and good bye"
+				}, 
+				{
+					"CurrentState": "Goodbye2",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Bye."
+				}, 
+				{
+					"CurrentState": "Goodbye2",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Yeah...bye..."
+				}, 
+				{
+					"CurrentState": "BadFinish",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "It's clear you can't help me indeed. I will try a collegue of yours."
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

@@ -141,9 +141,12 @@ public class SingleCharacterDemo : MonoBehaviour
 		var t = button.transform;
 		t.SetParent(m_menuButtonHolder);
 		t.localScale=Vector3.one;
+        button.image.color = new Color(0, 0, 0, 0);
+        button.image.color = new Color(200, 200, 200,0);
 
 		var buttonLabel = button.GetComponentInChildren<Text>();
 		buttonLabel.text = label;
+        buttonLabel.color = Color.white;
 		button.onClick.AddListener(action);
 		m_currentMenuButtons.Add(button);
 	}

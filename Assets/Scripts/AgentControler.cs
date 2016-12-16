@@ -7,6 +7,7 @@ using System.Text;
 using ActionLibrary;
 using AssetManagerPackage;
 using IntegratedAuthoringTool;
+using IntegratedAuthoringTool.DTOs;
 using RolePlayCharacter;
 using UnityEngine;
 using Utilities;
@@ -27,11 +28,14 @@ namespace Assets.Scripts
 		private float _previousMood;
 
 		private float _moodThresold = 0.001f;
-
+	    private GameObject _finalScore;
 		private SingleCharacterDemo.ScenarioData m_scenarioData;
 		private MonoBehaviour m_activeController;
 		private GameObject m_versionMenu;
 		private Coroutine _currentCoroutine = null;
+	    private DialogueStateActionDTO reply;
+	    private bool just_talked;
+        
 
 		public RolePlayCharacterAsset RPC { get { return _rpc; } }
 
@@ -43,8 +47,8 @@ namespace Assets.Scripts
 			m_iat = iat;
 			m_dialogController = dialogCrt;
 			_body = GameObject.Instantiate(archetype);
-
-			var t = _body.transform;
+		    just_talked = false;
+            var t = _body.transform;
 			t.SetParent(anchor, false);
 			t.localPosition = Vector3.zero;
 			t.localRotation = Quaternion.identity;
@@ -165,9 +169,11 @@ namespace Assets.Scripts
 			else
 			{
 				m_dialogController.AddDialogLine(dialog.Utterance);
+                reply = dialog;
+                just_talked = true;
 
-				
-				string subFolder = m_scenarioData.TTSFolder;
+
+                string subFolder = m_scenarioData.TTSFolder;
 				if (subFolder != "<none>")
 				{
 					var id = DialogUtilities.GenerateFileKey(dialog);
@@ -178,8 +184,8 @@ namespace Assets.Scripts
 
 					AudioClip clip = null; //Resources.Load<AudioClip>(path);
 					string xml = null; //Resources.Load<TextAsset>(path);
-
-					var xmlPath = path + ".xml";
+                    
+                    var xmlPath = path + ".xml";
 					if (provider.FileExists(xmlPath))
 					{
 						try
@@ -224,8 +230,8 @@ namespace Assets.Scripts
 							}
 						}
 					}
-
-					if (clip != null && xml != null)
+                  
+                    if (clip != null && xml != null)
 					{
 						yield return _body.PlaySpeech(clip, xml);
 						clip.UnloadAudioData();
@@ -278,8 +284,37 @@ namespace Assets.Scripts
 			if(_body)
 				_body.Hide();
 			yield return new WaitForSeconds(2);
-			m_dialogController.Clear();
-			m_versionMenu.SetActive(true);
-		}
+		    GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
+
+            _finalScore.SetActive(true);
+            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore();
+
+
+
+        }
+
+	    public void End()
+	    {
+           _finalScore.SetActive(false);
+            m_dialogController.Clear();
+            m_versionMenu.SetActive(true);
+
+        }
+
+	    public void storeFinalScore(GameObject g)
+	    {
+
+	        _finalScore = g;
+         
+	    }
+        public DialogueStateActionDTO getReply()
+        {
+            just_talked = false;
+            return reply;
+        }
+        public bool getJustReplied()
+        {
+            return just_talked;
+        }
 	}
 }

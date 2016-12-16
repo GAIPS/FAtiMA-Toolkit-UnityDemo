@@ -9,6 +9,7 @@ using IntegratedAuthoringTool.DTOs;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Windows.Speech;
 using WellFormedNames;
 
 public class SingleCharacterDemo : MonoBehaviour 
@@ -52,7 +53,13 @@ public class SingleCharacterDemo : MonoBehaviour
 	[SerializeField]
 	private Transform m_dialogButtonZone = null;
 
-	[Space]
+
+    [SerializeField]
+    private Transform m_scoreZone = null;
+
+    private GameObject score;
+
+    [Space]
 	[SerializeField]
 	[Range(1,60)]
 	private float m_agentProblemReminderRepeatTime = 3;
@@ -64,8 +71,9 @@ public class SingleCharacterDemo : MonoBehaviour
 	private Button m_menuButtonArchetype = null;
 
 	public GameObject VersionMenu;
+    public GameObject ScoreTextPrefab;
 
-	[Header("Intro")]
+    [Header("Intro")]
 	[SerializeField]
 	private GameObject _introPanel;
 	[SerializeField]
@@ -76,12 +84,15 @@ public class SingleCharacterDemo : MonoBehaviour
 	private List<Button> m_buttonList = new List<Button>();
 	private IntegratedAuthoringToolAsset _iat;
 	private AgentControler _agentController;
+    private GameObject _finalScore;
 
 	// Use this for initialization
 	private IEnumerator Start ()
 	{
-		AssetManager.Instance.Bridge = new AssetManagerBridge();
-
+        _finalScore = GameObject.FindGameObjectWithTag("FinalScore");
+        _finalScore.SetActive(false);
+        AssetManager.Instance.Bridge = new AssetManagerBridge();
+       ;
 		m_dialogController.AddDialogLine("Loading...");
 
 		var streamingAssetsPath = Application.streamingAssetsPath;
@@ -179,7 +190,11 @@ public class SingleCharacterDemo : MonoBehaviour
 				var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
 				_agentController = new AgentControler(data,rpc,_iat,body.CharaterArchtype,m_characterAnchor,m_dialogController);
 				StopAllCoroutines();
+                _agentController.storeFinalScore(_finalScore);
 				_agentController.Start(this,VersionMenu);
+			    InstantiateScore();
+
+
 			});
 		}
 
@@ -222,19 +237,25 @@ public class SingleCharacterDemo : MonoBehaviour
 				b.onClick.AddListener((() => Reply(id)));
 				m_buttonList.Add(b);
 			}
+
 		}
 	}
     
 	public void Reply(Guid dialogId)
 	{
 		var state = _agentController.RPC.GetBeliefValue("DialogState(Player)");
-		if (state == IntegratedAuthoringToolAsset.TERMINAL_DIALOGUE_STATE)
-			return;
-
-		var reply = _iat.GetDialogActionById(IntegratedAuthoringToolAsset.PLAYER, dialogId);
+	    if (state == IntegratedAuthoringToolAsset.TERMINAL_DIALOGUE_STATE)
+	    {
+          
+	        return;
+	    }
+	    var reply = _iat.GetDialogActionById(IntegratedAuthoringToolAsset.PLAYER, dialogId);
 		var actionFormat = string.Format("Speak({0},{1},{2},{3})",reply.CurrentState,reply.NextState,reply.GetMeaningName(),reply.GetStylesName());
+      
 
-		StartCoroutine(PlayerReplyAction(actionFormat,reply.NextState));
+        StartCoroutine(PlayerReplyAction(actionFormat,reply.NextState));
+	    UpdateScore(reply);
+
 	}
 
 	private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
@@ -255,7 +276,13 @@ public class SingleCharacterDemo : MonoBehaviour
 	    if (!_agentController.IsRunning)
 	        return;
 
-		if (Input.GetKeyDown(KeyCode.P))
+	    if (_agentController.getJustReplied())
+	    {
+          
+	        UpdateScore(_agentController.getReply());
+	    }
+
+	    if (Input.GetKeyDown(KeyCode.P))
 	    {
 	        if (Time.timeScale > 0)
 	            Time.timeScale = 0;
@@ -288,4 +315,99 @@ public class SingleCharacterDemo : MonoBehaviour
 		if(_agentController != null)
             _agentController.UpdateFields();
 	}
+
+    private void InstantiateScore()
+    {
+
+        score = Instantiate(ScoreTextPrefab);
+        var t = score.transform;
+        t.SetParent(m_scoreZone, false);
+    }
+
+    public void UpdateScore(DialogueStateActionDTO reply)
+    {
+        // var actionFormat = string.Format("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.GetMeaningName(), reply.GetStylesName());
+       // Debug.Log("Dialogue" + reply.Utterance);
+      
+       // Debug.Log("Dialogue" + reply.Style[0]);
+       // Debug.Log("Dialogue" + reply.Meaning[0]);
+
+
+        switch (reply.NextState)
+        {
+            case "AnswerType1":
+                score.GetComponent<ScoreManager>().AddI(1);
+                break;
+            case "AnswerType2":
+                score.GetComponent<ScoreManager>().AddI(1);
+                break;
+            case "AnswerType3":
+                score.GetComponent<ScoreManager>().AddI(-1);
+                break;
+            case "WaitForAnswer":
+                score.GetComponent<ScoreManager>().AddI(1);
+                break;
+            case "Reroute":
+                score.GetComponent<ScoreManager>().AddF(-1);
+                break;
+            case "AnswerDetails":
+                score.GetComponent<ScoreManager>().AddI(1);
+                break;
+            case "Goodbye1":
+                score.GetComponent<ScoreManager>().AddC(1);
+                break;
+            case "Goodbye2":
+                score.GetComponent<ScoreManager>().AddC(-1);
+                break;
+
+        }
+        if (reply.Style.Length > 0)
+            switch (reply.Style[0])
+        {
+            case "Polite":
+            score.GetComponent<ScoreManager>().AddP(1);
+            break;
+
+            case "Rude":
+            score.GetComponent<ScoreManager>().AddP(1);
+            break;
+        }
+
+        if (reply.Meaning.Length > 0)
+        {
+            Debug.Log(" E " + reply.Meaning[0]);
+            switch (reply.Meaning[0])
+            {
+                case "Apathetic":
+                    score.GetComponent<ScoreManager>().AddE(-1);
+                    break;
+
+                case "Empathetic":
+                    score.GetComponent<ScoreManager>().AddE(1);
+                    break;
+            }
+        }
+        /*    switch (reply.Style[1])
+            {
+                case "Polite":
+                    score.GetComponent<ScoreManager>().AddP(1);
+                    break;
+
+                case "UnPolite":
+                    score.GetComponent<ScoreManager>().AddP(1);
+                    break;
+            }*/
+    }
+
+    public void ClearScore()
+    {
+        Destroy(score);
+    }
+
+    public void End()
+    {
+
+        _agentController.End();
+    }
+
 }

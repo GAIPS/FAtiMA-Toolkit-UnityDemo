@@ -287,7 +287,7 @@ namespace Assets.Scripts
 		    GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
 
             _finalScore.SetActive(true);
-            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore();
+            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
 
 
 
@@ -296,6 +296,7 @@ namespace Assets.Scripts
 	    public void End()
 	    {
            _finalScore.SetActive(false);
+
             m_dialogController.Clear();
             m_versionMenu.SetActive(true);
 

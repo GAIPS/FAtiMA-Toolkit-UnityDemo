@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using AssetManagerPackage;
 using Assets.Scripts;
 using IntegratedAuthoringTool;
@@ -327,80 +328,93 @@ public class SingleCharacterDemo : MonoBehaviour
     public void UpdateScore(DialogueStateActionDTO reply)
     {
         // var actionFormat = string.Format("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.GetMeaningName(), reply.GetStylesName());
-       // Debug.Log("Dialogue" + reply.Utterance);
-      
-       // Debug.Log("Dialogue" + reply.Style[0]);
-       // Debug.Log("Dialogue" + reply.Meaning[0]);
+        // Debug.Log("Dialogue" + reply.Utterance);
 
+        // Debug.Log("Dialogue" + reply.Style[0]);
+        // Debug.Log("Dialogue" + reply.Meaning[0]);
+       // Debug.Log(reply.Meaning.Length + reply.Utterance);
 
-        switch (reply.NextState)
+        foreach (var meaning in reply.Meaning)
         {
-            case "AnswerType1":
+
+            HandleMeaning(meaning);
+        }
+
+        foreach (var style in reply.Style)
+        {
+            HandleStyle(style);
+        }
+      
+     
+    }
+
+
+    private void HandleStyle(string s)
+    {
+
+        switch (s)
+        {
+            case "Polite":
+                score.GetComponent<ScoreManager>().AddP(1);
+                break;
+
+            case "Rude":
+                score.GetComponent<ScoreManager>().AddP(-1);
+                break;
+        }
+
+    }
+
+    private void HandleMeaning(string s)
+    {
+       
+
+        switch (s)
+        {
+            case "Inquire":
                 score.GetComponent<ScoreManager>().AddI(1);
                 break;
-            case "AnswerType2":
-                score.GetComponent<ScoreManager>().AddI(1);
-                break;
-            case "AnswerType3":
+            case "NotInquire":
                 score.GetComponent<ScoreManager>().AddI(-1);
                 break;
-            case "WaitForAnswer":
-                score.GetComponent<ScoreManager>().AddI(1);
+
+
+            case "NoFAQ":
+                score.GetComponent<ScoreManager>().AddF(1);
                 break;
-            case "Reroute":
+            case "FAQ":
                 score.GetComponent<ScoreManager>().AddF(-1);
                 break;
-            case "AnswerDetails":
-                score.GetComponent<ScoreManager>().AddI(1);
-                break;
-            case "Goodbye1":
+
+
+            case "GoodClosure":
                 score.GetComponent<ScoreManager>().AddC(1);
                 break;
-            case "Goodbye2":
+            case "BadClosure":
                 score.GetComponent<ScoreManager>().AddC(-1);
                 break;
 
+            case "EmpathySuccess":
+                score.GetComponent<ScoreManager>().AddE(1);
+                break;
+            case "EmpathyFailed":
+                score.GetComponent<ScoreManager>().AddE(-1);
+                break;
+
+            case "Empathetic":
+                score.GetComponent<ScoreManager>().AddE(1);
+                break;
+            case "Apathetic":
+                score.GetComponent<ScoreManager>().AddE(-1);
+                break;
         }
-        if (reply.Style.Length > 0)
-            switch (reply.Style[0])
-        {
-            case "Polite":
-            score.GetComponent<ScoreManager>().AddP(1);
-            break;
 
-            case "Rude":
-            score.GetComponent<ScoreManager>().AddP(1);
-            break;
-        }
-
-        if (reply.Meaning.Length > 0)
-        {
-            Debug.Log(" E " + reply.Meaning[0]);
-            switch (reply.Meaning[0])
-            {
-                case "Apathetic":
-                    score.GetComponent<ScoreManager>().AddE(-1);
-                    break;
-
-                case "Empathetic":
-                    score.GetComponent<ScoreManager>().AddE(1);
-                    break;
-            }
-        }
-        /*    switch (reply.Style[1])
-            {
-                case "Polite":
-                    score.GetComponent<ScoreManager>().AddP(1);
-                    break;
-
-                case "UnPolite":
-                    score.GetComponent<ScoreManager>().AddP(1);
-                    break;
-            }*/
     }
+
 
     public void ClearScore()
     {
+    
         Destroy(score);
     }
 

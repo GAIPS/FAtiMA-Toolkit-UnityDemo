@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 public class FinalScoreScript : MonoBehaviour
 {
     private GameObject score;
+    private float mood;
 	// Use this for initialization
 	void Start ()
 	{
@@ -17,7 +19,7 @@ public class FinalScoreScript : MonoBehaviour
 		
 	}
 
-    public void FinalScore()
+    public void FinalScore(float mood)
     {
 
         score = GameObject.FindGameObjectWithTag("Score");
@@ -35,6 +37,7 @@ public class FinalScoreScript : MonoBehaviour
         ret += "FAQ usage: " + F + "\n";
         ret += "Inquire: " + I + "\n";
         ret += "Politeness: " + P + "\n";
+        ret += "Mood: " + Math.Round(mood, 2) + "\n";
 
         this.GetComponent<Text>().text = ret;
     }

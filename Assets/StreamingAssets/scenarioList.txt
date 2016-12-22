@@ -10,3 +10,5 @@
 	SpaceModules
 \Scenarios\SpaceModulesProblem\MinSysKnwNov.iat
 	SpaceModulesProblemDemo
+\Scenarios\CommeillFautScenario\CifExample.iat
+	CiF-Demo

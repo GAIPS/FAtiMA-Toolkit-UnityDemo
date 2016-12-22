@@ -1,0 +1,195 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "CommeillFautDemo",
+			"Description": "Small and simple situation where the Player performs Social Exchanges",
+			"Characters": [
+				{
+					"Name": "Mary",
+					"Source": "SpaceModulesRPC.rpc"
+				}],
+			"PlayerDialogues": [
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "ComplimentRomantic",
+					"Meaning": [],
+					"Style": ["Polite(1)"],
+					"Utterance": "I really like your eyes..."
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Opening1",
+					"Meaning": [],
+					"Style": ["Polite"],
+					"Utterance": "Hello, nice to meet you"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "HeavyInsult",
+					"Meaning": [],
+					"Style": ["Polite(-1)"],
+					"Utterance": "Is your family tree a circle?"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "ComplimentFriendly",
+					"Meaning": [],
+					"Style": ["Polite(1)"],
+					"Utterance": "You seem very honorable"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "Goodbye",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "So...uhm...see you later?"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Opening1",
+					"Meaning": [],
+					"Style": ["Rude(1)"],
+					"Utterance": "Sup, how yo doin'?"
+				}, 
+				{
+					"CurrentState": "FirstResponse",
+					"NextState": "LightInsult",
+					"Meaning": [],
+					"Style": ["Polite(-1)"],
+					"Utterance": "You don't go to the beach very often do you?"
+				}],
+			"AgentDialogues": [
+				{
+					"CurrentState": "Goodbye",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "I hope you die"
+				}, 
+				{
+					"CurrentState": "ComplimentFriendly",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "What are you talking about"
+				}, 
+				{
+					"CurrentState": "HeavyInsult",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Excuse me? Fuck off"
+				}, 
+				{
+					"CurrentState": "LighInsult",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Go away"
+				}, 
+				{
+					"CurrentState": "ComplimentFriendly",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Uhm...ok"
+				}, 
+				{
+					"CurrentState": "ComplimentRomantic",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Go away please"
+				}, 
+				{
+					"CurrentState": "LighInsult",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Oh gee..thanks"
+				}, 
+				{
+					"CurrentState": "HeavyInsult",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Hahahah, good one!"
+				}, 
+				{
+					"CurrentState": "HeavyInsult",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "How dare you!?? I'm going to kill you!"
+				}, 
+				{
+					"CurrentState": "LighInsult",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "..."
+				}, 
+				{
+					"CurrentState": "Opening1",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Hi, nice to meet you!"
+				}, 
+				{
+					"CurrentState": "Goodbye",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "See you later"
+				}, 
+				{
+					"CurrentState": "Goodbye",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Ok..."
+				}, 
+				{
+					"CurrentState": "Opening1",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Negative"],
+					"Utterance": "Go away..."
+				}, 
+				{
+					"CurrentState": "ComplimentRomantic",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Oooo thank you, you're making me blush"
+				}, 
+				{
+					"CurrentState": "Opening1",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Uhm..not much"
+				}, 
+				{
+					"CurrentState": "ComplimentRomantic",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Neutral"],
+					"Utterance": "Thanks I guess..."
+				}, 
+				{
+					"CurrentState": "ComplimentFriendly",
+					"NextState": "FirstResponse",
+					"Meaning": [],
+					"Style": ["Positive"],
+					"Utterance": "Good to hear"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

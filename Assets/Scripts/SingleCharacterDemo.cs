@@ -337,77 +337,56 @@ public class SingleCharacterDemo : MonoBehaviour
         foreach (var meaning in reply.Meaning)
         {
 
-            HandleMeaning(meaning);
+            HandleKeywords(meaning);
         }
 
         foreach (var style in reply.Style)
         {
-            HandleStyle(style);
+
+            HandleKeywords(style);
         }
-      
-     
+
+
+
+
+
     }
 
 
-    private void HandleStyle(string s)
+
+
+    private void HandleKeywords(string s)
     {
 
-        switch (s)
-        {
-            case "Polite":
-                score.GetComponent<ScoreManager>().AddP(1);
-                break;
+        char[] delimitedChars = { '(', ')' };
 
-            case "Rude":
-                score.GetComponent<ScoreManager>().AddP(-1);
-                break;
-        }
+       string[] result = s.Split(delimitedChars);
 
-    }
-
-    private void HandleMeaning(string s)
-    {
-       
-
-        switch (s)
+        if(result.Length > 1)
+        switch (result[0])
         {
             case "Inquire":
-                score.GetComponent<ScoreManager>().AddI(1);
+                score.GetComponent<ScoreManager>().AddI(Int32.Parse(result[1]));
                 break;
-            case "NotInquire":
-                score.GetComponent<ScoreManager>().AddI(-1);
-                break;
-
-
-            case "NoFAQ":
-                score.GetComponent<ScoreManager>().AddF(1);
-                break;
+        
             case "FAQ":
-                score.GetComponent<ScoreManager>().AddF(-1);
+                score.GetComponent<ScoreManager>().AddF(Int32.Parse(result[1]));
+                break;
+
+            case "Closure":
+                score.GetComponent<ScoreManager>().AddC(Int32.Parse(result[1]));
+                break;
+
+            case "Empathy":
+                score.GetComponent<ScoreManager>().AddE(Int32.Parse(result[1]));
+                break;
+
+            case "Polite":
+                score.GetComponent<ScoreManager>().AddP(Int32.Parse(result[1]));
                 break;
 
 
-            case "GoodClosure":
-                score.GetComponent<ScoreManager>().AddC(1);
-                break;
-            case "BadClosure":
-                score.GetComponent<ScoreManager>().AddC(-1);
-                break;
-
-            case "EmpathySuccess":
-                score.GetComponent<ScoreManager>().AddE(1);
-                break;
-            case "EmpathyFailed":
-                score.GetComponent<ScoreManager>().AddE(-1);
-                break;
-
-            case "Empathetic":
-                score.GetComponent<ScoreManager>().AddE(1);
-                break;
-            case "Apathetic":
-                score.GetComponent<ScoreManager>().AddE(-1);
-                break;
-        }
+            }
 
     }
 

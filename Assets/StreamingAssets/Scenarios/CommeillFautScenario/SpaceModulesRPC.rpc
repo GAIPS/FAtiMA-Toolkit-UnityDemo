@@ -2,10 +2,10 @@
 	"root":
 		{
 			"classId": 0,
-			"_emotionalAppraisalAssetSource": "NegativeMoodEA.ea",
+			"_emotionalAppraisalAssetSource": "NeutralMoodEA.ea",
 			"_emotionalDecisionMakingAssetSource": "MoodResponse.edm",
 			"BodyName": "Female",
-			"CharacterName": "Jane"
+			"CharacterName": "Mary"
 		},
 	"types": [
 		{

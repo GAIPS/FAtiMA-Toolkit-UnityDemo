@@ -5,12 +5,12 @@
 			"_emotionalAppraisalAssetSource": "SingleResponseEmotion.ea",
 			"_emotionalDecisionMakingAssetSource": "SingleResponse.edm",
 			"_socialImportanceAssetSource": "",
-			"BodyName": "Female-2D",
-			"CharacterName": "Mary"
+			"BodyName": "Female",
+			"CharacterName": "Jane"
 		},
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "RolePlayCharacter.RolePlayCharacterProfileAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

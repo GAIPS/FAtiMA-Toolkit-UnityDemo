@@ -5,12 +5,12 @@
 			"_emotionalAppraisalAssetSource": "Friend.ea",
 			"_emotionalDecisionMakingAssetSource": "Client.edm",
 			"_socialImportanceAssetSource": "SI-Friendship.si",
-			"BodyName": "Female-2D",
-			"CharacterName": "Friend"
+			"BodyName": "Female",
+			"CharacterName": "Initial_Positive_Mood_Client"
 		},
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "RolePlayCharacter.RolePlayCharacterProfileAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

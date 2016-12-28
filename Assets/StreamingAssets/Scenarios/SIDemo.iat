@@ -6,11 +6,11 @@
 			"Characters": [
 				{
 					"Name": "Friend",
-					"Source": "Friend.rpc"
+					"Source": "Friend.rpcp"
 				}, 
 				{
 					"Name": "Stranger",
-					"Source": "Stranger.rpc"
+					"Source": "Stranger.rpcp"
 				}],
 			"PlayerDialogues": [
 				{

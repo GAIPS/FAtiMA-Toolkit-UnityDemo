@@ -7,7 +7,7 @@
 			"Characters": [
 				{
 					"Name": "Mary",
-					"Source": "SpaceModulesRPC.rpc"
+					"Source": "SpaceModulesRPC.rpcp"
 				}],
 			"PlayerDialogues": [
 				{

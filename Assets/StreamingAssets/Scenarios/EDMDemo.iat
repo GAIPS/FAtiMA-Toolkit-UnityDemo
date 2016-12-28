@@ -7,11 +7,11 @@
 			"Characters": [
 				{
 					"Name": "Emotionally Congruent",
-					"Source": "EmotionalCongruent.rpc"
+					"Source": "EmotionalCongruent.rpcp"
 				}, 
 				{
 					"Name": "Emotionally Incongruent",
-					"Source": "EmotionalIncongruent.rpc"
+					"Source": "EmotionalIncongruent.rpcp"
 				}],
 			"PlayerDialogues": [
 				{

@@ -7,15 +7,15 @@
 			"Characters": [
 				{
 					"Name": "Emotionless Client",
-					"Source": "Emotionless.rpc"
+					"Source": "Emotionless.rpcp"
 				}, 
 				{
 					"Name": "Initial Positive Mood Client",
-					"Source": "Happy.rpc"
+					"Source": "Happy.rpcp"
 				}, 
 				{
 					"Name": "Initial Negative Mood Client",
-					"Source": "Angry.rpc"
+					"Source": "Angry.rpcp"
 				}],
 			"PlayerDialogues": [
 				{

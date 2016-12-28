@@ -7,7 +7,7 @@
 			"Characters": [
 				{
 					"Name": "Mary",
-					"Source": "SingleResponseRPC.rpc"
+					"Source": "SingleResponseRPC.rpcp"
 				}],
 			"PlayerDialogues": [
 				{

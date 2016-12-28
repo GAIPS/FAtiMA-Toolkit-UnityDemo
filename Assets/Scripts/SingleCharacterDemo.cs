@@ -187,8 +187,9 @@ public class SingleCharacterDemo : MonoBehaviour
 			var name = n;
 			AddButton(n, () =>
 			{
+				var rpcProfile = _iat.GetCharacterProfile(name);
+				var body = m_bodies.FirstOrDefault(b => b.BodyName == rpcProfile.BodyName);
 				var rpc = _iat.InstantiateCharacterAsset(name);
-				var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
 				_agentController = new AgentControler(data,rpc,_iat,body.CharaterArchtype,m_characterAnchor,m_dialogController);
 				StopAllCoroutines();
                 _agentController.storeFinalScore(_finalScore);

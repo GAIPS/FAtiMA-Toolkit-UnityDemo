@@ -54,7 +54,7 @@ namespace Assets.Scripts
 			t.localRotation = Quaternion.identity;
 			t.localScale = Vector3.one;
 
-			m_dialogController.SetCharacterLabel(rpc.CharacterName);
+			m_dialogController.SetCharacterLabel(rpc.Perspective.ToString());
 		}
 
 		public void AddEvent(string eventName)
@@ -139,7 +139,7 @@ namespace Assets.Scripts
 				}
 			}
 
-			m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", _rpc.CharacterName));
+			m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", _rpc.Perspective));
 			_currentCoroutine = null;
 			Object.Destroy(_body.Body);
 		}

@@ -7,7 +7,7 @@
 			"Characters": [
 				{
 					"Name": "Mary",
-					"Source": "..\\..\\..\\..\\..\\..\\ThirdDemo\\Third Demo\\Assets\\StreamingAssets\\Scenarios\\SpaceModules\\SpaceModulesRPC.rpc"
+					"Source": "SpaceModulesRPC.rpcp"
 				}],
 			"PlayerDialogues": [
 				{

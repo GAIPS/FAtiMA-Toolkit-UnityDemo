@@ -182,29 +182,30 @@ public class SingleCharacterDemo : MonoBehaviour
 		_introText.text = string.Format("<b>{0}</b>\n\n\n{1}",_iat.ScenarioName,_iat.ScenarioDescription);
 
 		var characterList = _iat.GetAllCharacterSources().ToList();
-		foreach (var n in characterList.Select(c => c.Name))
-		{
-			var name = n;
-			AddButton(n, () =>
-			{
-				var rpcProfile = _iat.GetCharacterProfile(name);
-				var body = m_bodies.FirstOrDefault(b => b.BodyName == rpcProfile.BodyName);
-				var rpc = _iat.InstantiateCharacterAsset(name);
-				_agentController = new AgentControler(data,rpc,_iat,body.CharaterArchtype,m_characterAnchor,m_dialogController);
-				StopAllCoroutines();
-                _agentController.storeFinalScore(_finalScore);
-				_agentController.Start(this,VersionMenu);
-			    InstantiateScore();
 
+            foreach (var n in characterList.Select(c => c.Name))
+            {
+                var name = n;
+                AddButton(n, () =>
+                {
+                    var rpcProfile = _iat.GetCharacterProfile(name);
+                    var body = m_bodies.FirstOrDefault(b => b.BodyName == rpcProfile.BodyName);
+                    var rpc = _iat.InstantiateCharacterAsset(name);
+                    _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
+                    StopAllCoroutines();
+                    _agentController.storeFinalScore(_finalScore);
+                    _agentController.Start(this, VersionMenu);
+                    InstantiateScore();
+                });
+            }
 
-			});
-		}
+            AddButton("Back to Scenario Selection Menu", () =>
+            {
+                _iat = null;
+                LoadScenarioMenu();
+            });
 
-		AddButton("Back to Scenario Selection Menu", () =>
-		{
-			_iat = null;
-			LoadScenarioMenu();
-		});
+	
 	}
     
 	//public void SaveState()

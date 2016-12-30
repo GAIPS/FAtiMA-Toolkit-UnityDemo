@@ -2,13 +2,26 @@
 	"root":
 		{
 			"classId": 0,
-			"ScenarioName": "MinSysKnwNov",
-			"Description": "A scenario where the user has to solve a user problem related withSpace Modules through dialogue.\r\nMinSysKnwNov, stands for: Minor Problem,System failure, Known problem, Novice user",
+			"ScenarioName": "Space Modules - Scenario A",
+			"Description": "In this scenario the player has to solve a minor problem that is related to a known system failure.",
 			"Characters": [
 				{
-					"Name": "Mary",
-					"Source": "SpaceModulesRPC.rpcp"
-				}],
+					"Name": "Positive",
+					"Source": "RPCPositive.rpcp"
+				},
+				{
+					"Name": "Neutral",
+					"Source": "RPCNeutral.rpcp"
+				},
+				{
+					"Name": "Negative",
+					"Source": "RPCNegative.rpcp"
+				},
+				{
+					"Name": "VeryNegative",
+					"Source": "RPCVeryNegative.rpcp"
+				}
+				],
 			"PlayerDialogues": [
 				{
 					"CurrentState": "Start",
@@ -107,13 +120,6 @@
 					"Meaning": ["FAQ(-1)"],
 					"Style": [],
 					"Utterance": "The engine is too hot. Add cooling liquid to the engine first."
-				}, 
-				{
-					"CurrentState": "SecondChance",
-					"NextState": "Reroute",
-					"Meaning": ["Empathy", "FAQ(-1)"],
-					"Style": ["Polite(1)"],
-					"Utterance": "I will give you the number of our warp drive specialist. He will help you further! The phonenumber is 999-452345"
 				}, 
 				{
 					"CurrentState": "InquireFurther",
@@ -310,6 +316,13 @@
 					"Meaning": ["Closure(-1)"],
 					"Style": ["Polite(-1)"],
 					"Utterance": "Bye now."
+				}, 
+				{
+					"CurrentState": "SecondChance",
+					"NextState": "Reroute",
+					"Meaning": ["Empathy(-1)", "FAQ(-1)"],
+					"Style": ["Polite(1)"],
+					"Utterance": "I will give you the number of our warp drive specialist. He will help you further! The phonenumber is 999-452345"
 				}],
 			"AgentDialogues": [
 				{

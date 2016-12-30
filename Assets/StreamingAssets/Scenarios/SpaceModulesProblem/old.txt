@@ -1,7 +1,0 @@
-{
-					"CurrentState": "SecondChance",
-					"NextState": "Reroute",
-					"Meaning": ["Empathy(-1)", "FAQ(-1)"],
-					"Style": ["Polite(1)"],
-					"Utterance": "I will give you the number of our warp drive specialist. He will help you further! The phonenumber is 999-452345"
-				}

@@ -1,0 +1,132 @@
+{
+	"root": "refId@0",
+	"references": [
+		{
+			"refId": 0,
+			"classId": 1,
+			"Description": null,
+			"EmotionalHalfLifeDecayTime": 20,
+			"MoodHalfLifeDecayTime": 60,
+			"HalfLifeDecayConstant": 0.5,
+			"EmotionInfluenceOnMoodFactor": 0.3,
+			"MoodInfluenceOnEmotionFactor": 0.3,
+			"MinimumMoodValueForInfluencingEmotions": 0.5,
+			"KnowledgeBase":
+				{
+					"Perspective": "Mary",
+					"Knowledge":
+						{
+							"SELF":
+								{
+									"DialogueState(Player)": "Start",
+									"Gender(Mary)": "Female",
+									"ID(Mary)": 1
+								}
+						}
+				},
+			"AutobiographicMemory":
+				{
+					"Tick": 0,
+					"records": [
+						{
+							"classId": 0,
+							"Id": 2,
+							"Type": "Property-Change",
+							"Subject": "World",
+							"Timestamp": 0,
+							"LinkedEmotions": ["Distress"],
+							"Property": "HasProblem(Mary)",
+							"NewValue": true
+						}]
+				},
+			"EmotionalState":
+				{
+					"Parent": "refId@0",
+					"EmotionalPool": [
+						{
+							"Intensity": 3,
+							"Decay": 1,
+							"Threshold": 1,
+							"CauseId": 2,
+							"EmotionType": "Distress",
+							"Valence": "Negative",
+							"AppraisalVariables": ["DESIRABILITY"],
+							"InfluenceMood": true
+						}],
+					"EmotionDispositions": [
+						{
+							"Emotion": "*",
+							"Decay": 1,
+							"Threshold": 1
+						}, 
+						{
+							"Emotion": "Joy",
+							"Decay": 1,
+							"Threshold": 1
+						}, 
+						{
+							"Emotion": "Anger",
+							"Decay": 1,
+							"Threshold": 1
+						}],
+					"Mood": -5
+				},
+			"AppraisalRules":
+				{
+					"AppraisalWeight": 1,
+					"Rules": [
+						{
+							"EventName": "Event(Action-Start, *, Speak(*, *, FAQ([x]), *), *)",
+							"Conditions":
+								{
+									"Set": ["[x] > 0"]
+								},
+							"Desirability": 5
+						}, 
+						{
+							"EventName": "Event(Action-Start, *, Speak(*, *, FAQ([x]), *), *)",
+							"Conditions":
+								{
+									"Set": ["[x] < 0"]
+								},
+							"Desirability": -5,
+							"Praiseworthiness": -5
+						}, 
+						{
+							"EventName": "Event(Action-Start, *, Speak(*, *, Meanings(Empathy(-1), FAQ(-1)), Polite(1)), *)",
+							"Conditions":
+								{
+									"Set": []
+								},
+							"Desirability": -5,
+							"Praiseworthiness": -5
+						}, 
+						{
+							"EventName": "Event(Action-Start, *, Speak(*, *, *, Polite([x])), *)",
+							"Conditions":
+								{
+									"Set": ["[x] > 0"]
+								},
+							"Desirability": 5
+						}, 
+						{
+							"EventName": "Event(Action-Start, *, Speak(*, *, *, Polite([x])), *)",
+							"Conditions":
+								{
+									"Set": ["[x] < 0"]
+								},
+							"Desirability": -5,
+							"Praiseworthiness": -5
+						}]
+				}
+		}],
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "AutobiographicMemory.AM+PropertyChangeEvent, AutobiographicMemory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}, 
+		{
+			"TypeId": 1,
+			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

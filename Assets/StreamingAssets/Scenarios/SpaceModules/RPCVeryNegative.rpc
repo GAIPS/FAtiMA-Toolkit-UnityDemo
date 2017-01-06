@@ -2,14 +2,14 @@
 	"root":
 		{
 			"classId": 0,
-			"CharacterName": "Mary",
+			"CharacterName": "VeryNegative",
 			"BodyName": "Female",
 			"VoiceName": null,
-			"EmotionalAppraisalAssetSource": "Neutral.ea",
-			"EmotionalDecisionMakingSource": "Client.edm",
-			"SocialImportanceAssetSource": "SITeste.si",
+			"EmotionalAppraisalAssetSource": "EAVeryNegativeMood.ea",
+			"EmotionalDecisionMakingSource": "MoodResponse.edm",
+			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
-			"AutobiographicMemory": null	
+			"AutobiographicMemory": null
 		},
 	"types": [
 		{

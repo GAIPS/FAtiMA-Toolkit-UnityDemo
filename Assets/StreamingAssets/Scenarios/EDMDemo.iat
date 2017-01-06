@@ -3,15 +3,15 @@
 		{
 			"classId": 0,
 			"ScenarioName": "Emotional Decision Making Demo",
-			"Description": "This scenario show 2 examples of how the Emotional Decision Makingl Asset can be configured.",
+			"Description": "This scenario show 2 examples of how the Emotional Decision Making Asset can be configured.",
 			"Characters": [
 				{
 					"Name": "Emotionally Congruent",
-					"Source": "EmotionalCongruent.rpcp"
+					"Source": "EmotionalCongruent.rpc"
 				}, 
 				{
 					"Name": "Emotionally Incongruent",
-					"Source": "EmotionalIncongruent.rpcp"
+					"Source": "EmotionalIncongruent.rpc"
 				}],
 			"PlayerDialogues": [
 				{

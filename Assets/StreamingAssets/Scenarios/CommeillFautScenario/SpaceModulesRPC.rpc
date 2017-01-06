@@ -1,0 +1,19 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"CharacterName": "Mary",
+			"BodyName": "Female",
+			"VoiceName": null,
+			"EmotionalAppraisalAssetSource": "NeutralMoodEA.ea",
+			"EmotionalDecisionMakingSource": "MoodResponse.edm",
+			"SocialImportanceAssetSource": null,
+			"CommeillFautAssetSource": null,
+			"AutobiographicMemory": null	
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "RolePlayCharacter.RolePlayCharacterProfileAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

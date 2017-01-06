@@ -6,7 +6,7 @@
 	EDM-Demo
 \Scenarios\SingleResponseScenario.iat
 	SI-Demo
-\Scenarios\SpaceModulesProblem\MinSysKnwNov.iat
+\Scenarios\SpaceModules\MinSysKnwNov.iat
 	SpaceModulesMinSysKnwNov
 \Scenarios\CommeillFautScenario\CifExample.iat
 	CiF-Demo

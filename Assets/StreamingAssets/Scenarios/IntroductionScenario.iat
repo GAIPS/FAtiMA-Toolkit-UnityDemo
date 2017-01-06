@@ -7,11 +7,11 @@
 			"Characters": [
 				{
 					"Name": "Jane",
-					"Source": "SingleResponseRPC-3D.rpcp"
+					"Source": "SingleResponseRPC-3D.rpc"
 				}, 
 				{
 					"Name": "Mary",
-					"Source": "SingleResponseRPC-2D.rpcp"
+					"Source": "SingleResponseRPC-2D.rpc"
 				}],
 			"PlayerDialogues": [
 				{

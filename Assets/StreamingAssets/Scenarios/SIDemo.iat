@@ -3,14 +3,15 @@
 		{
 			"classId": 0,
 			"ScenarioName": "Social Importance Demo",
+			"Description": "This is a scenario to showcase how the Social Importance model works",
 			"Characters": [
 				{
 					"Name": "Friend",
-					"Source": "Friend.rpcp"
+					"Source": "Friend.rpc"
 				}, 
 				{
 					"Name": "Stranger",
-					"Source": "Stranger.rpcp"
+					"Source": "Stranger.rpc"
 				}],
 			"PlayerDialogues": [
 				{

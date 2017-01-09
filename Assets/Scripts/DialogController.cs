@@ -31,12 +31,12 @@ namespace Assets.Scripts
 			StringBuilder builder = new StringBuilder();
 			bool notFirst = false;
 
-			var query = rpc.Emotions.GroupBy(r => r.EmotionType).Select(g => g.OrderByDescending(e => e.Intensity).First()).OrderByDescending(e => e.Intensity);
+			var query = rpc.GetAllActiveEmotions().GroupBy(e => e.Type).Select(g => g.OrderByDescending(e => e.Intensity).First()).OrderByDescending(e => e.Intensity);
 			foreach (var emt in query)
 			{
 				if (notFirst)
 					builder.AppendLine();
-				builder.AppendFormat("{0}: {1:N2}", emt.EmotionType, emt.Intensity);
+				builder.AppendFormat("{0}: {1:N2}", emt.Type, emt.Intensity);
 				notFirst = true;
 			}
 			m_emotionFieldOne.text= builder.ToString();

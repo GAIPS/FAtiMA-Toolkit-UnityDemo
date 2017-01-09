@@ -3,15 +3,15 @@
 		{
 			"classId": 0,
 			"ScenarioName": "Introduction",
-			"Description": "This is a scenario to showcase what the toolkit is able to do.",
+			"Description": "This is a scenario designed to showcase what the toolkit is able to do.",
 			"Characters": [
 				{
 					"Name": "Jane",
-					"Source": "SingleResponseRPC-3D.rpc"
+					"Source": "Introduction3D.rpc"
 				}, 
 				{
 					"Name": "Mary",
-					"Source": "SingleResponseRPC-2D.rpc"
+					"Source": "Introduction2D.rpc"
 				}],
 			"PlayerDialogues": [
 				{
@@ -19,7 +19,8 @@
 					"NextState": "A1",
 					"Meaning": ["Greeting"],
 					"Style": ["Formal"],
-					"Utterance": "Hi!"
+					"Utterance": "Hi!",
+					"FileName": "HI-5360706C803A759E3A9F2CA54A651950"
 				}],
 			"AgentDialogues": [
 				{
@@ -27,91 +28,104 @@
 					"NextState": "A3",
 					"Meaning": ["M2"],
 					"Style": ["-"],
-					"Utterance": "I have a dynamic emotional state that I can convey through facial expressions."
+					"Utterance": "I have a dynamic emotional state that I can convey through facial expressions.",
+					"FileName": "I HAVE A DYNAMIC EMO-A4537A568595820F08610DE7CBE354AE"
 				}, 
 				{
 					"CurrentState": "A1",
 					"NextState": "A2",
 					"Meaning": ["M1"],
 					"Style": ["-"],
-					"Utterance": "Hi, nice to meet you! I am a character created with the help of the Role Play Virtual Character asset."
+					"Utterance": "Hi, nice to meet you! I am a character created with the help of the Role Play Virtual Character asset.",
+					"FileName": "HI NICE TO MEET YOU -DC2DE3CDB8CB0EF63F584A21788A2755"
 				}, 
 				{
 					"CurrentState": "A3",
 					"NextState": "A4",
 					"Meaning": ["M3"],
 					"Style": ["-"],
-					"Utterance": "For instance, this is me feeling anger."
+					"Utterance": "For instance, this is me feeling anger.",
+					"FileName": "FOR INSTANCE THIS IS-4160696DDBECF20AC8D864487068E996"
 				}, 
 				{
 					"CurrentState": "A4",
 					"NextState": "A5",
 					"Meaning": ["M4"],
 					"Style": ["-"],
-					"Utterance": "And this is me feeling joy."
+					"Utterance": "And this is me feeling joy.",
+					"FileName": "AND THIS IS ME FEELI-3538BFF1AE469382B4D64DED0B4AB16D"
 				}, 
 				{
 					"CurrentState": "A5",
 					"NextState": "A6",
 					"Meaning": ["M5"],
 					"Style": ["-"],
-					"Utterance": "This helps me to be more believable and engaging to players that interact with me."
+					"Utterance": "This helps me to be more believable and engaging to players that interact with me.",
+					"FileName": "THIS HELPS ME TO BE -3D4FF2C1F4F974D26C1DB1696F1AD5A0"
 				}, 
 				{
 					"CurrentState": "A10",
 					"NextState": "A11",
 					"Meaning": ["M11"],
 					"Style": ["-"],
-					"Utterance": "All this flexibility promotes a closer collaboration between teachers and game developers."
+					"Utterance": "All this flexibility promotes a closer collaboration between teachers and game developers.",
+					"FileName": "ALL THIS FLEXIBILITY-47106BAABC5AB8AF668746B249F6985B"
 				}, 
 				{
 					"CurrentState": "A7",
 					"NextState": "A8",
 					"Meaning": ["M7"],
 					"Style": ["-"],
-					"Utterance": "The same is true for my voice, my embodiment, and the dialogues that are available to me."
+					"Utterance": "The same is true for my voice, my embodiment, and the dialogues that are available to me.",
+					"FileName": "THE SAME IS TRUE FOR-52960B834B62B1E22ED188742C88C213"
 				}, 
 				{
 					"CurrentState": "A9",
 					"NextState": "A10",
 					"Meaning": ["M9"],
 					"Style": ["-"],
-					"Utterance": "..."
+					"Utterance": "...",
+					"FileName": "-2F43B42FD833D1E77420A8DAE7419000"
 				}, 
 				{
 					"CurrentState": "A11",
 					"NextState": "A12",
 					"Meaning": ["A11"],
 					"Style": ["-"],
-					"Utterance": "I hope this was informative to you, for more information please check our website."
+					"Utterance": "I hope this was informative to you, for more information please check our website.",
+					"FileName": "I HOPE THIS WAS INFO-AB2F78C1923BD9873A2BF7241079FC98"
 				}, 
 				{
 					"CurrentState": "A12",
 					"NextState": "A13",
 					"Meaning": ["M12"],
 					"Style": ["-"],
-					"Utterance": "Thank you for listening. Have a nice day!"
+					"Utterance": "Thank you for listening. Have a nice day!",
+					"FileName": "THANK YOU FOR LISTEN-C4BE11959DFBB3A46D5415F15D93DF2C"
 				}, 
 				{
 					"CurrentState": "A6",
 					"NextState": "A7",
 					"Meaning": ["M6"],
 					"Style": ["-"],
-					"Utterance": "Also, all of my emotional reactions and decisions can be configured using a dedicated authoring tool without changing the game code."
+					"Utterance": "Also, all of my emotional reactions and decisions can be configured using a dedicated authoring tool without changing the game code.",
+					"FileName": "ALSO ALL OF MY EMOTI-2E8CE3119DC503ABB3D522EAE6046290"
 				}, 
 				{
 					"CurrentState": "A8",
 					"NextState": "A9",
 					"Meaning": ["M8"],
 					"Style": ["-"],
-					"Utterance": "For instance, this is me talking with a different text to speech voice."
+					"Utterance": "For instance, this is me talking with a different text to speech voice.",
+					"FileName": "FOR INSTANCE THIS IS-4AE11E2FF203683A696E1CC4C101C3AF"
 				}, 
 				{
 					"CurrentState": "A13",
 					"NextState": "End",
 					"Meaning": ["-"],
 					"Style": ["-"],
-					"Utterance": "..."
+					"Utterance": "...",
+					"FileName": "-2F43B42FD833D1E77420A8DAE7419000"
 				}]
 		},
 	"types": [

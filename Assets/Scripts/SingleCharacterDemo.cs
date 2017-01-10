@@ -185,10 +185,9 @@ public class SingleCharacterDemo : MonoBehaviour
             var name = characterList.First().Name;
             AddButton("Start Scenario", () =>
             {
-                var rpcProfile = _iat.GetCharacterProfile(name);
-                var body = m_bodies.FirstOrDefault(b => b.BodyName == rpcProfile.BodyName);
-                var rpc = _iat.InstantiateCharacterAsset(name);
-                _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
+                var rpc = _iat.GetCharacterProfile(name);
+                var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
+                _agentController = new AgentControler(data, characterList.First().Source, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
                 StopAllCoroutines();
                 _agentController.storeFinalScore(_finalScore);
                 _agentController.Start(this, VersionMenu);
@@ -197,15 +196,14 @@ public class SingleCharacterDemo : MonoBehaviour
         }
         else
         {
-            foreach (var n in characterList.Select(c => c.Name))
+            foreach (var c in characterList)
             {
-                var name = n;
-                AddButton(n, () =>
+                var name = c.Name;
+                AddButton(name, () =>
                 {
-                    var rpcProfile = _iat.GetCharacterProfile(name);
-                    var body = m_bodies.FirstOrDefault(b => b.BodyName == rpcProfile.BodyName);
-                    var rpc = _iat.InstantiateCharacterAsset(name);
-                    _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
+                    var rpc = _iat.GetCharacterProfile(name);
+                    var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
+                    _agentController = new AgentControler(data, c.Source, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
                     StopAllCoroutines();
                     _agentController.storeFinalScore(_finalScore);
                     _agentController.Start(this, VersionMenu);
@@ -282,7 +280,7 @@ public class SingleCharacterDemo : MonoBehaviour
         _agentController.AddEvent(string.Format("Event(Action-Start,Player,{0},Client)", replyActionName));
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(string.Format("Event(Action-Finished,Player,{0},Client)", replyActionName));
-        _agentController.AddEvent(string.Format("Event(Property-change,self,DialogueState(Player),{0})", nextState));
+        _agentController.AddEvent(string.Format("Event(Property-change,Self,DialogueState(Player),{0})", nextState));
     }
 
     // Update is called once per frame

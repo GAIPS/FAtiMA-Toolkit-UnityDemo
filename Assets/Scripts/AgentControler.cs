@@ -39,12 +39,14 @@ namespace Assets.Scripts
 
 		public RolePlayCharacterAsset RPC { get { return _rpc; } }
 
-		public AgentControler(SingleCharacterDemo.ScenarioData scenarioData, RolePlayCharacterAsset rpc,
+		public AgentControler(SingleCharacterDemo.ScenarioData scenarioData, string rpcSource,
 			IntegratedAuthoringToolAsset iat, UnityBodyImplement archetype, Transform anchor, DialogController dialogCrt)
 		{
 			m_scenarioData = scenarioData;
-			_rpc = rpc;
-			m_iat = iat;
+			_rpc = RolePlayCharacterAsset.LoadFromFile(rpcSource);
+            _rpc.Initialize();
+            iat.BindToRegistry(_rpc.DynamicPropertiesRegistry);
+            m_iat = iat;
 			m_dialogController = dialogCrt;
 			_body = GameObject.Instantiate(archetype);
 		    just_talked = false;
@@ -54,7 +56,7 @@ namespace Assets.Scripts
 			t.localRotation = Quaternion.identity;
 			t.localScale = Vector3.one;
 
-			m_dialogController.SetCharacterLabel(rpc.CharacterName.ToString());
+			m_dialogController.SetCharacterLabel(_rpc.CharacterName.ToString());
 		}
 
 		public void AddEvent(string eventName)
@@ -111,6 +113,13 @@ namespace Assets.Scripts
 			while (_rpc.GetBeliefValue("DialogueState(Player)") != "Disconnected")
 			{
 				yield return new WaitForSeconds(1);
+                if (_events.Count == 0)
+                {
+                    _rpc.Update();
+                    continue;
+                }
+                    
+                    
                 var actionRpc = _rpc.PerceptionActionLoop(_events);
 				_events.Clear(); 
 				_rpc.Update();
@@ -175,10 +184,8 @@ namespace Assets.Scripts
                 string subFolder = m_scenarioData.TTSFolder;
 				if (subFolder != "<none>")
 				{
-					var id = DialogUtilities.GenerateFileKey(dialog);
 					var provider = (AssetManager.Instance.Bridge as AssetManagerBridge)._provider;
-
-					var path = string.Format("/TTS-Dialogs/{0}/{1}/{2}", subFolder, id,dialog.FileName);
+                    var path = string.Format("/TTS-Dialogs/{0}/{1}", subFolder,dialog.Utterance);
 
 					AudioClip clip = null; //Resources.Load<AudioClip>(path);
 					string xml = null; //Resources.Load<TextAsset>(path);
@@ -238,7 +245,7 @@ namespace Assets.Scripts
 					}
 					else
 					{
-						Debug.LogWarning("Could not found speech assets for dialog id \"" + id + "\"");
+						Debug.LogWarning("Could not found speech assets for a dialog");
 						yield return new WaitForSeconds(2);
 					}
 				}

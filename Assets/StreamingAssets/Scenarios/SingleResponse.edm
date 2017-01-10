@@ -12,7 +12,9 @@
 							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]"]
 						},
 					"Priority": 0
-				}]
+				}
+				]
+				
 		},
 	"types": [
 		{

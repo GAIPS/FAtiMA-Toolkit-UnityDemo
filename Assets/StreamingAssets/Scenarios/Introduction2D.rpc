@@ -10,7 +10,7 @@
 
 						}
 				},
-			"BodyName": "Female2D",
+			"BodyName": "Female-2D",
 			"VoiceName": "Female",
 			"EmotionalAppraisalAssetSource": "IntroductionAgent.ea",
 			"EmotionalDecisionMakingSource": "SingleResponse.edm",

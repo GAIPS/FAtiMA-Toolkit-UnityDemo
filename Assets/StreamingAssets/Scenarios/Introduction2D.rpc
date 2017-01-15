@@ -11,7 +11,7 @@
 						}
 				},
 			"BodyName": "Female-2D",
-			"VoiceName": "Female",
+			"VoiceName": "Zira",
 			"EmotionalAppraisalAssetSource": "IntroductionAgent.ea",
 			"EmotionalDecisionMakingSource": "SingleResponse.edm",
 			"SocialImportanceAssetSource": null,

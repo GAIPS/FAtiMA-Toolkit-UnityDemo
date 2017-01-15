@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using WellFormedNames;
+using RolePlayCharacter;
 
 public class SingleCharacterDemo : MonoBehaviour
 {
@@ -179,41 +180,23 @@ public class SingleCharacterDemo : MonoBehaviour
         _introPanel.SetActive(true);
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
 
-        var characterList = _iat.GetAllCharacterSources().ToList();
-        if (characterList.Count == 1)
+        var characterSources = _iat.GetAllCharacterSources().ToList();
+        foreach (var source in characterSources)
         {
-            var name = characterList.First().Name;
-            AddButton("Start Scenario", () =>
-            {
-                var rpc = _iat.GetCharacterProfile(name);
-                var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
-                _agentController = new AgentControler(data, characterList.First().Source, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
+            var rpc = RolePlayCharacterAsset.LoadFromFile(source.Source);
+            rpc.Initialize();
+            _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
+            AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(), 
+                () =>
+                {
+                   var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
+                   _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
                 StopAllCoroutines();
                 _agentController.storeFinalScore(_finalScore);
                 _agentController.Start(this, VersionMenu);
                 InstantiateScore();
             });
         }
-        else
-        {
-            foreach (var c in characterList)
-            {
-                var name = c.Name;
-                AddButton(name, () =>
-                {
-                    var rpc = _iat.GetCharacterProfile(name);
-                    var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
-                    _agentController = new AgentControler(data, c.Source, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
-                    StopAllCoroutines();
-                    _agentController.storeFinalScore(_finalScore);
-                    _agentController.Start(this, VersionMenu);
-                    InstantiateScore();
-                });
-            }
-        }
-
-
-
         AddButton("Back to Scenario Selection Menu", () =>
         {
             _iat = null;

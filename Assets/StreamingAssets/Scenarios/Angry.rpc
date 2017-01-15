@@ -2,10 +2,39 @@
 	"root":
 		{
 			"classId": 0,
-			"_emotionalAppraisalAssetSource": "Angry.ea",
-			"_emotionalDecisionMakingAssetSource": "Client.edm",
-			"CharacterName": "Initial_Negative_Mood_Client",
-			"BodyName": "Female"
+			"KnowledgeBase":
+				{
+					"Perspective": "Angry",
+					"Knowledge":
+						{
+
+						}
+				},
+			"BodyName": "Female",
+			"VoiceName": "Heather",
+			"EmotionalAppraisalAssetSource": "Angry.ea",
+			"EmotionalDecisionMakingSource": "Client.edm",
+			"SocialImportanceAssetSource": null,
+			"CommeillFautAssetSource": null,
+			"EmotionalState":
+				{
+					"Mood": 0,
+					"EmotionalPool": [],
+					"AppraisalConfiguration":
+						{
+							"HalfLifeDecayConstant": 0.5,
+							"EmotionInfluenceOnMoodFactor": 0.3,
+							"MoodInfluenceOnEmotionFactor": 0.3,
+							"MinimumMoodValueForInfluencingEmotions": 0.5,
+							"EmotionalHalfLifeDecayTime": 15,
+							"MoodHalfLifeDecayTime": 60
+						}
+				},
+			"AutobiographicMemory":
+				{
+					"Tick": 0,
+					"records": []
+				}
 		},
 	"types": [
 		{

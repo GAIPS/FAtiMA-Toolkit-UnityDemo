@@ -2,11 +2,39 @@
 	"root":
 		{
 			"classId": 0,
-			"_emotionalAppraisalAssetSource": "Friend.ea",
-			"_emotionalDecisionMakingAssetSource": "Client.edm",
-			"_socialImportanceAssetSource": "SI-Friendship.si",
-			"BodyName": "Female-2D",
-			"CharacterName": "Friend"
+			"KnowledgeBase":
+				{
+					"Perspective": "Friend",
+					"Knowledge":
+						{
+
+						}
+				},
+			"BodyName": "Female",
+			"VoiceName": "Heather",
+			"EmotionalAppraisalAssetSource": "Friend.ea",
+			"EmotionalDecisionMakingSource": "SingleResponse.edm",
+			"SocialImportanceAssetSource": null,
+			"CommeillFautAssetSource": null,
+			"EmotionalState":
+				{
+					"Mood": 0,
+					"EmotionalPool": [],
+					"AppraisalConfiguration":
+						{
+							"HalfLifeDecayConstant": 0.5,
+							"EmotionInfluenceOnMoodFactor": 0.3,
+							"MoodInfluenceOnEmotionFactor": 0.3,
+							"MinimumMoodValueForInfluencingEmotions": 0.5,
+							"EmotionalHalfLifeDecayTime": 15,
+							"MoodHalfLifeDecayTime": 60
+						}
+				},
+			"AutobiographicMemory":
+				{
+					"Tick": 0,
+					"records": []
+				}
 		},
 	"types": [
 		{

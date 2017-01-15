@@ -18,7 +18,7 @@ namespace Assets.Scripts
 {
 	public class AgentControler
 	{
-		private RolePlayCharacterAsset _rpc;
+		private RolePlayCharacterAsset m_rpc;
 		private DialogController m_dialogController;
 		private IntegratedAuthoringToolAsset m_iat;
 		private UnityBodyImplement _body;
@@ -37,26 +37,25 @@ namespace Assets.Scripts
 	    private bool just_talked;
         
 
-		public RolePlayCharacterAsset RPC { get { return _rpc; } }
+		public RolePlayCharacterAsset RPC { get { return m_rpc; } }
 
-		public AgentControler(SingleCharacterDemo.ScenarioData scenarioData, string rpcSource,
+		public AgentControler(SingleCharacterDemo.ScenarioData scenarioData, RolePlayCharacterAsset rpc,
 			IntegratedAuthoringToolAsset iat, UnityBodyImplement archetype, Transform anchor, DialogController dialogCrt)
 		{
 			m_scenarioData = scenarioData;
-			_rpc = RolePlayCharacterAsset.LoadFromFile(rpcSource);
-            _rpc.Initialize();
-            iat.BindToRegistry(_rpc.DynamicPropertiesRegistry);
             m_iat = iat;
-			m_dialogController = dialogCrt;
+            m_rpc = rpc;
+            m_dialogController = dialogCrt;
 			_body = GameObject.Instantiate(archetype);
 		    just_talked = false;
+            
+
             var t = _body.transform;
 			t.SetParent(anchor, false);
 			t.localPosition = Vector3.zero;
 			t.localRotation = Quaternion.identity;
 			t.localScale = Vector3.one;
-
-			m_dialogController.SetCharacterLabel(_rpc.CharacterName.ToString());
+			m_dialogController.SetCharacterLabel(m_rpc.CharacterName.ToString());
 		}
 
 		public void AddEvent(string eventName)
@@ -91,12 +90,12 @@ namespace Assets.Scripts
 
 		public void UpdateFields()
 		{
-			m_dialogController.UpdateFields(_rpc);
+			m_dialogController.UpdateFields(m_rpc);
 		}
 
 		public void UpdateEmotionExpression()
 		{
-			var emotion = _rpc.GetStrongestActiveEmotion();
+			var emotion = m_rpc.GetStrongestActiveEmotion();
 			if (emotion == null)
 				return;
 
@@ -106,23 +105,23 @@ namespace Assets.Scripts
 		private IEnumerator UpdateCoroutine()
 		{
 			_events.Clear();
-			var enterEventRpcOne = string.Format("Event(Property-Change,{0},Front(Self),Computer)", _rpc.CharacterName);
+			var enterEventRpcOne = string.Format("Event(Property-Change,{0},Front(Self),Computer)", m_rpc.CharacterName);
 			AddEvent(enterEventRpcOne);
 			AddEvent(string.Format("Event(Property-change,Self,DialogueState(Player),{0})", IntegratedAuthoringToolAsset.INITIAL_DIALOGUE_STATE));
 
-			while (_rpc.GetBeliefValue("DialogueState(Player)") != "Disconnected")
+			while (m_rpc.GetBeliefValue("DialogueState(Player)") != "Disconnected")
 			{
 				yield return new WaitForSeconds(1);
                 if (_events.Count == 0)
                 {
-                    _rpc.Update();
+                    m_rpc.Update();
                     continue;
                 }
                     
                     
-                var actionRpc = _rpc.PerceptionActionLoop(_events);
+                var actionRpc = m_rpc.PerceptionActionLoop(_events);
 				_events.Clear(); 
-				_rpc.Update();
+				m_rpc.Update();
 
 				if (actionRpc == null)
 					continue;
@@ -147,7 +146,7 @@ namespace Assets.Scripts
 				}
 			}
 
-			m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", _rpc.CharacterName));
+			m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", m_rpc.CharacterName));
 			_currentCoroutine = null;
 			Object.Destroy(_body.Body);
 		}
@@ -185,7 +184,7 @@ namespace Assets.Scripts
 				if (subFolder != "<none>")
 				{
 					var provider = (AssetManager.Instance.Bridge as AssetManagerBridge)._provider;
-                    var path = string.Format("/TTS-Dialogs/{0}/{1}", subFolder,dialog.Utterance);
+                    var path = string.Format("/TTS-Dialogs/{0}/{1}/{2}", subFolder, m_rpc.VoiceName, dialog.UtteranceId);
 
 					AudioClip clip = null; //Resources.Load<AudioClip>(path);
 					string xml = null; //Resources.Load<TextAsset>(path);
@@ -261,31 +260,31 @@ namespace Assets.Scripts
 				var dialogueStateUpdateEvent = string.Format("Event(Property-Change,SELF,DialogueState({0}),{1})", speakAction.Target, speakAction.Parameters[1]);
 				AddEvent(dialogueStateUpdateEvent);
 			}
-			_rpc.ActionFinished(speakAction);
+			m_rpc.ActionFinished(speakAction);
 		}
 
 		private IEnumerator HandleFix(IAction actionRpc)
 		{
-			var leaveEvt = string.Format("Event(Property-change,{0},Front(Self),Socket)", _rpc.CharacterName);
+			var leaveEvt = string.Format("Event(Property-change,{0},Front(Self),Socket)", m_rpc.CharacterName);
 			AddEvent(leaveEvt);
 
 			yield return new WaitForSeconds(1.5f);
 
-			var fixedEvt = string.Format("Event(Property-change,{0},IsBroken({1}),false)", _rpc.CharacterName, actionRpc.Target);
+			var fixedEvt = string.Format("Event(Property-change,{0},IsBroken({1}),false)", m_rpc.CharacterName, actionRpc.Target);
             AddEvent(leaveEvt);
             
-			var enterEvt = string.Format("Event(Property-change,{0},Front(Self),Computer)", _rpc.CharacterName);
+			var enterEvt = string.Format("Event(Property-change,{0},Front(Self),Computer)", m_rpc.CharacterName);
 			AddEvent(enterEvt);
-			_rpc.ActionFinished(actionRpc);
+			m_rpc.ActionFinished(actionRpc);
 		}
 
 		private IEnumerator HandleDisconnectAction(IAction actionRpc)
 		{
-			var exitEvtOne = string.Format("Event(Property-change,{0},Front(Self),-)", _rpc.CharacterName);
+			var exitEvtOne = string.Format("Event(Property-change,{0},Front(Self),-)", m_rpc.CharacterName);
 			AddEvent(exitEvtOne);
-			_rpc.PerceptionActionLoop(_events);
+			m_rpc.PerceptionActionLoop(_events);
 			yield return null;
-			_rpc.ActionFinished(actionRpc);
+			m_rpc.ActionFinished(actionRpc);
 			AddEvent(string.Format("Event(Property-change,SELF,DialogueState(Player),{0})", "Disconnected"));
 			if(_body)
 				_body.Hide();

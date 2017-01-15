@@ -4,15 +4,7 @@
 			"classId": 0,
 			"ScenarioName": "Social Importance Demo",
 			"Description": "This is a scenario to showcase how the Social Importance model works",
-			"Characters": [
-				{
-					"Name": "Friend",
-					"Source": "Friend.rpc"
-				}, 
-				{
-					"Name": "Stranger",
-					"Source": "Stranger.rpc"
-				}],
+			"CharacterSources": ["Friend.rpc", "Stranger"],
 			"PlayerDialogues": [
 				{
 					"CurrentState": "Start",
@@ -76,119 +68,136 @@
 					"NextState": "-",
 					"Meaning": ["IsAnybodyThereQuestion"],
 					"Style": ["-"],
-					"Utterance": "Are you still there?"
+					"Utterance": "Are you still there?",
+					"UtteranceId": "TTS-872175A52C59DBE1E052AEFBD06300DC"
 				}, 
 				{
 					"CurrentState": "-",
 					"NextState": "End",
 					"Meaning": ["GiveUp"],
 					"Style": ["BadMood"],
-					"Utterance": "You are useless! I hope you get fired!!"
+					"Utterance": "You are useless! I hope you get fired!!",
+					"UtteranceId": "TTS-79C9F84F9810758D00515A412C021F08"
 				}, 
 				{
 					"CurrentState": "AfterPlayerGreeting",
 					"NextState": "GreetingEnd",
 					"Meaning": ["Greeting"],
 					"Style": ["GoodMood"],
-					"Utterance": "Good Day! How are you? I was wondering if you could help me..."
+					"Utterance": "Good Day! How are you? I was wondering if you could help me...",
+					"UtteranceId": "TTS-FF10E9ABA33C8E96AC8C8CE844529C49"
 				}, 
 				{
 					"CurrentState": "AfterPlayerGreeting",
 					"NextState": "GreetingEnd",
 					"Meaning": ["Greeting"],
 					"Style": ["Friend"],
-					"Utterance": "Yo dude! Your friend here needs help."
+					"Utterance": "Yo dude! Your friend here needs help.",
+					"UtteranceId": "TTS-C8E3ACB2D26B05C61B09EEE9B507152B"
 				}, 
 				{
 					"CurrentState": "AnythingElse",
 					"NextState": "End",
 					"Meaning": ["Farewell"],
 					"Style": ["BadMood"],
-					"Utterance": "..."
+					"Utterance": "...",
+					"UtteranceId": "TTS-2F43B42FD833D1E77420A8DAE7419000"
 				}, 
 				{
 					"CurrentState": "-",
 					"NextState": "ProblemSolved",
 					"Meaning": ["ProblemIsFixed"],
 					"Style": ["GoodMood"],
-					"Utterance": "It worked!! Thank you."
+					"Utterance": "It worked!! Thank you.",
+					"UtteranceId": "TTS-E677522A6129D83DE6DE96C0555FB0AD"
 				}, 
 				{
 					"CurrentState": "-",
 					"NextState": "ProblemSolved",
 					"Meaning": ["ProblemIsFixed"],
 					"Style": ["BadMood"],
-					"Utterance": "It seems to be working now."
+					"Utterance": "It seems to be working now.",
+					"UtteranceId": "TTS-A774C3BA0EA269400AA6F9A1B9BB7FAF"
 				}, 
 				{
 					"CurrentState": "Farewell",
 					"NextState": "End",
 					"Meaning": ["Farewell"],
 					"Style": ["Gratitude"],
-					"Utterance": "You were a great help. Thank you very much. More people like you should exist in this world."
+					"Utterance": "You were a great help. Thank you very much. More people like you should exist in this world.",
+					"UtteranceId": "TTS-9F37DD5BA4AE63ECC1795C8FBAA48F84"
 				}, 
 				{
 					"CurrentState": "Farewell",
 					"NextState": "End",
 					"Meaning": ["Farewell"],
 					"Style": ["GoodMood"],
-					"Utterance": "Thanks for the help. Have a nice day."
+					"Utterance": "Thanks for the help. Have a nice day.",
+					"UtteranceId": "TTS-AE1F3C51ED553501B829DB7F67B0B1C7"
 				}, 
 				{
 					"CurrentState": "AnythingElse",
 					"NextState": "Farewell",
 					"Meaning": ["NoAdditionalProblem"],
 					"Style": ["BadMood"],
-					"Utterance": "No, I'm fine."
+					"Utterance": "No, I'm fine.",
+					"UtteranceId": "TTS-2D6ED055A70669746D50C8407958E5CC"
 				}, 
 				{
 					"CurrentState": "AnythingElse",
 					"NextState": "Farewell",
 					"Meaning": ["NoAdditionalProblem"],
 					"Style": ["GoodMood"],
-					"Utterance": "No, that was the only problem I had."
+					"Utterance": "No, that was the only problem I had.",
+					"UtteranceId": "TTS-9FF30C8BBAF1826E3D1F6FFE29EA7AE1"
 				}, 
 				{
 					"CurrentState": "Farewell",
 					"NextState": "End",
 					"Meaning": ["Farewell"],
 					"Style": ["BadMood"],
-					"Utterance": "You should be more respectful when talking to customers..."
+					"Utterance": "You should be more respectful when talking to customers...",
+					"UtteranceId": "TTS-1068FE7D572AE8474660C49FD3C7D80A"
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
 					"NextState": "-",
 					"Meaning": ["CheckSolution"],
 					"Style": ["BadMood"],
-					"Utterance": "Let me see."
+					"Utterance": "Let me see.",
+					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
 					"NextState": "-",
 					"Meaning": ["CheckSolution"],
 					"Style": ["GoodMood"],
-					"Utterance": "Thank you. Could you wait just a moment?"
+					"Utterance": "Thank you. Could you wait just a moment?",
+					"UtteranceId": "TTS-AD2CE59A8552138A85A58A1B75E410B0"
 				}, 
 				{
 					"CurrentState": "AfterPlayerGreeting",
 					"NextState": "GreetingEnd",
 					"Meaning": ["Greeting"],
 					"Style": ["BadMood"],
-					"Utterance": "I need this fixed quickly!"
+					"Utterance": "I need this fixed quickly!",
+					"UtteranceId": "TTS-A3C1191B1D2013A5B58B225E950F6D83"
 				}, 
 				{
 					"CurrentState": "GreetingEnd",
 					"NextState": "Problem",
 					"Meaning": ["ExplainComputerProblem"],
 					"Style": ["BadMood"],
-					"Utterance": "I can't login into my e-mail account, and I am pretty sure I am using the correct password. This is unnacceptable."
+					"Utterance": "I can't login into my e-mail account, and I am pretty sure I am using the correct password. This is unnacceptable.",
+					"UtteranceId": "TTS-5A45A23D6B6F74E4205E061BB7D0A05F"
 				}, 
 				{
 					"CurrentState": "GreetingEnd",
 					"NextState": "Problem",
 					"Meaning": ["ExplainComputerProblem"],
 					"Style": ["GoodMood"],
-					"Utterance": "I am suddenly unable to login in to my e-mail account, and I am pretty sure my password is correct."
+					"Utterance": "I am suddenly unable to login in to my e-mail account, and I am pretty sure my password is correct.",
+					"UtteranceId": "TTS-B121529E6C8683315D5DBE7ECA62F478"
 				}]
 		},
 	"types": [

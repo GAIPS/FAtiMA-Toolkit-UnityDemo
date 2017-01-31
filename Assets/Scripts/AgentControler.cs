@@ -105,10 +105,6 @@ namespace Assets.Scripts
 		private IEnumerator UpdateCoroutine()
 		{
 			_events.Clear();
-			var enterEventRpcOne = string.Format("Event(Property-Change,{0},Front(Self),Computer)", m_rpc.CharacterName);
-			AddEvent(enterEventRpcOne);
-			AddEvent(string.Format("Event(Property-change,Self,DialogueState(Player),{0})", IntegratedAuthoringToolAsset.INITIAL_DIALOGUE_STATE));
-
 			while (m_rpc.GetBeliefValue("DialogueState(Player)") != "Disconnected")
 			{
 				yield return new WaitForSeconds(1);
@@ -117,31 +113,28 @@ namespace Assets.Scripts
                     m_rpc.Update();
                     continue;
                 }
-                    
-                    
-                var actionRpc = m_rpc.PerceptionActionLoop(_events);
+
+                m_rpc.Perceive(_events);
+                var action = m_rpc.Decide().FirstOrDefault();
+
 				_events.Clear(); 
 				m_rpc.Update();
 
-				if (actionRpc == null)
+				if (action == null)
 					continue;
 
-				string actionKey = actionRpc.ActionName.ToString();
-				Debug.Log("Action Key: " + actionKey);
+				Debug.Log("Action Key: " + action.Key);
 
-				switch (actionKey)
+				switch (action.Key.ToString())
 				{
 					case "Speak":
-						m_activeController.StartCoroutine(HandleSpeak(actionRpc));
-						break;
-					case "Fix":
-						m_activeController.StartCoroutine(HandleFix(actionRpc));
+						m_activeController.StartCoroutine(HandleSpeak(action));
 						break;
 					case "Disconnect":
-						m_activeController.StartCoroutine(HandleDisconnectAction(actionRpc));
+						m_activeController.StartCoroutine(HandleDisconnectAction(action));
 						break;
 					default:
-						Debug.LogWarning("Unknown action: " + actionKey);
+						Debug.LogWarning("Unknown action: " + action.Key);
 						break;
 				}
 			}
@@ -151,6 +144,8 @@ namespace Assets.Scripts
 			Object.Destroy(_body.Body);
 		}
 
+
+        /*
 		private static string JoinStrings(string[] strs)
 		{
 			if (strs.Length == 0)
@@ -159,15 +154,16 @@ namespace Assets.Scripts
 				return strs[0];
 
 			return strs.Aggregate((s, s1) => s + "," + s1);
-		}
+		}*/
 
 		private IEnumerator HandleSpeak(IAction speakAction)
 		{
-			Name nextState = speakAction.Parameters[1];
-			var dialog =
-				m_iat.GetDialogueActions(IntegratedAuthoringToolAsset.AGENT, speakAction.Parameters[0], nextState,
-					speakAction.Parameters[2], speakAction.Parameters[3]).Shuffle().FirstOrDefault();
+            Name currentState = speakAction.Parameters[0];
+            Name nextState = speakAction.Parameters[1];
+            Name meaning = speakAction.Parameters[2];
+            Name style = speakAction.Parameters[3];
 
+            var dialog = m_iat.GetDialogueAction(IATConsts.AGENT, currentState, nextState, meaning, style);
 			if (dialog == null)
 			{
 				Debug.LogWarning("Unknown dialog action.");
@@ -239,8 +235,6 @@ namespace Assets.Scripts
 					{
 						yield return _body.PlaySpeech(clip, xml);
 						clip.UnloadAudioData();
-						//Resources.UnloadAsset(clip);
-						//Resources.UnloadAsset(text);
 					}
 					else
 					{
@@ -260,32 +254,22 @@ namespace Assets.Scripts
 				var dialogueStateUpdateEvent = string.Format("Event(Property-Change,SELF,DialogueState({0}),{1})", speakAction.Target, speakAction.Parameters[1]);
 				AddEvent(dialogueStateUpdateEvent);
 			}
-			m_rpc.ActionFinished(speakAction);
-		}
 
-		private IEnumerator HandleFix(IAction actionRpc)
-		{
-			var leaveEvt = string.Format("Event(Property-change,{0},Front(Self),Socket)", m_rpc.CharacterName);
-			AddEvent(leaveEvt);
-
-			yield return new WaitForSeconds(1.5f);
-
-			var fixedEvt = string.Format("Event(Property-change,{0},IsBroken({1}),false)", m_rpc.CharacterName, actionRpc.Target);
-            AddEvent(leaveEvt);
-            
-			var enterEvt = string.Format("Event(Property-change,{0},Front(Self),Computer)", m_rpc.CharacterName);
-			AddEvent(enterEvt);
-			m_rpc.ActionFinished(actionRpc);
+            m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
 		}
 
 		private IEnumerator HandleDisconnectAction(IAction actionRpc)
 		{
-			var exitEvtOne = string.Format("Event(Property-change,{0},Front(Self),-)", m_rpc.CharacterName);
+			/*var exitEvtOne = string.Format("Event(Property-change,{0},Front(Self),-)", m_rpc.CharacterName);
 			AddEvent(exitEvtOne);
-			m_rpc.PerceptionActionLoop(_events);
+
+			m_rpc.PerceptionActionLoop(_events);*/
 			yield return null;
-			m_rpc.ActionFinished(actionRpc);
-			AddEvent(string.Format("Event(Property-change,SELF,DialogueState(Player),{0})", "Disconnected"));
+			m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
+
+            m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
+            AddEvent(string.Format("Event(Property-change,SELF,DialogueState(Player),{0})", "Disconnected"));
+
 			if(_body)
 				_body.Hide();
 			yield return new WaitForSeconds(2);

@@ -184,7 +184,7 @@ public class SingleCharacterDemo : MonoBehaviour
         foreach (var source in characterSources)
         {
             var rpc = RolePlayCharacterAsset.LoadFromFile(source.Source);
-            rpc.Initialize();
+            rpc.LoadAssociatedAssets();
             _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
             AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(), 
                 () =>
@@ -243,12 +243,11 @@ public class SingleCharacterDemo : MonoBehaviour
     public void Reply(Guid dialogId)
     {
         var state = _agentController.RPC.GetBeliefValue("DialogState(Player)");
-        if (state == IntegratedAuthoringToolAsset.TERMINAL_DIALOGUE_STATE)
+        if (state == IATConsts.TERMINAL_DIALOGUE_STATE)
         {
-
             return;
         }
-        var reply = _iat.GetDialogActionById(IntegratedAuthoringToolAsset.PLAYER, dialogId);
+        var reply = _iat.GetDialogActionById(IATConsts.PLAYER, dialogId);
         var actionFormat = string.Format("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.GetMeaningName(), reply.GetStylesName());
 
 
@@ -297,7 +296,7 @@ public class SingleCharacterDemo : MonoBehaviour
         _agentController.UpdateEmotionExpression();
 
         var state = (Name)_agentController.RPC.GetBeliefValue("DialogueState(Player)");
-        var possibleOptions = _iat.GetDialogueActions(IntegratedAuthoringToolAsset.PLAYER, state);
+        var possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
         if (!possibleOptions.Any())
         {
             UpdateButtonTexts(true, null);

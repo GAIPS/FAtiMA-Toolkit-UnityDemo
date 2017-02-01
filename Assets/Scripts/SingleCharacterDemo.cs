@@ -204,10 +204,10 @@ public class SingleCharacterDemo : MonoBehaviour
         });
     }
 
-    //public void SaveState()
-    //{
-    //       _agentController.SaveOutput();
-    //}
+    public void SaveState()
+    {
+        _agentController.SaveOutput();
+    }
 
     private void UpdateButtonTexts(bool hide, IEnumerable<DialogueStateActionDTO> dialogOptions)
     {
@@ -259,10 +259,10 @@ public class SingleCharacterDemo : MonoBehaviour
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
     {
         const float WAIT_TIME = 0.5f;
-        _agentController.AddEvent(string.Format("Event(Action-Start,Player,{0},Client)", replyActionName));
+        _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER,replyActionName,_agentController.RPC.CharacterName.ToString()).ToString());
         yield return new WaitForSeconds(WAIT_TIME);
-        _agentController.AddEvent(string.Format("Event(Action-Finished,Player,{0},Client)", replyActionName));
-        _agentController.AddEvent(string.Format("Event(Property-change,Self,DialogueState(Player),{0})", nextState));
+        _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
+        _agentController.AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF").ToString()); 
     }
 
     // Update is called once per frame
@@ -288,14 +288,14 @@ public class SingleCharacterDemo : MonoBehaviour
                 Time.timeScale = 1;
         }
 
-        //if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    this.SaveState();
-        //}
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            this.SaveState();
+        }
 
         _agentController.UpdateEmotionExpression();
 
-        var state = (Name)_agentController.RPC.GetBeliefValue("DialogueState(Player)");
+        var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
         var possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
         if (!possibleOptions.Any())
         {
@@ -324,13 +324,6 @@ public class SingleCharacterDemo : MonoBehaviour
 
     public void UpdateScore(DialogueStateActionDTO reply)
     {
-        // var actionFormat = string.Format("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.GetMeaningName(), reply.GetStylesName());
-        // Debug.Log("Dialogue" + reply.Utterance);
-
-        // Debug.Log("Dialogue" + reply.Style[0]);
-        // Debug.Log("Dialogue" + reply.Meaning[0]);
-        // Debug.Log(reply.Meaning.Length + reply.Utterance);
-
         foreach (var meaning in reply.Meaning)
         {
 
@@ -342,11 +335,6 @@ public class SingleCharacterDemo : MonoBehaviour
 
             HandleKeywords(style);
         }
-
-
-
-
-
     }
 
 

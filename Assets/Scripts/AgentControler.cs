@@ -68,12 +68,11 @@ namespace Assets.Scripts
 			_body.SetExpression(emotion, amount);
 		}
 
-		//public void SaveOutput()
-		//{
-		//	const string datePattern = "dd-MM-yyyy-H-mm-ss";
-
-		//	_rpc.SaveOutput(Application.streamingAssetsPath + "\\Output\\", _rpc.CharacterName + "-" + DateTime.Now.ToString(datePattern) + ".ea");
-		//}
+		public void SaveOutput()
+		{
+			const string datePattern = "dd-MM-yyyy-H-mm-ss";
+			m_rpc.SaveToFile(Application.streamingAssetsPath + "\\Output\\" + m_rpc.CharacterName + "-" + DateTime.Now.ToString(datePattern) + ".ea");
+		}
 
 		public bool IsRunning
 		{
@@ -143,19 +142,7 @@ namespace Assets.Scripts
 			_currentCoroutine = null;
 			Object.Destroy(_body.Body);
 		}
-
-
-        /*
-		private static string JoinStrings(string[] strs)
-		{
-			if (strs.Length == 0)
-				return "-";
-			if (strs.Length == 1)
-				return strs[0];
-
-			return strs.Aggregate((s, s1) => s + "," + s1);
-		}*/
-
+     
 		private IEnumerator HandleSpeak(IAction speakAction)
 		{
             Name currentState = speakAction.Parameters[0];
@@ -260,26 +247,16 @@ namespace Assets.Scripts
 
 		private IEnumerator HandleDisconnectAction(IAction actionRpc)
 		{
-			/*var exitEvtOne = string.Format("Event(Property-change,{0},Front(Self),-)", m_rpc.CharacterName);
-			AddEvent(exitEvtOne);
-
-			m_rpc.PerceptionActionLoop(_events);*/
 			yield return null;
 			m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
-
             m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
-            AddEvent(string.Format("Event(Property-change,SELF,DialogueState(Player),{0})", "Disconnected"));
-
+            AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER),"Disconnected", "SELF").ToString());
 			if(_body)
 				_body.Hide();
 			yield return new WaitForSeconds(2);
 		    GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
-
             _finalScore.SetActive(true);
             GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
-
-
-
         }
 
 	    public void End()

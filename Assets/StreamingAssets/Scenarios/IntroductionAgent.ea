@@ -8,7 +8,9 @@
 					"Perspective": "IntroductionAgent",
 					"Knowledge":
 						{
-
+							"SELF":
+								{
+									"DialogueState(Player)": "Start"								}
 						}
 				},
 			"AppraisalRules":

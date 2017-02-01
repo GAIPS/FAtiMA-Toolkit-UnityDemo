@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2628,7 +2628,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 418831447}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3597,6 +3597,7 @@ MonoBehaviour:
   VersionMenu: {fileID: 313979649}
   ScoreTextPrefab: {fileID: 1689566615498648, guid: 1d41450fc3978a249a72e54d7e988e53,
     type: 2}
+  PJScenario: 1
   _introPanel: {fileID: 2098785805}
   _introText: {fileID: 1162935416}
 --- !u!4 &2054510709

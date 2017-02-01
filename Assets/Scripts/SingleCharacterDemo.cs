@@ -11,6 +11,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using WellFormedNames;
 using RolePlayCharacter;
+using Utilities;
 
 public class SingleCharacterDemo : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SingleCharacterDemo : MonoBehaviour
     {
         public readonly string ScenarioPath;
         public readonly string TTSFolder;
+       
         private IntegratedAuthoringToolAsset _iat;
 
         public IntegratedAuthoringToolAsset IAT { get { return _iat; } }
@@ -72,6 +74,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
     public GameObject VersionMenu;
     public GameObject ScoreTextPrefab;
+    public bool PJScenario;
 
     [Header("Intro")]
     [SerializeField]
@@ -297,12 +300,27 @@ public class SingleCharacterDemo : MonoBehaviour
 
         var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
         var possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
+      
+
+
         if (!possibleOptions.Any())
         {
             UpdateButtonTexts(true, null);
         }
         else
         {
+            if (PJScenario)
+            {
+                var newOptions = possibleOptions.Shuffle().Take(4);
+
+
+
+                var additionalOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString())).Shuffle().Take(2);
+
+                possibleOptions = newOptions;
+                possibleOptions = possibleOptions.Concat(additionalOptions).Shuffle();
+
+            }
             UpdateButtonTexts(false, possibleOptions);
         }
     }
@@ -314,6 +332,23 @@ public class SingleCharacterDemo : MonoBehaviour
             _agentController.UpdateFields();
     }
 
+
+    private string GetNextPJState(string currentState)
+    {
+
+
+        switch (currentState)
+        {
+            case "Start":
+                return "FreeRecall";
+            case "FreeRecall":
+                return "Questioning";
+            case "Questioning":
+                return "Closure";
+
+        }
+        return "Closure";
+    }
     private void InstantiateScore()
     {
 

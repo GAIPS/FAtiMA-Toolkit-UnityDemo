@@ -104,7 +104,7 @@ namespace Assets.Scripts
 		private IEnumerator UpdateCoroutine()
 		{
 			_events.Clear();
-			while (m_rpc.GetBeliefValue("DialogueState(Player)") != "Disconnected")
+			while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE)
 			{
 				yield return new WaitForSeconds(1);
                 if (_events.Count == 0)
@@ -128,6 +128,7 @@ namespace Assets.Scripts
 				{
 					case "Speak":
 						m_activeController.StartCoroutine(HandleSpeak(action));
+
 						break;
 					case "Disconnect":
 						m_activeController.StartCoroutine(HandleDisconnectAction(action));
@@ -139,7 +140,8 @@ namespace Assets.Scripts
 			}
 
 			m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", m_rpc.CharacterName));
-			_currentCoroutine = null;
+            m_activeController.StartCoroutine(newHandleDisconnect());
+            _currentCoroutine = null;
 			Object.Destroy(_body.Body);
 		}
      
@@ -249,7 +251,6 @@ namespace Assets.Scripts
 		{
 			yield return null;
 			m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
-            m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
             AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER),"Disconnected", "SELF").ToString());
 			if(_body)
 				_body.Hide();
@@ -257,6 +258,18 @@ namespace Assets.Scripts
 		    GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
             _finalScore.SetActive(true);
             GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
+        }
+
+
+	    private IEnumerator newHandleDisconnect()
+	    {
+            if (_body)
+                _body.Hide();
+            yield return new WaitForSeconds(2);
+            GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
+            _finalScore.SetActive(true);
+            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
+            m_dialogController.Clear();
         }
 
 	    public void End()

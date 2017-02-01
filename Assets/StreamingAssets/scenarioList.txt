@@ -1,2 +1,4 @@
 \Scenarios\IntroductionScenario.iat
 	Introduction
+\Scenarios\PJ\PJScenario.iat
+	PJ-Demo

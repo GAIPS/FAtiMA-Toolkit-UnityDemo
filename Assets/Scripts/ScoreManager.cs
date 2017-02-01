@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-   
+
+    public bool PJ;
     private int C_score;
     private int E_score;
     private int F_score;
     private int I_score;
     private int P_score;
 
+    private int Aggression_score;
+    private int Information_score;
+    private int Truth_score;
+
     // Use this for initialization
     void Start ()
     {
+       
        this.GetComponent<Text>().text = "";
 
 	    C_score = 0;
@@ -22,6 +28,10 @@ public class ScoreManager : MonoBehaviour
         F_score = 0;
         I_score = 0;
         P_score = 0;
+
+        Aggression_score = 0;
+        Information_score = 0;
+        Truth_score = 0;
         Refresh();
     }
 	
@@ -36,18 +46,32 @@ public class ScoreManager : MonoBehaviour
     {
         string print = "";
 
-       
+        if (!PJ)
+        {
+
+
+
             print += "  C:" + C_score;
-       
+
             print += "  E:" + E_score;
-        
+
             print += "  F:" + F_score;
-      
+
             print += "  I:" + I_score;
 
-        print += "  P:" + P_score;
+            print += "  P:" + P_score;
+        }
+        else
+        {
+            print += "Aggression: " + Aggression_score;
 
-        this.GetComponent<Text>().text = print;
+            print += "  Information: " + Information_score;
+
+            print += "  Truth: " + Truth_score;
+        }
+
+       
+            this.GetComponent<Text>().text = print;
 
     }
     public void AddC(int add)
@@ -92,6 +116,10 @@ public class ScoreManager : MonoBehaviour
         F_score = 0;
         C_score = 0;
         P_score = 0;
+
+        Aggression_score = 0;
+        Information_score = 0;
+        Truth_score = 0;
     }
 
     public int getE()
@@ -122,6 +150,44 @@ public class ScoreManager : MonoBehaviour
     }
 
 
+    public void SetPJ(bool p)
+    {
+        PJ = p;
+    }
 
+    public int getInformation()
+    {
+        return Information_score;
+    }
+
+
+    public int getTruth()
+    {
+        return Truth_score;
+    }
+
+    public int getAggression()
+    {
+        return Aggression_score;
+    }
+
+    public void addAggression(int add)
+    {
+        Debug.Log("Added Aggresion" + add);
+        Aggression_score += add;
+        Refresh();
+    }
+    public void addInformation(int add)
+    {
+        Debug.Log("Added Information" + add);
+        Information_score += add;
+        Refresh();
+    }
+    public void addTruth(int add)
+    {
+        Debug.Log("Added Truth" + add);
+        Truth_score += add;
+        Refresh();
+    }
 
 }

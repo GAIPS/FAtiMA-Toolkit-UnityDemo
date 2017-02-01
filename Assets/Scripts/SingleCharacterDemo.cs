@@ -353,8 +353,17 @@ public class SingleCharacterDemo : MonoBehaviour
     {
 
         score = Instantiate(ScoreTextPrefab);
+       
         var t = score.transform;
         t.SetParent(m_scoreZone, false);
+
+        if (PJScenario)
+        {
+            var obj = GameObject.FindGameObjectWithTag("Score");
+            obj.GetComponent<ScoreManager>().SetPJ(true);
+            obj.GetComponent<ScoreManager>().Refresh();
+          
+        }
     }
 
     public void UpdateScore(DialogueStateActionDTO reply)
@@ -382,8 +391,29 @@ public class SingleCharacterDemo : MonoBehaviour
 
         string[] result = s.Split(delimitedChars);
 
+
+
         if (result.Length > 1)
-            switch (result[0])
+
+            if (PJScenario)
+            {
+                switch (result[0])
+                {
+                    case "Aggression":
+                        score.GetComponent<ScoreManager>().addAggression(Int32.Parse(result[1]));
+                        break;
+
+                    case "Information":
+                        score.GetComponent<ScoreManager>().addInformation(Int32.Parse(result[1]));
+                        break;
+
+                    case "Truth":
+                        score.GetComponent<ScoreManager>().addTruth(Int32.Parse(result[1]));
+                        break;
+
+                   }
+            }
+           else  switch (result[0])
             {
                 case "Inquire":
                     score.GetComponent<ScoreManager>().AddI(Int32.Parse(result[1]));

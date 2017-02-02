@@ -3,12 +3,12 @@
 		{
 			"classId": 0,
 			"ScenarioName": "PJScenario",
-			"Description": "This is an example scenario for the use case of Policia Judiciária",
+			"Description": "This is an example scenario for the use case of Policia Judiciária\r\n\r\nWe are questioning a suspect. His name is António Pedro, he is married and has 4 kids.\r\nHe works in construction",
 			"CharacterSources": ["Suspect.rpc"],
 			"PlayerDialogues": [
 				{
 					"CurrentState": "Closure",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(9)"],
 					"Utterance": "Don't worry. You're fucked up and will get rot for the rest of your life in the dungeons!"
@@ -92,7 +92,7 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(2)"],
 					"Utterance": "Sex normally gets violent. Women like to be slapped. Everyone likes it, but they don't tell."
@@ -400,7 +400,7 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "We know you're a beast and tie her with electric wires. That you burn her with cigarette butts. You're a perfect asshole."
@@ -652,7 +652,7 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(6)"],
 					"Utterance": "You're pretending that we're stupid. Don't you understand what's going on?"
@@ -701,7 +701,7 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(8)"],
 					"Utterance": "You're lying to us. We are not patient anymore. Tell us the truth right now!"
@@ -813,7 +813,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(8)"],
 					"Utterance": "Be careful with us. We don't like your conversation. This is the last time you talk to us with these manners. Do you get it?"
@@ -855,7 +855,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "Is it in these occasions that you beat her up? You have been trapped now. Tell us the truth immediately."
@@ -869,7 +869,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "We are sick and tired of listening to you. You haven't scored the point yet!"
@@ -960,7 +960,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": [],
 					"Utterance": "We agree. Women are there to take care of the home, children and serve the males…"
@@ -1030,7 +1030,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "Are you pretending to be an angel? \n Do you take us for the blind?"
@@ -1094,7 +1094,7 @@
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F40",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "I've been listening to you carefully and you are trying to tell us that you´ve had problems with the Police due to your wife…Can you tell us a little more about this?"
 				}, 
@@ -1107,7 +1107,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "Your neighbours tell us that she's always crying, because you beat her. Why do you do that all the time?"
@@ -1128,7 +1128,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "We're the ones that ask questions, not you. You must answer quickly."
@@ -1136,7 +1136,7 @@
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F36",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "We are here to understand what happened…"
 				}, 
@@ -1177,7 +1177,7 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "Let's speed up a bit. We don't care about the children. Let's talk about what really matters."
@@ -1311,7 +1311,7 @@
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F12",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Do you have any problem talking to us?"
 				}, 
@@ -1339,7 +1339,7 @@
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F9",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "How old's your wife?"
 				}, 
@@ -1353,48 +1353,48 @@
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F7",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Are you fed up with your marriage?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F6",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "What do you mean?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F5",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "How long are you together?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F4",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "But in terms of what you consider a good relationship, how's your relationship with your wife? Is it good in your opinion?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F3",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "What do you mean?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F2",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "So?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "I was told that you're a violent guy and beat her every week. What do you tell me about this?"
@@ -1402,62 +1402,62 @@
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F1",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "How about your wife? Do you have a good relationship with her?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S16",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "How's your relationship with them? Do you have a good relationship with them?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S15",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "A pair of imps? What are their names? How old are they, do you know?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S14",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Four kids?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S13",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Have you got kids?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S12",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "And pal are you single? Married?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S11",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "You're here because we need to speak with you. Soon we'll tell you the reasons why you came here. But as you are here, first I like to know about the people I'm speaking to. Is there a problem about it?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S10",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "More precisely what do you do in construction?"
 				}, 
 				{
 					"CurrentState": "Start",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "It seems you prefer to stay at home, resting and drinking some beers, isn't it?"
@@ -1465,13 +1465,13 @@
 				{
 					"CurrentState": "Start",
 					"NextState": "S9",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Have you always worked in construction? Do you like what you're doing?"
 				}, 
 				{
 					"CurrentState": "Start",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": [],
 					"Utterance": "Is it relaxing working in construction? Wouldn't it be better to work somewhere else?"
@@ -1479,42 +1479,42 @@
 				{
 					"CurrentState": "Start",
 					"NextState": "S8",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "How long have you been working in construction?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S7",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "But is it enough to make a living?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S6",
-					"Meaning": [],
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "But life isn't easy now, what do you think?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S5",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "I've been reading some information about you. So Mr. António Pedro you work in construction, isn't it?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S4",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "With the progress of our conversation, I'm sure you'll understand what we want and probably clarify your doubts."
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S3",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "You were notified to come here, because we've something to clarify and we need your help. I'm going to ask you some questions and expect you answer me."
 				}, 
@@ -1528,7 +1528,7 @@
 				{
 					"CurrentState": "Start",
 					"NextState": "S2",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Is there anything that worries you?"
 				}, 
@@ -1542,11 +1542,19 @@
 				{
 					"CurrentState": "Start",
 					"NextState": "S1",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Good morning, I’m an inspector from the Judiciary Police. You were notified to come here for an interview."
 				}],
 			"AgentDialogues": [
+				{
+					"CurrentState": "Failure",
+					"NextState": "Disconnect",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Fuck you, I won't answer anymore questions, I want my lawyer!",
+					"UtteranceId": "TTS-BBD3F5F5DF7550E250F7F4A3073EE8B2"
+				}, 
 				{
 					"CurrentState": "Q102",
 					"NextState": "Questioning",

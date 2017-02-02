@@ -11,6 +11,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using WellFormedNames;
 using RolePlayCharacter;
+using UnityEngine.SceneManagement;
 using Utilities;
 
 public class SingleCharacterDemo : MonoBehaviour
@@ -28,10 +29,11 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             ScenarioPath = path;
             TTSFolder = tts;
-
+          
             _iat = IntegratedAuthoringToolAsset.LoadFromFile(ScenarioPath);
         }
     }
+
 
     [Serializable]
     private struct BodyType
@@ -48,6 +50,10 @@ public class SingleCharacterDemo : MonoBehaviour
 
     [SerializeField]
     private BodyType[] m_bodies;
+
+
+  
+
 
     [Space]
     [SerializeField]
@@ -88,15 +94,20 @@ public class SingleCharacterDemo : MonoBehaviour
     private IntegratedAuthoringToolAsset _iat;
     private AgentControler _agentController;
     private GameObject _finalScore;
-
+    public List<string> alreadyUsedDialogs;
+    private bool Initialized;
+     
     // Use this for initialization
     private IEnumerator Start()
     {
+        Initialized = false;
         _finalScore = GameObject.FindGameObjectWithTag("FinalScore");
         _finalScore.SetActive(false);
         AssetManager.Instance.Bridge = new AssetManagerBridge();
         ;
         m_dialogController.AddDialogLine("Loading...");
+
+        alreadyUsedDialogs = new List<string>();
 
         var streamingAssetsPath = Application.streamingAssetsPath;
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -265,7 +276,9 @@ public class SingleCharacterDemo : MonoBehaviour
         _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER,replyActionName,_agentController.RPC.CharacterName.ToString()).ToString());
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
-        _agentController.AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF").ToString()); 
+        _agentController.AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF").ToString());
+        Initialized = true;
+
     }
 
     // Update is called once per frame
@@ -311,14 +324,64 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             if (PJScenario)
             {
-                var newOptions = possibleOptions.Shuffle().Take(4);
+
+                if (state.ToString() == "Start" && !Initialized)
+                {
+
+                    var newOptions = possibleOptions.Shuffle().Where(x => x.Meaning.First() == "ContextFree").Take(3).ToList();
+                    newOptions.Add(possibleOptions.Shuffle().First(x => x.Meaning.First() == "Failure"));
+                    possibleOptions = newOptions;
+
+                }
+                else
+                {
+                    if (state.ToString() == "Start" && Initialized)
+                    {
+
+                        var newOptions = possibleOptions.Shuffle().Where(x => x.Meaning.First() == "ContextFree").Take(3).ToList();
+                        newOptions.Add(possibleOptions.Shuffle().First(x => x.Meaning.First() == "Failure"));
+                        var additionalOptions =
+                            _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString()))
+                                .Shuffle()
+                                .Take(2);
+
+                        possibleOptions = newOptions;
+                        possibleOptions = possibleOptions.Concat(additionalOptions).Shuffle();
+                        /*    foreach (var current in newOptions)
+                            {
+                                if (alreadyUsedDialogs.Find(x => x == current.NextState) != null)
+                                {
+                                    newOptions.Remove(newOptions.Find(x => x.NextState == current.NextState));
+                                    newOptions.Add(possibleOptions.Shuffle().Take(1).ToList().First());
+                                }
+
+                            }*/
+                    }
+                    else
+                    {
+
+                        {
+                            possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
+                            var newOptions = possibleOptions.Shuffle().Take(4).ToList();
+                            var additionalOptions =
+                                _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString()))
+                                    .Shuffle()
+                                    .Take(2);
+
+                            possibleOptions = newOptions;
+                            possibleOptions = possibleOptions.Concat(additionalOptions).Shuffle();
+                        }
+                    }
+                }
 
 
-
-                var additionalOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString())).Shuffle().Take(2);
-
-                possibleOptions = newOptions;
-                possibleOptions = possibleOptions.Concat(additionalOptions).Shuffle();
+                foreach (var option in possibleOptions)
+                {
+                    if (option.NextState != "End" || option.NextState != "Failure")
+                    {
+                        alreadyUsedDialogs.Add(option.NextState);
+                    }
+                }
 
             }
             UpdateButtonTexts(false, possibleOptions);
@@ -368,6 +431,8 @@ public class SingleCharacterDemo : MonoBehaviour
 
     public void UpdateScore(DialogueStateActionDTO reply)
     {
+
+     
         foreach (var meaning in reply.Meaning)
         {
 
@@ -381,7 +446,11 @@ public class SingleCharacterDemo : MonoBehaviour
         }
     }
 
+   /* private IEnumerable<DialogueStateActionDTO> HandleContext(string s)
+    {
+        IEnumerable<DialogueStateActionDTO> ret =
 
+    }*/
 
 
     private void HandleKeywords(string s)
@@ -391,7 +460,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
         string[] result = s.Split(delimitedChars);
 
-
+    
 
         if (result.Length > 1)
 
@@ -450,7 +519,8 @@ public class SingleCharacterDemo : MonoBehaviour
     public void End()
     {
 
-        _agentController.End();
+       SceneManager.LoadScene(0);
+     
     }
 
 }

@@ -56,6 +56,8 @@ namespace Assets.Scripts
 			t.localRotation = Quaternion.identity;
 			t.localScale = Vector3.one;
 			m_dialogController.SetCharacterLabel(m_rpc.CharacterName.ToString());
+
+            m_rpc.Perceive(new Name[] { EventHelper.PropertyChanged("DialogueState(Player)", "Start", "world")});
 		}
 
 		public void AddEvent(string eventName)
@@ -243,8 +245,12 @@ namespace Assets.Scripts
 				var dialogueStateUpdateEvent = string.Format("Event(Property-Change,SELF,DialogueState({0}),{1})", speakAction.Target, speakAction.Parameters[1]);
 				AddEvent(dialogueStateUpdateEvent);
 			}
-
-            m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
+		    if (nextState.ToString() == "Disconnect")
+		    {
+                Debug.Log("End");
+		        this.End();
+		    }
+		    m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
 		}
 
 		private IEnumerator HandleDisconnectAction(IAction actionRpc)
@@ -274,10 +280,13 @@ namespace Assets.Scripts
 
 	    public void End()
 	    {
-           _finalScore.SetActive(false);
-
+            if (_body)
+                _body.Hide();
+          //  yield return new WaitForSeconds(2);
+            GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
+            _finalScore.SetActive(true);
+            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
             m_dialogController.Clear();
-            m_versionMenu.SetActive(true);
 
         }
 

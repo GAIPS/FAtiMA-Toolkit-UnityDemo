@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LipSyncVisemes wavFile="TTS-5CB257AC7FA0DC0072F7534209F8E460.wav">
+  <viseme type="4" time="0.220433921568627" duration="0.0848930124777183" />
+  <viseme type="14" time="0.305326934046346" duration="0.0308601158645277" />
+  <viseme type="15" time="0.387156764705882" duration="0.0470672281639929" />
+  <viseme type="19" time="0.434223992869875" duration="0.0652441354723707" />
+  <viseme type="6" time="0.499468128342246" duration="0.109108743315508" />
+  <viseme type="15" time="0.608576871657754" duration="0.147726862745098" />
+  <viseme type="4" time="0.756303734402852" duration="0.0755361853832442" />
+  <viseme type="14" time="0.831839919786096" duration="0.136920320855615" />
+  <viseme type="9" time="0.968760240641711" duration="0.0314733511586453" />
+  <viseme type="4" time="1.52257252228164" duration="0.0848930303030303" />
+  <viseme type="14" time="1.60746555258467" duration="0.0308601247771836" />
+  <viseme type="15" time="1.68929540106952" duration="0.0470513101604279" />
+  <viseme type="19" time="1.73634671122995" duration="0.0648787878787878" />
+  <viseme type="6" time="1.80122549910873" duration="0.122439393939394" />
+  <viseme type="15" time="1.92366489304813" duration="0.0691900534759358" />
+  <viseme type="4" time="1.99285494652406" duration="0.0521946524064171" />
+  <viseme type="14" time="2.04504959893048" duration="0.0876378431372549" />
+  <viseme type="9" time="2.13268744206774" duration="0.122398395721925" />
+  <viseme type="20" time="2.25508583778966" duration="0.0833941176470588" />
+  <viseme type="4" time="2.368966942959" duration="0.0933218360071301" />
+  <viseme type="7" time="2.46228877896613" duration="0.0813836007130125" />
+  <viseme type="19" time="2.54367237967914" duration="0.0589349376114082" />
+  <viseme type="6" time="2.60260731729055" duration="0.0884581105169341" />
+  <viseme type="20" time="2.69106542780749" duration="0.0616089126559715" />
+  <viseme type="1" time="2.75267434046346" duration="0.0480721925133689" />
+  <viseme type="21" time="2.80074653297683" duration="0.0586577540106952" />
+  <viseme type="1" time="2.85940428698752" duration="0.105728609625669" />
+  <viseme type="19" time="2.96513289661319" duration="0.0489644385026738" />
+  <viseme type="6" time="3.01409733511586" duration="0.0525846702317288" />
+  <viseme type="19" time="3.06668200534759" duration="0.0603279857397508" />
+  <viseme type="7" time="3.12700999108734" duration="0.0484635472370765" />
+  <viseme type="19" time="3.17547353832442" duration="0.102106951871658" />
+  <viseme type="4" time="3.27758049019608" duration="0.0774273618538323" />
+  <viseme type="14" time="3.35500785204991" duration="0.111128609625668" />
+  <viseme type="1" time="3.46613646167558" duration="0.0259027629233512" />
+</LipSyncVisemes>

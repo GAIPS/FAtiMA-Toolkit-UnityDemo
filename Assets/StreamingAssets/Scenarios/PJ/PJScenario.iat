@@ -36,56 +36,56 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q98",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "Take it easy. We're almost finishing."
-				}, 
-				{
-					"CurrentState": "Questioning",
 					"NextState": "Q97",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Of course"
+					"Utterance": "We're almost finishing."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q96",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Did you have the same type of relationship?"
+					"Utterance": "Of course"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q95",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "But before Lay, there were others, and then?"
+					"Utterance": "Did you have the same type of relationship?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q94",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Don't you remember?"
+					"Utterance": "Before your current wife, were there others?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q93",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "And the same kind of relationship?"
+					"Utterance": "Don't you remember?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q92",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Did you have other girlfriends that accepted well this kind of relationship?"
+					"Utterance": "And the same kind of relationship?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q91",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Did you have other girlfriends that accepted well this kind of relationship?"
+				}, 
+				{
+					"CurrentState": "Questioning",
+					"NextState": "Q90",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Were your sexual relations always like this? Even when you were dating?"
@@ -99,301 +99,301 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q90",
+					"NextState": "Q89",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Do you think it was your wife's idea or Mrs Miquelina's?"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q89",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "How can you explain that the Police was at your home?"
-				}, 
-				{
-					"CurrentState": "Questioning",
 					"NextState": "Q88",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "You've told us that Lay's in tune with you in those matters. She likes what you do together and asks for more."
+					"Utterance": "How can you explain that the Police was at your home yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q87",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "So the door was broken, is it?"
+					"Utterance": "You've told us that Lay's in tune with you in those matters. She likes what you do together and asks for more."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q86",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "You've told us that when you came back home, your wife was not there. How can it be, if the door was locked?"
+					"Utterance": "So the door was broken, is it?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q85",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "You did an odd job for a Gipsy, is it?"
+					"Utterance": "You've told us that when you came back home, your wife was not there. How can it be, if the door was locked?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q84",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "So you work for Gipsies?"
+					"Utterance": "You did an odd job for a Gipsy, is it?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q83",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Can you tell us where was it? Don't you know the address?"
+					"Utterance": "So you work for Gipsies?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q82",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "So late?"
+					"Utterance": "Can you tell us where was it? Don't you know the address?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q81",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "You told us you had something to do, what was it? Can you explain?"
+					"Utterance": "So late?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q80",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "What do you mean?"
+					"Utterance": "You told us you had something to do, what was it? Can you explain?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q79",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Another question, you told us that your wife agreed with everything you did. So I ask you, why was she found locked in your bedroom?"
+					"Utterance": "What do you mean?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q78",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "You 've told us that your wife likes fucking. And you how do you like it?"
+					"Utterance": "Another question, you told us that your wife agreed with everything you did. So I ask you, why was she found locked in your bedroom?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q77",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "We're here to help."
+					"Utterance": "You 've told us that your wife likes fucking. And you how do you like it?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q76",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "And Lay? How was she?"
+					"Utterance": "We're here to help."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q75",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Did you stop the sexual practice?"
+					"Utterance": "And Lay? How was she?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q74",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "You had a beer late in the afternoon. Did it take so long?"
+					"Utterance": "Did you stop the sexual practice?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q73",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "And that takes some time, you've told us…"
+					"Utterance": "You had a beer late in the afternoon. Did it take so long?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q72",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Having gone to the bedroom, you had the practices that you've explained, did you tie her up meanwhile?"
+					"Utterance": "And that takes some time, you've told us…"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q71",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Did you embrace her and carried her on your arms?"
+					"Utterance": "Having gone to the bedroom, you had the practices that you've explained, did you tie her up meanwhile?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q70",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "It's not necessary. How was your mood yesterday? How did it come about?"
+					"Utterance": "Did you embrace her and carried her on your arms?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q69",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "But you hold on long, don't you?"
+					"Utterance": "How was your mood yesterday? How did it come about?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q68",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "How long do you take?"
+					"Utterance": "But you hold on long, don't you?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q67",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "More or less."
+					"Utterance": "How long do your sexual practices take?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q66",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "And again in what refers to your sexual practices, do they take long? For how long do you like being involved?"
+					"Utterance": "More or less."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q65",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Can it be your pee? Is it yours or not?"
+					"Utterance": "And again in what refers to your sexual practices, do they take long? For how long do you like being involved?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q64",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Our colleagues told us that yesterday in your bedroom, some waste was found, together with some pee and other things. What are the things you use in your relations?"
+					"Utterance": "Can it be your pee? Is it yours or not?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q63",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "In your point of view, is this normal?"
+					"Utterance": "Our colleagues told us that yesterday in your bedroom, some waste was found, together with some pee and other things. What are the things you use in your relations?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q62",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Wouldn't you?"
+					"Utterance": "In your point of view, is this normal?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q61",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Didn't she tell you to stop?"
+					"Utterance": "Wouldn't you?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q60",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "What happened?"
+					"Utterance": "Didn't she tell you to stop?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q59",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Yesterday during your practices did she ever ask you to stop?"
+					"Utterance": "What happened?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q58",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Feel at ease with us…"
+					"Utterance": "Yesterday during your practices did she ever ask you to stop?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q57",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Apart from beating her, what else did you do?"
+					"Utterance": "Feel at ease with us…"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q56",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Was that the case yesterday?"
+					"Utterance": "Apart from beating her, what else did you do?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q55",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Mr António, you've told us that she's accepted all your practices."
+					"Utterance": "Was that the case yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q54",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Mr António…"
+					"Utterance": "Mr António, you've told us that she's accepted all your practices."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q53",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "No, we're not."
+					"Utterance": "Mr António…"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q52",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Besides beating her, what other practices do you have with her? Apart from the three plates…"
+					"Utterance": "No, we're not."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q51",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "But does she ask for it?"
+					"Utterance": "Besides beating her, what other practices do you have with her? Apart from the three plates…"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q50",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Is it all? Don't you do other things?"
+					"Utterance": "But does she ask for it?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q49",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "That's what I was trying to know."
+					"Utterance": "Is it all? Don't you do other things?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q48",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "That's what I was trying to know."
+				}, 
+				{
+					"CurrentState": "Questioning",
+					"NextState": "Q47",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Yes, I am."
@@ -407,245 +407,245 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q47",
+					"NextState": "Q46",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Wasn't Lay yesterday lying on the bed at home? Wasn't she tied? Didn't you use something to tie her?"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q46",
+					"NextState": "Q45",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Are you sure?"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q45",
+					"NextState": "Q44",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Make an effort."
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q44",
+					"NextState": "Q43",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Besides the three plates, what else did you do yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q43",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "Do you like to do something with her that maybe she doesn't agree with? Or has she always accepted everything you did with her?"
-				}, 
-				{
-					"CurrentState": "Questioning",
 					"NextState": "Q42",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "You've told us that you enjoy the three plates. Besides these, with Lay do you have other sexual practices?"
+					"Utterance": "Do you like to do something with our wifethat maybe she doesn't agree with? Or has she always accepted everything you did with her?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q41",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "In the evening? Who brought them there?"
+					"Utterance": "You've told us that you enjoy the three plates. Besides these, with Lay do you have other sexual practices?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q40",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "But were they alone at home?"
+					"Utterance": "In the evening? Who brought them there?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q39",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "So, where could she be?"
+					"Utterance": "Were your kids alone at home yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q38",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Was Lay there?"
+					"Utterance": "So, where could she be?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q37",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Was it late?"
+					"Utterance": "Was Lay there?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q36",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "More or less."
+					"Utterance": "Was it late?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q35",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "So, you had to go out. Do you know what time you went home?"
+					"Utterance": "More or less."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q34",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "So when did you know that the Police was at your home?"
+					"Utterance": "So, you had to go out. Do you know what time you went home?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q33",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "You've told us that you spent the afternoon with your wife, that you had sexual relations and then you went out to have a beer. Is it?"
+					"Utterance": "So when did you know that the Police was at your home?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q32",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Does it have anything to do with the Police going to your home yesterday?"
+					"Utterance": "You've told us that you spent the afternoon with your wife, that you had sexual relations and then you went out to have a beer. Is it?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q31",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "But did Lay complain yesterday?"
+					"Utterance": "Does it have anything to do with the Police going to your home yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q30",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Has she complained?"
+					"Utterance": "But did Lay complain yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q29",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Has she never complained about your sexual practices? Can you explain?"
+					"Utterance": "Has she complained?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q28",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "These questions are made in order to know if Lay understands sex the way you do."
+					"Utterance": "Has your wife ever complained about your sexual practices?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q27",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Did she?"
+					"Utterance": "These questions are made in order to know if Lay understands sex the way you do."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q26",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Did she accept it yesterday?"
+					"Utterance": "Did she?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q25",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "And does your wife accept that?"
+					"Utterance": "Did she accept it yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q24",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "That's what I'm asking you about. So, besides the normal plate…"
+					"Utterance": "And does your wife accept that?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q23",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "I know, but is it always like that? It seems that you are a guy that knows more than just that sexual practice."
+					"Utterance": "That's what I'm asking you about. So, besides the normal plate…"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q22",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "But exactly how do you make sex? Is it vaginal sex?"
+					"Utterance": "I know, but is it always like that? It seems that you are a guy that knows more than just that sexual practice."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q21",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "But can you tell us a little bit more?"
+					"Utterance": "But exactly how do you make sex? Is it vaginal sex?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q20",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "How would you approach? How do you do with a girl normally?"
+					"Utterance": "But can you tell us a little bit more?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q19",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Imagine, Mr. António, if it were not your wife, but somebody else, how would you do it?"
+					"Utterance": "How do you approach a girl normally?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q18",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Ok. Now that we are just three here, how do you approach the situation? How do you get involved?"
+					"Utterance": "Imagine, Mr. António, if it were not your wife, but somebody else, how would you do it?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q17",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "My colleague intends to know if something strange happened yersterday when you were having relations."
+					"Utterance": "Ok. Now that we are just three here, how do you approach the situation? How do you get involved?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q16",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "So you had sexual relations yesterday, is it?"
+					"Utterance": "My colleague intends to know if something strange happened yersterday when you were having relations."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q15",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "So what do you mean by that?"
+					"Utterance": "Did you have sexual relations yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q14",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Yes, I'm sure. Did you have sexual relations yesterday?"
+					"Utterance": "So what do you mean by that?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q13",
+					"Meaning": ["ContextFree"],
+					"Style": [],
+					"Utterance": "Did you have sexual relations yesterday?"
+				}, 
+				{
+					"CurrentState": "Questioning",
+					"NextState": "Q12",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Possibly something happened that you can explain. You were with your wife at home in the afternoon and probably something happened there. And then the Police came."
@@ -659,45 +659,45 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q12",
+					"NextState": "Q11",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Lay was there with you at home and may have called the Police…"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q11",
+					"NextState": "Q10",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Did the Police contact you?"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q10",
+					"NextState": "Q9",
 					"Meaning": [],
 					"Style": ["Aggression(2)"],
 					"Utterance": "So what happened? Was it again your wife's invention? What was this time?"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q9",
+					"NextState": "Q8",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "But you've known that the Police went there."
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q8",
-					"Meaning": [],
+					"NextState": "Q7",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "But weren't you there when the Police went to your home?"
+					"Utterance": "But weren't you there when the Police went to your home yesterday?"
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q7",
-					"Meaning": [],
+					"NextState": "Q6",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Can you tell us something about it? What happened this time?"
+					"Utterance": "Can you tell us something about yesterday? What happened?"
 				}, 
 				{
 					"CurrentState": "Questioning",
@@ -708,105 +708,105 @@
 				}, 
 				{
 					"CurrentState": "Questioning",
-					"NextState": "Q6",
-					"Meaning": [],
+					"NextState": "Q5",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Have you heard that the Police was at your home yesterday?"
-				}, 
-				{
-					"CurrentState": "Questioning",
-					"NextState": "Q5",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "Ok, everything normal."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q4",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "And how was it at home? Was there a problem or was it as usual?"
+					"Utterance": "Ok, everything normal."
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q3",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Was it in the evening?"
+					"Utterance": "And how was it at home? Was there a problem or was it as usual?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q2",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "What time did you arrive home? Have you an idea?"
+					"Utterance": "Was it in the evening?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q1",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "And when you came home yesterday was she there?"
+					"Utterance": "What time did you arrive home? Have you an idea?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q0",
-					"Meaning": [],
+					"Meaning": ["ContextFree"],
+					"Style": [],
+					"Utterance": "When you came home yesterday was your wife there?"
+				}, 
+				{
+					"CurrentState": "Questioning",
+					"NextState": "Q-1",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "We have been talking, but there's something I haven't asked, it's your wife's name."
-				}, 
-				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F83",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "But as you didn't mention the time when you came back."
-				}, 
-				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F82",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "Can you tell me about your day yesterday? You stayed with your wife at home, and did you have lunch together?"
-				}, 
-				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F81",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "At about what time did they go home?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F80",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "Mrs. Miquelina…"
+					"Utterance": "But as you didn't mention the time when you came back."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F79",
+					"Meaning": ["ContextFree"],
+					"Style": [],
+					"Utterance": "Can you tell me about your day yesterday? You stayed with your wife at home, and did you have lunch together?"
+				}, 
+				{
+					"CurrentState": "FreeRecall",
+					"NextState": "F78",
+					"Meaning": ["ContextFree"],
+					"Style": [],
+					"Utterance": "At about what time did your children go home yesterday?"
+				}, 
+				{
+					"CurrentState": "FreeRecall",
+					"NextState": "F77",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Mrs. Miquelina…"
+				}, 
+				{
+					"CurrentState": "FreeRecall",
+					"NextState": "F76",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Were the children with you?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F78",
+					"NextState": "F75",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "How about your wife? Was she there with you or did she go to work to the beauty place?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F77",
+					"NextState": "F74",
 					"Meaning": [],
 					"Style": ["Aggression(2)"],
 					"Utterance": "We haven't told you it was strange. 'Here we speak with a lot of people and not all of them are equal. That's why in our opinion these questions are normal. Don't you agree?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F76",
+					"NextState": "F73",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Coming to that point, we'd like to know about it."
@@ -820,35 +820,35 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F75",
+					"NextState": "F72",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "We'll tell you very soon."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F74",
-					"Meaning": [],
+					"NextState": "F71",
+					"Meaning": ["ContextFree"],
 					"Style": ["Aggression(1)"],
 					"Utterance": "You know that the Police deals with many things in society and today we are dealing with something that you can tell us about."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F73",
-					"Meaning": [],
+					"NextState": "F70",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Did you go to work yesterday? Or did you stay at home? You've told me that you get some odd jobs..."
+					"Utterance": "Did you go to work yesterday? Or did you stay at home? We know you get some odd jobs..."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F72",
+					"NextState": "F69",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "No? Was it normal as before?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F71",
+					"NextState": "F68",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "In the last few days did it happen anything about sexual issues that led you to think she didn't want and that you thought she should keep to her role?"
@@ -862,8 +862,8 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F71",
-					"Meaning": [],
+					"NextState": "F67",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "So?"
 				}, 
@@ -876,84 +876,84 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F69",
+					"NextState": "F66",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "How would you react if such situation happened? Or has this situation ever happened?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F68",
+					"NextState": "F65",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Has your wife ever refused to have relations with you? I've understood that you like to mark your position, but has your wife ever told you \"no not today I'm not feeling like it today, António\""
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F67",
-					"Meaning": [],
+					"NextState": "F64",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "If you are thirsty, I' ll get you some water soon."
-				}, 
-				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F66",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "Still referring to your wife and this subject we're talking about…"
-				}, 
-				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F65",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "But doesn't she …"
-				}, 
-				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F64",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "So do you have anyting to complain about in this respect?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F63",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "What my colleague wants to know is if your wife fulfills her function."
+					"Utterance": "Still referring to your wife and this subject we're talking about…"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F62",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "And your wife? How's your relationship?"
+					"Utterance": "But doesn't she …"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F61",
 					"Meaning": [],
-					"Style": ["Aggression(2)"],
-					"Utterance": "No, you were saying that the wife should take care of the chidren and have a purpose that, as I understood, is for…"
+					"Style": [],
+					"Utterance": "So do you have anyting to complain about in this respect?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F60",
 					"Meaning": [],
 					"Style": [],
-					"Utterance": "In your opinion as regards this aspect,do you have a good relationship?"
+					"Utterance": "What my colleague wants to know is if your wife fulfills her function."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
 					"NextState": "F59",
+					"Meaning": ["ContextFree"],
+					"Style": [],
+					"Utterance": "And your wife? How's your relationship?"
+				}, 
+				{
+					"CurrentState": "FreeRecall",
+					"NextState": "F58",
+					"Meaning": [],
+					"Style": ["Aggression(2)"],
+					"Utterance": "No, you were saying that the wife should take care of the chidren and have a purpose that, as I understood, is for…"
+				}, 
+				{
+					"CurrentState": "FreeRecall",
+					"NextState": "F57",
+					"Meaning": ["ContextFree"],
+					"Style": [],
+					"Utterance": "In your opinion as regards this aspect,do you have a good relationship with your wife?"
+				}, 
+				{
+					"CurrentState": "FreeRecall",
+					"NextState": "F56",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "I want you to explain. Do you have a good relationship with your wife in what concerns the aspect you are suggesting, sexual?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F58",
+					"NextState": "F55",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Things? You are a man, tell about it."
@@ -967,63 +967,63 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F57",
+					"NextState": "F54",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Please explain it better, what to you mean by purpose?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F56",
-					"Meaning": [],
+					"NextState": "F53",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Ok, tell me a bit more about your life. When you drink wine, are you with your wife? Do you share these moments together?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F55",
-					"Meaning": [],
+					"NextState": "F52",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Yes"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F54",
-					"Meaning": [],
+					"NextState": "F51",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "You told us you like to enjoy life and … and drink a bit …"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F53",
+					"NextState": "F50",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "So you have no relationship with her"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F52",
-					"Meaning": [],
+					"NextState": "F49",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "How did it happen? Was it a neigbour that called the Police?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F51",
+					"NextState": "F48",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Some old sayings show more truthfulness than others. As my colleague was telling you about, you had those two situations with your wife, and in your opinion these situations should not be approached by the Police…"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F50",
-					"Meaning": ["Failure"],
+					"NextState": "F47",
+					"Meaning": [],
 					"Style": [],
 					"Utterance": "It's an old saying."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F49",
+					"NextState": "F46",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "We're speaking about your life. And then?"
@@ -1037,71 +1037,71 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F48",
-					"Meaning": [],
+					"NextState": "F45",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "So you become uncomfortable when she starts speaking to you about it."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F47",
-					"Meaning": [],
+					"NextState": "F44",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Why do you think she makes films about you?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F46",
-					"Meaning": [],
+					"NextState": "F43",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "We would like to clarify…"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F45",
-					"Meaning": [],
+					"NextState": "F42",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "And then what did you tell them? Of course something you can tell us about."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F44",
-					"Meaning": [],
+					"NextState": "F41",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Ok. At these two or three times what did they tell you at the Police?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F43",
-					"Meaning": [],
+					"NextState": "F40",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "What you've tried to tell me is that you have been called several times to the Police…"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F42",
-					"Meaning": [],
+					"NextState": "F39",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "I get it."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F41",
-					"Meaning": [],
+					"NextState": "F38",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "What kind of situations? What does she complain about?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F40",
+					"NextState": "F37",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "I've been listening to you carefully and you are trying to tell us that you´ve had problems with the Police due to your wife…Can you tell us a little more about this?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F39",
-					"Meaning": [],
+					"NextState": "F36",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Please explain it better."
 				}, 
@@ -1114,17 +1114,17 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F38",
-					"Meaning": [],
+					"NextState": "F35",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Was there a problem between you and your wife? Can you tell us?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F37",
-					"Meaning": [],
+					"NextState": "F34",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Soon we'll explain you about it. We don't have anything to hide."
+					"Utterance": "Soon we'll explain you about why you're here. We don't have anything to hide."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
@@ -1135,43 +1135,43 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F36",
+					"NextState": "F33",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "We are here to understand what happened…"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F35",
-					"Meaning": [],
+					"NextState": "F32",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Let's go a little bit back, and talking about your wife, and I don' know if I'm using the exact right words, we got the idea that the relationship with your wife is a bit complicated. Do you mind explaining about it?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F34",
-					"Meaning": [],
+					"NextState": "F31",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "But when you arrive home, are your kids there or not?"
+					"Utterance": "When you arrive home, are your kids there or not?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F33",
-					"Meaning": [],
+					"NextState": "F30",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "I was asking you these questions because earlier you were talking about your worries about your children. Who normally fetches them at school? You'd say the mother…"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F32",
-					"Meaning": [],
+					"NextState": "F29",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "So when Mrs Miquelina finishes her task… at what time normally?"
+					"Utterance": "So when does the caretaker finishes her task… at what time normally?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F31",
-					"Meaning": [],
+					"NextState": "F28",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Ok..."
 				}, 
@@ -1184,244 +1184,230 @@
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F30",
+					"NextState": "F27",
 					"Meaning": [],
 					"Style": [],
 					"Utterance": "Mrs Miquelina"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F29",
-					"Meaning": [],
+					"NextState": "F26",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "What's the name of the lady?"
+					"Utterance": "What's the name of your kid's caretaker?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F28",
-					"Meaning": [],
+					"NextState": "F25",
+					"Meaning": ["ContextNeeded"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "And during that time are the children at home or at school? Who takes care of them, if in fact there's somebody taking care of them?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F27",
-					"Meaning": [],
+					"NextState": "F24",
+					"Meaning": ["ContextNeeded"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "But normally?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F26",
-					"Meaning": [],
+					"NextState": "F23",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "But in general what's your work time?"
+					"Utterance": "In general what's your work time?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F25",
-					"Meaning": [],
+					"NextState": "F22",
+					"Meaning": ["ContextNeeded"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "I don't know. That's why I'm asking you about it."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F24",
-					"Meaning": [],
+					"NextState": "F21",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Why don't you have time? Is it because of your work schedule?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F23",
-					"Meaning": [],
+					"NextState": "F20",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Can you detail that?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F22",
-					"Meaning": [],
+					"NextState": "F19",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "And at home, how's her relationship with the kids in your opinion? Does she treat her kids, your kids well?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F21",
-					"Meaning": [],
+					"NextState": "F18",
+					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "It seems your relationship has had better days, is it so?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F20",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": [],
 					"Utterance": "It's necessary to control those places. One cannot trust women…They are cunning!"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F19",
-					"Meaning": [],
+					"NextState": "F17",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "In order to confirm if she's a beautician..."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F18",
-					"Meaning": [],
+					"NextState": "F16",
+					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "Have you ever been to her workplace?"
+					"Utterance": "Have you ever been to your wife's workplace?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F17",
-					"Meaning": [],
+					"NextState": "F15",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Don't you like her job?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F16",
-					"Meaning": [],
+					"NextState": "F14",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Does she work? What's her job?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F15",
-					"Meaning": [],
+					"NextState": "F13",
+					"Meaning": ["ComtextFree"],
 					"Style": [],
-					"Utterance": "Can we talk a little bit more about your wife?"
+					"Utterance": "Can we talk a little bit about your wife?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F14",
-					"Meaning": [],
+					"NextState": "F12",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Beer we don´t have. We were talking about your wife..."
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F13",
-					"Meaning": [],
+					"NextState": "F11",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "We'll handle that, but here we can only give you water. Is it ok?"
 				}, 
 				{
 					"CurrentState": "FreeRecall",
-					"NextState": "F12",
+					"NextState": "F10",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Do you have any problem talking to us?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F11",
-					"Meaning": [],
+					"CurrentState": "WifeSpecific",
+					"NextState": "F9",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Don't you want to talk about it?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "End",
+					"CurrentState": "CowSpecific",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": [],
 					"Utterance": "I know what you mean. Women enjoy some slaps on the bottom…"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F10",
-					"Meaning": [],
+					"CurrentState": "CowSpecific",
+					"NextState": "F8",
+					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "Cow? Why cow?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F9",
+					"CurrentState": "WifeSpecific",
+					"NextState": "F7",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "How old's your wife?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F8",
-					"Meaning": [],
-					"Style": [],
-					"Utterance": "So?"
-				}, 
-				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F7",
+					"CurrentState": "WifeSpecific",
+					"NextState": "F6",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Are you fed up with your marriage?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F6",
+					"CurrentState": "WifeSpecific",
+					"NextState": "F5",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "What do you mean?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F5",
+					"CurrentState": "WifeSpecific",
+					"NextState": "F4",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "How long are you together?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F4",
+					"CurrentState": "WifeSpecific",
+					"NextState": "F3",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "But in terms of what you consider a good relationship, how's your relationship with your wife? Is it good in your opinion?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F3",
+					"CurrentState": "WifeSpecific",
+					"NextState": "F2",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "What do you mean?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F2",
-					"Meaning": ["ContextNeeded"],
-					"Style": [],
-					"Utterance": "So?"
-				}, 
-				{
-					"CurrentState": "FreeRecall",
+					"CurrentState": "WifeSpecific",
 					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "I was told that you're a violent guy and beat her every week. What do you tell me about this?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
+					"CurrentState": "Start",
 					"NextState": "F1",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
-					"Utterance": "How about your wife? Do you have a good relationship with her?"
+					"Utterance": "Do you have a good relationship with your wife?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "KidsSpecific",
 					"NextState": "S16",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "How's your relationship with them? Do you have a good relationship with them?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "KidsSpecific",
 					"NextState": "S15",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "A pair of imps? What are their names? How old are they, do you know?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "KidsSpecific",
 					"NextState": "S14",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
@@ -1439,59 +1425,59 @@
 					"NextState": "S12",
 					"Meaning": ["ContextFree"],
 					"Style": [],
-					"Utterance": "And pal are you single? Married?"
+					"Utterance": "Pal are you single? Married?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "GreetingSpecific",
 					"NextState": "S11",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "You're here because we need to speak with you. Soon we'll tell you the reasons why you came here. But as you are here, first I like to know about the people I'm speaking to. Is there a problem about it?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "WorkSpecific",
 					"NextState": "S10",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "More precisely what do you do in construction?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "WorkSpecific",
 					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "It seems you prefer to stay at home, resting and drinking some beers, isn't it?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "WorkSpecific",
 					"NextState": "S9",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "Have you always worked in construction? Do you like what you're doing?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "WorkSpecific",
 					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": [],
 					"Utterance": "Is it relaxing working in construction? Wouldn't it be better to work somewhere else?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "WorkSpecific",
 					"NextState": "S8",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "How long have you been working in construction?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "WorkSpecific",
 					"NextState": "S7",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
 					"Utterance": "But is it enough to make a living?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "WorkSpecific",
 					"NextState": "S6",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
@@ -1505,22 +1491,22 @@
 					"Utterance": "I've been reading some information about you. So Mr. António Pedro you work in construction, isn't it?"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "GreetingSpecific",
 					"NextState": "S4",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "With the progress of our conversation, I'm sure you'll understand what we want and probably clarify your doubts."
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "GreetingSpecific",
 					"NextState": "S3",
 					"Meaning": ["ContextFree"],
 					"Style": [],
 					"Utterance": "You were notified to come here, because we've something to clarify and we need your help. I'm going to ask you some questions and expect you answer me."
 				}, 
 				{
-					"CurrentState": "Start",
-					"NextState": "End",
+					"CurrentState": "FreeRecall",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "We've been here for ten minutes and you don't tell me what happened. Speed up a bit. We have plenty of records to make."
@@ -1534,13 +1520,13 @@
 				}, 
 				{
 					"CurrentState": "Start",
-					"NextState": "End",
+					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "I've seen that you're nervous. Tell me what you've done!"
 				}, 
 				{
-					"CurrentState": "Start",
+					"CurrentState": "Introduction",
 					"NextState": "S1",
 					"Meaning": ["ContextFree"],
 					"Style": [],
@@ -1556,7 +1542,7 @@
 					"UtteranceId": "TTS-BBD3F5F5DF7550E250F7F4A3073EE8B2"
 				}, 
 				{
-					"CurrentState": "Q102",
+					"CurrentState": "Q97",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(0)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
@@ -1564,15 +1550,7 @@
 					"UtteranceId": "TTS-D13B724DA2EC8CB93BD0433D0AA19DC8"
 				}, 
 				{
-					"CurrentState": "Q101",
-					"NextState": "Questioning",
-					"Meaning": ["Informative(5)", "Truth(5)"],
-					"Style": ["Aggression(7)"],
-					"Utterance": "It must have been the neighbour. Someone should punch that bitch. She's envious.",
-					"UtteranceId": "TTS-281705DFD2E065247075CF79986E9C77"
-				}, 
-				{
-					"CurrentState": "Q100",
+					"CurrentState": "Q96",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -1580,7 +1558,7 @@
 					"UtteranceId": "TTS-FDAD78A9135BF15AEC8BDEB70BB426A3"
 				}, 
 				{
-					"CurrentState": "Q99",
+					"CurrentState": "Q95",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -1588,7 +1566,7 @@
 					"UtteranceId": "TTS-D2A9333F06690282A955B0EE1382187C"
 				}, 
 				{
-					"CurrentState": "Q98",
+					"CurrentState": "Q94",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -1596,7 +1574,7 @@
 					"UtteranceId": "TTS-B771EB27691BB9D2C24AF7EFB9C5D381"
 				}, 
 				{
-					"CurrentState": "Q97",
+					"CurrentState": "Q93",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(3)"],
 					"Style": ["Aggression(4)"],
@@ -1604,7 +1582,7 @@
 					"UtteranceId": "TTS-CF18EAE566F98161ADB6320C87593F42"
 				}, 
 				{
-					"CurrentState": "Q96",
+					"CurrentState": "Q92",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(3)"],
 					"Style": ["Aggression(4)"],
@@ -1612,7 +1590,7 @@
 					"UtteranceId": "TTS-F8829C2F2CEF8106D3B0F0D1B29A772E"
 				}, 
 				{
-					"CurrentState": "Q95",
+					"CurrentState": "Q91",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -1620,15 +1598,15 @@
 					"UtteranceId": "TTS-0DA7441EC97F1963278454B91CF7FCC1"
 				}, 
 				{
-					"CurrentState": "Q94",
+					"CurrentState": "Q90",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
-					"Utterance": "…/…/…/… yes, it was always like this. Well, at the beginning when you're dating a girl, you'd not give her slaps on the face. She'd be frightened. I'm not so insensitive…A guy must know if she likes…This is not for everybody.",
-					"UtteranceId": "TTS-DE606E71B9A905DD2DE76E2A95CC13C9"
+					"Utterance": "yes, it was always like this. Well, at the beginning when you're dating a girl, you'd not give her slaps on the face. She'd be frightened. I'm not so insensitive…A guy must know if she likes…This is not for everybody.",
+					"UtteranceId": "TTS-8A8E01AB8A681F89133F63DBFE0191F1"
 				}, 
 				{
-					"CurrentState": "Q93",
+					"CurrentState": "Q89",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(7)"],
@@ -1636,7 +1614,7 @@
 					"UtteranceId": "TTS-227E6DDC68DC667EF5AE82C9054D93CB"
 				}, 
 				{
-					"CurrentState": "Q92",
+					"CurrentState": "Q88",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1644,7 +1622,7 @@
 					"UtteranceId": "TTS-F27B140BB07B8AE91A0112B61FD96F50"
 				}, 
 				{
-					"CurrentState": "Q91",
+					"CurrentState": "Q87",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
@@ -1652,7 +1630,7 @@
 					"UtteranceId": "TTS-2DE48F2023D9D308F0A56879263E18A0"
 				}, 
 				{
-					"CurrentState": "Q90",
+					"CurrentState": "Q86",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -1660,7 +1638,7 @@
 					"UtteranceId": "TTS-B6FF556E26FE2F8C738EC5AEB9963DE5"
 				}, 
 				{
-					"CurrentState": "Q89",
+					"CurrentState": "Q85",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(7)"],
 					"Style": ["Aggression(7)"],
@@ -1668,7 +1646,7 @@
 					"UtteranceId": "TTS-54AA7F1DB26BAB853E39FA85B8D8BEED"
 				}, 
 				{
-					"CurrentState": "Q88",
+					"CurrentState": "Q84",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -1676,7 +1654,7 @@
 					"UtteranceId": "TTS-104B645DAD925EFEC56D05EC421F675F"
 				}, 
 				{
-					"CurrentState": "Q87",
+					"CurrentState": "Q83",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(8)"],
 					"Style": ["Aggression(5)"],
@@ -1684,7 +1662,7 @@
 					"UtteranceId": "TTS-9775A1382CE97F497D3AEEBBD70B827A"
 				}, 
 				{
-					"CurrentState": "Q86",
+					"CurrentState": "Q82",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -1692,7 +1670,7 @@
 					"UtteranceId": "TTS-04B007E925E78E7C7E47AE7D2B444E01"
 				}, 
 				{
-					"CurrentState": "Q85",
+					"CurrentState": "Q81",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(10)"],
 					"Style": ["Aggression(4)"],
@@ -1700,7 +1678,7 @@
 					"UtteranceId": "TTS-475CDA7181366E0CF0D381737003A5A5"
 				}, 
 				{
-					"CurrentState": "Q84",
+					"CurrentState": "Q80",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -1708,15 +1686,7 @@
 					"UtteranceId": "TTS-6F736689D0EE65A78A904C601F7408A1"
 				}, 
 				{
-					"CurrentState": "Q83",
-					"NextState": "Questioning",
-					"Meaning": ["Informative(4)", "Truth(0)"],
-					"Style": ["Aggression(6)"],
-					"Utterance": "I was in the club drinking some beer, and then I heard the noise. I began to figure it out. No studies are necessary to understand…",
-					"UtteranceId": "TTS-C55B26DFF2450710B6B5C6181A1C06E0"
-				}, 
-				{
-					"CurrentState": "Q82",
+					"CurrentState": "Q79",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -1724,7 +1694,7 @@
 					"UtteranceId": "TTS-82439ACDF40F47E4E390C0B7E15742BF"
 				}, 
 				{
-					"CurrentState": "Q81",
+					"CurrentState": "Q78",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1732,7 +1702,7 @@
 					"UtteranceId": "TTS-778C42C5819A63CD728D58E3FA787B6C"
 				}, 
 				{
-					"CurrentState": "Q80",
+					"CurrentState": "Q77",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -1740,7 +1710,7 @@
 					"UtteranceId": "TTS-EE212F8D17F5D357B78016180E767E8F"
 				}, 
 				{
-					"CurrentState": "Q79",
+					"CurrentState": "Q76",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -1748,7 +1718,7 @@
 					"UtteranceId": "TTS-0108788B4BBD0B28A74B69C3B8DE4C4D"
 				}, 
 				{
-					"CurrentState": "Q78",
+					"CurrentState": "Q75",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -1756,7 +1726,7 @@
 					"UtteranceId": "TTS-9F1A79993D0622A3E715D604F6740699"
 				}, 
 				{
-					"CurrentState": "Q77",
+					"CurrentState": "Q74",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -1764,7 +1734,7 @@
 					"UtteranceId": "TTS-5509655FE12A61B8D432370845D3C4B4"
 				}, 
 				{
-					"CurrentState": "Q76",
+					"CurrentState": "Q73",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -1772,7 +1742,7 @@
 					"UtteranceId": "TTS-B103541C70B369C55577A152D4310E08"
 				}, 
 				{
-					"CurrentState": "Q75",
+					"CurrentState": "Q72",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -1780,7 +1750,7 @@
 					"UtteranceId": "TTS-AFFACB4096D9E5BB6229ACAC81F91267"
 				}, 
 				{
-					"CurrentState": "Q74",
+					"CurrentState": "Q71",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -1788,7 +1758,7 @@
 					"UtteranceId": "TTS-22C3DF8E7B02A32518E5A6C9BB4F1A08"
 				}, 
 				{
-					"CurrentState": "Q73",
+					"CurrentState": "Q70",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(6)"],
 					"Style": ["Aggression(5)"],
@@ -1796,7 +1766,7 @@
 					"UtteranceId": "TTS-A8752424265589B9ECBFFE3AB54D3623"
 				}, 
 				{
-					"CurrentState": "Q72",
+					"CurrentState": "Q69",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -1804,7 +1774,7 @@
 					"UtteranceId": "TTS-356B50ED2748680D6CCD599790D29430"
 				}, 
 				{
-					"CurrentState": "Q71",
+					"CurrentState": "Q68",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(3)"],
 					"Style": ["Aggression(6)"],
@@ -1812,7 +1782,7 @@
 					"UtteranceId": "TTS-1F420057DFA8C8524363C386DC628DC6"
 				}, 
 				{
-					"CurrentState": "Q70",
+					"CurrentState": "Q67",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -1820,7 +1790,7 @@
 					"UtteranceId": "TTS-45C6433A99F9CF4C21AF5AB2C1E6D605"
 				}, 
 				{
-					"CurrentState": "Q69",
+					"CurrentState": "Q66",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -1828,7 +1798,7 @@
 					"UtteranceId": "TTS-ECD9B862CE6487C870B4B9F425A0F926"
 				}, 
 				{
-					"CurrentState": "Q68",
+					"CurrentState": "Q65",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -1836,7 +1806,7 @@
 					"UtteranceId": "TTS-713B3F99F33912FA8DEAE06E0AD96E26"
 				}, 
 				{
-					"CurrentState": "Q67",
+					"CurrentState": "Q64",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1844,7 +1814,7 @@
 					"UtteranceId": "TTS-25F1F3F734429415E5328156844A0C64"
 				}, 
 				{
-					"CurrentState": "Q66",
+					"CurrentState": "Q63",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(4)"],
@@ -1852,7 +1822,7 @@
 					"UtteranceId": "TTS-2E4C445158D72ECF1939A18896E9FD24"
 				}, 
 				{
-					"CurrentState": "Q65",
+					"CurrentState": "Q62",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1860,7 +1830,7 @@
 					"UtteranceId": "TTS-11AE35EEE1497196105CBCE8EA5FB00B"
 				}, 
 				{
-					"CurrentState": "Q64",
+					"CurrentState": "Q61",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1868,7 +1838,7 @@
 					"UtteranceId": "TTS-81326A0AD26BEFE906DF383F212FED5B"
 				}, 
 				{
-					"CurrentState": "Q63",
+					"CurrentState": "Q60",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1876,7 +1846,7 @@
 					"UtteranceId": "TTS-76C553227F56D1C0DB3504718825BB1B"
 				}, 
 				{
-					"CurrentState": "Q62",
+					"CurrentState": "Q59",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(2)"],
 					"Style": ["Aggression(4)"],
@@ -1884,7 +1854,7 @@
 					"UtteranceId": "TTS-78E99FBE298726A056BF8852BEF887F4"
 				}, 
 				{
-					"CurrentState": "Q61",
+					"CurrentState": "Q58",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -1892,15 +1862,7 @@
 					"UtteranceId": "TTS-557352E1AD1507C2623AB8683AD95366"
 				}, 
 				{
-					"CurrentState": "Q60",
-					"NextState": "Questioning",
-					"Meaning": ["Informative(7)", "Truth(0)"],
-					"Style": ["Aggression(5)"],
-					"Utterance": "She likes being tied. I used electrical wires, but it was her who asked for it. It's not the end of the world.",
-					"UtteranceId": "TTS-A0691F4979FAFF9B031A90EAF9A8C92C"
-				}, 
-				{
-					"CurrentState": "Q59",
+					"CurrentState": "Q57",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -1908,7 +1870,7 @@
 					"UtteranceId": "TTS-9AD68260CA1214887E82ABD9D7544935"
 				}, 
 				{
-					"CurrentState": "Q58",
+					"CurrentState": "Q56",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1916,7 +1878,7 @@
 					"UtteranceId": "TTS-9CE47D7A28F81EAE5C56038021A6F9A8"
 				}, 
 				{
-					"CurrentState": "Q57",
+					"CurrentState": "Q55",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(2)"],
 					"Style": ["Aggression(4)"],
@@ -1924,7 +1886,7 @@
 					"UtteranceId": "TTS-748A1ECDB7CE6DCC6E1F5EB9E495688C"
 				}, 
 				{
-					"CurrentState": "Q56",
+					"CurrentState": "Q54",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(4)"],
@@ -1932,7 +1894,7 @@
 					"UtteranceId": "TTS-95BA1861BBC1AAED66FDC1EBF15EF7C0"
 				}, 
 				{
-					"CurrentState": "Q55",
+					"CurrentState": "Q53",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(4)"],
@@ -1940,7 +1902,7 @@
 					"UtteranceId": "TTS-CF1C2C9C9B999909B3720A9AA6E54F0F"
 				}, 
 				{
-					"CurrentState": "Q54",
+					"CurrentState": "Q52",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(2)"],
 					"Style": ["Aggression(6)"],
@@ -1948,7 +1910,7 @@
 					"UtteranceId": "TTS-262E393EB7E89EDCAEE345AEDB2C6E56"
 				}, 
 				{
-					"CurrentState": "Q53",
+					"CurrentState": "Q51",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(2)"],
 					"Style": ["Aggression(4)"],
@@ -1956,7 +1918,7 @@
 					"UtteranceId": "TTS-0A4CB3768B58FBFE5F130B32814FA41A"
 				}, 
 				{
-					"CurrentState": "Q52",
+					"CurrentState": "Q50",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(2)"],
 					"Style": ["Aggression(4)"],
@@ -1964,7 +1926,7 @@
 					"UtteranceId": "TTS-B6FF556E26FE2F8C738EC5AEB9963DE5"
 				}, 
 				{
-					"CurrentState": "Q51",
+					"CurrentState": "Q49",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(4)"],
 					"Style": ["Aggression(4)"],
@@ -1972,7 +1934,7 @@
 					"UtteranceId": "TTS-E154E25794130C417290DDD4B3CE0D0D"
 				}, 
 				{
-					"CurrentState": "Q50",
+					"CurrentState": "Q48",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -1980,7 +1942,7 @@
 					"UtteranceId": "TTS-24481FC2917F7622350020DF20460675"
 				}, 
 				{
-					"CurrentState": "Q49",
+					"CurrentState": "Q47",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1988,7 +1950,7 @@
 					"UtteranceId": "TTS-7A6178788120F7949B1ABB28A4B3FF48"
 				}, 
 				{
-					"CurrentState": "Q48",
+					"CurrentState": "Q46",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -1996,7 +1958,7 @@
 					"UtteranceId": "TTS-938BB603CA754EB90C8E9218856A98A5"
 				}, 
 				{
-					"CurrentState": "Q47",
+					"CurrentState": "Q45",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(6)"],
@@ -2004,7 +1966,7 @@
 					"UtteranceId": "TTS-B55E32FB2766F5E760AA44EB6B9722A4"
 				}, 
 				{
-					"CurrentState": "Q46",
+					"CurrentState": "Q44",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(2)"],
@@ -2012,7 +1974,7 @@
 					"UtteranceId": "TTS-88BA045D5DA26D2573F5DA6E651451AC"
 				}, 
 				{
-					"CurrentState": "Q45",
+					"CurrentState": "Q43",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(2)"],
@@ -2020,7 +1982,7 @@
 					"UtteranceId": "TTS-9A3CCEE67CF0B0DF371E56877BB9A011"
 				}, 
 				{
-					"CurrentState": "Q44",
+					"CurrentState": "Q42",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(2)"],
 					"Style": ["Aggression(6)"],
@@ -2028,7 +1990,7 @@
 					"UtteranceId": "TTS-100DAC8E1A59ACA2BBA57E73D3ECCE5F"
 				}, 
 				{
-					"CurrentState": "Q43",
+					"CurrentState": "Q41",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2036,7 +1998,7 @@
 					"UtteranceId": "TTS-957C1A822A17341540B33B175B354316"
 				}, 
 				{
-					"CurrentState": "Q42",
+					"CurrentState": "Q40",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
@@ -2044,7 +2006,7 @@
 					"UtteranceId": "TTS-A92B33A83AFE2378B08DDD04CF775E5F"
 				}, 
 				{
-					"CurrentState": "Q41",
+					"CurrentState": "Q39",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(10)"],
 					"Style": ["Aggression(4)"],
@@ -2052,7 +2014,7 @@
 					"UtteranceId": "TTS-0D437B2011D2EDA3BAFE949CEAE6B9D9"
 				}, 
 				{
-					"CurrentState": "Q40",
+					"CurrentState": "Q38",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(7)"],
 					"Style": ["Aggression(5)"],
@@ -2060,7 +2022,7 @@
 					"UtteranceId": "TTS-B95790100F32A7AEF605B6585A568950"
 				}, 
 				{
-					"CurrentState": "Q39",
+					"CurrentState": "Q37",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(10)"],
 					"Style": ["Aggression(5)"],
@@ -2068,7 +2030,7 @@
 					"UtteranceId": "TTS-56E90BD2FDAD9A7D2C54B92DC3E7A9C4"
 				}, 
 				{
-					"CurrentState": "Q38",
+					"CurrentState": "Q36",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2076,7 +2038,7 @@
 					"UtteranceId": "TTS-40EB3311869C08868E7A58E4AC73217F"
 				}, 
 				{
-					"CurrentState": "Q37",
+					"CurrentState": "Q35",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(0)"],
 					"Style": ["Aggression(4)"],
@@ -2084,7 +2046,7 @@
 					"UtteranceId": "TTS-F8829C2F2CEF8106D3B0F0D1B29A772E"
 				}, 
 				{
-					"CurrentState": "Q36",
+					"CurrentState": "Q34",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(3)"],
 					"Style": ["Aggression(3)"],
@@ -2092,7 +2054,7 @@
 					"UtteranceId": "TTS-893F56F481336EEB65A17534FDDC9865"
 				}, 
 				{
-					"CurrentState": "Q35",
+					"CurrentState": "Q33",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2100,7 +2062,7 @@
 					"UtteranceId": "TTS-4EF5C7BB0ED18FDC04CE800578C22CEB"
 				}, 
 				{
-					"CurrentState": "Q34",
+					"CurrentState": "Q32",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2108,7 +2070,7 @@
 					"UtteranceId": "TTS-AC96534326CFCE20141EEA11F89D9229"
 				}, 
 				{
-					"CurrentState": "Q33",
+					"CurrentState": "Q31",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(2)"],
 					"Style": ["Aggression(6)"],
@@ -2116,7 +2078,7 @@
 					"UtteranceId": "TTS-7077811F265AAEF0D816F7BF215D8725"
 				}, 
 				{
-					"CurrentState": "Q32",
+					"CurrentState": "Q30",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(2)"],
 					"Style": ["Aggression(4)"],
@@ -2124,7 +2086,7 @@
 					"UtteranceId": "TTS-09228E63895CBD379886D3F58300C903"
 				}, 
 				{
-					"CurrentState": "Q31",
+					"CurrentState": "Q29",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2132,7 +2094,7 @@
 					"UtteranceId": "TTS-C1F90D6BC4EBD21410364ED35E1FE882"
 				}, 
 				{
-					"CurrentState": "Q30",
+					"CurrentState": "Q28",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(3)"],
 					"Style": ["Aggression(6)"],
@@ -2140,7 +2102,7 @@
 					"UtteranceId": "TTS-0EFC7A9CC2E6BA675036913CA80BEC9E"
 				}, 
 				{
-					"CurrentState": "Q29",
+					"CurrentState": "Q27",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(3)"],
 					"Style": ["Aggression(6)"],
@@ -2148,7 +2110,7 @@
 					"UtteranceId": "TTS-6647A4F707BBB9B02125078B1A211B06"
 				}, 
 				{
-					"CurrentState": "Q28",
+					"CurrentState": "Q26",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(8)", "Truth(0)"],
 					"Style": ["Aggression(7)"],
@@ -2156,7 +2118,7 @@
 					"UtteranceId": "TTS-F162A7E42537EBA9C88C6EFF3F6C546E"
 				}, 
 				{
-					"CurrentState": "Q27",
+					"CurrentState": "Q25",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -2164,7 +2126,7 @@
 					"UtteranceId": "TTS-CC89FA6920DE2CC58FAB3CEF4A4FD335"
 				}, 
 				{
-					"CurrentState": "Q26",
+					"CurrentState": "Q24",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2172,7 +2134,7 @@
 					"UtteranceId": "TTS-B6FF556E26FE2F8C738EC5AEB9963DE5"
 				}, 
 				{
-					"CurrentState": "Q25",
+					"CurrentState": "Q23",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(7)", "Truth(8)"],
 					"Style": ["Aggression(6)"],
@@ -2180,7 +2142,7 @@
 					"UtteranceId": "TTS-13242A8370844FC034599300B8DE355E"
 				}, 
 				{
-					"CurrentState": "Q24",
+					"CurrentState": "Q22",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(6)"],
 					"Style": ["Aggression(4)"],
@@ -2188,7 +2150,7 @@
 					"UtteranceId": "TTS-8BD05BD8D550B508C17C3EE863EC4EC4"
 				}, 
 				{
-					"CurrentState": "Q23",
+					"CurrentState": "Q21",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(2)", "Truth(8)"],
 					"Style": ["Aggression(4)"],
@@ -2196,7 +2158,7 @@
 					"UtteranceId": "TTS-49EB8B0B198DF6A2B06EF6F41140D37E"
 				}, 
 				{
-					"CurrentState": "Q22",
+					"CurrentState": "Q20",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(6)"],
 					"Style": ["Aggression(2)"],
@@ -2204,7 +2166,7 @@
 					"UtteranceId": "TTS-802641D73AB3529533060938FF9D465A"
 				}, 
 				{
-					"CurrentState": "Q21",
+					"CurrentState": "Q19",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(1)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2212,7 +2174,7 @@
 					"UtteranceId": "TTS-DF72BC2540D431305B2463DC87FEC57F"
 				}, 
 				{
-					"CurrentState": "Q20",
+					"CurrentState": "Q18",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(1)", "Truth(5)"],
 					"Style": ["Aggression(1)"],
@@ -2220,7 +2182,7 @@
 					"UtteranceId": "TTS-5DA435175D48F5EC95A6BC52BB18DAAA"
 				}, 
 				{
-					"CurrentState": "Q19",
+					"CurrentState": "Q17",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2228,7 +2190,7 @@
 					"UtteranceId": "TTS-E2D4DB3B3CB2B3E66505DB71449AF05C"
 				}, 
 				{
-					"CurrentState": "Q18",
+					"CurrentState": "Q16",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2236,7 +2198,7 @@
 					"UtteranceId": "TTS-4F13438C3BBEEDD2770E7AB10D005DE1"
 				}, 
 				{
-					"CurrentState": "Q17",
+					"CurrentState": "Q15",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2244,7 +2206,7 @@
 					"UtteranceId": "TTS-9A65F31100ABD4E9713B80390144003C"
 				}, 
 				{
-					"CurrentState": "Q16",
+					"CurrentState": "Q14",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2252,7 +2214,7 @@
 					"UtteranceId": "TTS-D170C7E62390D88AEA81B4127B3DFB1C"
 				}, 
 				{
-					"CurrentState": "Q15",
+					"CurrentState": "Q13",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2260,7 +2222,7 @@
 					"UtteranceId": "TTS-CED595AE83741CB1326B90508F59ABA4"
 				}, 
 				{
-					"CurrentState": "Q14",
+					"CurrentState": "Q12",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(4)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
@@ -2268,7 +2230,7 @@
 					"UtteranceId": "TTS-551CDF1D4795762CC49F7935E9F2C834"
 				}, 
 				{
-					"CurrentState": "Q13",
+					"CurrentState": "Q11",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(2)", "Truth(3)"],
 					"Style": ["Aggression(3)"],
@@ -2276,7 +2238,7 @@
 					"UtteranceId": "TTS-4E813254B52F9CA59C2A13EEEC07E161"
 				}, 
 				{
-					"CurrentState": "Q12",
+					"CurrentState": "Q10",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2284,7 +2246,7 @@
 					"UtteranceId": "TTS-30F5D0FC9E8F144DC39F36C305B82CA6"
 				}, 
 				{
-					"CurrentState": "Q11",
+					"CurrentState": "Q9",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(2)", "Truth(0)"],
 					"Style": ["Aggression(3)"],
@@ -2292,7 +2254,7 @@
 					"UtteranceId": "TTS-B431C8AF02887B9DDDF2778FBDA1BB05"
 				}, 
 				{
-					"CurrentState": "Q10",
+					"CurrentState": "Q8",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(1)", "Truth(10)"],
 					"Style": ["Aggression(2)"],
@@ -2300,7 +2262,7 @@
 					"UtteranceId": "TTS-05CC1335CBABD72DBC6285E933868942"
 				}, 
 				{
-					"CurrentState": "Q9",
+					"CurrentState": "Q7",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(6)", "Truth(10)"],
 					"Style": ["Aggression(1)"],
@@ -2308,7 +2270,7 @@
 					"UtteranceId": "TTS-348F1B877B918EBD8364F5C0EDCAACAF"
 				}, 
 				{
-					"CurrentState": "Q8",
+					"CurrentState": "Q6",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(0)"],
 					"Style": ["Aggression(3)"],
@@ -2316,7 +2278,7 @@
 					"UtteranceId": "TTS-0AE0881BB9C20C5C1BD48EC2373346FC"
 				}, 
 				{
-					"CurrentState": "Q7",
+					"CurrentState": "Q5",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(1)"],
@@ -2324,7 +2286,7 @@
 					"UtteranceId": "TTS-62B37F3797CA737B42D79AA8EBB71208"
 				}, 
 				{
-					"CurrentState": "Q6",
+					"CurrentState": "Q4",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(0)"],
 					"Style": ["Aggression(1)"],
@@ -2332,7 +2294,7 @@
 					"UtteranceId": "TTS-0F43B0D23829791504E77BD73AC31104"
 				}, 
 				{
-					"CurrentState": "Q5",
+					"CurrentState": "Q3",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(0)"],
 					"Style": ["Aggression(1)"],
@@ -2340,7 +2302,7 @@
 					"UtteranceId": "TTS-0852EF30C3CB1B6722E5326F7ADFA772"
 				}, 
 				{
-					"CurrentState": "Q4",
+					"CurrentState": "Q2",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2348,7 +2310,7 @@
 					"UtteranceId": "TTS-7AD0D31A86C074346C851C2F7A86B5D6"
 				}, 
 				{
-					"CurrentState": "Q3",
+					"CurrentState": "Q1",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(10)"],
 					"Style": ["Aggression(1)"],
@@ -2356,7 +2318,7 @@
 					"UtteranceId": "TTS-2F5603BAA69448FFCB1FCD09AB49795C"
 				}, 
 				{
-					"CurrentState": "Q2",
+					"CurrentState": "Q0",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(5)", "Truth(10)"],
 					"Style": ["Aggression(1)"],
@@ -2364,7 +2326,7 @@
 					"UtteranceId": "TTS-C29C8CFD7D6882EA6E9030AB913D13C3"
 				}, 
 				{
-					"CurrentState": "Q1",
+					"CurrentState": "Q-1",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(2)", "Truth(10)"],
 					"Style": ["Aggression(2)"],
@@ -2372,7 +2334,7 @@
 					"UtteranceId": "TTS-64E9C51777978DA8850787F1283043A3"
 				}, 
 				{
-					"CurrentState": "F83",
+					"CurrentState": "F81",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2380,7 +2342,7 @@
 					"UtteranceId": "TTS-3C72F67431CFAF2EA4E5FCF54285987C"
 				}, 
 				{
-					"CurrentState": "F82",
+					"CurrentState": "F80",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2388,7 +2350,7 @@
 					"UtteranceId": "TTS-1262711644DE73572D6E154EEEA57212"
 				}, 
 				{
-					"CurrentState": "F81",
+					"CurrentState": "F79",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(8)"],
 					"Style": ["Aggression(2)"],
@@ -2396,7 +2358,7 @@
 					"UtteranceId": "TTS-E07E66BC5049F72B19EEA41959312880"
 				}, 
 				{
-					"CurrentState": "F80",
+					"CurrentState": "F78",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(10)"],
 					"Style": ["Aggression(2)"],
@@ -2404,7 +2366,7 @@
 					"UtteranceId": "TTS-8FCFF30A05C9A493442DECF4858EB682"
 				}, 
 				{
-					"CurrentState": "F79",
+					"CurrentState": "F77",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(10)"],
 					"Style": ["Aggression(1)"],
@@ -2412,7 +2374,7 @@
 					"UtteranceId": "TTS-BD5E14D46BD02620D295713C01DE2BFA"
 				}, 
 				{
-					"CurrentState": "F78",
+					"CurrentState": "F76",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2420,7 +2382,7 @@
 					"UtteranceId": "TTS-494F3287D52C1EA488CCE5775CEE672E"
 				}, 
 				{
-					"CurrentState": "F77",
+					"CurrentState": "F75",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(0)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
@@ -2428,7 +2390,7 @@
 					"UtteranceId": "TTS-06955D02BE4658C10687A21882F8C021"
 				}, 
 				{
-					"CurrentState": "F76",
+					"CurrentState": "F74",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(3)"],
@@ -2436,7 +2398,7 @@
 					"UtteranceId": "TTS-6A88D349CBF310ED0A37A6D72480EDEE"
 				}, 
 				{
-					"CurrentState": "F75",
+					"CurrentState": "F73",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(4)"],
@@ -2444,7 +2406,7 @@
 					"UtteranceId": "TTS-39C7BBDFD95D8B48B6539AC6ECA4AEF6"
 				}, 
 				{
-					"CurrentState": "F74",
+					"CurrentState": "F72",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(3)"],
 					"Style": ["Aggression(2)"],
@@ -2452,7 +2414,7 @@
 					"UtteranceId": "TTS-85BBF7450E1B23EC52E8269364F5CE42"
 				}, 
 				{
-					"CurrentState": "F73",
+					"CurrentState": "F71",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(1)"],
@@ -2460,7 +2422,7 @@
 					"UtteranceId": "TTS-EB124791E6AAF03F2A16783B53BBDE8D"
 				}, 
 				{
-					"CurrentState": "F72",
+					"CurrentState": "F70",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(1)"],
@@ -2468,7 +2430,7 @@
 					"UtteranceId": "TTS-DDE122065C41D207AC8E34AE834A9030"
 				}, 
 				{
-					"CurrentState": "F71",
+					"CurrentState": "F69",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(1)"],
@@ -2476,7 +2438,7 @@
 					"UtteranceId": "TTS-1BFD7F653591E54B5C9C4E428C65F608"
 				}, 
 				{
-					"CurrentState": "F70",
+					"CurrentState": "F68",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(7)", "Truth(7)"],
 					"Style": ["Aggression(3)"],
@@ -2484,7 +2446,7 @@
 					"UtteranceId": "TTS-8FC88368C21D3AD9D678A948FAAC8D07"
 				}, 
 				{
-					"CurrentState": "F69",
+					"CurrentState": "F67",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(3)"],
@@ -2492,7 +2454,7 @@
 					"UtteranceId": "TTS-B7FE6D4916021FE4C37FD9F65C47A582"
 				}, 
 				{
-					"CurrentState": "F68",
+					"CurrentState": "F66",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(3)"],
@@ -2500,7 +2462,7 @@
 					"UtteranceId": "TTS-0AE48E3565634F8DB76CDF8D9C73FB4A"
 				}, 
 				{
-					"CurrentState": "F67",
+					"CurrentState": "F65",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(0)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
@@ -2508,7 +2470,7 @@
 					"UtteranceId": "TTS-905CB41C2C8EA4DE8DCC48515E6FB2BC"
 				}, 
 				{
-					"CurrentState": "F66",
+					"CurrentState": "F64",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(0)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
@@ -2516,7 +2478,7 @@
 					"UtteranceId": "TTS-B782D07BED3765B728D140CFB5652089"
 				}, 
 				{
-					"CurrentState": "F65",
+					"CurrentState": "F63",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(7)", "Truth(7)"],
 					"Style": ["Aggression(3)"],
@@ -2524,7 +2486,7 @@
 					"UtteranceId": "TTS-3DFF3379765CE9BEA6FED41E2E20A081"
 				}, 
 				{
-					"CurrentState": "F64",
+					"CurrentState": "F62",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2532,7 +2494,7 @@
 					"UtteranceId": "TTS-3EF1EE4A72BCCCC272B698B7901F8E52"
 				}, 
 				{
-					"CurrentState": "F63",
+					"CurrentState": "F61",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(1)"],
@@ -2540,7 +2502,7 @@
 					"UtteranceId": "TTS-DA626A09B738B122BEB8296B1062A3D1"
 				}, 
 				{
-					"CurrentState": "F62",
+					"CurrentState": "F60",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(8)"],
 					"Style": ["Aggression(3)"],
@@ -2548,7 +2510,7 @@
 					"UtteranceId": "TTS-F0F7288BDC9C9AF7D74E28EB89C8E9B1"
 				}, 
 				{
-					"CurrentState": "F61",
+					"CurrentState": "F59",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(8)"],
 					"Style": ["Aggression(3)"],
@@ -2556,7 +2518,7 @@
 					"UtteranceId": "TTS-7F09B37B53AD3892BB6640BF309FE4AD"
 				}, 
 				{
-					"CurrentState": "F60",
+					"CurrentState": "F58",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2564,7 +2526,7 @@
 					"UtteranceId": "TTS-AD291DE48A59F279CBCB2C210A431D47"
 				}, 
 				{
-					"CurrentState": "F59",
+					"CurrentState": "F57",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2572,7 +2534,7 @@
 					"UtteranceId": "TTS-3AE755129D6335D7D98319D3C838FA45"
 				}, 
 				{
-					"CurrentState": "F58",
+					"CurrentState": "F56",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2580,7 +2542,7 @@
 					"UtteranceId": "TTS-60FCE3550FC29F8495FCB6FB137011A5"
 				}, 
 				{
-					"CurrentState": "F57",
+					"CurrentState": "F55",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2588,7 +2550,7 @@
 					"UtteranceId": "TTS-C370FD076C29D8F9EBD33DA9A942EB5B"
 				}, 
 				{
-					"CurrentState": "F56",
+					"CurrentState": "F54",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2596,7 +2558,7 @@
 					"UtteranceId": "TTS-4F24BE1DC01BDF6D50AAF2D077BC06D6"
 				}, 
 				{
-					"CurrentState": "F55",
+					"CurrentState": "F53",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(4)", "Truth(8)"],
 					"Style": ["Aggression(1)"],
@@ -2604,7 +2566,7 @@
 					"UtteranceId": "TTS-0A6517AD5AFFEF1094FC50761124EB35"
 				}, 
 				{
-					"CurrentState": "F54",
+					"CurrentState": "F52",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(1)"],
@@ -2612,7 +2574,7 @@
 					"UtteranceId": "TTS-5336962F0CBF9C76B89E2358A1817B77"
 				}, 
 				{
-					"CurrentState": "F53",
+					"CurrentState": "F51",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2620,7 +2582,7 @@
 					"UtteranceId": "TTS-333A86BE6D52384D573CE92A4A5D79E7"
 				}, 
 				{
-					"CurrentState": "F52",
+					"CurrentState": "F50",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2628,7 +2590,7 @@
 					"UtteranceId": "TTS-83E5B8A7BD6AD72888F6C0366365134C"
 				}, 
 				{
-					"CurrentState": "F51",
+					"CurrentState": "F49",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2636,7 +2598,7 @@
 					"UtteranceId": "TTS-F3C40A9682E3174AE32F0A4CC8F768F1"
 				}, 
 				{
-					"CurrentState": "F50",
+					"CurrentState": "F48",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2644,7 +2606,7 @@
 					"UtteranceId": "TTS-DDD6C36382687D1F48278B4B223ECD37"
 				}, 
 				{
-					"CurrentState": "F49",
+					"CurrentState": "F47",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(7)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2652,7 +2614,7 @@
 					"UtteranceId": "TTS-03A2B750AF5F83C261411530DC020649"
 				}, 
 				{
-					"CurrentState": "F48",
+					"CurrentState": "F46",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -2660,7 +2622,7 @@
 					"UtteranceId": "TTS-613E55414E13B487A810C6B737E2240E"
 				}, 
 				{
-					"CurrentState": "F47",
+					"CurrentState": "F45",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(0)", "Truth(5)"],
 					"Style": ["Aggression(0)"],
@@ -2668,7 +2630,7 @@
 					"UtteranceId": "TTS-5E9FF5C6ECBD4931FFD3F98FC95BCFB8"
 				}, 
 				{
-					"CurrentState": "F46",
+					"CurrentState": "F44",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(0)"],
 					"Style": ["Aggression(2)"],
@@ -2676,7 +2638,7 @@
 					"UtteranceId": "TTS-A8F99E3700E561D9D1AD2F6BE784EC12"
 				}, 
 				{
-					"CurrentState": "F45",
+					"CurrentState": "F43",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(0)"],
 					"Style": ["Aggression(3)"],
@@ -2684,7 +2646,7 @@
 					"UtteranceId": "TTS-4D18364AC3E4740BCE02C0B2CCCCFE30"
 				}, 
 				{
-					"CurrentState": "F44",
+					"CurrentState": "F42",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(0)"],
 					"Style": ["Aggression(3)"],
@@ -2692,7 +2654,7 @@
 					"UtteranceId": "TTS-9F14DCBEA3110486D94E1B91F7B83F6D"
 				}, 
 				{
-					"CurrentState": "F43",
+					"CurrentState": "F41",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(8)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2700,7 +2662,7 @@
 					"UtteranceId": "TTS-3A1EA957CABE1E66D1AA640C6FFBA748"
 				}, 
 				{
-					"CurrentState": "F42",
+					"CurrentState": "F40",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(4)", "Truth(2)"],
 					"Style": ["Aggression(1)"],
@@ -2708,7 +2670,7 @@
 					"UtteranceId": "TTS-17781872AAB82A627C71C3474ABA51F7"
 				}, 
 				{
-					"CurrentState": "F41",
+					"CurrentState": "F39",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(1)", "Truth(2)"],
 					"Style": ["Aggression(1)"],
@@ -2716,7 +2678,7 @@
 					"UtteranceId": "TTS-4298AAE8B4975D2F0B0BF8A59614D254"
 				}, 
 				{
-					"CurrentState": "F40",
+					"CurrentState": "F38",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(1)", "Truth(1)"],
 					"Style": ["Aggression(2)"],
@@ -2724,7 +2686,7 @@
 					"UtteranceId": "TTS-C6CA00D2188AF098FF60E881C0019D73"
 				}, 
 				{
-					"CurrentState": "F39",
+					"CurrentState": "F37",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(1)", "Truth(1)"],
 					"Style": ["Aggression(1)"],
@@ -2732,7 +2694,7 @@
 					"UtteranceId": "TTS-2C1DA1F301EDF526944C80E307EEA5B7"
 				}, 
 				{
-					"CurrentState": "F38",
+					"CurrentState": "F36",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(6)", "Truth(2)"],
 					"Style": ["Aggression(2)"],
@@ -2740,7 +2702,7 @@
 					"UtteranceId": "TTS-D0A958510B87205894AF89E13515819C"
 				}, 
 				{
-					"CurrentState": "F37",
+					"CurrentState": "F35",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(5)", "Truth(3)"],
 					"Style": ["Aggression(3)"],
@@ -2748,7 +2710,7 @@
 					"UtteranceId": "TTS-F3769AF3955C5D39A954D979672AA102"
 				}, 
 				{
-					"CurrentState": "F36",
+					"CurrentState": "F34",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(1)"],
 					"Style": ["Aggression(3)"],
@@ -2756,7 +2718,7 @@
 					"UtteranceId": "TTS-32636065903EE238F37CB7940139A3CE"
 				}, 
 				{
-					"CurrentState": "F35",
+					"CurrentState": "F33",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(1)", "Truth(1)"],
 					"Style": ["Aggression(1)"],
@@ -2764,7 +2726,7 @@
 					"UtteranceId": "TTS-14B9A0FA4C45678D53ED674B3F7BB5DC"
 				}, 
 				{
-					"CurrentState": "F34",
+					"CurrentState": "F32",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(3)"],
 					"Style": ["Aggression(3)"],
@@ -2772,7 +2734,7 @@
 					"UtteranceId": "TTS-B4CF55EABA04BF3D1570A120C1F30D50"
 				}, 
 				{
-					"CurrentState": "F33",
+					"CurrentState": "F31",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2780,7 +2742,7 @@
 					"UtteranceId": "TTS-3BFE93A93E800D22B22A5FF2CEC5CCCA"
 				}, 
 				{
-					"CurrentState": "F32",
+					"CurrentState": "F30",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2788,7 +2750,7 @@
 					"UtteranceId": "TTS-DB90882D1BA3A0631FB4494FEC9080B3"
 				}, 
 				{
-					"CurrentState": "F31",
+					"CurrentState": "F29",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2796,7 +2758,7 @@
 					"UtteranceId": "TTS-75C3E8832DFB4A5E13C1ADB9BA3D4358"
 				}, 
 				{
-					"CurrentState": "F30",
+					"CurrentState": "F28",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(1)", "Truth(8)"],
 					"Style": ["Aggression(2)"],
@@ -2804,7 +2766,7 @@
 					"UtteranceId": "TTS-D3EA92F181D9AA4790F193F1DC581A70"
 				}, 
 				{
-					"CurrentState": "F29",
+					"CurrentState": "F27",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(1)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2812,7 +2774,7 @@
 					"UtteranceId": "TTS-8FBF62949F4F3B6183498F67CC4A9140"
 				}, 
 				{
-					"CurrentState": "F28",
+					"CurrentState": "F26",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(7)"],
 					"Style": ["Aggression(2)"],
@@ -2820,7 +2782,7 @@
 					"UtteranceId": "TTS-34BEB876532765028DA6D6F16C447ECE"
 				}, 
 				{
-					"CurrentState": "F27",
+					"CurrentState": "F25",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(4)", "Truth(7)"],
 					"Style": ["Aggression(2)"],
@@ -2828,7 +2790,7 @@
 					"UtteranceId": "TTS-90D8033D52B12BA4DB0B119C3089784E"
 				}, 
 				{
-					"CurrentState": "F26",
+					"CurrentState": "F24",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(6)"],
 					"Style": ["Aggression(2)"],
@@ -2836,7 +2798,7 @@
 					"UtteranceId": "TTS-0F3FA3C9A8414DD23A3852186EC00E8C"
 				}, 
 				{
-					"CurrentState": "F25",
+					"CurrentState": "F23",
 					"NextState": "FreeRecall",
 					"Meaning": ["Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2844,7 +2806,7 @@
 					"UtteranceId": "TTS-E8B5C5603038A8D3557452EB61CB6934"
 				}, 
 				{
-					"CurrentState": "F24",
+					"CurrentState": "F22",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2852,7 +2814,7 @@
 					"UtteranceId": "TTS-5C028946E6831FB74D3184D7603A7E45"
 				}, 
 				{
-					"CurrentState": "F23",
+					"CurrentState": "F21",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2860,7 +2822,7 @@
 					"UtteranceId": "TTS-5733D9188E0D398617B94664811C9C0B"
 				}, 
 				{
-					"CurrentState": "F22",
+					"CurrentState": "F20",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(6)"],
 					"Style": ["Aggression(1)"],
@@ -2868,7 +2830,7 @@
 					"UtteranceId": "TTS-2DB435E70DBCF14F915D5417206CED05"
 				}, 
 				{
-					"CurrentState": "F21",
+					"CurrentState": "F19",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(6)"],
 					"Style": ["Aggression(2)"],
@@ -2876,7 +2838,7 @@
 					"UtteranceId": "TTS-02D517030D936B040A0E948F5BD01D6B"
 				}, 
 				{
-					"CurrentState": "F20",
+					"CurrentState": "F18",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2884,7 +2846,7 @@
 					"UtteranceId": "TTS-94BA7A30ADD807C84908D05688DEF098"
 				}, 
 				{
-					"CurrentState": "F19",
+					"CurrentState": "F17",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2892,7 +2854,7 @@
 					"UtteranceId": "TTS-1562A7DD5BB9C374B2BEF201875A43F0"
 				}, 
 				{
-					"CurrentState": "F18",
+					"CurrentState": "F16",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2900,7 +2862,7 @@
 					"UtteranceId": "TTS-1165AD3CB69459F2F8F376CF02A5D6B1"
 				}, 
 				{
-					"CurrentState": "F17",
+					"CurrentState": "F15",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2908,7 +2870,7 @@
 					"UtteranceId": "TTS-084B08B5688F4785D0A96AC0A939CCB8"
 				}, 
 				{
-					"CurrentState": "F16",
+					"CurrentState": "F14",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(8)"],
 					"Style": ["Aggression(3)"],
@@ -2916,7 +2878,7 @@
 					"UtteranceId": "TTS-E3C6F9F1C1266D0F9763B3DFA72D5D52"
 				}, 
 				{
-					"CurrentState": "F15",
+					"CurrentState": "F13",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(2)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
@@ -2924,7 +2886,7 @@
 					"UtteranceId": "TTS-48A8318C0749BE694B9E19F4563DF922"
 				}, 
 				{
-					"CurrentState": "F14",
+					"CurrentState": "F12",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2932,7 +2894,7 @@
 					"UtteranceId": "TTS-2508EECA779FCC2F0E50F651DD8AFD61"
 				}, 
 				{
-					"CurrentState": "F13",
+					"CurrentState": "F11",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(0)", "Truth(4)"],
 					"Style": ["Aggression(2)"],
@@ -2940,7 +2902,7 @@
 					"UtteranceId": "TTS-CF80B34276EE716C4D0345A1E91464F8"
 				}, 
 				{
-					"CurrentState": "F12",
+					"CurrentState": "F10",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(0)", "Truth(2)"],
 					"Style": ["Aggression(2)"],
@@ -2948,7 +2910,7 @@
 					"UtteranceId": "TTS-85B4BC9E5A41F3B5C5AEB0DF2897D329"
 				}, 
 				{
-					"CurrentState": "F11",
+					"CurrentState": "F9",
 					"NextState": "FreeRecall",
 					"Meaning": ["Informative(0)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
@@ -2956,40 +2918,24 @@
 					"UtteranceId": "TTS-087503BE6B1A40502AAC767206EC8DDA"
 				}, 
 				{
-					"CurrentState": "F10",
-					"NextState": "FreeRecall",
+					"CurrentState": "F8",
+					"NextState": "CowSpecific",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
 					"Utterance": "There are scenes that are ours…A guy doesn't come here and starts talking about…",
 					"UtteranceId": "TTS-C85182FE10AA59A661D280C72AFCA977"
 				}, 
 				{
-					"CurrentState": "F9",
-					"NextState": "FreeRecall",
+					"CurrentState": "F7",
+					"NextState": "CowSpecific",
 					"Meaning": ["Informative(6)", "Truth(10)"],
 					"Style": ["Aggression(6)"],
 					"Utterance": "I think that cow's about forty years old.",
 					"UtteranceId": "TTS-AD3B483479120C5A456396E019171D31"
 				}, 
 				{
-					"CurrentState": "F8",
-					"NextState": "FreeRecall",
-					"Meaning": ["Informative(0)", "Truth(0)"],
-					"Style": ["Aggression(0)"],
-					"Utterance": "Aha…Aha…",
-					"UtteranceId": "TTS-949DB71471F027B166BBB1AD86F9C258"
-				}, 
-				{
-					"CurrentState": "F7",
-					"NextState": "FreeRecall",
-					"Meaning": ["Informative(0)", "Truth(0)"],
-					"Style": ["Aggression(0)"],
-					"Utterance": "Aha…Aha…",
-					"UtteranceId": "TTS-949DB71471F027B166BBB1AD86F9C258"
-				}, 
-				{
 					"CurrentState": "F6",
-					"NextState": "FreeRecall",
+					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(0)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Aha…Aha…",
@@ -2997,39 +2943,39 @@
 				}, 
 				{
 					"CurrentState": "F5",
-					"NextState": "FreeRecall",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(0)", "Truth(0)"],
+					"Style": ["Aggression(0)"],
+					"Utterance": "Aha…Aha…",
+					"UtteranceId": "TTS-949DB71471F027B166BBB1AD86F9C258"
+				}, 
+				{
+					"CurrentState": "F4",
+					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(5)", "Truth(8)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Aha…aha…I don'know. Too many years…",
 					"UtteranceId": "TTS-94A6CFEF5F3AC9908A6F8311895BEBAC"
 				}, 
 				{
-					"CurrentState": "F4",
-					"NextState": "FreeRecall",
+					"CurrentState": "F3",
+					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(5)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Yes, of course it is.",
 					"UtteranceId": "TTS-2268D654C5193FE80E7CAB2B3F44BF2D"
 				}, 
 				{
-					"CurrentState": "F3",
-					"NextState": "FreeRecall",
+					"CurrentState": "F2",
+					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
 					"Utterance": "There're days when a guy's better, there're days when a guy's worse…It's like that, you know…Married for so long, it's just like that…",
 					"UtteranceId": "TTS-53FD0D6003C080BCEF21B2B208B2A43B"
 				}, 
 				{
-					"CurrentState": "F2",
-					"NextState": "FreeRecall",
-					"Meaning": ["Informative(3)", "Truth(5)"],
-					"Style": ["Aggression(0)"],
-					"Utterance": "There're days…",
-					"UtteranceId": "TTS-16F644A6E46D4F5702F68689C28AB666"
-				}, 
-				{
 					"CurrentState": "F1",
-					"NextState": "FreeRecall",
+					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "It depends, there're days…",
@@ -3037,7 +2983,7 @@
 				}, 
 				{
 					"CurrentState": "S16",
-					"NextState": "Start",
+					"NextState": "KidsSpecific",
 					"Meaning": ["Informative(3)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Of course, the chidren are the light of our eyes…",
@@ -3045,7 +2991,7 @@
 				}, 
 				{
 					"CurrentState": "S15",
-					"NextState": "Start",
+					"NextState": "KidsSpecific",
 					"Meaning": ["Informative(3)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Of course. They 're mine. One's Rubinho, the other's Cristiano, the light of my eyes, they 're twins. There's also Cátia Vanessa and Bruna Ilda…, the little ones.",
@@ -3053,7 +2999,7 @@
 				}, 
 				{
 					"CurrentState": "S14",
-					"NextState": "Start",
+					"NextState": "KidsSpecific",
 					"Meaning": ["Informative(4)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "A man has to be a man, isn't it so?",
@@ -3061,7 +3007,7 @@
 				}, 
 				{
 					"CurrentState": "S13",
-					"NextState": "Start",
+					"NextState": "KidsSpecific",
 					"Meaning": ["Informative(3)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Four.",
@@ -3069,7 +3015,7 @@
 				}, 
 				{
 					"CurrentState": "S12",
-					"NextState": "Start",
+					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(3)", "Truth(8)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Married, better not to be…",
@@ -3093,7 +3039,7 @@
 				}, 
 				{
 					"CurrentState": "S9",
-					"NextState": "Start",
+					"NextState": "WorkSpecific",
 					"Meaning": ["Informative(2)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Do you think so? I'd prefer not to work…But you know, if you want to eat, you have to work, the kids…",
@@ -3101,7 +3047,7 @@
 				}, 
 				{
 					"CurrentState": "S8",
-					"NextState": "Start",
+					"NextState": "WorkSpecific",
 					"Meaning": ["Informative(2)", "Truth(8)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Pf... many years. For a load of years… Pf…",
@@ -3109,7 +3055,7 @@
 				}, 
 				{
 					"CurrentState": "S7",
-					"NextState": "Start",
+					"NextState": "WorkSpecific",
 					"Meaning": ["Informative(2)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "A guy tries to get odd jobs…to make a living",
@@ -3117,7 +3063,7 @@
 				}, 
 				{
 					"CurrentState": "S6",
-					"NextState": "Start",
+					"NextState": "WorkSpecific",
 					"Meaning": ["Informative(2)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "No, it isn't. It's rather bad now, you know, the construction is not good now...",
@@ -3125,7 +3071,7 @@
 				}, 
 				{
 					"CurrentState": "S5",
-					"NextState": "Start",
+					"NextState": "WorkSpecific",
 					"Meaning": ["Informative(3)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Yes. Me... I'm an expert on staves …",
@@ -3157,7 +3103,7 @@
 				}, 
 				{
 					"CurrentState": "S1",
-					"NextState": "Start",
+					"NextState": "GreetingSpecific",
 					"Meaning": ["Informative(0)", "Truth(1)"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "Good morning. I've much to do and I don't know why I'm here!",

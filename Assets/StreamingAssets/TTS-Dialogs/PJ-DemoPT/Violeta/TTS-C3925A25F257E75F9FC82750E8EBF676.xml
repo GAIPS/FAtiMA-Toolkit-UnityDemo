@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LipSyncVisemes wavFile="TTS-C3925A25F257E75F9FC82750E8EBF676.wav">
+  <viseme type="8" time="0.251350534759358" duration="0.0862854367201426" />
+  <viseme type="7" time="0.337635971479501" duration="0.0225039928698753" />
+  <viseme type="21" time="0.618722727272727" duration="0.149788057040998" />
+  <viseme type="18" time="0.768510784313725" duration="0.254067468805704" />
+  <viseme type="8" time="1.02257825311943" duration="0.0733054367201427" />
+  <viseme type="7" time="1.09588368983957" duration="0.0295010695187166" />
+  <viseme type="4" time="1.61808944741533" duration="0.064060623885918" />
+  <viseme type="7" time="1.68215007130125" duration="0.102328877005348" />
+  <viseme type="19" time="1.7844789483066" duration="0.086898431372549" />
+  <viseme type="1" time="1.87137737967914" duration="0.0627780748663101" />
+  <viseme type="20" time="1.93415545454545" duration="0.0608841354723708" />
+  <viseme type="7" time="1.99503959001783" duration="0.0550364884135473" />
+  <viseme type="21" time="2.05007607843137" duration="0.0699082263814616" />
+  <viseme type="1" time="2.11998430481283" duration="0.0540891532976827" />
+  <viseme type="19" time="2.17407345811052" duration="0.0852272459893048" />
+  <viseme type="8" time="2.25930070409982" duration="0.0481835383244206" />
+  <viseme type="14" time="2.30748424242424" duration="0.0423351158645277" />
+  <viseme type="19" time="2.34981935828877" duration="0.0398288770053476" />
+  <viseme type="15" time="2.47819903743315" duration="0.0763976827094475" />
+  <viseme type="19" time="2.5545967201426" duration="0.0950320855614972" />
+  <viseme type="8" time="2.6496288057041" duration="0.0793789661319073" />
+  <viseme type="21" time="2.72900777183601" duration="0.0887360962566846" />
+  <viseme type="1" time="2.81774386809269" duration="0.0373779857397503" />
+  <viseme type="20" time="2.85512185383244" duration="0.101883333333333" />
+  <viseme type="7" time="2.95700518716578" duration="0.0208885918003566" />
+</LipSyncVisemes>

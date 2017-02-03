@@ -94,7 +94,7 @@ public class SingleCharacterDemo : MonoBehaviour
     private IntegratedAuthoringToolAsset _iat;
     private AgentControler _agentController;
     private GameObject _finalScore;
-    public List<string> alreadyUsedDialogs;
+    public Dictionary<string,string> alreadyUsedDialogs;
     private bool Initialized;
      
     // Use this for initialization
@@ -107,7 +107,7 @@ public class SingleCharacterDemo : MonoBehaviour
         ;
         m_dialogController.AddDialogLine("Loading...");
 
-        alreadyUsedDialogs = new List<string>();
+        alreadyUsedDialogs = new Dictionary<string, string>();
 
         var streamingAssetsPath = Application.streamingAssetsPath;
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -268,6 +268,8 @@ public class SingleCharacterDemo : MonoBehaviour
         StartCoroutine(PlayerReplyAction(actionFormat, reply.NextState));
         UpdateScore(reply);
 
+        alreadyUsedDialogs.Add(reply.Utterance,reply.UtteranceId);
+
     }
 
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
@@ -313,7 +315,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
         var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
         var possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
-      
+
 
 
         if (!possibleOptions.Any())
@@ -325,68 +327,47 @@ public class SingleCharacterDemo : MonoBehaviour
             if (PJScenario)
             {
 
-                if (state.ToString() == "Start" && !Initialized)
+                if (!Initialized)
                 {
 
-                    var newOptions = possibleOptions.Shuffle().Where(x => x.Meaning.First() == "ContextFree").Take(3).ToList();
-                    newOptions.Add(possibleOptions.Shuffle().First(x => x.Meaning.First() == "Failure"));
+                    var newOptions =
+                        possibleOptions.Shuffle().Where(x => x.CurrentState == "Start").Take(3).ToList();
+
+                    newOptions.AddRange(_iat.GetDialogueActionsByState(IATConsts.PLAYER, "Introduction"));
                     possibleOptions = newOptions;
 
                 }
                 else
                 {
-                    if (state.ToString() == "Start" && Initialized)
-                    {
 
-                        var newOptions = possibleOptions.Shuffle().Where(x => x.Meaning.First() == "ContextFree").Take(3).ToList();
-                        newOptions.Add(possibleOptions.Shuffle().First(x => x.Meaning.First() == "Failure"));
-                        var additionalOptions =
-                            _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString()))
-                                .Shuffle()
-                                .Take(2);
 
-                        possibleOptions = newOptions;
-                        possibleOptions = possibleOptions.Concat(additionalOptions).Shuffle();
-                        /*    foreach (var current in newOptions)
-                            {
-                                if (alreadyUsedDialogs.Find(x => x == current.NextState) != null)
-                                {
-                                    newOptions.Remove(newOptions.Find(x => x.NextState == current.NextState));
-                                    newOptions.Add(possibleOptions.Shuffle().Take(1).ToList().First());
-                                }
+                    
 
-                            }*/
-                    }
-                    else
-                    {
 
-                        {
-                            possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
-                            var newOptions = possibleOptions.Shuffle().Take(4).ToList();
-                            var additionalOptions =
-                                _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString()))
-                                    .Shuffle()
-                                    .Take(2);
+                    var newOptions = possibleOptions.Where(x=>!alreadyUsedDialogs.ContainsKey(x.Utterance) ).Shuffle().Take(3).ToList();
 
-                            possibleOptions = newOptions;
-                            possibleOptions = possibleOptions.Concat(additionalOptions).Shuffle();
-                        }
-                    }
+
+               
+                 
+                    var additionalOptions =
+                        _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString()))
+                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
+                            .Shuffle()
+                            .Take(2);
+                    
+                    possibleOptions = newOptions.Concat(additionalOptions).Shuffle();
+                   
+
                 }
+            }
+        
 
-
-                foreach (var option in possibleOptions)
-                {
-                    if (option.NextState != "End" || option.NextState != "Failure")
-                    {
-                        alreadyUsedDialogs.Add(option.NextState);
-                    }
-                }
+    
 
             }
             UpdateButtonTexts(false, possibleOptions);
         }
-    }
+    
 
 
     private void LateUpdate()
@@ -404,10 +385,23 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             case "Start":
                 return "FreeRecall";
+            case "GreetingSpecific":
+                return "Start";
+            case "WorkSpecific":
+                return "Start";
+            case "WifeSpecific":
+                return "Start";
+            case "KidsSpecific":
+                return "Start";
+            case "Greeting":
+                return "Start";
+            case "CowSpecific":
+                return "Start";
             case "FreeRecall":
                 return "Questioning";
             case "Questioning":
                 return "Closure";
+            
 
         }
         return "Closure";

@@ -2,3 +2,5 @@
 	Introduction
 \Scenarios\PJ\PJScenario.iat
 	PJ-Demo
+\Scenarios\PJPT\PJScenario.iat
+	PJ-DemoPT

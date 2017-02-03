@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LipSyncVisemes wavFile="TTS-FFC374A047AAA2AFACFEA2CE7B12ACB7.wav">
+  <viseme type="2" time="0.1" duration="0.155" />
+  <viseme type="12" time="0.255" duration="0.105" />
+  <viseme type="2" time="0.36" duration="0.2" />
+  <viseme type="2" time="1.41" duration="0.155" />
+  <viseme type="12" time="1.565" duration="0.105" />
+  <viseme type="2" time="1.67" duration="0.2" />
+</LipSyncVisemes>

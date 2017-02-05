@@ -133,18 +133,19 @@ namespace Assets.Scripts
 
 						break;
 					case "Disconnect":
-						m_activeController.StartCoroutine(HandleDisconnectAction(action));
-						break;
+                        m_activeController.StartCoroutine(newHandleDisconnect());
+                        m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", m_rpc.CharacterName));
+
+                        _currentCoroutine = null;
+                        Object.Destroy(_body.Body);
+                        break;
 					default:
 						Debug.LogWarning("Unknown action: " + action.Key);
 						break;
 				}
 			}
 
-			m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", m_rpc.CharacterName));
-            m_activeController.StartCoroutine(newHandleDisconnect());
-            _currentCoroutine = null;
-			Object.Destroy(_body.Body);
+		
 		}
      
 		private IEnumerator HandleSpeak(IAction speakAction)

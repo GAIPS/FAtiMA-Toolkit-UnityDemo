@@ -96,6 +96,7 @@ public class SingleCharacterDemo : MonoBehaviour
     private GameObject _finalScore;
     public Dictionary<string,string> alreadyUsedDialogs;
     private bool Initialized;
+
      
     // Use this for initialization
     private IEnumerator Start()
@@ -357,11 +358,11 @@ public class SingleCharacterDemo : MonoBehaviour
                     
                     possibleOptions = newOptions.Concat(additionalOptions).Shuffle();
 
-                    if (alreadyUsedDialogs.Count() > 10 & possibleOptions.Count() <5)
+                    if (alreadyUsedDialogs.Count() > 12 & possibleOptions.Count() <6)
                     {
                        
                       var ClosureOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Closure").Shuffle().Take(1).ToList();
-                        Debug.Log("Closure" + ClosureOptions.FirstOrDefault().Utterance);
+                        
                         possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle();
                     }
                 }

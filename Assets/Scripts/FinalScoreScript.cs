@@ -34,7 +34,7 @@ public class FinalScoreScript : MonoBehaviour
             int I = score.GetComponent<ScoreManager>().getInformation();
             int T = score.GetComponent<ScoreManager>().getTruth();
         
-            ret += "Suspect Aggression level: " + A + "\n";
+            ret += "Question's Aggression level: " + A + "\n";
             ret += "Information obtained: " + I + "\n";
             ret += "Truth: " + T + "\n";
 

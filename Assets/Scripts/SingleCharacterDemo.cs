@@ -316,7 +316,7 @@ public class SingleCharacterDemo : MonoBehaviour
         var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
         var possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
 
-
+        var originalPossibleActions = possibleOptions;
 
         if (!possibleOptions.Any())
         {
@@ -350,14 +350,20 @@ public class SingleCharacterDemo : MonoBehaviour
                
                  
                     var additionalOptions =
-                        _iat.GetDialogueActionsByState(IATConsts.PLAYER, GetNextPJState(state.ToString()))
-                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
+                        _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Start")
+                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
                             .Shuffle()
                             .Take(2);
                     
                     possibleOptions = newOptions.Concat(additionalOptions).Shuffle();
-                   
 
+                    if (alreadyUsedDialogs.Count() > 10 & possibleOptions.Count() <5)
+                    {
+                       
+                      var ClosureOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Closure").Shuffle().Take(1).ToList();
+                        Debug.Log("Closure" + ClosureOptions.FirstOrDefault().Utterance);
+                        possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle();
+                    }
                 }
             }
         
@@ -404,7 +410,7 @@ public class SingleCharacterDemo : MonoBehaviour
             
 
         }
-        return "Closure";
+        return "Start";
     }
     private void InstantiateScore()
     {

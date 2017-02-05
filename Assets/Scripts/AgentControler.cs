@@ -247,7 +247,7 @@ namespace Assets.Scripts
 			}
 		    if (nextState.ToString() == "Disconnect")
 		    {
-                Debug.Log("End");
+               
 		        this.End();
 		    }
 		    m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });

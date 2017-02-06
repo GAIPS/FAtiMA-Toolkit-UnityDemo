@@ -1267,7 +1267,7 @@
 					"Utterance": "Do you have any problem talking to us?"
 				}, 
 				{
-					"CurrentState": "WifeSpecific",
+					"CurrentState": "TalkAboutItSpecific",
 					"NextState": "F9",
 					"Meaning": ["ContextNeeded"],
 					"Style": [],
@@ -1456,7 +1456,7 @@
 					"Utterance": "You were notified to come here, because we've something to clarify and we need your help. I'm going to ask you some questions and expect you answer me."
 				}, 
 				{
-					"CurrentState": "FreeRecall",
+					"CurrentState": "Closure",
 					"NextState": "Failure",
 					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
@@ -2153,8 +2153,8 @@
 					"NextState": "SexualRelationsSpecfic",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
-					"Utterance": "Yes, it is. The kids weren't at home, four \"pf\", we have to take advantage and fuck.",
-					"UtteranceId": "TTS-9A65F31100ABD4E9713B80390144003C"
+					"Utterance": "Yes. The kids weren't at home, four \"pf\", we have to take advantage and fuck.",
+					"UtteranceId": "TTS-21D9DE7EB6FAA4CBF8D601C94F17A7DD"
 				}, 
 				{
 					"CurrentState": "Q16",
@@ -2806,7 +2806,7 @@
 				}, 
 				{
 					"CurrentState": "F9",
-					"NextState": "FoodSpecific",
+					"NextState": "Start",
 					"Meaning": ["Informative(0)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "No, I still don't know why I'm here.",
@@ -2814,7 +2814,7 @@
 				}, 
 				{
 					"CurrentState": "F8",
-					"NextState": "CowSpecific",
+					"NextState": "TalkAboutItSpecific",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
 					"Utterance": "There are scenes that are ours…A guy doesn't come here and starts talking about…",

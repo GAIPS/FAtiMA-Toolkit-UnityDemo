@@ -353,8 +353,8 @@ public class SingleCharacterDemo : MonoBehaviour
                     var additionalOptions =
                         _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Start")
                             .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
-                            .Shuffle()
-                            .Take(2);
+                            .Take(2)
+                            .Shuffle();
                     
                     possibleOptions = newOptions.Concat(additionalOptions).Shuffle();
 

@@ -3511,7 +3511,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1333213832}
   m_HandleRect: {fileID: 1333213831}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3583,9 +3583,13 @@ MonoBehaviour:
   m_dialogController: {fileID: 433526443}
   m_bodies:
   - BodyName: Female
-    CharaterArchtype: {fileID: 11479282, guid: c29bf72af6e12f74db5fe439b7b2d7d7, type: 2}
+    CharaterArchtype: {fileID: 114032766617856860, guid: 4244c7f92a280a543a9ac782ec62c0c8,
+      type: 2}
   - BodyName: Female-2D
     CharaterArchtype: {fileID: 114000012784329970, guid: 31603eb50fba6f44ababe4399bc981c0,
+      type: 2}
+  - BodyName: Male
+    CharaterArchtype: {fileID: 114032766617856860, guid: 4244c7f92a280a543a9ac782ec62c0c8,
       type: 2}
   m_dialogButtonArchetype: {fileID: 11411466, guid: a6dcc26afc01649428e68538c726131f,
     type: 2}

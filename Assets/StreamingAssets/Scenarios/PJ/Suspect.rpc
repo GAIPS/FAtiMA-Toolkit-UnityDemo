@@ -27,7 +27,7 @@
 							"MoodInfluenceOnEmotionFactor": 0.3,
 							"MinimumMoodValueForInfluencingEmotions": 0.5,
 							"EmotionalHalfLifeDecayTime": 15,
-							"MoodHalfLifeDecayTime": 60
+							"MoodHalfLifeDecayTime": 600
 						}
 				},
 			"AutobiographicMemory":

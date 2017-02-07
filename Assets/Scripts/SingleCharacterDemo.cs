@@ -20,7 +20,7 @@ public class SingleCharacterDemo : MonoBehaviour
     {
         public readonly string ScenarioPath;
         public readonly string TTSFolder;
-       
+
         private IntegratedAuthoringToolAsset _iat;
 
         public IntegratedAuthoringToolAsset IAT { get { return _iat; } }
@@ -29,7 +29,7 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             ScenarioPath = path;
             TTSFolder = tts;
-          
+
             _iat = IntegratedAuthoringToolAsset.LoadFromFile(ScenarioPath);
         }
     }
@@ -52,7 +52,7 @@ public class SingleCharacterDemo : MonoBehaviour
     private BodyType[] m_bodies;
 
 
-  
+
 
 
     [Space]
@@ -94,10 +94,10 @@ public class SingleCharacterDemo : MonoBehaviour
     private IntegratedAuthoringToolAsset _iat;
     private AgentControler _agentController;
     private GameObject _finalScore;
-    public Dictionary<string,string> alreadyUsedDialogs;
+    public Dictionary<string, string> alreadyUsedDialogs;
     private bool Initialized;
 
-     
+
     // Use this for initialization
     private IEnumerator Start()
     {
@@ -201,16 +201,16 @@ public class SingleCharacterDemo : MonoBehaviour
             var rpc = RolePlayCharacterAsset.LoadFromFile(source.Source);
             rpc.LoadAssociatedAssets();
             _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
-            AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(), 
+            AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(),
                 () =>
                 {
-                   var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
-                   _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
-                StopAllCoroutines();
-                _agentController.storeFinalScore(_finalScore);
-                _agentController.Start(this, VersionMenu);
-                InstantiateScore();
-            });
+                    var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
+                    _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
+                    StopAllCoroutines();
+                    _agentController.storeFinalScore(_finalScore);
+                    _agentController.Start(this, VersionMenu);
+                    InstantiateScore();
+                });
         }
         AddButton("Back to Scenario Selection Menu", () =>
         {
@@ -269,14 +269,14 @@ public class SingleCharacterDemo : MonoBehaviour
         StartCoroutine(PlayerReplyAction(actionFormat, reply.NextState));
         UpdateScore(reply);
 
-        alreadyUsedDialogs.Add(reply.Utterance,reply.UtteranceId);
+        alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
 
     }
 
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
     {
         const float WAIT_TIME = 0.5f;
-        _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER,replyActionName,_agentController.RPC.CharacterName.ToString()).ToString());
+        _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         _agentController.AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF").ToString());
@@ -295,7 +295,6 @@ public class SingleCharacterDemo : MonoBehaviour
 
         if (_agentController.getJustReplied())
         {
-
             UpdateScore(_agentController.getReply());
         }
 
@@ -327,55 +326,33 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             if (PJScenario)
             {
-
                 if (!Initialized)
                 {
-
-                    var newOptions =
-                        possibleOptions.Shuffle().Where(x => x.CurrentState == "Start").Take(3).ToList();
+                    var newOptions = possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE).Take(3).Shuffle().ToList();
 
                     newOptions.AddRange(_iat.GetDialogueActionsByState(IATConsts.PLAYER, "Introduction"));
                     possibleOptions = newOptions;
-
                 }
                 else
                 {
+                    var newOptions = possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance)).Shuffle().Take(3).ToList();
 
+                    var additionalOptions =  _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Start")
+                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x)).Shuffle().Take(2);
 
-                    
-
-
-                    var newOptions = possibleOptions.Where(x=>!alreadyUsedDialogs.ContainsKey(x.Utterance) ).Shuffle().Take(3).ToList();
-
-
-               
-                 
-                    var additionalOptions =
-                        _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Start")
-                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
-                            .Shuffle()
-                            .Take(2);
-                    
                     possibleOptions = newOptions.Concat(additionalOptions).Shuffle();
 
-                    if (alreadyUsedDialogs.Count() > 12 & possibleOptions.Count() <6)
+                    if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
                     {
-                       
-                      var ClosureOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Closure").Shuffle().Take(1).ToList();
-                        
+                        var ClosureOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Closure").Take(1).ToList();
+
                         possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle();
                     }
                 }
             }
-        
-
-    
-
-            }
-            UpdateButtonTexts(false, possibleOptions);
         }
-    
-
+        UpdateButtonTexts(false, possibleOptions);
+    }
 
     private void LateUpdate()
     {
@@ -386,8 +363,6 @@ public class SingleCharacterDemo : MonoBehaviour
 
     private string GetNextPJState(string currentState)
     {
-
-
         switch (currentState)
         {
             case "Start":
@@ -403,21 +378,19 @@ public class SingleCharacterDemo : MonoBehaviour
             case "Greeting":
                 return "Start";
             case "CowSpecific":
-                return "Start";
+                return "FreeRecall";
             case "FreeRecall":
                 return "Questioning";
             case "Questioning":
                 return "Closure";
-            
-
+            default: return "FreeRecall";
         }
-        return "Start";
     }
     private void InstantiateScore()
     {
 
         score = Instantiate(ScoreTextPrefab);
-       
+
         var t = score.transform;
         t.SetParent(m_scoreZone, false);
 
@@ -426,14 +399,14 @@ public class SingleCharacterDemo : MonoBehaviour
             var obj = GameObject.FindGameObjectWithTag("Score");
             obj.GetComponent<ScoreManager>().SetPJ(true);
             obj.GetComponent<ScoreManager>().Refresh();
-          
+
         }
     }
 
     public void UpdateScore(DialogueStateActionDTO reply)
     {
 
-     
+
         foreach (var meaning in reply.Meaning)
         {
 
@@ -447,11 +420,11 @@ public class SingleCharacterDemo : MonoBehaviour
         }
     }
 
-   /* private IEnumerable<DialogueStateActionDTO> HandleContext(string s)
-    {
-        IEnumerable<DialogueStateActionDTO> ret =
+    /* private IEnumerable<DialogueStateActionDTO> HandleContext(string s)
+     {
+         IEnumerable<DialogueStateActionDTO> ret =
 
-    }*/
+     }*/
 
 
     private void HandleKeywords(string s)
@@ -461,7 +434,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
         string[] result = s.Split(delimitedChars);
 
-    
+
 
         if (result.Length > 1)
 
@@ -481,32 +454,33 @@ public class SingleCharacterDemo : MonoBehaviour
                         score.GetComponent<ScoreManager>().addTruth(Int32.Parse(result[1]));
                         break;
 
-                   }
+                }
             }
-           else  switch (result[0])
-            {
-                case "Inquire":
-                    score.GetComponent<ScoreManager>().AddI(Int32.Parse(result[1]));
-                    break;
+            else
+                switch (result[0])
+                {
+                    case "Inquire":
+                        score.GetComponent<ScoreManager>().AddI(Int32.Parse(result[1]));
+                        break;
 
-                case "FAQ":
-                    score.GetComponent<ScoreManager>().AddF(Int32.Parse(result[1]));
-                    break;
+                    case "FAQ":
+                        score.GetComponent<ScoreManager>().AddF(Int32.Parse(result[1]));
+                        break;
 
-                case "Closure":
-                    score.GetComponent<ScoreManager>().AddC(Int32.Parse(result[1]));
-                    break;
+                    case "Closure":
+                        score.GetComponent<ScoreManager>().AddC(Int32.Parse(result[1]));
+                        break;
 
-                case "Empathy":
-                    score.GetComponent<ScoreManager>().AddE(Int32.Parse(result[1]));
-                    break;
+                    case "Empathy":
+                        score.GetComponent<ScoreManager>().AddE(Int32.Parse(result[1]));
+                        break;
 
-                case "Polite":
-                    score.GetComponent<ScoreManager>().AddP(Int32.Parse(result[1]));
-                    break;
+                    case "Polite":
+                        score.GetComponent<ScoreManager>().AddP(Int32.Parse(result[1]));
+                        break;
 
 
-            }
+                }
 
     }
 
@@ -520,8 +494,8 @@ public class SingleCharacterDemo : MonoBehaviour
     public void End()
     {
 
-       SceneManager.LoadScene(0);
-     
+        SceneManager.LoadScene(0);
+
     }
 
 }

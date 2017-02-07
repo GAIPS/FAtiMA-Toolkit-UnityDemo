@@ -4,7 +4,7 @@
 			"classId": 0,
 			"ScenarioName": "PJScenario",
 			"Description": "This is an example scenario for the use case of Policia Judiciária\r\n\r\nWe are questioning a suspect. His name is António Pedro, he is married and has 4 kids.\r\nHe works in construction",
-			"CharacterSources": ["Suspect.rpc"],
+			"CharacterSources": ["Suspect.rpc", "Sheppard.rpc"],
 			"PlayerDialogues": [
 				{
 					"CurrentState": "Closure",

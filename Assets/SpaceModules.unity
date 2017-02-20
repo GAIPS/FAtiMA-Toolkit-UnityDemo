@@ -3583,8 +3583,7 @@ MonoBehaviour:
   m_dialogController: {fileID: 433526443}
   m_bodies:
   - BodyName: Female
-    CharaterArchtype: {fileID: 114032766617856860, guid: 4244c7f92a280a543a9ac782ec62c0c8,
-      type: 2}
+    CharaterArchtype: {fileID: 11479282, guid: c29bf72af6e12f74db5fe439b7b2d7d7, type: 2}
   - BodyName: Female-2D
     CharaterArchtype: {fileID: 114000012784329970, guid: 31603eb50fba6f44ababe4399bc981c0,
       type: 2}

@@ -9,7 +9,7 @@
 				{
 					"CurrentState": "Closure",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(9)"],
 					"Utterance": "Don't worry. You're fucked up and will get rot for the rest of your life in the dungeons!"
 				}, 
@@ -17,76 +17,83 @@
 					"CurrentState": "Closure",
 					"NextState": "End",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Some formal police acts will take place furtheron, such as collecting fingerprints and DNA samples. Please wait a bit, we'll come back to you soon."
 				}, 
 				{
 					"CurrentState": "Closure",
 					"NextState": "End",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Previously to elaborating the report we have to summarize your declarations. Feel free to clarify any information that you think important or add some details we haven't asked you about."
 				}, 
 				{
 					"CurrentState": "Closure",
 					"NextState": "End",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "We're almost at the end. We'll make a report of what you told us and you have to sign with us."
+				}, 
+				{
+					"CurrentState": "Closure",
+					"NextState": "Q99",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Take it easy. We're almost finishing."
 				}, 
 				{
 					"CurrentState": "GirlRelationshipSpecific",
 					"NextState": "Q98",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Of course"
 				}, 
 				{
 					"CurrentState": "GirlRelationshipSpecific",
 					"NextState": "Q97",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Did you have the same type of relationship?"
 				}, 
 				{
 					"CurrentState": "DontRememberSpecific",
 					"NextState": "Q96",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Before your current wife, were there others?"
 				}, 
 				{
 					"CurrentState": "DontRememberSpecific",
 					"NextState": "Q95",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Don't you remember?"
 				}, 
 				{
 					"CurrentState": "GirlRelationshipSpecific",
 					"NextState": "Q94",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "And the same kind of relationship?"
 				}, 
 				{
 					"CurrentState": "SexViolentSpecific",
 					"NextState": "Q93",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Did you have other girlfriends that accepted well this kind of relationship?"
 				}, 
 				{
 					"CurrentState": "SexViolentSpecific",
 					"NextState": "Q92",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Were your sexual relations always like this? Even when you were dating?"
 				}, 
 				{
 					"CurrentState": "SexViolentSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(2)"],
 					"Utterance": "Sex normally gets violent. Women like to be slapped. Everyone likes it, but they don't tell."
 				}, 
@@ -94,307 +101,307 @@
 					"CurrentState": "IdeaSpecific",
 					"NextState": "Q91",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Do you think it was your wife's idea or Mrs Miquelina's?"
 				}, 
 				{
 					"CurrentState": "PoliceatHouseSpecific",
 					"NextState": "Q90",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "How can you explain that the Police was at your home yesterday?"
 				}, 
 				{
 					"CurrentState": "TogetherSpecific",
 					"NextState": "Q89",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "You've told us that Lay's in tune with you in those matters. She likes what you do together and asks for more."
 				}, 
 				{
 					"CurrentState": "DoorBrokenSpecific",
 					"NextState": "Q88",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "So the door was broken, is it?"
 				}, 
 				{
 					"CurrentState": "ComeBackSpecific",
 					"NextState": "Q87",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "You've told us that when you came back home, your wife was not there. How can it be, if the door was locked?"
 				}, 
 				{
 					"CurrentState": "GipsiesSpecific",
 					"NextState": "Q86",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "You did an odd job for a Gipsy, is it?"
 				}, 
 				{
 					"CurrentState": "GipsiesSpecific",
 					"NextState": "Q85",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "So you work for Gipsies?"
 				}, 
 				{
 					"CurrentState": "YesterdayOddJobSpecific",
 					"NextState": "Q84",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Can you tell us where was it? Don't you know the address?"
 				}, 
 				{
 					"CurrentState": "YesterdayOddJobSpecific",
 					"NextState": "Q83",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "So late?"
 				}, 
 				{
 					"CurrentState": "JokeSpecific",
 					"NextState": "Q82",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "You told us you had something to do, what was it? Can you explain?"
 				}, 
 				{
 					"CurrentState": "JokeSpecific",
 					"NextState": "Q81",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "What do you mean?"
 				}, 
 				{
 					"CurrentState": "WifeFuckingSpecific",
 					"NextState": "Q80",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Another question, you told us that your wife agreed with everything you did. So I ask you, why was she found locked in your bedroom?"
 				}, 
 				{
 					"CurrentState": "WifeFuckingSpecific",
 					"NextState": "Q79",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "You 've told us that your wife likes fucking. And you how do you like it?"
 				}, 
 				{
 					"CurrentState": "WifeFuckingSpecific",
 					"NextState": "Q78",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "We're here to help."
 				}, 
 				{
 					"CurrentState": "BeerSpecific",
 					"NextState": "Q77",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "And Lay? How was she?"
 				}, 
 				{
 					"CurrentState": "BeerSpecific",
 					"NextState": "Q76",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Did you stop the sexual practice?"
 				}, 
 				{
 					"CurrentState": "ComeOnSpecific",
 					"NextState": "Q75",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "You had a beer late in the afternoon. Did it take so long?"
 				}, 
 				{
 					"CurrentState": "TimeAboutSpecific",
 					"NextState": "Q74",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "And that takes some time, you've told us…"
 				}, 
 				{
 					"CurrentState": "ComeAboutSpecific",
 					"NextState": "Q73",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Having gone to the bedroom, you had the practices that you've explained, did you tie her up meanwhile?"
 				}, 
 				{
 					"CurrentState": "ComeAboutSpecific",
 					"NextState": "Q72",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Did you embrace her and carried her on your arms?"
 				}, 
 				{
 					"CurrentState": "YesterdayMoodSpecific",
 					"NextState": "Q71",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "How was your mood yesterday? How did it come about?"
 				}, 
 				{
 					"CurrentState": "LongSpecific",
 					"NextState": "Q70",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "But you hold on long, don't you?"
 				}, 
 				{
 					"CurrentState": "LongSpecific",
 					"NextState": "Q69",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "How long do your sexual practices take?"
 				}, 
 				{
 					"CurrentState": "LongSpecific",
 					"NextState": "Q68",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "More or less."
 				}, 
 				{
 					"CurrentState": "PeeSpecific",
 					"NextState": "Q67",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "And again in what refers to your sexual practices, do they take long? For how long do you like being involved?"
 				}, 
 				{
 					"CurrentState": "PeeSpecific",
 					"NextState": "Q66",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Can it be your pee? Is it yours or not?"
 				}, 
 				{
 					"CurrentState": "StopSpecific",
 					"NextState": "Q65",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Our colleagues told us that yesterday in your bedroom, some waste was found, together with some pee and other things. What are the things you use in your relations?"
 				}, 
 				{
 					"CurrentState": "StopSpecific",
 					"NextState": "Q64",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "In your point of view, is this normal?"
 				}, 
 				{
 					"CurrentState": "StopSpecific",
 					"NextState": "Q63",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Wouldn't you?"
 				}, 
 				{
 					"CurrentState": "NoMeansYesSpecific",
 					"NextState": "Q62",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Didn't she tell you to stop?"
 				}, 
 				{
 					"CurrentState": "NoMeansYesSpecific",
 					"NextState": "Q61",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "What happened?"
 				}, 
 				{
 					"CurrentState": "ExcitedSpecific",
 					"NextState": "Q60",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Yesterday during your practices did she ever ask you to stop?"
 				}, 
 				{
 					"CurrentState": "ExcitedSpecific",
 					"NextState": "Q59",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Feel at ease with us…"
 				}, 
 				{
 					"CurrentState": "ExcitedSpecific",
 					"NextState": "Q58",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Apart from beating her, what else did you do?"
 				}, 
 				{
 					"CurrentState": "WantSpecific",
 					"NextState": "Q57",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Was that the case yesterday?"
 				}, 
 				{
 					"CurrentState": "BlameSpecific",
 					"NextState": "Q56",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Mr António, you've told us that she's accepted all your practices."
 				}, 
 				{
 					"CurrentState": "BlameSpecific",
 					"NextState": "Q55",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Mr António…"
 				}, 
 				{
 					"CurrentState": "MovieSpecific",
 					"NextState": "Q54",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "No, we're not."
 				}, 
 				{
 					"CurrentState": "SlamSpecific",
 					"NextState": "Q53",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Besides beating her, what other practices do you have with her? Apart from the three plates…"
 				}, 
 				{
 					"CurrentState": "SlamSpecific",
 					"NextState": "Q52",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "But does she ask for it?"
 				}, 
 				{
 					"CurrentState": "TalkingAboutSpecific",
 					"NextState": "Q51",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Is it all? Don't you do other things?"
 				}, 
 				{
 					"CurrentState": "TalkingAboutSpecific",
 					"NextState": "Q50",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "That's what I was trying to know."
 				}, 
 				{
 					"CurrentState": "TalkingAboutSpecific",
 					"NextState": "Q49",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Yes, I am."
 				}, 
 				{
 					"CurrentState": "RememberSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "We know you're a beast and tie her with electric wires. That you burn her with cigarette butts. You're a perfect asshole."
 				}, 
@@ -402,251 +409,251 @@
 					"CurrentState": "RememberSpecific",
 					"NextState": "Q48",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Wasn't Lay yesterday lying on the bed at home? Wasn't she tied? Didn't you use something to tie her?"
 				}, 
 				{
 					"CurrentState": "AgreedSpecific",
 					"NextState": "Q47",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Are you sure?"
 				}, 
 				{
 					"CurrentState": "AgreedSpecific",
 					"NextState": "Q46",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Make an effort."
 				}, 
 				{
 					"CurrentState": "3PlatesSpecific",
 					"NextState": "Q45",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Besides the three plates, what else did you do yesterday?"
 				}, 
 				{
 					"CurrentState": "3PlatesSpecific",
 					"NextState": "Q44",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Do you like to do something with our wifethat maybe she doesn't agree with? Or has she always accepted everything you did with her?"
 				}, 
 				{
 					"CurrentState": "SexualPracticeSpecific",
 					"NextState": "Q43",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "You've told us that you enjoy the three plates. Besides these, with Lay do you have other sexual practices?"
 				}, 
 				{
 					"CurrentState": "KidsAtHomeSpecific",
 					"NextState": "Q42",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "In the evening? Who brought them there?"
 				}, 
 				{
 					"CurrentState": "KidsHomeSpecific",
 					"NextState": "Q41",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Were your kids alone at home yesterday?"
 				}, 
 				{
 					"CurrentState": "LayHomeSpecific",
 					"NextState": "Q40",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "So, where could she be?"
 				}, 
 				{
 					"CurrentState": "TimeHomeSpecific",
 					"NextState": "Q39",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Was Lay there?"
 				}, 
 				{
 					"CurrentState": "TimeHomeSpecific",
 					"NextState": "Q38",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Was it late?"
 				}, 
 				{
 					"CurrentState": "TimeHomeSpecific",
 					"NextState": "Q37",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "More or less."
 				}, 
 				{
 					"CurrentState": "ClubSpecific",
 					"NextState": "Q36",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "So, you had to go out. Do you know what time you went home?"
 				}, 
 				{
 					"CurrentState": "PoliceHomeSpecific",
 					"NextState": "Q35",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "So when did you know that the Police was at your home?"
 				}, 
 				{
 					"CurrentState": "HomeSpecific",
 					"NextState": "Q34",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "You've told us that you spent the afternoon with your wife, that you had sexual relations and then you went out to have a beer. Is it?"
 				}, 
 				{
 					"CurrentState": "HomeSpecific",
 					"NextState": "Q33",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Does it have anything to do with the Police going to your home yesterday?"
 				}, 
 				{
 					"CurrentState": "UnderstandSpecific",
 					"NextState": "Q32",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "But did Lay complain yesterday?"
 				}, 
 				{
 					"CurrentState": "UnderstandSpecific",
 					"NextState": "Q31",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Has she complained?"
 				}, 
 				{
 					"CurrentState": "UnderstandSpecific",
 					"NextState": "Q30",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Has your wife ever complained about your sexual practices?"
 				}, 
 				{
 					"CurrentState": "QuestionsSpecific",
 					"NextState": "Q29",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "These questions are made in order to know if Lay understands sex the way you do."
 				}, 
 				{
 					"CurrentState": "HeadacheSpecific",
 					"NextState": "Q28",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Did she?"
 				}, 
 				{
 					"CurrentState": "HeadacheSpecific",
 					"NextState": "Q27",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Did she accept it yesterday?"
 				}, 
 				{
 					"CurrentState": "HeadacheSpecific",
 					"NextState": "Q26",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "And does your wife accept that?"
 				}, 
 				{
 					"CurrentState": "PlateSpecific",
 					"NextState": "Q25",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "That's what I'm asking you about. So, besides the normal plate…"
 				}, 
 				{
 					"CurrentState": "PlateSpecific",
 					"NextState": "Q24",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "I know, but is it always like that? It seems that you are a guy that knows more than just that sexual practice."
 				}, 
 				{
 					"CurrentState": "ApproachSpecific",
 					"NextState": "Q23",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "But exactly how do you make sex? Is it vaginal sex?"
 				}, 
 				{
 					"CurrentState": "ApproachSpecific",
 					"NextState": "Q22",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "But can you tell us a little bit more?"
 				}, 
 				{
 					"CurrentState": "ApproachSpecific",
 					"NextState": "Q21",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "How do you approach a girl normally?"
 				}, 
 				{
 					"CurrentState": "ApproachSpecific",
 					"NextState": "Q20",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Imagine, Mr. António, if it were not your wife, but somebody else, how would you do it?"
 				}, 
 				{
 					"CurrentState": "ApproachSpecific",
 					"NextState": "Q19",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Ok. Now that we are just three here, how do you approach the situation? How do you get involved?"
 				}, 
 				{
 					"CurrentState": "SexualRelationsSpecfic",
 					"NextState": "Q18",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "My colleague intends to know if something strange happened yersterday when you were having relations."
 				}, 
 				{
 					"CurrentState": "SexualRelationsSpecfic",
 					"NextState": "Q17",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "So you had sexual relations yesterday, is it?"
 				}, 
 				{
 					"CurrentState": "SexualRelationsSpecfic",
 					"NextState": "Q16",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "So what do you mean by that?"
 				}, 
 				{
-					"CurrentState": "Questioning",
+					"CurrentState": "Start",
 					"NextState": "Q15",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Did you have sexual relations yesterday?"
 				}, 
 				{
 					"CurrentState": "WifePoliceHomeSpecific",
 					"NextState": "Q14",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Possibly something happened that you can explain. You were with your wife at home in the afternoon and probably something happened there. And then the Police came."
 				}, 
 				{
 					"CurrentState": "WifePoliceHomeSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(6)"],
 					"Utterance": "You're pretending that we're stupid. Don't you understand what's going on?"
 				}, 
@@ -654,14 +661,14 @@
 					"CurrentState": "WifePoliceHomeSpecific",
 					"NextState": "Q13",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Lay was there with you at home and may have called the Police…"
 				}, 
 				{
 					"CurrentState": "PoliceHomeSpecific",
 					"NextState": "Q12",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Did the Police contact you?"
 				}, 
 				{
@@ -675,815 +682,999 @@
 					"CurrentState": "PoliceHomeSpecific",
 					"NextState": "Q10",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "You've known that the Police went to your home."
 				}, 
 				{
 					"CurrentState": "PoliceHomeSpecific",
 					"NextState": "Q9",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "But weren't you there when the Police went to your home yesterday?"
 				}, 
 				{
 					"CurrentState": "PoliceHomeSpecific",
 					"NextState": "Q8",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Can you tell us something about yesterday? What happened?"
 				}, 
 				{
 					"CurrentState": "PoliceHomeSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(8)"],
 					"Utterance": "You're lying to us. We are not patient anymore. Tell us the truth right now!"
 				}, 
 				{
-					"CurrentState": "Questioning",
+					"CurrentState": "Start",
 					"NextState": "Q7",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Have you heard that the Police was at your home yesterday?"
 				}, 
 				{
 					"CurrentState": "HomeYesterdaySpecific",
 					"NextState": "Q6",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Ok, everything normal."
 				}, 
 				{
 					"CurrentState": "HomeYesterdaySpecific",
 					"NextState": "Q5",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "And how was it at home? Was there a problem or was it as usual?"
 				}, 
 				{
 					"CurrentState": "YesterdayTimeSpecific",
 					"NextState": "Q4",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Was it in the evening?"
 				}, 
 				{
 					"CurrentState": "YesterdaySpecific",
 					"NextState": "Q3",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "What time did you arrive home yesterday? Have you an idea?"
 				}, 
 				{
 					"CurrentState": "YesterdaySpecific",
 					"NextState": "Q2",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "When you came home yesterday was your wife there?"
 				}, 
 				{
 					"CurrentState": "Questioning",
 					"NextState": "Q1",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "We have been talking, but there's something I haven't asked, it's your wife's name."
 				}, 
 				{
 					"CurrentState": "TmeSpecific",
-					"NextState": "F74",
+					"NextState": "F82",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "But as you didn't mention the time when you came back."
 				}, 
 				{
 					"CurrentState": "OddJobSpecific",
-					"NextState": "F73",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F81",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Can you tell me about your day yesterday? You stayed with your wife at home, and did you have lunch together?"
 				}, 
 				{
 					"CurrentState": "OddJobSpecific",
-					"NextState": "F72",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F80",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "At about what time did your children go home yesterday?"
 				}, 
 				{
 					"CurrentState": "OddJobSpecific",
-					"NextState": "F71",
+					"NextState": "F79",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
+					"Utterance": "Mrs. Miquelina…"
+				}, 
+				{
+					"CurrentState": "OddJobSpecific",
+					"NextState": "F78",
+					"Meaning": [],
+					"Style": [],
 					"Utterance": "Were the children with you yesterday?"
 				}, 
 				{
 					"CurrentState": "OddJobSpecific",
-					"NextState": "F70",
+					"NextState": "F77",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "How about your wife? Was she there with you or did she go to work?"
 				}, 
 				{
 					"CurrentState": "StrangeSpecific",
-					"NextState": "F69",
+					"NextState": "F76",
 					"Meaning": [],
 					"Style": ["Aggression(2)"],
 					"Utterance": "We haven't told you it was strange. 'Here we speak with a lot of people and not all of them are equal. That's why in our opinion these questions are normal. Don't you agree?"
 				}, 
 				{
 					"CurrentState": "WineSpecific",
-					"NextState": "F68",
+					"NextState": "F75",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Coming to that point, we'd like to know about it."
 				}, 
 				{
 					"CurrentState": "WhySpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(8)"],
 					"Utterance": "Be careful with us. We don't like your conversation. This is the last time you talk to us with these manners. Do you get it?"
 				}, 
 				{
 					"CurrentState": "WhySpecific",
-					"NextState": "F67",
+					"NextState": "F74",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "We'll tell you very soon."
 				}, 
 				{
 					"CurrentState": "OddJobSpecific",
-					"NextState": "F66",
-					"Meaning": [],
+					"NextState": "F73",
+					"Meaning": ["ContextFree"],
 					"Style": ["Aggression(1)"],
 					"Utterance": "You know that the Police deals with many things in society and today we are dealing with something that you can tell us about."
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F65",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"CurrentState": "Start",
+					"NextState": "F72",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Did you go to work yesterday? Or did you stay at home? We know you get some odd jobs..."
 				}, 
 				{
 					"CurrentState": "WifeSexualRefusalSpecfic",
-					"NextState": "F64",
+					"NextState": "F71",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
+					"Utterance": "No? Was it normal as before?"
+				}, 
+				{
+					"CurrentState": "WifeSexualRefusalSpecfic",
+					"NextState": "F70",
+					"Meaning": [],
+					"Style": [],
 					"Utterance": "In the last few days did it happen anything about sexual issues that led you to think she didn't want and that you thought she should keep to her role?"
 				}, 
 				{
 					"CurrentState": "WifeSexualRefusalSpecfic",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "Is it in these occasions that you beat her up? You have been trapped now. Tell us the truth immediately."
 				}, 
 				{
 					"CurrentState": "WifeSexualRefusalSpecfic",
-					"NextState": "F63",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F69",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "So?"
 				}, 
 				{
 					"CurrentState": "WifeSexualRefusalSpecfic",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "We are sick and tired of listening to you. You haven't scored the point yet!"
 				}, 
 				{
 					"CurrentState": "WifeSexualSpecfic",
-					"NextState": "F62",
+					"NextState": "F68",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "How would you react if your wife refused? Or has this situation ever happened?"
 				}, 
 				{
 					"CurrentState": "WifeSexualSpecfic",
-					"NextState": "F61",
+					"NextState": "F67",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Has your wife ever refused to have relations with you? I've understood that you like to mark your position, but has your wife ever told you \"no not today I'm not feeling like it today, António\""
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F60",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"CurrentState": "Start",
+					"NextState": "F66",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "If you are thirsty, I' ll get you some water soon."
 				}, 
 				{
 					"CurrentState": "WifeSexualSpecfic",
-					"NextState": "F59",
+					"NextState": "F65",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Still referring to your wife and this subject we're talking about…"
 				}, 
 				{
 					"CurrentState": "WifeSexualSpecfic",
-					"NextState": "F58",
+					"NextState": "F64",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "But doesn't she …"
 				}, 
 				{
 					"CurrentState": "SexualSpecific",
-					"NextState": "F57",
+					"NextState": "F63",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "So do you have anyting to complain about in this respect?"
 				}, 
 				{
-					"CurrentState": "WifeSexualRelationShipSpecific",
-					"NextState": "F56",
+					"CurrentState": "SexualSpecific",
+					"NextState": "F62",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
-					"Utterance": "And your wife? How's your sexual relationship?"
+					"Style": [],
+					"Utterance": "What my colleague wants to know is if your wife fulfills her function."
 				}, 
 				{
-					"CurrentState": "WifeSexualRelationShipSpecific",
-					"NextState": "F55",
+					"CurrentState": "WifeRelationShipSpecific",
+					"NextState": "F61",
+					"Meaning": ["ContextFree"],
+					"Style": [],
+					"Utterance": "And your wife? How's your relationship?"
+				}, 
+				{
+					"CurrentState": "NotGoodSpecific",
+					"NextState": "F60",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": ["Aggression(2)"],
+					"Utterance": "No, you were saying that the wife should take care of the chidren and have a purpose that, as I understood, is for…"
+				}, 
+				{
+					"CurrentState": "WifeRelationShipSpecific",
+					"NextState": "F59",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "In your opinion as regards to the sexual aspect, do you have a good relationship with your wife?"
 				}, 
 				{
 					"CurrentState": "ThingsSpecific",
-					"NextState": "F54",
+					"NextState": "F58",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "I want you to explain. Do you have a good relationship with your wife in what concerns the aspect you are suggesting, sexual?"
 				}, 
 				{
 					"CurrentState": "ThingsSpecific",
-					"NextState": "F53",
+					"NextState": "F57",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Things? You are a man, tell about it."
 				}, 
 				{
 					"CurrentState": "PurposeSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["Failure"],
+					"Style": [],
 					"Utterance": "We agree. Women are there to take care of the home, children and serve the males…"
 				}, 
 				{
 					"CurrentState": "PurposeSpecific",
-					"NextState": "F52",
+					"NextState": "F56",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Please explain it better, what to you mean by purpose?"
 				}, 
 				{
 					"CurrentState": "DrinkingSpecific",
-					"NextState": "F51",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F55",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Ok, tell me a bit more about your life. When you drink wine, are you with your wife? Do you share these moments together?"
 				}, 
 				{
 					"CurrentState": "DrinkingSpecific",
-					"NextState": "F50",
+					"NextState": "F54",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
+					"Utterance": "Yes"
+				}, 
+				{
+					"CurrentState": "DrinkingSpecific",
+					"NextState": "F53",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "You told us you like to enjoy life and … and drink a bit …"
 				}, 
 				{
 					"CurrentState": "OdlySpecific",
-					"NextState": "F49",
+					"NextState": "F52",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "So you have no relationship with your neighbour?"
 				}, 
 				{
 					"CurrentState": "OdlySpecific",
-					"NextState": "F48",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F51",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "How did it happen? Was it a neighbour that called the Police?"
 				}, 
 				{
 					"CurrentState": "OldSayingSpecific",
-					"NextState": "F47",
+					"NextState": "F50",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Some old sayings show more truthfulness than others. As my colleague was telling you about, you had those two situations with your wife, and in your opinion these situations should not be approached by the Police…"
 				}, 
 				{
 					"CurrentState": "OldSayingSpecific",
-					"NextState": "F46",
+					"NextState": "F49",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "It's an old saying."
 				}, 
 				{
 					"CurrentState": "FilmingSpecific",
-					"NextState": "F45",
+					"NextState": "F48",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "We're speaking about your life. And then?"
 				}, 
 				{
 					"CurrentState": "FilmingSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "Are you pretending to be an angel? \n Do you take us for the blind?"
 				}, 
 				{
 					"CurrentState": "FilmingSpecific",
-					"NextState": "F44",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F47",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "So you become uncomfortable when she starts speaking to you about it."
 				}, 
 				{
 					"CurrentState": "FilmingSpecific",
-					"NextState": "F43",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F46",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Why do you think she makes films about you?"
 				}, 
 				{
 					"CurrentState": "ComplainSpecific",
-					"NextState": "F42",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F45",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "We would like to clarify…"
 				}, 
 				{
 					"CurrentState": "ComplainSpecific",
-					"NextState": "F41",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F44",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "And what do you tell the Police? Of course something you can tell us about."
 				}, 
 				{
 					"CurrentState": "ComplainSpecific",
-					"NextState": "F40",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F43",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Ok. At these two or three times what did they tell you at the Police?"
 				}, 
 				{
 					"CurrentState": "ComplainSpecific",
-					"NextState": "F39",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F42",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "What you've tried to tell me is that you have been called several times to the Police…"
 				}, 
 				{
-					"CurrentState": "ComplainSpecific",
-					"NextState": "F38",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"CurrentState": "BadGuySpecific",
+					"NextState": "F41",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "I get it."
 				}, 
 				{
 					"CurrentState": "BadGuySpecific",
-					"NextState": "F37",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F40",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "What kind of situations? What does she complain about?"
 				}, 
 				{
 					"CurrentState": "BadGuySpecific",
-					"NextState": "F36",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F39",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "I've been listening to you carefully and you are trying to tell us that you´ve had problems with the Police due to your wife…Can you tell us a little more about this?"
 				}, 
 				{
 					"CurrentState": "BadGuySpecific",
-					"NextState": "F35",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F38",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Please explain it better."
 				}, 
 				{
 					"CurrentState": "BadGuySpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "Your neighbours tell us that she's always crying, because you beat her. Why do you do that all the time?"
 				}, 
 				{
 					"CurrentState": "PastSpecific",
-					"NextState": "F34",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F37",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Was there a problem between you and your wife? Can you tell us?"
 				}, 
 				{
 					"CurrentState": "PastSpecific",
-					"NextState": "F33",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F36",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Soon we'll explain you about why you're here. We don't have anything to hide."
 				}, 
 				{
 					"CurrentState": "PastSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "We're the ones that ask questions, not you. You must answer quickly."
 				}, 
 				{
-					"CurrentState": "PastSpecific",
-					"NextState": "F32",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"CurrentState": "Start",
+					"NextState": "F35",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "We are here to understand what happened…"
 				}, 
 				{
-					"CurrentState": "CaretakerSpecific",
-					"NextState": "F31",
+					"CurrentState": "PastSpecific",
+					"NextState": "F34",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
+					"Utterance": "Let's go a little bit back, and talking about your wife, and I don' know if I'm using the exact right words, we got the idea that the relationship with your wife is a bit complicated. Do you mind explaining about it?"
+				}, 
+				{
+					"CurrentState": "CaretakerSpecific",
+					"NextState": "F33",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "When you arrive home, are your kids there or not?"
 				}, 
 				{
 					"CurrentState": "CaretakerSpecific",
-					"NextState": "F30",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F32",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "I was asking you these questions because earlier you were talking about your worries about your children. Who normally fetches them at school? You'd say the mother…"
 				}, 
 				{
 					"CurrentState": "CaretakerSpecific",
-					"NextState": "F29",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F31",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "So when does the caretaker finishes her task… at what time normally?"
 				}, 
 				{
 					"CurrentState": "CaretakerSpecific",
-					"NextState": "F28",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F30",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Ok..."
 				}, 
 				{
 					"CurrentState": "CaretakerSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "Let's speed up a bit. We don't care about the children. Let's talk about what really matters."
 				}, 
 				{
 					"CurrentState": "CaretakerSpecific",
-					"NextState": "F27",
+					"NextState": "F29",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
 					"Utterance": "Mrs Miquelina"
 				}, 
 				{
 					"CurrentState": "CaretakerSpecific",
-					"NextState": "F26",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F28",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "What's the name of your kid's caretaker?"
 				}, 
 				{
 					"CurrentState": "ChildrenTimeSpecific",
-					"NextState": "F25",
-					"Meaning": [],
+					"NextState": "F27",
+					"Meaning": ["ContextNeeded"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "And during that time are the children at home or at school? Who takes care of them, if in fact there's somebody taking care of them?"
 				}, 
 				{
 					"CurrentState": "TimeSpecific",
-					"NextState": "F24",
-					"Meaning": [],
+					"NextState": "F26",
+					"Meaning": ["ContextNeeded"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "But normally?"
 				}, 
 				{
 					"CurrentState": "TimeSpecific",
-					"NextState": "F23",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F25",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "In general what's your work time?"
 				}, 
 				{
 					"CurrentState": "TimeSpecific",
-					"NextState": "F22",
-					"Meaning": [],
+					"NextState": "F24",
+					"Meaning": ["ContextNeeded"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "I don't know. That's why I'm asking you about it."
 				}, 
 				{
 					"CurrentState": "TimeSpecific",
-					"NextState": "F21",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F23",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Why don't you have time? Is it because of your work schedule?"
 				}, 
 				{
 					"CurrentState": "WifeRelationShipSpecific",
-					"NextState": "F20",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F22",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Can you detail that?"
 				}, 
 				{
 					"CurrentState": "WifeRelationShipSpecific",
-					"NextState": "F19",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F21",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "And at home, how's her relationship with the kids in your opinion? Does she treat her kids, your kids well?"
 				}, 
 				{
 					"CurrentState": "WifeRelationShipSpecific",
-					"NextState": "F18",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F20",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "It seems your relationship has had better days, is it so?"
 				}, 
 				{
 					"CurrentState": "WifeWorkLocationSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["Failure"],
+					"Style": [],
 					"Utterance": "It's necessary to control those places. One cannot trust women…They are cunning!"
 				}, 
 				{
 					"CurrentState": "WifeWorkLocationSpecific",
-					"NextState": "F17",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F19",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "In order to confirm if she's a beautician..."
 				}, 
 				{
 					"CurrentState": "WifeWorkSpecific",
-					"NextState": "F16",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F18",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Have you ever been to your wife's workplace?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
-					"NextState": "F15",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F17",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Don't you like her job?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
-					"NextState": "F14",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F16",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Does she work? What's her job?"
 				}, 
 				{
-					"CurrentState": "FreeRecall",
-					"NextState": "F13",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"CurrentState": "Start",
+					"NextState": "F15",
+					"Meaning": ["ComtextFree"],
+					"Style": [],
 					"Utterance": "Can we talk a little bit about your wife?"
 				}, 
 				{
 					"CurrentState": "BeerPlsSpecific",
-					"NextState": "F13",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F14",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Beer we don´t have. What if we talked about your wife..."
 				}, 
 				{
 					"CurrentState": "FoodSpecific",
-					"NextState": "F11",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F13",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "We'll handle that, but here we can only give you water. Is it ok?"
 				}, 
 				{
-					"CurrentState": "CowSpecific",
-					"NextState": "F10",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"CurrentState": "Start",
+					"NextState": "F12",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Do you have any problem talking to us?"
 				}, 
 				{
-					"CurrentState": "CowSpecific",
-					"NextState": "F9",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"CurrentState": "TalkAboutItSpecific",
+					"NextState": "F11",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Don't you want to talk about it?"
 				}, 
 				{
 					"CurrentState": "CowSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["Failure"],
+					"Style": [],
 					"Utterance": "I know what you mean. Women enjoy some slaps on the bottom…"
 				}, 
 				{
 					"CurrentState": "CowSpecific",
-					"NextState": "F8",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F10",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Cow? Why cow?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
-					"NextState": "F7",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F9",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "How old's your wife?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
-					"NextState": "F6",
+					"NextState": "F8",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Style": [],
+					"Utterance": "So?"
+				}, 
+				{
+					"CurrentState": "WifeSpecific",
+					"NextState": "F7",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Are you fed up with your marriage?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
-					"NextState": "F5",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F6",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "What do you mean?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
-					"NextState": "F4",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F5",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "How long are you together?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
-					"NextState": "F3",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"NextState": "F4",
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "But in terms of what you consider a good relationship, how's your relationship with your wife? Is it good in your opinion?"
+				}, 
+				{
+					"CurrentState": "WifeSpecific",
+					"NextState": "F3",
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
+					"Utterance": "What do you mean?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
 					"NextState": "F2",
 					"Meaning": [],
-					"Style": ["Aggression(0)"],
-					"Utterance": "What do you mean?"
+					"Style": [],
+					"Utterance": "So?"
 				}, 
 				{
 					"CurrentState": "WifeSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "I was told that you're a violent guy and beat her every week. What do you tell me about this?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "F1",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Do you have a good relationship with your wife?"
 				}, 
 				{
 					"CurrentState": "KidsSpecific",
 					"NextState": "S16",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "How's your relationship with them? Do you have a good relationship with them?"
 				}, 
 				{
 					"CurrentState": "KidsSpecific",
 					"NextState": "S15",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "A pair of imps? What are their names? How old are they, do you know?"
 				}, 
 				{
 					"CurrentState": "KidsSpecific",
 					"NextState": "S14",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "Four kids?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S13",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Have you got kids?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S12",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Pal are you single? Married?"
 				}, 
 				{
 					"CurrentState": "GreetingSpecific",
 					"NextState": "S11",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "You're here because we need to speak with you. Soon we'll tell you the reasons why you came here. But as you are here, first I like to know about the people I'm speaking to. Is there a problem about it?"
 				}, 
 				{
 					"CurrentState": "WorkSpecific",
 					"NextState": "S10",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "More precisely what do you do in construction?"
 				}, 
 				{
 					"CurrentState": "WorkSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "It seems you prefer to stay at home, resting and drinking some beers, isn't it?"
 				}, 
 				{
 					"CurrentState": "WorkSpecific",
 					"NextState": "S9",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Have you always worked in construction? Do you like what you're doing?"
 				}, 
 				{
 					"CurrentState": "WorkSpecific",
 					"NextState": "Failure",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["Failure"],
+					"Style": [],
 					"Utterance": "Is it relaxing working in construction? Wouldn't it be better to work somewhere else?"
 				}, 
 				{
 					"CurrentState": "WorkSpecific",
 					"NextState": "S8",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "How long have you been working in construction?"
 				}, 
 				{
 					"CurrentState": "WorkSpecific",
 					"NextState": "S7",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "But is it enough to make a living?"
 				}, 
 				{
 					"CurrentState": "WorkSpecific",
 					"NextState": "S6",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextNeeded"],
+					"Style": [],
 					"Utterance": "But life isn't easy now, what do you think?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S5",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "I've been reading some information about you. So Mr. António Pedro you work in construction, isn't it?"
 				}, 
 				{
 					"CurrentState": "GreetingSpecific",
 					"NextState": "S4",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "With the progress of our conversation, I'm sure you'll understand what we want and probably clarify your doubts."
 				}, 
 				{
 					"CurrentState": "GreetingSpecific",
 					"NextState": "S3",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "You were notified to come here, because we've something to clarify and we need your help. I'm going to ask you some questions and expect you answer me."
 				}, 
 				{
-					"CurrentState": "FreeRecall",
+					"CurrentState": "Closure",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "We've been here for ten minutes and you don't tell me what happened. Speed up a bit. We have plenty of records to make."
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "S2",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Is there anything that worries you?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "Failure",
-					"Meaning": [],
+					"Meaning": ["Failure"],
 					"Style": ["Aggression(7)"],
 					"Utterance": "I've seen that you're nervous. Tell me what you've done!"
 				}, 
 				{
 					"CurrentState": "Introduction",
 					"NextState": "S1",
-					"Meaning": [],
-					"Style": ["Aggression(0)"],
+					"Meaning": ["ContextFree"],
+					"Style": [],
 					"Utterance": "Good morning, I’m an inspector from the Judiciary Police. You were notified to come here for an interview."
 				}],
 			"AgentDialogues": [
+				{
+					"CurrentState": "Q30",
+					"NextState": "UnderstandSpecific",
+					"Meaning": ["Informative(7)", "Truth(3)"],
+					"Style": ["Aggression(6)", "Variation(4)"],
+					"Utterance": "We like to watch pornos. Then we do as in the films, fucking hard. What's the problem?",
+					"UtteranceId": "TTS-5D29042E3E9DD0CF8139B4BF9004CC9A"
+				}, 
+				{
+					"CurrentState": "Q30",
+					"NextState": "UnderstandSpecific",
+					"Meaning": ["Informative(7)", "Truth(3)"],
+					"Style": ["Aggression(6)", "Variation(3)"],
+					"Utterance": "She enjoys violent sex, not me. She always asks me to beat her.",
+					"UtteranceId": "TTS-4CBDDF5E229A58D91FF4ECB04DDC7F41"
+				}, 
+				{
+					"CurrentState": "Q30",
+					"NextState": "UnderstandSpecific",
+					"Meaning": ["Informative(7)", "Truth(3)"],
+					"Style": ["Aggression(6)", "Variation(2)"],
+					"Utterance": "Why? Does your wife complain?",
+					"UtteranceId": "TTS-F252105A2DF318A8F3AE1DF82EFF4983"
+				}, 
+				{
+					"CurrentState": "Q30",
+					"NextState": "UnderstandSpecific",
+					"Meaning": ["Informative(7)", "Truth(3)"],
+					"Style": ["Aggression(6)", "Variation(1)"],
+					"Utterance": "No, she never complains. She loves it.",
+					"UtteranceId": "TTS-CC76984E363C56B4A19256B88871C7AC"
+				}, 
+				{
+					"CurrentState": "F51",
+					"NextState": "OdlySpecific",
+					"Meaning": ["Informative(5)", "Truth(5)"],
+					"Style": ["Aggression(6)", "Variation(4)"],
+					"Utterance": "Only her could have called the Police. The door was locked and she was the one that was able to call the Police.",
+					"UtteranceId": "TTS-B51593BD893F9A13FB60113F5D751D27"
+				}, 
+				{
+					"CurrentState": "F51",
+					"NextState": "OdlySpecific",
+					"Meaning": ["Informative(5)", "Truth(5)"],
+					"Style": ["Aggression(6)", "Variation(3)"],
+					"Utterance": "It was me that called the Police. She might need some help. I care very much about her.",
+					"UtteranceId": "TTS-7B8420E1041ED90583647D29394DA171"
+				}, 
+				{
+					"CurrentState": "F51",
+					"NextState": "OdlySpecific",
+					"Meaning": ["Informative(5)", "Truth(5)"],
+					"Style": ["Aggression(6)", "Variation(2)"],
+					"Utterance": "It must have been the guy she's dating with. I've always Known that bitch is deceiving me.",
+					"UtteranceId": "TTS-4B3AF5F165CAECA22EFE00B10F521676"
+				}, 
+				{
+					"CurrentState": "F51",
+					"NextState": "OdlySpecific",
+					"Meaning": ["Informative(5)", "Truth(5)"],
+					"Style": ["Aggression(6)", "Variation(1)"],
+					"Utterance": "I'm not a magician. How should I know?",
+					"UtteranceId": "TTS-AFDF23B8D230905ED41B441F3B43190A"
+				}, 
+				{
+					"CurrentState": "F2",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(3)", "Truth(5)"],
+					"Style": ["Aggression(0)", "Variation(4)"],
+					"Utterance": "We get alongtogether very well. We live in a kind of honeymoon. Haven't you noticed?",
+					"UtteranceId": "TTS-9538367A3377E7E415CC65259DA21CEB"
+				}, 
+				{
+					"CurrentState": "F2",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(3)", "Truth(5)"],
+					"Style": ["Aggression(0)", "Variation(3)"],
+					"Utterance": " Isn't there anything else to investigate except asking about that bitch.",
+					"UtteranceId": "TTS-94337557A0F012A846E79B84029F8AE4"
+				}, 
+				{
+					"CurrentState": "F2",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(3)", "Truth(5)"],
+					"Style": ["Aggression(0)", "Variation(2)"],
+					"Utterance": " That's a private matter. I don't speak about it with Policemen",
+					"UtteranceId": "TTS-56D2B02808C773E5463437B9CA0E11DF"
+				}, 
+				{
+					"CurrentState": "F2",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(3)", "Truth(5)"],
+					"Style": ["Aggression(0)", "Variation(1)"],
+					"Utterance": "That's nothing to do with you.",
+					"UtteranceId": "TTS-F49686B22C424CBAD5AA9AF19944AD8D"
+				}, 
+				{
+					"CurrentState": "S3",
+					"NextState": "Start",
+					"Meaning": ["Informative(0)", "Truth(3)"],
+					"Style": ["Aggression(3)", "Variation(4)"],
+					"Utterance": "I only speak with you in the presence of my lawyer",
+					"UtteranceId": "TTS-9D93CA4D1700A88308144A978B457BFC"
+				}, 
+				{
+					"CurrentState": "S3",
+					"NextState": "Start",
+					"Meaning": ["Informative(0)", "Truth(3)"],
+					"Style": ["Aggression(1)", "Variation(3)"],
+					"Utterance": "It depends. The Police's never satisfied",
+					"UtteranceId": "TTS-F87BDA9754A6F71DD4BFEC8C0B6B07B0"
+				}, 
+				{
+					"CurrentState": "S3",
+					"NextState": "Start",
+					"Meaning": ["Informative(0)", "Truth(3)"],
+					"Style": ["Aggression(0)", "Variation(2)"],
+					"Utterance": "Of course, as far as I'm aware.",
+					"UtteranceId": "TTS-3B5A721632A43CACD205DFD4CB615E10"
+				}, 
+				{
+					"CurrentState": "S3",
+					"NextState": "Start",
+					"Meaning": ["Informative(0)", "Truth(3)"],
+					"Style": ["Aggression(0)", "Variation(1)"],
+					"Utterance": "I've no time for that.",
+					"UtteranceId": "TTS-24182FA9EF75305D98F2BA468DECF053"
+				}, 
 				{
 					"CurrentState": "End",
 					"NextState": "Disconnect",
@@ -1499,6 +1690,14 @@
 					"Style": [],
 					"Utterance": "Fuck you, I won't answer anymore questions, I want my lawyer!",
 					"UtteranceId": "TTS-BBD3F5F5DF7550E250F7F4A3073EE8B2"
+				}, 
+				{
+					"CurrentState": "Q99",
+					"NextState": "Closure",
+					"Meaning": ["Informative(0)", "Truth(0)"],
+					"Style": ["Aggression(6)"],
+					"Utterance": "I'm so thirsty. I'd like to have a beer.",
+					"UtteranceId": "TTS-D13B724DA2EC8CB93BD0433D0AA19DC8"
 				}, 
 				{
 					"CurrentState": "Q98",
@@ -2153,8 +2352,8 @@
 					"NextState": "SexualRelationsSpecfic",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
-					"Utterance": "Yes, it is. The kids weren't at home, four \"pf\", we have to take advantage and fuck.",
-					"UtteranceId": "TTS-9A65F31100ABD4E9713B80390144003C"
+					"Utterance": "Yes. The kids weren't at home, four \"pf\", we have to take advantage and fuck.",
+					"UtteranceId": "TTS-21D9DE7EB6FAA4CBF8D601C94F17A7DD"
 				}, 
 				{
 					"CurrentState": "Q16",
@@ -2285,7 +2484,7 @@
 					"UtteranceId": "TTS-64E9C51777978DA8850787F1283043A3"
 				}, 
 				{
-					"CurrentState": "F74",
+					"CurrentState": "F82",
 					"NextState": "Questioning",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2293,7 +2492,7 @@
 					"UtteranceId": "TTS-3C72F67431CFAF2EA4E5FCF54285987C"
 				}, 
 				{
-					"CurrentState": "F73",
+					"CurrentState": "F81",
 					"NextState": "TmeSpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2301,7 +2500,7 @@
 					"UtteranceId": "TTS-1262711644DE73572D6E154EEEA57212"
 				}, 
 				{
-					"CurrentState": "F72",
+					"CurrentState": "F80",
 					"NextState": "OddJobSpecific",
 					"Meaning": ["Informative(3)", "Truth(8)"],
 					"Style": ["Aggression(2)"],
@@ -2309,7 +2508,15 @@
 					"UtteranceId": "TTS-E07E66BC5049F72B19EEA41959312880"
 				}, 
 				{
-					"CurrentState": "F71",
+					"CurrentState": "F79",
+					"NextState": "OddJobSpecific",
+					"Meaning": ["Informative(2)", "Truth(10)"],
+					"Style": ["Aggression(1)"],
+					"Utterance": "I pay her…",
+					"UtteranceId": "TTS-8FCFF30A05C9A493442DECF4858EB682"
+				}, 
+				{
+					"CurrentState": "F78",
 					"NextState": "OddJobSpecific",
 					"Meaning": ["Informative(5)", "Truth(10)"],
 					"Style": ["Aggression(1)"],
@@ -2317,7 +2524,7 @@
 					"UtteranceId": "TTS-BD5E14D46BD02620D295713C01DE2BFA"
 				}, 
 				{
-					"CurrentState": "F70",
+					"CurrentState": "F77",
 					"NextState": "OddJobSpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2325,15 +2532,15 @@
 					"UtteranceId": "TTS-494F3287D52C1EA488CCE5775CEE672E"
 				}, 
 				{
-					"CurrentState": "F69",
-					"NextState": "FreeRecall",
+					"CurrentState": "F76",
+					"NextState": "OddJobSpecific",
 					"Meaning": ["Informative(0)", "Truth(10)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Yes, it's true.",
 					"UtteranceId": "TTS-06955D02BE4658C10687A21882F8C021"
 				}, 
 				{
-					"CurrentState": "F68",
+					"CurrentState": "F75",
 					"NextState": "StrangeSpecific",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(3)"],
@@ -2341,7 +2548,7 @@
 					"UtteranceId": "TTS-6A88D349CBF310ED0A37A6D72480EDEE"
 				}, 
 				{
-					"CurrentState": "F67",
+					"CurrentState": "F74",
 					"NextState": "WineSpecific",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(4)"],
@@ -2349,7 +2556,7 @@
 					"UtteranceId": "TTS-39C7BBDFD95D8B48B6539AC6ECA4AEF6"
 				}, 
 				{
-					"CurrentState": "F66",
+					"CurrentState": "F73",
 					"NextState": "WhySpecific",
 					"Meaning": ["Informative(5)", "Truth(3)"],
 					"Style": ["Aggression(2)"],
@@ -2357,7 +2564,7 @@
 					"UtteranceId": "TTS-85BBF7450E1B23EC52E8269364F5CE42"
 				}, 
 				{
-					"CurrentState": "F65",
+					"CurrentState": "F72",
 					"NextState": "OddJobSpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(1)"],
@@ -2365,7 +2572,15 @@
 					"UtteranceId": "TTS-EB124791E6AAF03F2A16783B53BBDE8D"
 				}, 
 				{
-					"CurrentState": "F64",
+					"CurrentState": "F71",
+					"NextState": "WifeSexualRefusalSpecfic",
+					"Meaning": ["Informative(7)", "Truth(0)"],
+					"Style": ["Aggression(1)"],
+					"Utterance": "Normal. The woman complies as she has to.",
+					"UtteranceId": "TTS-DDE122065C41D207AC8E34AE834A9030"
+				}, 
+				{
+					"CurrentState": "F70",
 					"NextState": "WifeSexualRefusalSpecfic",
 					"Meaning": ["Informative(7)", "Truth(0)"],
 					"Style": ["Aggression(1)"],
@@ -2373,7 +2588,7 @@
 					"UtteranceId": "TTS-1BFD7F653591E54B5C9C4E428C65F608"
 				}, 
 				{
-					"CurrentState": "F63",
+					"CurrentState": "F69",
 					"NextState": "WifeSexualRefusalSpecfic",
 					"Meaning": ["Informative(7)", "Truth(7)"],
 					"Style": ["Aggression(3)"],
@@ -2381,15 +2596,15 @@
 					"UtteranceId": "TTS-8FC88368C21D3AD9D678A948FAAC8D07"
 				}, 
 				{
-					"CurrentState": "F62",
-					"NextState": "FreeRecall",
+					"CurrentState": "F68",
+					"NextState": "WifeSexualRefusalSpecfic",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(3)"],
 					"Utterance": "That'd be good! That conversation is not for me.",
 					"UtteranceId": "TTS-B7FE6D4916021FE4C37FD9F65C47A582"
 				}, 
 				{
-					"CurrentState": "F61",
+					"CurrentState": "F67",
 					"NextState": "WifeSexualSpecfic",
 					"Meaning": ["Informative(6)", "Truth(6)"],
 					"Style": ["Aggression(3)"],
@@ -2397,23 +2612,23 @@
 					"UtteranceId": "TTS-0AE48E3565634F8DB76CDF8D9C73FB4A"
 				}, 
 				{
-					"CurrentState": "F60",
-					"NextState": "FreeRecall",
+					"CurrentState": "F66",
+					"NextState": "Start",
 					"Meaning": ["Informative(0)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Hoo, pfhoo. I've a stomachache.",
 					"UtteranceId": "TTS-905CB41C2C8EA4DE8DCC48515E6FB2BC"
 				}, 
 				{
-					"CurrentState": "F59",
-					"NextState": "FreeRecall",
+					"CurrentState": "F65",
+					"NextState": "Start",
 					"Meaning": ["Informative(0)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "I'm very thirsty…",
 					"UtteranceId": "TTS-B782D07BED3765B728D140CFB5652089"
 				}, 
 				{
-					"CurrentState": "F58",
+					"CurrentState": "F64",
 					"NextState": "WifeSexualSpecfic",
 					"Meaning": ["Informative(7)", "Truth(7)"],
 					"Style": ["Aggression(3)"],
@@ -2421,7 +2636,7 @@
 					"UtteranceId": "TTS-3DFF3379765CE9BEA6FED41E2E20A081"
 				}, 
 				{
-					"CurrentState": "F57",
+					"CurrentState": "F63",
 					"NextState": "WifeSexualSpecfic",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2429,7 +2644,15 @@
 					"UtteranceId": "TTS-3EF1EE4A72BCCCC272B698B7901F8E52"
 				}, 
 				{
-					"CurrentState": "F56",
+					"CurrentState": "F62",
+					"NextState": "SexualSpecific",
+					"Meaning": ["Informative(5)", "Truth(5)"],
+					"Style": ["Aggression(3)"],
+					"Utterance": "Of course she does.",
+					"UtteranceId": "TTS-DA626A09B738B122BEB8296B1062A3D1"
+				}, 
+				{
+					"CurrentState": "F61",
 					"NextState": "SexualSpecific",
 					"Meaning": ["Informative(5)", "Truth(8)"],
 					"Style": ["Aggression(3)"],
@@ -2437,23 +2660,31 @@
 					"UtteranceId": "TTS-F0F7288BDC9C9AF7D74E28EB89C8E9B1"
 				}, 
 				{
-					"CurrentState": "F55",
-					"NextState": "FreeRecall",
+					"CurrentState": "F60",
+					"NextState": "NotGoodSpecific",
+					"Meaning": ["Informative(5)", "Truth(8)"],
+					"Style": ["Aggression(5)"],
+					"Utterance": "Fucks. If it's not to take care of the children and for fucks, what's a woman there for? I don't understand you…",
+					"UtteranceId": "TTS-7F09B37B53AD3892BB6640BF309FE4AD"
+				}, 
+				{
+					"CurrentState": "F59",
+					"NextState": "NotGoodSpecific",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "I'm not following you. Are you thinking I'm not good?",
 					"UtteranceId": "TTS-AD291DE48A59F279CBCB2C210A431D47"
 				}, 
 				{
-					"CurrentState": "F54",
-					"NextState": "WifeSexuaRelationShipSpecific",
+					"CurrentState": "F58",
+					"NextState": "WifeRelationShipSpecific",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
 					"Utterance": "A guy's a man or not a man. I'm not a faggot. The wife must satisfy the husband. A man has his needs.",
 					"UtteranceId": "TTS-3AE755129D6335D7D98319D3C838FA45"
 				}, 
 				{
-					"CurrentState": "F53",
+					"CurrentState": "F57",
 					"NextState": "ThingsSpecific",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2461,7 +2692,7 @@
 					"UtteranceId": "TTS-60FCE3550FC29F8495FCB6FB137011A5"
 				}, 
 				{
-					"CurrentState": "F52",
+					"CurrentState": "F56",
 					"NextState": "ThingsSpecific",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2469,7 +2700,7 @@
 					"UtteranceId": "TTS-C370FD076C29D8F9EBD33DA9A942EB5B"
 				}, 
 				{
-					"CurrentState": "F51",
+					"CurrentState": "F55",
 					"NextState": "PurposeSpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2477,7 +2708,7 @@
 					"UtteranceId": "TTS-4F24BE1DC01BDF6D50AAF2D077BC06D6"
 				}, 
 				{
-					"CurrentState": "F50",
+					"CurrentState": "F54",
 					"NextState": "DrinkingSpecific",
 					"Meaning": ["Informative(4)", "Truth(8)"],
 					"Style": ["Aggression(1)"],
@@ -2485,7 +2716,15 @@
 					"UtteranceId": "TTS-0A6517AD5AFFEF1094FC50761124EB35"
 				}, 
 				{
-					"CurrentState": "F49",
+					"CurrentState": "F53",
+					"NextState": "DrinkingSpecific",
+					"Meaning": ["Informative(2)", "Truth(5)"],
+					"Style": ["Aggression(6)"],
+					"Utterance": "That's what we can get from life.",
+					"UtteranceId": "TTS-5336962F0CBF9C76B89E2358A1817B77"
+				}, 
+				{
+					"CurrentState": "F52",
 					"NextState": "DrinkingSpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2493,7 +2732,7 @@
 					"UtteranceId": "TTS-333A86BE6D52384D573CE92A4A5D79E7"
 				}, 
 				{
-					"CurrentState": "F48",
+					"CurrentState": "F51",
 					"NextState": "OdlySpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2501,7 +2740,7 @@
 					"UtteranceId": "TTS-83E5B8A7BD6AD72888F6C0366365134C"
 				}, 
 				{
-					"CurrentState": "F47",
+					"CurrentState": "F50",
 					"NextState": "OdlySpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2509,7 +2748,7 @@
 					"UtteranceId": "TTS-F3C40A9682E3174AE32F0A4CC8F768F1"
 				}, 
 				{
-					"CurrentState": "F46",
+					"CurrentState": "F49",
 					"NextState": "OldSayingSpecific",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2517,7 +2756,7 @@
 					"UtteranceId": "TTS-DDD6C36382687D1F48278B4B223ECD37"
 				}, 
 				{
-					"CurrentState": "F45",
+					"CurrentState": "F48",
 					"NextState": "OldSayingSpecific",
 					"Meaning": ["Informative(7)", "Truth(5)"],
 					"Style": ["Aggression(6)"],
@@ -2525,7 +2764,7 @@
 					"UtteranceId": "TTS-03A2B750AF5F83C261411530DC020649"
 				}, 
 				{
-					"CurrentState": "F44",
+					"CurrentState": "F47",
 					"NextState": "OldSayingSpecific",
 					"Meaning": ["Informative(6)", "Truth(0)"],
 					"Style": ["Aggression(5)"],
@@ -2533,7 +2772,7 @@
 					"UtteranceId": "TTS-613E55414E13B487A810C6B737E2240E"
 				}, 
 				{
-					"CurrentState": "F43",
+					"CurrentState": "F46",
 					"NextState": "FilmingSpecific",
 					"Meaning": ["Informative(3)", "Truth(0)"],
 					"Style": ["Aggression(2)"],
@@ -2541,7 +2780,7 @@
 					"UtteranceId": "TTS-A8F99E3700E561D9D1AD2F6BE784EC12"
 				}, 
 				{
-					"CurrentState": "F42",
+					"CurrentState": "F45",
 					"NextState": "FilmingSpecific",
 					"Meaning": ["Informative(6)", "Truth(0)"],
 					"Style": ["Aggression(3)"],
@@ -2549,7 +2788,7 @@
 					"UtteranceId": "TTS-4D18364AC3E4740BCE02C0B2CCCCFE30"
 				}, 
 				{
-					"CurrentState": "F41",
+					"CurrentState": "F44",
 					"NextState": "ComplainSpecific",
 					"Meaning": ["Informative(6)", "Truth(0)"],
 					"Style": ["Aggression(3)"],
@@ -2557,7 +2796,7 @@
 					"UtteranceId": "TTS-9F14DCBEA3110486D94E1B91F7B83F6D"
 				}, 
 				{
-					"CurrentState": "F40",
+					"CurrentState": "F43",
 					"NextState": "ComplainSpecific",
 					"Meaning": ["Informative(8)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2565,7 +2804,7 @@
 					"UtteranceId": "TTS-3A1EA957CABE1E66D1AA640C6FFBA748"
 				}, 
 				{
-					"CurrentState": "F39",
+					"CurrentState": "F42",
 					"NextState": "ComplainSpecific",
 					"Meaning": ["Informative(4)", "Truth(2)"],
 					"Style": ["Aggression(1)"],
@@ -2573,15 +2812,15 @@
 					"UtteranceId": "TTS-17781872AAB82A627C71C3474ABA51F7"
 				}, 
 				{
-					"CurrentState": "F38",
-					"NextState": "ComplainSpecific",
+					"CurrentState": "F41",
+					"NextState": "BadGuySpecific",
 					"Meaning": ["Informative(1)", "Truth(2)"],
 					"Style": ["Aggression(1)"],
 					"Utterance": "A guy always gets screwed.",
 					"UtteranceId": "TTS-4298AAE8B4975D2F0B0BF8A59614D254"
 				}, 
 				{
-					"CurrentState": "F37",
+					"CurrentState": "F40",
 					"NextState": "ComplainSpecific",
 					"Meaning": ["Informative(1)", "Truth(1)"],
 					"Style": ["Aggression(2)"],
@@ -2589,7 +2828,7 @@
 					"UtteranceId": "TTS-C6CA00D2188AF098FF60E881C0019D73"
 				}, 
 				{
-					"CurrentState": "F36",
+					"CurrentState": "F39",
 					"NextState": "BadGuySpecific",
 					"Meaning": ["Informative(1)", "Truth(1)"],
 					"Style": ["Aggression(1)"],
@@ -2597,7 +2836,7 @@
 					"UtteranceId": "TTS-2C1DA1F301EDF526944C80E307EEA5B7"
 				}, 
 				{
-					"CurrentState": "F35",
+					"CurrentState": "F38",
 					"NextState": "BadGuySpecific",
 					"Meaning": ["Informative(6)", "Truth(2)"],
 					"Style": ["Aggression(2)"],
@@ -2605,7 +2844,7 @@
 					"UtteranceId": "TTS-D0A958510B87205894AF89E13515819C"
 				}, 
 				{
-					"CurrentState": "F34",
+					"CurrentState": "F37",
 					"NextState": "BadGuySpecific",
 					"Meaning": ["Informative(5)", "Truth(3)"],
 					"Style": ["Aggression(3)"],
@@ -2613,7 +2852,7 @@
 					"UtteranceId": "TTS-F3769AF3955C5D39A954D979672AA102"
 				}, 
 				{
-					"CurrentState": "F33",
+					"CurrentState": "F36",
 					"NextState": "PastSpecific",
 					"Meaning": ["Informative(3)", "Truth(1)"],
 					"Style": ["Aggression(3)"],
@@ -2621,7 +2860,7 @@
 					"UtteranceId": "TTS-32636065903EE238F37CB7940139A3CE"
 				}, 
 				{
-					"CurrentState": "F32",
+					"CurrentState": "F35",
 					"NextState": "PastSpecific",
 					"Meaning": ["Informative(1)", "Truth(1)"],
 					"Style": ["Aggression(1)"],
@@ -2629,15 +2868,23 @@
 					"UtteranceId": "TTS-14B9A0FA4C45678D53ED674B3F7BB5DC"
 				}, 
 				{
-					"CurrentState": "F31",
+					"CurrentState": "F34",
 					"NextState": "PastSpecific",
+					"Meaning": ["Informative(3)", "Truth(3)"],
+					"Style": ["Aggression(2)"],
+					"Utterance": "I've a relationship with my wife as a couple has. Why are we talking about it? I don't understand. It's about those scenes… The bitch sometimes doesn't … you know how women are. They only work with slaps. They're not useful for anything… They are useful for, ok it doesn't matter now...",
+					"UtteranceId": "TTS-B4CF55EABA04BF3D1570A120C1F30D50"
+				}, 
+				{
+					"CurrentState": "F33",
+					"NextState": "Start",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
 					"Utterance": "When I arrive late, they are there already.",
 					"UtteranceId": "TTS-3BFE93A93E800D22B22A5FF2CEC5CCCA"
 				}, 
 				{
-					"CurrentState": "F30",
+					"CurrentState": "F32",
 					"NextState": "CaretakerSpecific",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2645,7 +2892,7 @@
 					"UtteranceId": "TTS-DB90882D1BA3A0631FB4494FEC9080B3"
 				}, 
 				{
-					"CurrentState": "F29",
+					"CurrentState": "F31",
 					"NextState": "CaretakerSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2653,7 +2900,7 @@
 					"UtteranceId": "TTS-75C3E8832DFB4A5E13C1ADB9BA3D4358"
 				}, 
 				{
-					"CurrentState": "F28",
+					"CurrentState": "F30",
 					"NextState": "CaretakerSpecific",
 					"Meaning": ["Informative(1)", "Truth(8)"],
 					"Style": ["Aggression(2)"],
@@ -2661,7 +2908,7 @@
 					"UtteranceId": "TTS-D3EA92F181D9AA4790F193F1DC581A70"
 				}, 
 				{
-					"CurrentState": "F27",
+					"CurrentState": "F29",
 					"NextState": "CaretakerSpecific",
 					"Meaning": ["Informative(1)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
@@ -2669,7 +2916,7 @@
 					"UtteranceId": "TTS-8FBF62949F4F3B6183498F67CC4A9140"
 				}, 
 				{
-					"CurrentState": "F26",
+					"CurrentState": "F28",
 					"NextState": "CaretakerSpecific",
 					"Meaning": ["Informative(3)", "Truth(7)"],
 					"Style": ["Aggression(2)"],
@@ -2677,7 +2924,7 @@
 					"UtteranceId": "TTS-34BEB876532765028DA6D6F16C447ECE"
 				}, 
 				{
-					"CurrentState": "F25",
+					"CurrentState": "F27",
 					"NextState": "CaretakerSpecific",
 					"Meaning": ["Informative(4)", "Truth(7)"],
 					"Style": ["Aggression(2)"],
@@ -2685,7 +2932,7 @@
 					"UtteranceId": "TTS-90D8033D52B12BA4DB0B119C3089784E"
 				}, 
 				{
-					"CurrentState": "F24",
+					"CurrentState": "F26",
 					"NextState": "ChildrenTimeSpecific",
 					"Meaning": ["Informative(2)", "Truth(6)"],
 					"Style": ["Aggression(2)"],
@@ -2693,15 +2940,15 @@
 					"UtteranceId": "TTS-0F3FA3C9A8414DD23A3852186EC00E8C"
 				}, 
 				{
-					"CurrentState": "F23",
+					"CurrentState": "F25",
 					"NextState": "TimeSpecific",
-					"Meaning": ["Truth(5)"],
+					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
 					"Utterance": "It depends on the work.",
 					"UtteranceId": "TTS-E8B5C5603038A8D3557452EB61CB6934"
 				}, 
 				{
-					"CurrentState": "F22",
+					"CurrentState": "F24",
 					"NextState": "TimeSpecific",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2709,7 +2956,7 @@
 					"UtteranceId": "TTS-5C028946E6831FB74D3184D7603A7E45"
 				}, 
 				{
-					"CurrentState": "F21",
+					"CurrentState": "F23",
 					"NextState": "TimeSpecific",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2717,7 +2964,7 @@
 					"UtteranceId": "TTS-5733D9188E0D398617B94664811C9C0B"
 				}, 
 				{
-					"CurrentState": "F20",
+					"CurrentState": "F22",
 					"NextState": "TimeSpecific",
 					"Meaning": ["Informative(2)", "Truth(6)"],
 					"Style": ["Aggression(1)"],
@@ -2725,7 +2972,7 @@
 					"UtteranceId": "TTS-2DB435E70DBCF14F915D5417206CED05"
 				}, 
 				{
-					"CurrentState": "F19",
+					"CurrentState": "F21",
 					"NextState": "WifeRelationShipSpecific",
 					"Meaning": ["Informative(3)", "Truth(6)"],
 					"Style": ["Aggression(2)"],
@@ -2733,7 +2980,7 @@
 					"UtteranceId": "TTS-02D517030D936B040A0E948F5BD01D6B"
 				}, 
 				{
-					"CurrentState": "F18",
+					"CurrentState": "F20",
 					"NextState": "WifeRelationShipSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2741,7 +2988,7 @@
 					"UtteranceId": "TTS-94BA7A30ADD807C84908D05688DEF098"
 				}, 
 				{
-					"CurrentState": "F17",
+					"CurrentState": "F19",
 					"NextState": "WifeRelationShipSpecific",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(5)"],
@@ -2749,7 +2996,7 @@
 					"UtteranceId": "TTS-1562A7DD5BB9C374B2BEF201875A43F0"
 				}, 
 				{
-					"CurrentState": "F16",
+					"CurrentState": "F18",
 					"NextState": "WifeWorkLocationSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2757,7 +3004,7 @@
 					"UtteranceId": "TTS-1165AD3CB69459F2F8F376CF02A5D6B1"
 				}, 
 				{
-					"CurrentState": "F15",
+					"CurrentState": "F17",
 					"NextState": "WifeWorkSpecific",
 					"Meaning": ["Informative(2)", "Truth(5)"],
 					"Style": ["Aggression(3)"],
@@ -2765,7 +3012,7 @@
 					"UtteranceId": "TTS-084B08B5688F4785D0A96AC0A939CCB8"
 				}, 
 				{
-					"CurrentState": "F14",
+					"CurrentState": "F16",
 					"NextState": "WifeWorkSpecific",
 					"Meaning": ["Informative(2)", "Truth(8)"],
 					"Style": ["Aggression(3)"],
@@ -2773,7 +3020,7 @@
 					"UtteranceId": "TTS-E3C6F9F1C1266D0F9763B3DFA72D5D52"
 				}, 
 				{
-					"CurrentState": "F13",
+					"CurrentState": "F15",
 					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(2)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
@@ -2781,7 +3028,7 @@
 					"UtteranceId": "TTS-48A8318C0749BE694B9E19F4563DF922"
 				}, 
 				{
-					"CurrentState": "F12",
+					"CurrentState": "F14",
 					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
@@ -2789,7 +3036,7 @@
 					"UtteranceId": "TTS-2508EECA779FCC2F0E50F651DD8AFD61"
 				}, 
 				{
-					"CurrentState": "F11",
+					"CurrentState": "F13",
 					"NextState": "BeerPlsSpecific",
 					"Meaning": ["Informative(0)", "Truth(4)"],
 					"Style": ["Aggression(2)"],
@@ -2797,7 +3044,7 @@
 					"UtteranceId": "TTS-CF80B34276EE716C4D0345A1E91464F8"
 				}, 
 				{
-					"CurrentState": "F10",
+					"CurrentState": "F12",
 					"NextState": "FoodSpecific",
 					"Meaning": ["Informative(0)", "Truth(2)"],
 					"Style": ["Aggression(2)"],
@@ -2805,28 +3052,44 @@
 					"UtteranceId": "TTS-85B4BC9E5A41F3B5C5AEB0DF2897D329"
 				}, 
 				{
-					"CurrentState": "F9",
-					"NextState": "CowSpecific",
+					"CurrentState": "F11",
+					"NextState": "Start",
 					"Meaning": ["Informative(0)", "Truth(2)"],
 					"Style": ["Aggression(5)"],
 					"Utterance": "No, I still don't know why I'm here.",
 					"UtteranceId": "TTS-087503BE6B1A40502AAC767206EC8DDA"
 				}, 
 				{
-					"CurrentState": "F8",
-					"NextState": "CowSpecific",
+					"CurrentState": "F10",
+					"NextState": "TalkAboutItSpecific",
 					"Meaning": ["Informative(6)", "Truth(5)"],
 					"Style": ["Aggression(4)"],
 					"Utterance": "There are scenes that are ours…A guy doesn't come here and starts talking about…",
 					"UtteranceId": "TTS-C85182FE10AA59A661D280C72AFCA977"
 				}, 
 				{
-					"CurrentState": "F7",
+					"CurrentState": "F9",
 					"NextState": "CowSpecific",
 					"Meaning": ["Informative(6)", "Truth(10)"],
 					"Style": ["Aggression(6)"],
 					"Utterance": "I think that cow's about forty years old.",
 					"UtteranceId": "TTS-AD3B483479120C5A456396E019171D31"
+				}, 
+				{
+					"CurrentState": "F8",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(0)", "Truth(0)"],
+					"Style": ["Aggression(0)"],
+					"Utterance": "Aha…Aha…",
+					"UtteranceId": "TTS-949DB71471F027B166BBB1AD86F9C258"
+				}, 
+				{
+					"CurrentState": "F7",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(0)", "Truth(0)"],
+					"Style": ["Aggression(0)"],
+					"Utterance": "Aha…Aha…",
+					"UtteranceId": "TTS-949DB71471F027B166BBB1AD86F9C258"
 				}, 
 				{
 					"CurrentState": "F6",
@@ -2839,21 +3102,13 @@
 				{
 					"CurrentState": "F5",
 					"NextState": "WifeSpecific",
-					"Meaning": ["Informative(0)", "Truth(0)"],
-					"Style": ["Aggression(0)"],
-					"Utterance": "Aha…Aha…",
-					"UtteranceId": "TTS-949DB71471F027B166BBB1AD86F9C258"
-				}, 
-				{
-					"CurrentState": "F4",
-					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(5)", "Truth(8)"],
 					"Style": ["Aggression(0)"],
 					"Utterance": "Aha…aha…I don'know. Too many years…",
 					"UtteranceId": "TTS-94A6CFEF5F3AC9908A6F8311895BEBAC"
 				}, 
 				{
-					"CurrentState": "F3",
+					"CurrentState": "F4",
 					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(5)", "Truth(0)"],
 					"Style": ["Aggression(0)"],
@@ -2861,12 +3116,20 @@
 					"UtteranceId": "TTS-2268D654C5193FE80E7CAB2B3F44BF2D"
 				}, 
 				{
-					"CurrentState": "F2",
+					"CurrentState": "F3",
 					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(4)", "Truth(5)"],
 					"Style": ["Aggression(2)"],
 					"Utterance": "There're days when a guy's better, there're days when a guy's worse…It's like that, you know…Married for so long, it's just like that…",
 					"UtteranceId": "TTS-53FD0D6003C080BCEF21B2B208B2A43B"
+				}, 
+				{
+					"CurrentState": "F2",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(3)", "Truth(5)"],
+					"Style": ["Aggression(0)"],
+					"Utterance": "There're days…",
+					"UtteranceId": "TTS-16F644A6E46D4F5702F68689C28AB666"
 				}, 
 				{
 					"CurrentState": "F1",

@@ -116,7 +116,7 @@ namespace Assets.Scripts
                 }
 
                 m_rpc.Perceive(_events);
-                var action = m_rpc.Decide().FirstOrDefault();
+                var action = m_rpc.Decide().Shuffle().FirstOrDefault();
 
 				_events.Clear(); 
 				m_rpc.Update();

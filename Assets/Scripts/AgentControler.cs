@@ -144,13 +144,13 @@ namespace Assets.Scripts
 						break;
 				}
 			}
-
-		
 		}
      
 		private IEnumerator HandleSpeak(IAction speakAction)
 		{
-            Name currentState = speakAction.Parameters[0];
+			//m_rpc.Perceive(new [] { EventHelper.ActionStart(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
+
+			Name currentState = speakAction.Parameters[0];
             Name nextState = speakAction.Parameters[1];
             Name meaning = speakAction.Parameters[2];
             Name style = speakAction.Parameters[3];
@@ -163,79 +163,115 @@ namespace Assets.Scripts
 			}
 			else
 			{
-				m_dialogController.AddDialogLine(dialog.Utterance);
-                reply = dialog;
-                just_talked = true;
-
-
-                string subFolder = m_scenarioData.TTSFolder;
+				string subFolder = m_scenarioData.TTSFolder;
 				if (subFolder != "<none>")
 				{
-					var provider = (AssetManager.Instance.Bridge as AssetManagerBridge)._provider;
-                    var path = string.Format("/TTS-Dialogs/{0}/{1}/{2}", subFolder, m_rpc.VoiceName, dialog.UtteranceId);
+					var path = string.Format("/TTS-Dialogs/{0}/{1}/{2}", subFolder, m_rpc.VoiceName, dialog.UtteranceId);
+					var absolutePath = Application.streamingAssetsPath;
+#if UNITY_EDITOR || UNITY_STANDALONE
+					absolutePath = "file://" + absolutePath;
+#endif
+					string audioUrl = absolutePath +path+ ".wav";
+					string xmlUrl = absolutePath +path+ ".xml";
 
-					AudioClip clip = null; //Resources.Load<AudioClip>(path);
-					string xml = null; //Resources.Load<TextAsset>(path);
-                    
-                    var xmlPath = path + ".xml";
-					if (provider.FileExists(xmlPath))
+					var audio = new WWW(audioUrl);
+					var xml = new WWW(xmlUrl);
+
+					yield return audio;
+					yield return xml;
+
+					var xmlError = !string.IsNullOrEmpty(xml.error);
+					var audioError = !string.IsNullOrEmpty(audio.error);
+
+					if(xmlError)
+						Debug.LogError(xml.error);
+					if(audioError)
+						Debug.LogError(audio.error);
+
+					m_dialogController.AddDialogLine(dialog.Utterance);
+
+					if (xmlError || audioError)
 					{
-						try
-						{
-							using (var xmlStream = provider.LoadFile(xmlPath, FileMode.Open, FileAccess.Read))
-							{
-								using (var reader = new StreamReader(xmlStream))
-								{
-									xml = reader.ReadToEnd();
-								}
-							}
-						}
-						catch (Exception e)
-						{
-							Debug.LogException(e);
-						}
-
-						if (!string.IsNullOrEmpty(xml))
-						{
-							var wavPath = path + ".wav";
-							if (provider.FileExists(wavPath))
-							{
-								try
-								{
-									using (var wavStream = provider.LoadFile(wavPath, FileMode.Open, FileAccess.Read))
-									{
-										var wav = new WavStreamReader(wavStream);
-
-										clip = AudioClip.Create("tmp", (int)wav.SamplesLength, wav.NumOfChannels, (int)wav.SampleRate, false);
-										clip.SetData(wav.GetRawSamples(), 0);
-									}
-								}
-								catch (Exception e)
-								{
-									Debug.LogException(e);
-									if (clip != null)
-									{
-										clip.UnloadAudioData();
-										clip = null;
-									}
-								}
-							}
-						}
-					}
-                  
-                    if (clip != null && xml != null)
-					{
-						yield return _body.PlaySpeech(clip, xml);
-						clip.UnloadAudioData();
+						yield return new WaitForSeconds(2);
 					}
 					else
 					{
-						Debug.LogWarning("Could not found speech assets for a dialog");
-						yield return new WaitForSeconds(2);
+						var clip = audio.GetAudioClip(false);
+						yield return _body.PlaySpeech(clip, xml.text);
+						clip.UnloadAudioData();
 					}
+
+					//AudioClip clip = null; //Resources.Load<AudioClip>(path);
+					//string xml = null; //Resources.Load<TextAsset>(path);
+
+					//var xmlPath = path + ".xml";
+					//if (provider.FileExists(xmlPath))
+					//{
+					//	try
+					//	{
+					//		using (var xmlStream = provider.LoadFile(xmlPath, FileMode.Open, FileAccess.Read))
+					//		{
+					//			using (var reader = new StreamReader(xmlStream))
+					//			{
+					//				xml = reader.ReadToEnd();
+					//			}
+					//		}
+					//	}
+					//	catch (Exception e)
+					//	{
+					//		Debug.LogException(e);
+					//	}
+
+					//	if (!string.IsNullOrEmpty(xml))
+					//	{
+					//		var wavPath = path + ".wav";
+					//		if (provider.FileExists(wavPath))
+					//		{
+					//			try
+					//			{
+					//				using (var wavStream = provider.LoadFile(wavPath, FileMode.Open, FileAccess.Read))
+					//				{
+					//					var wav = new WavStreamReader(wavStream);
+
+					//					clip = AudioClip.Create("tmp", (int)wav.SamplesLength, wav.NumOfChannels, (int)wav.SampleRate, false);
+					//					clip.SetData(wav.GetRawSamples(), 0);
+					//				}
+					//			}
+					//			catch (Exception e)
+					//			{
+					//				Debug.LogException(e);
+					//				if (clip != null)
+					//				{
+					//					clip.UnloadAudioData();
+					//					clip = null;
+					//				}
+					//			}
+					//		}
+					//	}
+					//}
+
+					//if (clip != null && xml != null)
+					//{
+					//	yield return _body.PlaySpeech(clip, xml);
+					//	clip.UnloadAudioData();
+					//}
+					//else
+					//{
+					//	Debug.LogWarning("Could not found speech assets for a dialog");
+					//	yield return new WaitForSeconds(2);
+					//}
+
+					reply = dialog;
+					just_talked = true;
 				}
 				else
+				{
+					m_dialogController.AddDialogLine(dialog.Utterance);
 					yield return new WaitForSeconds(2);
+
+					reply = dialog;
+					just_talked = true;
+				}
 
 				if (nextState.ToString() != "-") //todo: replace with a constant
 					AddEvent(string.Format("Event(Property-change,self,DialogueState(Player),{0})", nextState));
@@ -248,8 +284,7 @@ namespace Assets.Scripts
 			}
 		    if (nextState.ToString() == "Disconnect")
 		    {
-               
-		        this.End();
+               this.End();
 		    }
 		    m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
 		}

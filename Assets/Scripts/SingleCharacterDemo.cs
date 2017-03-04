@@ -36,20 +36,20 @@ public class SingleCharacterDemo : MonoBehaviour
 
 
     [Serializable]
-    private struct BodyType
+    protected struct BodyType
     {
         public string BodyName;
         public UnityBodyImplement CharaterArchtype;
     }
 
     [SerializeField]
-    private Transform m_characterAnchor;
+    protected Transform m_characterAnchor;
 
     [SerializeField]
-    private DialogController m_dialogController;
+    protected DialogController m_dialogController;
 
     [SerializeField]
-    private BodyType[] m_bodies;
+    protected BodyType[] m_bodies;
 
 
 
@@ -57,26 +57,26 @@ public class SingleCharacterDemo : MonoBehaviour
 
     [Space]
     [SerializeField]
-    private Button m_dialogButtonArchetype = null;
+    protected Button m_dialogButtonArchetype = null;
     [SerializeField]
-    private Transform m_dialogButtonZone = null;
+    protected Transform m_dialogButtonZone = null;
 
 
     [SerializeField]
-    private Transform m_scoreZone = null;
+    protected Transform m_scoreZone = null;
 
-    private GameObject score;
+    protected GameObject score;
 
     [Space]
     [SerializeField]
     [Range(1, 60)]
-    private float m_agentProblemReminderRepeatTime = 3;
+    protected float m_agentProblemReminderRepeatTime = 3;
 
     [Space]
     [SerializeField]
-    private RectTransform m_menuButtonHolder = null;
+    protected RectTransform m_menuButtonHolder = null;
     [SerializeField]
-    private Button m_menuButtonArchetype = null;
+    protected Button m_menuButtonArchetype = null;
 
     public GameObject VersionMenu;
     public GameObject ScoreTextPrefab;
@@ -84,18 +84,18 @@ public class SingleCharacterDemo : MonoBehaviour
 
     [Header("Intro")]
     [SerializeField]
-    private GameObject _introPanel;
+    protected GameObject _introPanel;
     [SerializeField]
-    private Text _introText;
+    protected Text _introText;
 
-    private ScenarioData[] m_scenarios;
-    private List<Button> m_currentMenuButtons = new List<Button>();
-    private List<Button> m_buttonList = new List<Button>();
-    private IntegratedAuthoringToolAsset _iat;
-    private AgentControler _agentController;
-    private GameObject _finalScore;
+    protected ScenarioData[] m_scenarios;
+    protected List<Button> m_currentMenuButtons = new List<Button>();
+    protected List<Button> m_buttonList = new List<Button>();
+    protected IntegratedAuthoringToolAsset _iat;
+    protected AgentControler _agentController;
+    protected GameObject _finalScore;
     public Dictionary<string, string> alreadyUsedDialogs;
-    private bool Initialized;
+    protected bool Initialized;
 
 
     // Use this for initialization
@@ -420,7 +420,7 @@ public class SingleCharacterDemo : MonoBehaviour
         }
     }
 
-    /* private IEnumerable<DialogueStateActionDTO> HandleContext(string s)
+    /* protected IEnumerable<DialogueStateActionDTO> HandleContext(string s)
      {
          IEnumerable<DialogueStateActionDTO> ret =
 

@@ -1,18 +1,13 @@
 ﻿#if UNITY_WEBGL
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using Assets.Plugins;
 using UnityEngine;
-using Utilities;
+using System.IO;
+using System.Runtime.InteropServices;
+using GAIPS.Rage;
 
 namespace Assets.Scripts
 {
-	public class WebGLStorageProvider : IStorageProvider
+	public class WebGLStorageProvider : BaseStorageProvider
 	{
 		private const int MAX_BUFFER_SIZE = 1024;
 
@@ -34,33 +29,13 @@ namespace Assets.Scripts
 		[DllImport("__Internal")]
 		private static extern bool WebGl_Storage_IsEndOfFile(int id, int index);
 
-		private static Dictionary<string,byte[]> m_retrievedFiles=new Dictionary<string, byte[]>();
-
-		public WebGLStorageProvider()
+		public WebGLStorageProvider() : base(Application.streamingAssetsPath)
 		{
 			if (!WebGl_Storage_IsInitialized())
 				WebGl_Storage_Initialize();
 		}
 
-		public bool FileExists(string absoluteFilePath)
-		{
-			if (m_retrievedFiles.ContainsKey(absoluteFilePath))
-				return true;
-
-			try
-			{
-				PullFile(absoluteFilePath);
-			}
-			catch (Exception e)
-			{
-				Debug.LogException(e);
-				return false;
-			}
-
-			return true;
-		}
-
-		public Stream LoadFile(string absoluteFilePath, FileMode mode, FileAccess access)
+		protected override Stream LoadFile(string filePath, FileMode mode, FileAccess access)
 		{
 			if (mode != FileMode.Open)
 				throw new System.NotImplementedException("Only open mode is implemented at the moment.");
@@ -68,19 +43,7 @@ namespace Assets.Scripts
 			if (access != FileAccess.Read)
 				throw new System.NotImplementedException("Only read access is implemented at the moment.");
 
-			byte[] data;
-			if (!m_retrievedFiles.TryGetValue(absoluteFilePath, out data))
-			{
-				PullFile(absoluteFilePath);
-				data = m_retrievedFiles[absoluteFilePath];
-			}
-			return new MemoryStream(data,false);
-		}
-
-		private static void PullFile(string absoluteFilePath)
-		{
-			var rootedPath = RootPath(absoluteFilePath);
-			var id = LoadRemoteFile(rootedPath);
+			var id = LoadRemoteFile(filePath);
 			var errorMsg = HasErrors(id);
 			if (errorMsg != null)
 				throw new IOException(errorMsg);
@@ -88,26 +51,21 @@ namespace Assets.Scripts
 			byte[] buffer = new byte[MAX_BUFFER_SIZE];
 			int index = 0;
 
-			using (var m = new MemoryStream())
+			var m = new MemoryStream();
+			do
 			{
-				do
-				{
-					var readed = WebGl_Storage_ReadBytes(id, buffer, index, MAX_BUFFER_SIZE);
-					m.Write(buffer, 0, readed);
-					index += readed;
-				} while (!WebGl_Storage_IsEndOfFile(id, index));
+				var readed = WebGl_Storage_ReadBytes(id, buffer, index, MAX_BUFFER_SIZE);
+				m.Write(buffer, 0, readed);
+				index += readed;
+			} while (!WebGl_Storage_IsEndOfFile(id, index));
 
-				m_retrievedFiles[absoluteFilePath] = m.GetBuffer();
-			}
+			m.Position = 0;
+			return m;
 		}
 
-		private static string RootPath(string path)
+		protected override bool IsDirectory(string path)
 		{
-			path = path.Split('/', '\\').Select(s => WWW.EscapeURL(s)).AggregateToString("/");
-			Debug.Log(path);
-			if (Path.IsPathRooted(path))
-				return Application.streamingAssetsPath + path;
-			return Path.Combine(Application.streamingAssetsPath, path);
+			return !Path.HasExtension(path);
 		}
 	}
 }

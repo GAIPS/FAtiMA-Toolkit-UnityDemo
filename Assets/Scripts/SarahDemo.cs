@@ -23,70 +23,6 @@ public class SarahDemo : SingleCharacterDemo
 
 
 
-
-	[Serializable]
-	private struct BodyType
-	{
-		public string BodyName;
-		public UnityBodyImplement CharaterArchtype;
-	}
-
-	[SerializeField]
-	private Transform m_characterAnchor;
-
-	[SerializeField]
-	private DialogController m_dialogController;
-
-	[SerializeField]
-	private BodyType[] m_bodies;
-
-
-
-
-
-	[Space]
-	[SerializeField]
-	private Button m_dialogButtonArchetype = null;
-	[SerializeField]
-	private Transform m_dialogButtonZone = null;
-
-
-	[SerializeField]
-	private Transform m_scoreZone = null;
-
-	private GameObject score;
-
-	[Space]
-	[SerializeField]
-	[Range (1, 60)]
-	private float m_agentProblemReminderRepeatTime = 3;
-
-	[Space]
-	[SerializeField]
-	private RectTransform m_menuButtonHolder = null;
-	[SerializeField]
-	private Button m_menuButtonArchetype = null;
-
-	public GameObject VersionMenu;
-	public GameObject ScoreTextPrefab;
-	public bool PJScenario;
-
-	[Header ("Intro")]
-	[SerializeField]
-	private GameObject _introPanel;
-	[SerializeField]
-	private Text _introText;
-
-	private ScenarioData[] m_scenarios;
-	private List<Button> m_currentMenuButtons = new List<Button> ();
-	private List<Button> m_buttonList = new List<Button> ();
-	private IntegratedAuthoringToolAsset _iat;
-	private AgentControler _agentController;
-	private GameObject _finalScore;
-	public Dictionary<string, string> alreadyUsedDialogs;
-	private bool Initialized;
-
-
 	// Use this for initialization
 	private IEnumerator Start ()
 	{
@@ -101,7 +37,7 @@ public class SarahDemo : SingleCharacterDemo
 
 		var streamingAssetsPath = Application.streamingAssetsPath;
 #if UNITY_EDITOR || UNITY_STANDALONE
-        streamingAssetsPath = "file://" + streamingAssetsPath;
+		streamingAssetsPath = "file://" + streamingAssetsPath;
 #endif
 
 		var www = new WWW (streamingAssetsPath + "/scenarioList.txt");
@@ -193,12 +129,12 @@ public class SarahDemo : SingleCharacterDemo
 			_iat.BindToRegistry (rpc.DynamicPropertiesRegistry);
 			AddButton (characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString (),
 				() => {
-					var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
-					_agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
-					StopAllCoroutines();
-					_agentController.storeFinalScore(_finalScore);
-					_agentController.Start(this, VersionMenu);
-					InstantiateScore();
+					var body = m_bodies.FirstOrDefault (b => b.BodyName == rpc.BodyName);
+					_agentController = new AgentControler (data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
+					StopAllCoroutines ();
+					_agentController.storeFinalScore (_finalScore);
+					_agentController.Start (this, VersionMenu);
+					InstantiateScore ();
 				});
 		}
 		AddButton ("Back to Scenario Selection Menu", () => {
@@ -227,10 +163,10 @@ public class SarahDemo : SingleCharacterDemo
 				return;
 
 			foreach (var d in dialogOptions) {
-
+				var id = d.Id;
 				//bypass start
 				if (d.Utterance == "START") {
-					Reply (d.Id);
+					Reply (id);
 				} else {
 					var b = Instantiate (m_dialogButtonArchetype);
 					var t = b.transform;
@@ -269,8 +205,9 @@ public class SarahDemo : SingleCharacterDemo
 			return;
 		}
 		var reply = _iat.GetDialogActionById (IATConsts.PLAYER, dialogId);
-		//var actionFormat = string.Format ("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.GetMeaningName (), reply.GetStylesName ());
-		userReply = reply.Utterance;
+
+
+		///userReply = reply.Utterance;
 
 		//make group number textbox invisible after group number entered
 		questionNumber = questionNumber + 1;
@@ -289,6 +226,7 @@ public class SarahDemo : SingleCharacterDemo
 		if (reply.Utterance == "BYE") {
 			Application.Quit ();
 		}
+
 
 		var actionFormat = string.Format ("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.Meaning, reply.Style);
 
@@ -492,7 +430,6 @@ public class SarahDemo : SingleCharacterDemo
 			}
 
 	}
-
 
 	public void ClearScore ()
 	{

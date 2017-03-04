@@ -204,6 +204,7 @@ public class SingleCharacterDemo : MonoBehaviour
             AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(),
                 () =>
                 {
+                  //  Debug.Log("Body " + rpc.BodyName);
                     var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
                     _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
                     StopAllCoroutines();
@@ -240,7 +241,8 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             if (m_buttonList.Count == dialogOptions.Count())
                 return;
-
+         Debug.Log("size" + dialogOptions.Count() );
+            if(dialogOptions.Count() < 6)
             foreach (var d in dialogOptions)
             {
                 var b = Instantiate(m_dialogButtonArchetype);
@@ -351,6 +353,7 @@ public class SingleCharacterDemo : MonoBehaviour
                 }
             }
         }
+        
         UpdateButtonTexts(false, possibleOptions);
     }
 
@@ -361,31 +364,7 @@ public class SingleCharacterDemo : MonoBehaviour
     }
 
 
-    private string GetNextPJState(string currentState)
-    {
-        switch (currentState)
-        {
-            case "Start":
-                return "FreeRecall";
-            case "GreetingSpecific":
-                return "Start";
-            case "WorkSpecific":
-                return "Start";
-            case "WifeSpecific":
-                return "Start";
-            case "KidsSpecific":
-                return "Start";
-            case "Greeting":
-                return "Start";
-            case "CowSpecific":
-                return "FreeRecall";
-            case "FreeRecall":
-                return "Questioning";
-            case "Questioning":
-                return "Closure";
-            default: return "FreeRecall";
-        }
-    }
+    
     private void InstantiateScore()
     {
 

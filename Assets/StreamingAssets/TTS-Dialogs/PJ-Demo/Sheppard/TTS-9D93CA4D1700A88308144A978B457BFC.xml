@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LipSyncVisemes wavFile="TTS-9D93CA4D1700A88308144A978B457BFC.wav">
+  <viseme type="2" time="0.073" duration="0.073" />
+  <viseme type="6" time="0.146" duration="0.073" />
+  <viseme type="8" time="0.219" duration="0.058" />
+  <viseme type="4" time="0.277" duration="0.058" />
+  <viseme type="19" time="0.335" duration="0.068" />
+  <viseme type="14" time="0.403" duration="0.04" />
+  <viseme type="6" time="0.443" duration="0.076" />
+  <viseme type="15" time="0.519" duration="0.104" />
+  <viseme type="21" time="0.623" duration="0.052" />
+  <viseme type="6" time="0.675" duration="0.112" />
+  <viseme type="20" time="0.787" duration="0.077" />
+  <viseme type="7" time="0.864" duration="0.065" />
+  <viseme type="6" time="0.929" duration="0.04" />
+  <viseme type="17" time="0.969" duration="0.044" />
+  <viseme type="6" time="1.013" duration="0.065" />
+  <viseme type="4" time="1.078" duration="0.073" />
+  <viseme type="6" time="1.151" duration="0.069" />
+  <viseme type="19" time="1.22" duration="0.057" />
+  <viseme type="17" time="1.277" duration="0.024" />
+  <viseme type="1" time="1.301" duration="0.04" />
+  <viseme type="21" time="1.341" duration="0.071" />
+  <viseme type="13" time="1.412" duration="0.047" />
+  <viseme type="4" time="1.459" duration="0.063" />
+  <viseme type="15" time="1.522" duration="0.063" />
+  <viseme type="1" time="1.585" duration="0.039" />
+  <viseme type="19" time="1.624" duration="0.063" />
+  <viseme type="15" time="1.687" duration="0.091" />
+  <viseme type="1" time="1.778" duration="0.051" />
+  <viseme type="18" time="1.829" duration="0.055" />
+  <viseme type="21" time="1.884" duration="0.052" />
+  <viseme type="2" time="1.936" duration="0.068" />
+  <viseme type="6" time="2.004" duration="0.068" />
+  <viseme type="14" time="2.072" duration="0.072" />
+  <viseme type="3" time="2.144" duration="0.07" />
+  <viseme type="6" time="2.214" duration="0.07" />
+  <viseme type="1" time="2.284" duration="0.16" />
+</LipSyncVisemes>

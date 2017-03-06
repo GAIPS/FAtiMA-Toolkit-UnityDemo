@@ -257,6 +257,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
             foreach (var d in dialogOptions)
             {
+                if (isInButtonList(d.Utterance)) continue;
                 var b = Instantiate(m_dialogButtonArchetype);
                 var t = b.transform;
                 t.SetParent(m_dialogButtonZone, false);
@@ -380,10 +381,8 @@ public class SingleCharacterDemo : MonoBehaviour
                         .Shuffle()
                         .Take(2);
 
-                  //  if (additionalOptions.Count() > 1) Debug.Log("Additionak OPTIOns: " + additionalOptions.ElementAt(0).Utterance +
-                   //           additionalOptions.ElementAt(1).Utterance);
-
-                    possibleOptions = additionalOptions.Count() > 1 ? newOptions.Concat(additionalOptions).Shuffle() : newOptions.Shuffle();
+                 
+                possibleOptions =   newOptions.Concat(additionalOptions).Shuffle();
 
                     if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
                     {
@@ -520,4 +519,15 @@ public class SingleCharacterDemo : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+
+    public bool isInButtonList(string utterance)
+    {
+
+        foreach (var button in m_buttonList)
+        {
+            if (button.GetComponentInChildren<Text>().text == utterance)
+                return true;
+        }
+        return false;
+    }
 }

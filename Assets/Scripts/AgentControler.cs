@@ -298,9 +298,12 @@ namespace Assets.Scripts
 				_body.Hide();
 			yield return new WaitForSeconds(2);
 		    GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
-            _finalScore.SetActive(true);
-            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
-        }
+		    if (m_scenarioData.IAT.ScenarioName.Contains("PJ"))
+		    {
+		        _finalScore.SetActive(true);
+		        GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
+		    }
+		}
 
 
 	    private IEnumerator newHandleDisconnect()
@@ -309,9 +312,12 @@ namespace Assets.Scripts
                 _body.Hide();
             yield return new WaitForSeconds(2);
             GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
-            _finalScore.SetActive(true);
-            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
-            m_dialogController.Clear();
+	        if (m_scenarioData.IAT.ScenarioName.Contains("PJ"))
+	        {
+	            _finalScore.SetActive(true);
+	            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
+	        }
+	        m_dialogController.Clear();
         }
 
 	    public void End()

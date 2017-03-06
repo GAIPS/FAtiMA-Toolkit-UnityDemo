@@ -96,11 +96,12 @@ public class SingleCharacterDemo : MonoBehaviour
     private GameObject _finalScore;
     public Dictionary<string, string> alreadyUsedDialogs;
     private bool Initialized;
-
+    private bool waitingforReply;
 
     // Use this for initialization
     private IEnumerator Start()
     {
+        waitingforReply = false;
         Initialized = false;
         _finalScore = GameObject.FindGameObjectWithTag("FinalScore");
         _finalScore.SetActive(false);
@@ -219,7 +220,7 @@ public class SingleCharacterDemo : MonoBehaviour
                     StopAllCoroutines();
                     _agentController.storeFinalScore(_finalScore);
                     _agentController.Start(this, VersionMenu);
-                    InstantiateScore();
+                   if(PJScenario) InstantiateScore();
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -248,10 +249,12 @@ public class SingleCharacterDemo : MonoBehaviour
         }
         else
         {
-            if (m_buttonList.Count == dialogOptions.Count())
+        
+          if (m_buttonList.Count == dialogOptions.Count())
                 return;
-         Debug.Log("size" + dialogOptions.Count() );
-            if(dialogOptions.Count() < 6)
+          
+
+
             foreach (var d in dialogOptions)
             {
                 var b = Instantiate(m_dialogButtonArchetype);
@@ -278,10 +281,11 @@ public class SingleCharacterDemo : MonoBehaviour
 
 
         StartCoroutine(PlayerReplyAction(actionFormat, reply.NextState));
-        UpdateScore(reply);
+       if(PJScenario) UpdateScore(reply);
 
         alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
-
+     
+       
     }
 
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
@@ -291,8 +295,8 @@ public class SingleCharacterDemo : MonoBehaviour
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         _agentController.AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF").ToString());
-        Initialized = true;
 
+        
     }
 
     // Update is called once per frame
@@ -307,6 +311,7 @@ public class SingleCharacterDemo : MonoBehaviour
         if (_agentController.getJustReplied())
         {
             UpdateScore(_agentController.getReply());
+           if(Initialized) waitingforReply = false;
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -337,38 +342,67 @@ public class SingleCharacterDemo : MonoBehaviour
         if (!possibleOptions.Any())
         {
             UpdateButtonTexts(true, null);
+            Initialized = true;
+
+
         }
         else
         {
             if (PJScenario)
             {
+                if (waitingforReply) return;
                 if (!Initialized)
                 {
-                    var newOptions = possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE).Take(3).Shuffle().ToList();
+                     
+                    var newOptions =
+                        possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
+                            .Take(3)
+                            .Shuffle()
+                            .ToList();
 
                     newOptions.AddRange(_iat.GetDialogueActionsByState(IATConsts.PLAYER, "Introduction"));
                     possibleOptions = newOptions;
+                    waitingforReply = true;
+                    UpdateButtonTexts(false, possibleOptions);
                 }
                 else
                 {
-                    var newOptions = possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance)).Shuffle().Take(3).ToList();
 
-                    var additionalOptions =  _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Start")
-                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x)).Shuffle().Take(2);
+                   
+                    var newOptions =
+                        possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
+                            .Shuffle()
+                            .Take(3)
+                            .ToList();
+                //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
+                    var additionalOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Start")
+                        .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
+                        .Shuffle()
+                        .Take(2);
 
-                    possibleOptions = newOptions.Concat(additionalOptions).Shuffle();
+                  //  if (additionalOptions.Count() > 1) Debug.Log("Additionak OPTIOns: " + additionalOptions.ElementAt(0).Utterance +
+                   //           additionalOptions.ElementAt(1).Utterance);
+
+                    possibleOptions = additionalOptions.Count() > 1 ? newOptions.Concat(additionalOptions).Shuffle() : newOptions.Shuffle();
 
                     if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
                     {
-                        var ClosureOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Closure").Take(1).ToList();
+                        var ClosureOptions =
+                            _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Closure").Take(1).ToList();
 
                         possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle();
                     }
+
+                    waitingforReply = true;
+                    UpdateButtonTexts(false, possibleOptions);
                 }
             }
+
+        else UpdateButtonTexts(false, possibleOptions);
+
         }
-        
-        UpdateButtonTexts(false, possibleOptions);
+   
+
     }
 
     private void LateUpdate()

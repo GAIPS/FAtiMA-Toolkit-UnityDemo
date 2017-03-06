@@ -81,6 +81,7 @@ public class SingleCharacterDemo : MonoBehaviour
     public GameObject VersionMenu;
     public GameObject ScoreTextPrefab;
     private bool PJScenario;
+    private bool SpaceModulesScenario;
 
     [Header("Intro")]
     [SerializeField]
@@ -205,6 +206,15 @@ public class SingleCharacterDemo : MonoBehaviour
             PJScenario = false;
         }
 
+        if (_iat.ScenarioName.Contains("Space"))
+        {
+            SpaceModulesScenario = true;
+        }
+        else
+        {
+            SpaceModulesScenario = false;
+        }
+
         var characterSources = _iat.GetAllCharacterSources().ToList();
         foreach (var source in characterSources)
         {
@@ -220,7 +230,7 @@ public class SingleCharacterDemo : MonoBehaviour
                     StopAllCoroutines();
                     _agentController.storeFinalScore(_finalScore);
                     _agentController.Start(this, VersionMenu);
-                   if(PJScenario) InstantiateScore();
+                   if(PJScenario || SpaceModulesScenario) InstantiateScore();
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -282,7 +292,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
 
         StartCoroutine(PlayerReplyAction(actionFormat, reply.NextState));
-       if(PJScenario) UpdateScore(reply);
+       if(PJScenario || SpaceModulesScenario) UpdateScore(reply);
 
         alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
      
@@ -426,6 +436,11 @@ public class SingleCharacterDemo : MonoBehaviour
             obj.GetComponent<ScoreManager>().SetPJ(true);
             obj.GetComponent<ScoreManager>().Refresh();
 
+        } else if (SpaceModulesScenario)
+        {
+            var obj = GameObject.FindGameObjectWithTag("Score");
+            obj.GetComponent<ScoreManager>().SetPJ(false);
+            obj.GetComponent<ScoreManager>().Refresh();
         }
     }
 

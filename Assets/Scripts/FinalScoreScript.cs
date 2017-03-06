@@ -24,7 +24,7 @@ public class FinalScoreScript : MonoBehaviour
     {
 
         score = GameObject.FindGameObjectWithTag("Score");
-
+        PJ = score.GetComponent<ScoreManager>().PJ;
         string ret = "";
 
 

@@ -312,7 +312,7 @@ namespace Assets.Scripts
                 _body.Hide();
             yield return new WaitForSeconds(2);
             GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
-	        if (m_scenarioData.IAT.ScenarioName.Contains("PJ"))
+	        if (m_scenarioData.IAT.ScenarioName.Contains("PJ") || m_scenarioData.IAT.ScenarioName.Contains("Space"))
 	        {
 	            _finalScore.SetActive(true);
 	            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);

@@ -2628,7 +2628,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 418831448}
   m_HandleRect: {fileID: 418831447}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3511,7 +3511,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1333213832}
   m_HandleRect: {fileID: 1333213831}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3601,7 +3601,6 @@ MonoBehaviour:
   VersionMenu: {fileID: 313979649}
   ScoreTextPrefab: {fileID: 1689566615498648, guid: 1d41450fc3978a249a72e54d7e988e53,
     type: 2}
-  PJScenario: 0
   _introPanel: {fileID: 2098785805}
   _introText: {fileID: 1162935416}
 --- !u!4 &2054510709

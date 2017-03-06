@@ -1,6 +1,12 @@
-\Scenarios\IntroductionScenario.iat
+\Scenarios\Introduction\IntroductionScenario.iat
 	Introduction
+\Scenarios\AssetDemos\EADemo.iat
+	AssetDemos
+\Scenarios\AssetDemos\EDMDemo.iat
+	AssetDemos
+\Scenarios\AssetDemos\SIDemo.iat
+	AssetDemos
 \Scenarios\PJ\PJScenario.iat
 	PJ-Demo
-\Scenarios\PJPT\PJScenario.iat
-	PJ-DemoPT
+\Scenarios\SpaceModules\MinSysKnwNov.iat
+	SpaceModules

@@ -80,7 +80,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
     public GameObject VersionMenu;
     public GameObject ScoreTextPrefab;
-    public bool PJScenario;
+    private bool PJScenario;
 
     [Header("Intro")]
     [SerializeField]
@@ -111,10 +111,10 @@ public class SingleCharacterDemo : MonoBehaviour
         alreadyUsedDialogs = new Dictionary<string, string>();
 
         var streamingAssetsPath = Application.streamingAssetsPath;
+
 #if UNITY_EDITOR || UNITY_STANDALONE
         streamingAssetsPath = "file://" + streamingAssetsPath;
 #endif
-
         var www = new WWW(streamingAssetsPath + "/scenarioList.txt");
         yield return www;
 
@@ -194,6 +194,15 @@ public class SingleCharacterDemo : MonoBehaviour
 
         _introPanel.SetActive(true);
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
+
+        if (_iat.ScenarioName.Contains("PJ"))
+        {
+            PJScenario = true;
+        }
+        else
+        {
+            PJScenario = false;
+        }
 
         var characterSources = _iat.GetAllCharacterSources().ToList();
         foreach (var source in characterSources)
@@ -306,6 +315,11 @@ public class SingleCharacterDemo : MonoBehaviour
                 Time.timeScale = 0;
             else
                 Time.timeScale = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            this.Restart();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -457,8 +471,6 @@ public class SingleCharacterDemo : MonoBehaviour
                     case "Polite":
                         score.GetComponent<ScoreManager>().AddP(Int32.Parse(result[1]));
                         break;
-
-
                 }
 
     }
@@ -466,15 +478,12 @@ public class SingleCharacterDemo : MonoBehaviour
 
     public void ClearScore()
     {
-
         Destroy(score);
     }
 
-    public void End()
+    public void Restart()
     {
-
         SceneManager.LoadScene(0);
-
     }
 
 }

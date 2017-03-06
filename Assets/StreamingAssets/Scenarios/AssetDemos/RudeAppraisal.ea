@@ -1,0 +1,52 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"Description": "Respond Emotionally to \"Polite\" and \"Rule\"",
+			"KnowledgeBase":
+				{
+					"Perspective": "Client",
+					"Knowledge":
+						{
+							"SELF":
+								{
+									"DialogueState(Player)": "Start"
+								}
+						}
+				},
+			"AppraisalRules":
+				{
+					"AppraisalWeight": 1,
+					"Rules": [
+						{
+							"EventName": "Event(Action-End, Player, Speak(*, *, *, Rude), SELF)",
+							"Conditions":
+								{
+									"Set": []
+								},
+							"Desirability": -4,
+							"Praiseworthiness": -4
+						},
+						{
+							"EventName": "Event(Action-End, SELF, Speak(*, *, CheckSolution, *), *)",
+							"Conditions":
+								{
+									"Set": []
+								},
+							"Desirability": 10,
+							"Praiseworthiness": 0
+						}]
+				},
+			"EmotionDispositions": [
+				{
+					"Emotion": "*",
+					"Decay": 1,
+					"Threshold": 1
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

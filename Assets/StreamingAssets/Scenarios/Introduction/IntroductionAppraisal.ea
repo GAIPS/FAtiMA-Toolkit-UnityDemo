@@ -10,7 +10,7 @@
 						{
 							"SELF":
 								{
-									"DialogueState(Player)": "Start"			
+									"DialogueState(Player)": "Start"
 								}
 						}
 				},
@@ -19,7 +19,7 @@
 					"AppraisalWeight": 1,
 					"Rules": [
 						{
-							"EventName": "Event(Action-Start, Self, Speak(A1, *, *, *), *)",
+							"EventName": "Event(Action-End, Self, Speak(A13, *, *, *), *)",
 							"Conditions":
 								{
 									"Set": []
@@ -27,15 +27,7 @@
 							"Desirability": 5
 						}, 
 						{
-							"EventName": "Event(Action-Start, Self, Speak(A13, *, *, *), *)",
-							"Conditions":
-								{
-									"Set": []
-								},
-							"Desirability": 5
-						}, 
-						{
-							"EventName": "Event(Action-Start, Self, Speak(A3, *, *, *), *)",
+							"EventName": "Event(Action-End, Self, Speak(A2, *, *, *), *)",
 							"Conditions":
 								{
 									"Set": []
@@ -44,13 +36,21 @@
 							"Praiseworthiness": -6
 						}, 
 						{
-							"EventName": "Event(Action-Start, Self, Speak(A4, *, *, *), *)",
+							"EventName": "Event(Action-End, Self, Speak(A3, *, *, *), *)",
 							"Conditions":
 								{
 									"Set": []
 								},
 							"Desirability": 9,
 							"Praiseworthiness": 9
+						}, 
+						{
+							"EventName": "Event(Action-End, *, Speak(Start, *, *, *), *)",
+							"Conditions":
+								{
+									"Set": []
+								},
+							"Desirability": 5
 						}]
 				},
 			"EmotionDispositions": [

@@ -10,57 +10,64 @@
 					"CurrentState": "Start",
 					"NextState": "AfterPlayerGreeting",
 					"Meaning": ["Greeting"],
-					"Style": ["Informal"],
+					"Style": ["Rude"],
 					"Utterance": "Hello, how may I help you?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "AfterPlayerGreeting",
 					"Meaning": ["Greeting"],
-					"Style": ["Formal"],
+					"Style": ["Polite"],
 					"Utterance": "Tech Solutions LTD, this is Tom speaking. How are you today?"
 				}, 
 				{
 					"CurrentState": "ProblemSolved",
 					"NextState": "AnythingElse",
 					"Meaning": ["AskForFurtherAssistance"],
-					"Style": ["Informal"],
+					"Style": ["Rude"],
 					"Utterance": "Anything else?"
 				}, 
 				{
 					"CurrentState": "ProblemSolved",
 					"NextState": "AnythingElse",
 					"Meaning": ["AskForFurtherAssistance"],
-					"Style": ["Formal"],
+					"Style": ["Polite"],
 					"Utterance": "We are glad that we could help you solve your problem. Is there anything else we can assist you with?"
 				}, 
 				{
 					"CurrentState": "Start",
 					"NextState": "AfterPlayerGreeting",
 					"Meaning": ["Greeting"],
-					"Style": ["Informal"],
+					"Style": ["Rude"],
 					"Utterance": "Yo dude, wassup?"
 				}, 
 				{
 					"CurrentState": "Problem",
 					"NextState": "SolutionProposed",
 					"Meaning": ["AskToCheckCapsLock"],
-					"Style": ["Informal"],
+					"Style": ["Rude"],
 					"Utterance": "Check the caps lock..."
 				}, 
 				{
 					"CurrentState": "Problem",
 					"NextState": "SolutionProposed",
 					"Meaning": ["AskToCheckCapsLock"],
-					"Style": ["Formal"],
+					"Style": ["Polite"],
 					"Utterance": "Could you please check if the caps lock is turned on by accident?"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "AfterPlayerGreeting",
+					"Meaning": ["Greeting"],
+					"Style": ["Polite"],
+					"Utterance": "Dear Madam, is there anything I can do to help you?"
 				}],
 			"AgentDialogues": [
 				{
 					"CurrentState": "-",
 					"NextState": "-",
 					"Meaning": ["IsAnybodyThereQuestion"],
-					"Style": [],
+					"Style": ["-"],
 					"Utterance": "Are you still there?",
 					"UtteranceId": "TTS-872175A52C59DBE1E052AEFBD06300DC"
 				}, 
@@ -89,20 +96,20 @@
 					"UtteranceId": "TTS-76EFB34FC9BA7F43F2CFAD94BCEAB637"
 				}, 
 				{
-					"CurrentState": "-",
-					"NextState": "ProblemSolved",
-					"Meaning": ["ProblemIsFixed"],
-					"Style": ["GoodMood"],
-					"Utterance": "It worked!! Thank you.",
-					"UtteranceId": "TTS-E677522A6129D83DE6DE96C0555FB0AD"
-				}, 
-				{
-					"CurrentState": "-",
+					"CurrentState": "TestingSolution",
 					"NextState": "ProblemSolved",
 					"Meaning": ["ProblemIsFixed"],
 					"Style": ["BadMood"],
 					"Utterance": "It seems to be working now.",
 					"UtteranceId": "TTS-A774C3BA0EA269400AA6F9A1B9BB7FAF"
+				}, 
+				{
+					"CurrentState": "SolutionProposed",
+					"NextState": "TestingSolution",
+					"Meaning": ["CheckSolution"],
+					"Style": ["BadMood"],
+					"Utterance": "Let me see.",
+					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
 				}, 
 				{
 					"CurrentState": "Farewell",
@@ -146,15 +153,7 @@
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
-					"NextState": "-",
-					"Meaning": ["CheckSolution"],
-					"Style": ["BadMood"],
-					"Utterance": "Let me see.",
-					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
-				}, 
-				{
-					"CurrentState": "SolutionProposed",
-					"NextState": "-",
+					"NextState": "TestingSolution",
 					"Meaning": ["CheckSolution"],
 					"Style": ["GoodMood"],
 					"Utterance": "Thank you. Could you wait just a moment?",
@@ -183,6 +182,14 @@
 					"Style": ["GoodMood"],
 					"Utterance": "I am suddenly unable to login in to my e-mail account, and I am pretty sure my password is correct.",
 					"UtteranceId": "TTS-B121529E6C8683315D5DBE7ECA62F478"
+				}, 
+				{
+					"CurrentState": "TestingSolution",
+					"NextState": "ProblemSolved",
+					"Meaning": ["ProblemIsFixed"],
+					"Style": ["GoodMood"],
+					"Utterance": "It worked!! Thank you.",
+					"UtteranceId": "TTS-E677522A6129D83DE6DE96C0555FB0AD"
 				}]
 		},
 	"types": [

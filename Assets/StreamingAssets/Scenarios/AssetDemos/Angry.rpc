@@ -13,7 +13,7 @@
 			"BodyName": "Female",
 			"VoiceName": null,
 			"EmotionalAppraisalAssetSource": "RudeAppraisal.ea",
-			"EmotionalDecisionMakingSource": "..\\Common\\SingleResponse.edm",
+			"EmotionalDecisionMakingSource": "..\\Common\\BadMoodGoodMood.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
 			"EmotionalState":

@@ -11,9 +11,9 @@
 						}
 				},
 			"BodyName": "Female",
-			"VoiceName": "Heather",
-			"EmotionalAppraisalAssetSource": "Neutral.ea",
-			"EmotionalDecisionMakingSource": "Client.edm",
+			"VoiceName": null,
+			"EmotionalAppraisalAssetSource": "PoliteAppraisal.ea",
+			"EmotionalDecisionMakingSource": "..\\Common\\BadMoodGoodMood.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
 			"EmotionalState":

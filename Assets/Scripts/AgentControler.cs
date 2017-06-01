@@ -57,7 +57,7 @@ namespace Assets.Scripts
 			t.localScale = Vector3.one;
 			m_dialogController.SetCharacterLabel(m_rpc.CharacterName.ToString());
 
-            m_rpc.Perceive(new Name[] { EventHelper.PropertyChanged("DialogueState(Player)", "Start", "world")});
+            m_rpc.Perceive(new Name[] { EventHelper.PropertyChange("DialogueState(Player)", "Start", "world")});
 		}
 
 		public void AddEvent(string eventName)
@@ -100,7 +100,7 @@ namespace Assets.Scripts
 			if (emotion == null)
 				return;
 
-			_body.SetExpression(emotion.EmotionType, emotion.Intensity/10f);
+			//_body.SetExpression(emotion.EmotionType, emotion.Intensity/10f);
 		}
 
 		private IEnumerator UpdateCoroutine()
@@ -155,8 +155,15 @@ namespace Assets.Scripts
             Name meaning = speakAction.Parameters[2];
             Name style = speakAction.Parameters[3];
 
-            var dialog = m_iat.GetDialogueAction(IATConsts.AGENT, currentState, nextState, meaning, style);
-			if (dialog == null)
+            var dialogs = m_iat.GetDialogueActions(IATConsts.AGENT, currentState, nextState, meaning, style);
+           
+	
+
+		    var dialog = dialogs.Shuffle().FirstOrDefault();
+
+		   
+
+		    if (dialog == null)
 			{
 				Debug.LogWarning("Unknown dialog action.");
 				m_dialogController.AddDialogLine("... (unkown dialogue) ...");
@@ -293,7 +300,7 @@ namespace Assets.Scripts
 		{
 			yield return null;
 			m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
-            AddEvent(EventHelper.PropertyChanged(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER),"Disconnected", "SELF").ToString());
+            AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER),"Disconnected", "SELF").ToString());
 			if(_body)
 				_body.Hide();
 			yield return new WaitForSeconds(2);

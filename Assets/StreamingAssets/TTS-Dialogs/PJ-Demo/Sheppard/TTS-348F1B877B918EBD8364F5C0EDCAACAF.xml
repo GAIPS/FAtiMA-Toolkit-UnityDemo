@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LipSyncVisemes wavFile="TTS-348F1B877B918EBD8364F5C0EDCAACAF.wav">
-  <viseme type="19" time="0.073" duration="0.066" />
-  <viseme type="8" time="0.139" duration="0.079" />
-  <viseme type="4" time="0.218" duration="0.079" />
-  <viseme type="2" time="0.455" duration="0.049" />
-  <viseme type="6" time="0.504" duration="0.049" />
-  <viseme type="7" time="0.553" duration="0.051" />
-  <viseme type="1" time="0.604" duration="0.039" />
-  <viseme type="15" time="0.643" duration="0.083" />
-  <viseme type="1" time="0.726" duration="0.062" />
-  <viseme type="19" time="0.788" duration="0.082" />
-  <viseme type="19" time="0.87" duration="0.145" />
+  <viseme type="19" time="0.1" duration="0.09" />
+  <viseme type="8" time="0.19" duration="0.2" />
+  <viseme type="2" time="0.79" duration="0.06" />
+  <viseme type="6" time="0.85" duration="0.06" />
+  <viseme type="7" time="0.91" duration="0.055" />
+  <viseme type="1" time="0.965" duration="0.075" />
+  <viseme type="15" time="1.04" duration="0.075" />
+  <viseme type="1" time="1.115" duration="0.07" />
+  <viseme type="19" time="1.185" duration="0.05" />
+  <viseme type="19" time="1.235" duration="0.115" />
 </LipSyncVisemes>

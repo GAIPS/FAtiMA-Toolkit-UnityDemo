@@ -1592,15 +1592,7 @@
 					"CurrentState": "S3",
 					"NextState": "Start",
 					"Meaning": ["Informative(0)", "Truth(3)"],
-					"Style": ["Aggression(3)", "Variation(4)"],
-					"Utterance": "I only speak with you in the presence of my lawyer",
-					"UtteranceId": "TTS-9D93CA4D1700A88308144A978B457BFC"
-				}, 
-				{
-					"CurrentState": "S3",
-					"NextState": "Start",
-					"Meaning": ["Informative(0)", "Truth(3)"],
-					"Style": ["Aggression(1)", "Variation(3)"],
+					"Style": ["Aggression(0)"],
 					"Utterance": "It depends. The Police's never satisfied",
 					"UtteranceId": "TTS-F87BDA9754A6F71DD4BFEC8C0B6B07B0"
 				}, 
@@ -1608,17 +1600,17 @@
 					"CurrentState": "S3",
 					"NextState": "Start",
 					"Meaning": ["Informative(0)", "Truth(3)"],
-					"Style": ["Aggression(0)", "Variation(2)"],
-					"Utterance": "Of course, as far as I'm aware.",
-					"UtteranceId": "TTS-3B5A721632A43CACD205DFD4CB615E10"
+					"Style": ["Aggression(0)"],
+					"Utterance": "I only speak with you in the presence of my lawyer",
+					"UtteranceId": "TTS-9D93CA4D1700A88308144A978B457BFC"
 				}, 
 				{
 					"CurrentState": "S3",
 					"NextState": "Start",
 					"Meaning": ["Informative(0)", "Truth(3)"],
-					"Style": ["Aggression(0)", "Variation(1)"],
-					"Utterance": "I've no time for that.",
-					"UtteranceId": "TTS-24182FA9EF75305D98F2BA468DECF053"
+					"Style": ["Aggression(0)"],
+					"Utterance": "Of course, as far as I'm aware.",
+					"UtteranceId": "TTS-3B5A721632A43CACD205DFD4CB615E10"
 				}, 
 				{
 					"CurrentState": "S3",
@@ -2304,15 +2296,7 @@
 					"CurrentState": "Q30",
 					"NextState": "UnderstandSpecific",
 					"Meaning": ["Informative(7)", "Truth(3)"],
-					"Style": ["Aggression(6)", "Variation(4)"],
-					"Utterance": "We like to watch pornos. Then we do as in the films, fucking hard. What's the problem?",
-					"UtteranceId": "TTS-5D29042E3E9DD0CF8139B4BF9004CC9A"
-				}, 
-				{
-					"CurrentState": "Q30",
-					"NextState": "UnderstandSpecific",
-					"Meaning": ["Informative(7)", "Truth(3)"],
-					"Style": ["Aggression(6)", "Variation(3)"],
+					"Style": ["Aggression(6)"],
 					"Utterance": "She enjoys violent sex, not me. She always asks me to beat her.",
 					"UtteranceId": "TTS-4CBDDF5E229A58D91FF4ECB04DDC7F41"
 				}, 
@@ -2320,17 +2304,25 @@
 					"CurrentState": "Q30",
 					"NextState": "UnderstandSpecific",
 					"Meaning": ["Informative(7)", "Truth(3)"],
-					"Style": ["Aggression(6)", "Variation(2)"],
+					"Style": ["Aggression(6)"],
 					"Utterance": "Why? Does your wife complain?",
 					"UtteranceId": "TTS-F252105A2DF318A8F3AE1DF82EFF4983"
+				}, 
+				{
+					"CurrentState": "S3",
+					"NextState": "Start",
+					"Meaning": ["Informative(0)", "Truth(3)"],
+					"Style": ["Aggression(0)"],
+					"Utterance": "I've no time for that.",
+					"UtteranceId": "TTS-24182FA9EF75305D98F2BA468DECF053"
 				}, 
 				{
 					"CurrentState": "Q30",
 					"NextState": "UnderstandSpecific",
 					"Meaning": ["Informative(7)", "Truth(3)"],
-					"Style": ["Aggression(6)", "Variation(1)"],
-					"Utterance": "No, she never complains. She loves it.",
-					"UtteranceId": "TTS-CC76984E363C56B4A19256B88871C7AC"
+					"Style": ["Aggression(6)"],
+					"Utterance": "We like to watch pornos. Then we do as in the films, fucking hard. What's the problem?",
+					"UtteranceId": "TTS-5D29042E3E9DD0CF8139B4BF9004CC9A"
 				}, 
 				{
 					"CurrentState": "Q30",
@@ -2816,15 +2808,7 @@
 					"CurrentState": "F51",
 					"NextState": "OdlySpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
-					"Style": ["Aggression(6)", "Variation(4)"],
-					"Utterance": "Only her could have called the Police. The door was locked and she was the one that was able to call the Police.",
-					"UtteranceId": "TTS-B51593BD893F9A13FB60113F5D751D27"
-				}, 
-				{
-					"CurrentState": "F51",
-					"NextState": "OdlySpecific",
-					"Meaning": ["Informative(5)", "Truth(5)"],
-					"Style": ["Aggression(6)", "Variation(3)"],
+					"Style": ["Aggression(6)"],
 					"Utterance": "It was me that called the Police. She might need some help. I care very much about her.",
 					"UtteranceId": "TTS-7B8420E1041ED90583647D29394DA171"
 				}, 
@@ -2832,7 +2816,7 @@
 					"CurrentState": "F51",
 					"NextState": "OdlySpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
-					"Style": ["Aggression(6)", "Variation(2)"],
+					"Style": ["Aggression(6)"],
 					"Utterance": "It must have been the guy she's dating with. I've always Known that bitch is deceiving me.",
 					"UtteranceId": "TTS-4B3AF5F165CAECA22EFE00B10F521676"
 				}, 
@@ -2840,9 +2824,17 @@
 					"CurrentState": "F51",
 					"NextState": "OdlySpecific",
 					"Meaning": ["Informative(5)", "Truth(5)"],
-					"Style": ["Aggression(6)", "Variation(1)"],
+					"Style": ["Aggression(6)"],
 					"Utterance": "I'm not a magician. How should I know?",
 					"UtteranceId": "TTS-AFDF23B8D230905ED41B441F3B43190A"
+				}, 
+				{
+					"CurrentState": "Q30",
+					"NextState": "UnderstandSpecific",
+					"Meaning": ["Informative(7)", "Truth(3)"],
+					"Style": ["Aggression(6)"],
+					"Utterance": "No, she never complains. She loves it.",
+					"UtteranceId": "TTS-CC76984E363C56B4A19256B88871C7AC"
 				}, 
 				{
 					"CurrentState": "F50",
@@ -3120,15 +3112,7 @@
 					"CurrentState": "F2",
 					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
-					"Style": ["Aggression(0)", "Variation(4)"],
-					"Utterance": "We get alongtogether very well. We live in a kind of honeymoon. Haven't you noticed?",
-					"UtteranceId": "TTS-9538367A3377E7E415CC65259DA21CEB"
-				}, 
-				{
-					"CurrentState": "F2",
-					"NextState": "WifeSpecific",
-					"Meaning": ["Informative(3)", "Truth(5)"],
-					"Style": ["Aggression(0)", "Variation(3)"],
+					"Style": ["Aggression(0)"],
 					"Utterance": " Isn't there anything else to investigate except asking about that bitch.",
 					"UtteranceId": "TTS-94337557A0F012A846E79B84029F8AE4"
 				}, 
@@ -3136,17 +3120,25 @@
 					"CurrentState": "F2",
 					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
-					"Style": ["Aggression(0)", "Variation(2)"],
-					"Utterance": " That's a private matter. I don't speak about it with Policemen",
-					"UtteranceId": "TTS-56D2B02808C773E5463437B9CA0E11DF"
+					"Style": ["Aggression(0)"],
+					"Utterance": "That's nothing to do with you.",
+					"UtteranceId": "TTS-F49686B22C424CBAD5AA9AF19944AD8D"
 				}, 
 				{
 					"CurrentState": "F2",
 					"NextState": "WifeSpecific",
 					"Meaning": ["Informative(3)", "Truth(5)"],
-					"Style": ["Aggression(0)", "Variation(1)"],
-					"Utterance": "That's nothing to do with you.",
-					"UtteranceId": "TTS-F49686B22C424CBAD5AA9AF19944AD8D"
+					"Style": ["Aggression(0)"],
+					"Utterance": "We get alongtogether very well. We live in a kind of honeymoon. Haven't you noticed?",
+					"UtteranceId": "TTS-9538367A3377E7E415CC65259DA21CEB"
+				}, 
+				{
+					"CurrentState": "F51",
+					"NextState": "OdlySpecific",
+					"Meaning": ["Informative(5)", "Truth(5)"],
+					"Style": ["Aggression(6)"],
+					"Utterance": "Only her could have called the Police. The door was locked and she was the one that was able to call the Police.",
+					"UtteranceId": "TTS-B51593BD893F9A13FB60113F5D751D27"
 				}, 
 				{
 					"CurrentState": "F2",
@@ -3251,6 +3243,14 @@
 					"Style": [],
 					"Utterance": "I see, I'll wait a bit then, but please give me a beer....",
 					"UtteranceId": "TTS-AA339CD2ADEA9959329CF57E34E3E398"
+				}, 
+				{
+					"CurrentState": "F2",
+					"NextState": "WifeSpecific",
+					"Meaning": ["Informative(3)", "Truth(5)"],
+					"Style": ["Aggression(0)"],
+					"Utterance": " That's a private matter. I don't speak about it with Policemen",
+					"UtteranceId": "TTS-56D2B02808C773E5463437B9CA0E11DF"
 				}]
 		},
 	"types": [

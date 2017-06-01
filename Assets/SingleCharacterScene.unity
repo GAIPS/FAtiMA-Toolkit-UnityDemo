@@ -3588,7 +3588,7 @@ MonoBehaviour:
     CharaterArchtype: {fileID: 114000012784329970, guid: 31603eb50fba6f44ababe4399bc981c0,
       type: 2}
   - BodyName: Male
-    CharaterArchtype: {fileID: 114032766617856860, guid: 4244c7f92a280a543a9ac782ec62c0c8,
+    CharaterArchtype: {fileID: 114693501108300788, guid: 775d7efc093cf434c922b88c57983dbb,
       type: 2}
   m_dialogButtonArchetype: {fileID: 11411466, guid: a6dcc26afc01649428e68538c726131f,
     type: 2}

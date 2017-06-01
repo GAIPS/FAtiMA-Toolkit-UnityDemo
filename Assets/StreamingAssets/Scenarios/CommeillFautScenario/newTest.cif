@@ -1,0 +1,115 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"SocialExchanges": [
+				{
+					"Action": "Compliment",
+					"Conditions":
+						{
+							"Set": []
+						},
+					"Intent": "Be Friends",
+					"Instantiation": "",
+					"InfluenceRules": [
+						{
+							"RuleName": "Low Attraction",
+							"Target": "[x]",
+							"Value": -10,
+							"RuleConditions":
+								{
+									"Set": ["Friendship(SELF, [x]) < -5"]
+								}
+						}, 
+						{
+							"RuleName": "High Friendship",
+							"Target": "[x]",
+							"Value": 10,
+							"RuleConditions":
+								{
+									"Set": ["Friendship(SELF, [x]) > 5"]
+								}
+						}],
+					"EffectsList":
+						{
+							"dictionary": []
+						}
+				}, 
+				{
+					"Action": "Flirt",
+					"Conditions":
+						{
+							"Set": []
+						},
+					"Intent": "to flirt...",
+					"Instantiation": "",
+					"InfluenceRules": [
+						{
+							"RuleName": "High Attraction",
+							"Target": "[x]",
+							"Value": 10,
+							"RuleConditions":
+								{
+									"Set": ["Attraction(SELF, [x]) > 5"]
+								}
+						}, 
+						{
+							"RuleName": "Low Attraction",
+							"Target": "[x]",
+							"Value": -10,
+							"RuleConditions":
+								{
+									"Set": ["Attraction(SELF, [x]) < -5"]
+								}
+						}],
+					"EffectsList":
+						{
+							"dictionary": []
+						}
+				}, 
+				{
+					"Action": "Insult",
+					"Conditions":
+						{
+							"Set": []
+						},
+					"Intent": "Insult the other",
+					"Instantiation": "",
+					"InfluenceRules": [
+						{
+							"RuleName": "Disgusting",
+							"Target": "[x]",
+							"Value": 5,
+							"RuleConditions":
+								{
+									"Set": ["Friendship(SELF, [x]) <= -5"]
+								}
+						}, 
+						{
+							"RuleName": "Lovely",
+							"Target": "[x]",
+							"Value": -5,
+							"RuleConditions":
+								{
+									"Set": ["Friendship(SELF, [x]) >= 5"]
+								}
+						}],
+					"EffectsList":
+						{
+							"dictionary": []
+						}
+				}],
+			"_triggerRules":
+				{
+					"_triggerRules":
+						{
+							"dictionary": []
+						}
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "CommeillFaut.CommeillFautAsset, CommeillFaut, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

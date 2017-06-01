@@ -8,6 +8,13 @@ TagManager:
   - Score
   - FinalScore
   - FinalScoreText
+  - Anchor
+  - Female
+  - Male
+  - Peter
+  - Sarah
+  - Kate
+  - Mary
   layers:
   - Default
   - TransparentFX

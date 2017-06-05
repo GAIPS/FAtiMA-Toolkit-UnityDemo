@@ -32,8 +32,11 @@
 						}],
 					"EffectsList":
 						{
-							"dictionary": []
+							"dictionary": [{
+									"key": "Positive",
+									"value": ["Friendship(Initiator, Target, 4)", "Friendship(Target, Initiator, 5)"]}]
 						}
+				
 				}, 
 				{
 					"Action": "Flirt",
@@ -64,7 +67,9 @@
 						}],
 					"EffectsList":
 						{
-							"dictionary": []
+							"dictionary": [{
+									"key": "Positive",
+									"value": ["Attraction(Initiator, Target, 4)", "Attraction(Target, Initiator, 5)"]}]
 						}
 				}, 
 				{
@@ -96,7 +101,11 @@
 						}],
 					"EffectsList":
 						{
-							"dictionary": []
+							"dictionary": [
+								{
+									"key": "Negative",
+									"value": ["Attraction(Initiator, Target, -4)", "Attraction(Target, Initiator, -4)"]
+								}]
 						}
 				}],
 			"_triggerRules":

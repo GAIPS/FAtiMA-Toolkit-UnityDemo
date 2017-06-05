@@ -92,11 +92,12 @@ public class MultiCharacterDemo : MonoBehaviour {
     string currentSocialMoveResult;
     private MultiCharacterAgentController justSpokeAgent;
     private float TIME_LEFT_CONST = 5.0f;
-    private float Timeleft = 5.0f;
+    private float Timeleft = 15.0f;
     private bool stopTime = false;
     private Name _chosenCharacter;
     private int counter;
     private Name chosenTarget;
+    private bool initiated;
 
 
     // Use this for initialization
@@ -159,6 +160,7 @@ public class MultiCharacterDemo : MonoBehaviour {
         _events = new List<Name>();
        _actions = new List<IAction>();
        currentSocialMoveAction = "";
+        initiated = false;
        currentSocialMoveResult = "";
         chosenTarget = Name.BuildName("ay");
         m_dialogController.Clear();
@@ -442,9 +444,14 @@ public class MultiCharacterDemo : MonoBehaviour {
                     Debug.Log(" to perceive " + lastEvent.ToString());
                     eventsToPerceive.Add(lastEvent);
                     var actionTarget = agent.getLastAction().Target;
+                    var TargetRPC = _agentControllers.Find(x => x.RPC.CharacterName == actionTarget);
                     agent.setFloor(false);
                     justSpokeAgent = agent;
                     Debug.Log("Justspoke agent" + justSpokeAgent.RPC.CharacterName + lastEvent);
+                    Debug.Log(justSpokeAgent.RPC.CharacterName + " property Friendship towards "  + actionTarget + justSpokeAgent.RPC.m_kb.AskProperty(Name.BuildName("Friendship(" + justSpokeAgent.RPC.CharacterName + "," + TargetRPC.RPC.CharacterName + ")" )));
+                    Debug.Log(justSpokeAgent.RPC.CharacterName + " property Attraction towards " + actionTarget + justSpokeAgent.RPC.m_kb.AskProperty(Name.BuildName("Attraction(" + justSpokeAgent.RPC.CharacterName + "," + TargetRPC.RPC.CharacterName + ")")));
+                    Debug.Log(TargetRPC.RPC.CharacterName + " property Friendship towards " + justSpokeAgent.RPC.CharacterName + TargetRPC.RPC.m_kb.AskProperty(Name.BuildName("Friendship(" + TargetRPC.RPC.CharacterName + "," + justSpokeAgent.RPC.CharacterName + ")")));
+                    Debug.Log(TargetRPC.RPC.CharacterName + " property Attraction towards " + justSpokeAgent.RPC.CharacterName + TargetRPC.RPC.m_kb.AskProperty(Name.BuildName("Attraction(" + TargetRPC.RPC.CharacterName + "," + justSpokeAgent.RPC.CharacterName + ")")));
 
                     agent.ClearTempVariables();
                     m_dialogController.Clear();
@@ -621,10 +628,7 @@ public class MultiCharacterDemo : MonoBehaviour {
     {
         var playerAgent = rpcList.Find(x => x.CharacterName == _chosenCharacter);
 
-     foreach (var eve in playerAgent.EventRecords)
-        {
-            Debug.Log(playerAgent.CharacterName + "Iniate Turn events so far: " + eve.Event.ToString());
-        }
+  
      
        var actionList =  _iat.GetDialogueActionsBySpeaker(IATConsts.AGENT).ToList();
         var newList = actionList.FindAll(x => x.Meaning.First().ToString().Contains("Initiate"));
@@ -667,20 +671,10 @@ public class MultiCharacterDemo : MonoBehaviour {
     {
         var playerAgent = rpcList.Find(x => x.CharacterName == _chosenCharacter);
 
-        foreach (var eve in playerAgent.EventRecords)
-        {
-            Debug.Log(playerAgent.CharacterName + " PlayerReplyTurn events so far: " + eve.Event.ToString());
-        }
 
         var decidedList = playerAgent.Decide();
         var action = decidedList.FirstOrDefault();
-        int i = 0;
-        foreach (var act in decidedList)
-        {
-            
-            Debug.Log(playerAgent.CharacterName + " has decided: " + act.Name + " iteration: " +  i );
-            i++;
-        }
+      
         IEnumerable<DialogueStateActionDTO> availableDialogs = new DialogueStateActionDTO[1];
         List<DialogueStateActionDTO> dialogs = new List<DialogueStateActionDTO>();
         stopTime = true;
@@ -714,9 +708,19 @@ public class MultiCharacterDemo : MonoBehaviour {
     var rand = new System.Random();
         //   int next = rand.Next(0, _agentControllers.Count);
 
-        if (counter < 2)
-            counter++;
-        else counter = 0;
+        if (initiated)
+        {
+            if (counter < 2)
+                counter++;
+            else counter = 0;
+        }
+        else {
+            if (_agentControllers[0].RPC.CharacterName != _chosenCharacter)
+                counter = 0;
+            else counter = 1;
+            initiated = true;
+          
+        }
 
           //  Debug.Log(" randomizeNext: " + counter + " count : " + _agentControllers.Count);
         Timeleft = TIME_LEFT_CONST;

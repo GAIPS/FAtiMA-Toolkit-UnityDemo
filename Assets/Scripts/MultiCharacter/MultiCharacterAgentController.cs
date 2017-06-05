@@ -115,34 +115,18 @@ public class MultiCharacterAgentController : MonoBehaviour {
         if (emotion == null)
             return;
 
-        //_body.SetExpression(emotion.EmotionType, emotion.Intensity/10f);
     }
 
     public IEnumerator UpdateCoroutine()
     {
         _events.Clear();
-
-    //    Debug.Log("Start corroutine");
-        /*  while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE)
-          {
-              yield return new WaitForSeconds(1);
-              if (_events.Count == 0)
-              {
-                  m_rpc.Update();
-                  continue;
-              }
-  
-              m_rpc.Perceive(_events);*/
         var action = m_rpc.Decide().Shuffle().FirstOrDefault();
-        Debug.Log(RPC.CharacterName + " Action  " + action);
+        
         _events.Clear();
         m_rpc.Update();
 
         if (action != null)
         {
-
-
-            Debug.Log("Action Key: " + action.Key);
 
             switch (action.Key.ToString())
             {
@@ -176,7 +160,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
     {
         // if(m_activeController)
         m_activeController = controler;
-        
+        updateHeadController(speakAction.Target.ToString());
         m_activeController.StartCoroutine(HandleSpeak(speakAction));
       
     }

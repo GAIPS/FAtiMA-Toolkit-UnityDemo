@@ -19,7 +19,6 @@
 			"EmotionalState":
 				{
 					"Mood": 0,
-					"initialTick": 0,
 					"EmotionalPool": [],
 					"AppraisalConfiguration":
 						{
@@ -35,10 +34,6 @@
 				{
 					"Tick": 0,
 					"records": []
-				},
-			"OtherAgents":
-				{
-					"dictionary": []
 				}
 		},
 	"types": [

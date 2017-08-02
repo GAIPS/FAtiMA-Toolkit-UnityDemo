@@ -50,17 +50,12 @@ public class SingleCharacterDemo : MonoBehaviour
 
     [SerializeField]
     private BodyType[] m_bodies;
-
-
-
-
-
+    
     [Space]
     [SerializeField]
     private Button m_dialogButtonArchetype = null;
     [SerializeField]
     private Transform m_dialogButtonZone = null;
-
 
     [SerializeField]
     private Transform m_scoreZone = null;
@@ -129,7 +124,7 @@ public class SingleCharacterDemo : MonoBehaviour
         var entries = www.text.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None);
         if ((entries.Length % 2) != 0)
         {
-            m_dialogController.AddDialogLine("Error: Scenario entries must in groups of 2, to identify the scenario file, and TTS directory");
+            m_dialogController.AddDialogLine("Error: Scenario entries must in groups of 2 to identify the scenario file, and TTS directory");
             yield break;
         }
 

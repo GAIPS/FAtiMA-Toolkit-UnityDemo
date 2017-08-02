@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000001, guid: 570aa5f4291673f42b240bbb8c1d31a7,
+  m_LightingDataAsset: {fileID: 112000002, guid: acc6c1ad1873a0147a3ce298dc0fabab,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -2655,7 +2655,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 418831448}
   m_HandleRect: {fileID: 418831447}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3559,7 +3559,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1333213832}
   m_HandleRect: {fileID: 1333213831}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

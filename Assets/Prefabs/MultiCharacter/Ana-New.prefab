@@ -5391,12 +5391,16 @@ Animator:
   m_GameObject: {fileID: 1397071277104726}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d978ee81cc242d94794d140b825cdbf2, type: 3}
-  m_Controller: {fileID: 9100000, guid: 28c76ea6c89dbdf4da9a65e1ed5cac9b, type: 2}
+  m_Controller: {fileID: 9100000, guid: cecc1eb3686a31e4b9aa5da73ff14315, type: 2}
   m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) use transforms that are
+    already bound by a Humanoid avatar. These transforms can only be changed by Humanoid
+    clips.\n\tTransform 'rBigToe'\n\tTransform 'lBigToe'\n\tTransform 'rBigToe'\n\tTransform
+    'lBigToe'\n\tFrom animation clip 'Sit to Stand'\n\tFrom animation clip 'Sit to
+    Stand'\n\tFrom animation clip 'ShowGesture'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114098401831695134
@@ -5460,6 +5464,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   effect: 1
   overrideAnimation: 0
+  _target: {fileID: 0}
 --- !u!114 &114655549993177684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5568,6 +5573,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -5645,6 +5651,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -5974,6 +5981,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -6031,6 +6039,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -6101,6 +6110,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -6169,6 +6179,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0

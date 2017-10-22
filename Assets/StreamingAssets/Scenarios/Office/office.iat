@@ -1,0 +1,409 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "Office",
+			"Description": null,
+			"CharacterSources": ["Bob.rpc", "George.rpc", "Sarah.rpc"],
+			"PlayerDialogues": [
+				{
+					"CurrentState": "Start",
+					"NextState": "Opening",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Thank you for coming by. As you're probably well aware, this is a tough economic climate and your company is not immune. "
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "Opening",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I'm here to fire you, pure and simple"
+				}, 
+				{
+					"CurrentState": "Fire",
+					"NextState": "FireResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "While I wish I was here with better news, the reason you and I are meeting is this is your final week of employment here. "
+				}, 
+				{
+					"CurrentState": "Blame",
+					"NextState": "BlameResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "This is not a time to look for blame. Your position simply no longer exists. "
+				}, 
+				{
+					"CurrentState": "Hostile",
+					"NextState": "HostileResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "This is not an assessment of your productivity. Try not to take this personally"
+				}, 
+				{
+					"CurrentState": "KidsTests",
+					"NextState": "KidsTestsResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Well, tests have shown that      children under moderate trauma have      a tendency to apply themselves      academically as a method of coping. "
+				}, 
+				{
+					"CurrentState": "Kids",
+					"NextState": "KidsAdmirationResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " Your children's admiration is      important to you? "
+				}, 
+				{
+					"CurrentState": "KidsProud",
+					"NextState": "KidsProudResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Well, I doubt they ever admired      you, Bob. "
+				}, 
+				{
+					"CurrentState": "Resume",
+					"NextState": "ResumeResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " Your resume says you minored in French Culinary Arts. Most students work the frier at KFC. You bussed tables at Il Picatorre to support yourself. Then you got out of college and started working here. How much did they first pay you to give up on your dreams? "
+				}, 
+				{
+					"CurrentState": "Athletes",
+					"NextState": "AthletesResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " No, that's why we love athletes.      Kids love them because they follow      their dreams. "
+				}, 
+				{
+					"CurrentState": "Cook",
+					"NextState": "CookResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " But you can cook. "
+				}, 
+				{
+					"CurrentState": "Fate",
+					"NextState": "FateResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " Do you believe in fate? "
+				}, 
+				{
+					"CurrentState": "Happy",
+					"NextState": "HappyResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "At what point were you going to  stop and go back to what made you happy?"
+				}, 
+				{
+					"CurrentState": "Opportunity",
+					"NextState": "OpportunityResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " Exactly. Well, I think fate is telling you to do somethin. I see guys who work for the same company their entire lives. Clock in. Clock out. Never a moment of happiness. Not everyone gets this kind of opportunity. "
+				}, 
+				{
+					"CurrentState": "Blame",
+					"NextState": "BlameResponse",
+					"Meaning": ["-"],
+					"Style": ["-"],
+					"Utterance": "This is not a time to look for blame. Your position simply no longer exists. "
+				}, 
+				{
+					"CurrentState": "Rebirth",
+					"NextState": "RebirthResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "The chance for rebirth. If not for yourself... Do it for your kids. "
+				}, 
+				{
+					"CurrentState": "Anybody",
+					"NextState": "AnybodyResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Well, anybody who ever built an empire or changed the world sat where you are now and its because they sat there that they were able to do it, that's the truth"
+				}, 
+				{
+					"CurrentState": "Kids",
+					"NextState": "KidsTestsResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Perhaps you're underestimating the possitive effect that your career-transition can have on your children"
+				}, 
+				{
+					"CurrentState": "Shrink",
+					"NextState": "ShrinkResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I'm not a shrink, I'm a wake up call. You know why kids love athletes? "
+				}, 
+				{
+					"CurrentState": "Blame",
+					"NextState": "AngryResponse",
+					"Meaning": ["-"],
+					"Style": ["-"],
+					"Utterance": "Hey! I'm just the messenger, chill"
+				}, 
+				{
+					"CurrentState": "Blame",
+					"NextState": "AngryResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "It's your own fault, you are a terrible employee"
+				}, 
+				{
+					"CurrentState": "Shrink",
+					"NextState": "HostileResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Don't take it personally ok?"
+				}, 
+				{
+					"CurrentState": "Kids",
+					"NextState": "AngryResponse",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Thats not my problem..."
+				}],
+			"AgentDialogues": [
+				{
+					"CurrentState": "Opening",
+					"NextState": "Fire",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "This is what I get after 30 years of working in this company? Are you trying to tell me I'm out of a job",
+					"UtteranceId": "TTS-30CADA54DDCEDC4AD1F04373B4FDCC60"
+				}, 
+				{
+					"CurrentState": "Opening",
+					"NextState": "Fire",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "You have a lot of gall coming in here and firing your number one producer",
+					"UtteranceId": "TTS-B06B81C081B8D3707185FF21DB68F225"
+				}, 
+				{
+					"CurrentState": "Opening",
+					"NextState": "Fire",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What are you tring to tell me?",
+					"UtteranceId": "TTS-A973B4F57637FEB51E3D1553C0733437"
+				}, 
+				{
+					"CurrentState": "Opening",
+					"NextState": "Fire",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What does that mean?",
+					"UtteranceId": "TTS-E6379C45EFE90F744BE0C734872667BA"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Blame",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I just... I guess you leave me dumbfounded, I don't know where this is coming from",
+					"UtteranceId": "TTS-5B3084AC7F5313577EDFE059E95E2433"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Blame",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "On stress level I've heard that losing your job is the same as losing a family member. But personally I feel more like the people I worked with were my family and I died",
+					"UtteranceId": "TTS-8210832BBDA4D24FA296C5ED30E6E6B8"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Blame",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Did I do something wrong?",
+					"UtteranceId": "TTS-3DBD6CE41D6104D0F4FC2990AAD2DC3F"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Blame",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Why me?",
+					"UtteranceId": "TTS-0CADE9F3D78D91BA7ECD1BDC4AB6A029"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Blame",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What am I suposed to do now?",
+					"UtteranceId": "TTS-E8837CFDD28CAF9B87EFDC553FB30F9E"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Blame",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I can't afford to lose my job...",
+					"UtteranceId": "TTS-80B5AFC0CEE769EA709504627DA6ACC3"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Hostile",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Who the fuck are you?",
+					"UtteranceId": "TTS-7F56C09D754FAB1EC1B450132AA80B2B"
+				}, 
+				{
+					"CurrentState": "FireResponse",
+					"NextState": "Kids",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What am I supposed to tell my kids?",
+					"UtteranceId": "TTS-376C9D0CF06216A605E1370B1862BED2"
+				}, 
+				{
+					"CurrentState": "BlameResponse",
+					"NextState": "Kids",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "How am I supposed to go back and explain this to my wife, that I lost my job",
+					"UtteranceId": "TTS-4A07292D9F5282D248B293A71C08C9E9"
+				}, 
+				{
+					"CurrentState": "BlameResponse",
+					"NextState": "Kids",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I can't afford to be unemployed. I have a house payment. I have children",
+					"UtteranceId": "TTS-DD21FA9913629AE0247CC7311C957966"
+				}, 
+				{
+					"CurrentState": "KidsTestsResponse",
+					"NextState": "KidsTests",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "The positive effect? I make about 90 grand a year now, unemployment is what, 250 a week? Is that one of your positive effects?",
+					"UtteranceId": "TTS-9F84CAA8B6EDEDFBDD924DAC83C5A09F"
+				}, 
+				{
+					"CurrentState": "KidsTestsResponse",
+					"NextState": "Kids",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " Go fuck yourself. That's what my kids'll think. ",
+					"UtteranceId": "TTS-236B96633212343D5D600040E33E4245"
+				}, 
+				{
+					"CurrentState": "KidsAdmirationResponse",
+					"NextState": "KidsProud",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Yeah. It was.",
+					"UtteranceId": "TTS-99D71A83FCD8549562F5AF10B7E8B5D6"
+				}, 
+				{
+					"CurrentState": "KidsProudResponse",
+					"NextState": "Shrink",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Hey asshole, aren't you here to      console me? ",
+					"UtteranceId": "TTS-BF2293E0EE79295A021E554CC9A03BE8"
+				}, 
+				{
+					"CurrentState": "ShrinkResponse",
+					"NextState": "Athletes",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Because they screw lingerie models.",
+					"UtteranceId": "TTS-E6D642C719E2F8A94B7862A559CCA580"
+				}, 
+				{
+					"CurrentState": "AthletesResponse",
+					"NextState": "Cook",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Yeah, well I can't dunk.",
+					"UtteranceId": "TTS-297DF08EA90105FFB3C4C516F46626DD"
+				}, 
+				{
+					"CurrentState": "CookResponse",
+					"NextState": "Resume",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "What are you talking about? ",
+					"UtteranceId": "TTS-5B7AFC51834E2C03F84AAC2AEAEC1CD7"
+				}, 
+				{
+					"CurrentState": "ResumeResponse",
+					"NextState": "Happy",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Twenty seven thousand a year. ",
+					"UtteranceId": "TTS-5CE7518352D4CE735EF55AC46D8DBCD5"
+				}, 
+				{
+					"CurrentState": "HappyResponse",
+					"NextState": "Fate",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Good question...",
+					"UtteranceId": "TTS-892459E6CFD94445D4A2C51D8BDC586F"
+				}, 
+				{
+					"CurrentState": "FateResponse",
+					"NextState": "Opportunity",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": " I met my wife at a gas station. ",
+					"UtteranceId": "TTS-965ED837425646FB0468D2CDCB1A4603"
+				}, 
+				{
+					"CurrentState": "RebirthResponse",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I see...",
+					"UtteranceId": "TTS-1015ECE28A104C6814B0DE0632B30149"
+				}, 
+				{
+					"CurrentState": "AngryResponse",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Fuck you! I'm out of here",
+					"UtteranceId": "TTS-7391DDA5C854600974C034DFC0323737"
+				}, 
+				{
+					"CurrentState": "HostileResponse",
+					"NextState": "Anybody",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "Yeah, right, I'll try",
+					"UtteranceId": "TTS-783AD09BC3F668E200C7FC8DD64EFE8D"
+				}, 
+				{
+					"CurrentState": "AnybodyResponse",
+					"NextState": "End",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I guess you are right",
+					"UtteranceId": "TTS-91DC7F1E9137F461728759222310021A"
+				}, 
+				{
+					"CurrentState": "OpportunityResponse",
+					"NextState": "Rebirth",
+					"Meaning": [],
+					"Style": [],
+					"Utterance": "I guess...",
+					"UtteranceId": "TTS-EC3615FC6FE037DEB8978DF7263CB1B6"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

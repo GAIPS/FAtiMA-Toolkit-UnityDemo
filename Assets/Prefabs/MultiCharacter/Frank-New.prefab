@@ -5794,7 +5794,7 @@ Animator:
   m_GameObject: {fileID: 1437303693987848}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0df4819e9970194499c73aae9145326d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 28c76ea6c89dbdf4da9a65e1ed5cac9b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0254af0bc3fa6ef4481133abb07825a5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -5828,6 +5828,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   effect: 1
   overrideAnimation: 0
+  _target: {fileID: 0}
 --- !u!114 &114521285743111246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5975,6 +5976,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -6034,6 +6036,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -6101,6 +6104,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -6172,6 +6176,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -6255,6 +6260,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0

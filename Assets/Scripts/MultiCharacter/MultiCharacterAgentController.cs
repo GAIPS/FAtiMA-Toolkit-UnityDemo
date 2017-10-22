@@ -36,6 +36,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
     private bool just_talked;
     private IAction lastAction;
     private Name[] lastEvent;
+    private DialogueStateActionDTO lastDialog;
 
 
     public RolePlayCharacterAsset RPC { get { return m_rpc; } }
@@ -60,11 +61,12 @@ public class MultiCharacterAgentController : MonoBehaviour {
 
         HeadLookController head = _body.GetComponentInChildren<HeadLookController>();
         head._target = GameObject.FindGameObjectWithTag("MainCamera");
+        
         m_dialogController.SetCharacterLabel(m_rpc.CharacterName.ToString());
 
-      //  m_rpc.Perceive(new Name[] { EventHelper.PropertyChange("DialogueState(Player)", "Start", "world") });
+        //  m_rpc.Perceive(new Name[] { EventHelper.PropertyChange("DialogueState(Player)", "Start", "world") });
 
-        
+        lastDialog = new DialogueStateActionDTO();
         
     }
 
@@ -111,7 +113,9 @@ public class MultiCharacterAgentController : MonoBehaviour {
 
     public void UpdateEmotionExpression()
     {
+      
         var emotion = m_rpc.GetStrongestActiveEmotion();
+  //      Debug.Log(" Mood :" + m_rpc.CharacterName + " " + m_rpc.Mood + " emotion " + emotion);
         if (emotion == null)
             return;
 
@@ -131,7 +135,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
             switch (action.Key.ToString())
             {
                 case "Speak":
-                    Debug.Log(action.Target.ToString());
+                    
                     updateHeadController(action.Target.ToString());
                     GameObject.FindGameObjectWithTag(action.Target.ToString())
                         .GetComponentInChildren<HeadLookController>()._target = this._body.gameObject;
@@ -177,11 +181,11 @@ public class MultiCharacterAgentController : MonoBehaviour {
 
         var dialogs = m_iat.GetDialogueActions(IATConsts.AGENT, currentState, nextState, meaning, style);
 
-
+     
 
         var dialog = dialogs.Shuffle().FirstOrDefault();
+        lastDialog = dialog;
 
-      
 
         if (dialog == null)
         {
@@ -353,6 +357,11 @@ public class MultiCharacterAgentController : MonoBehaviour {
         return true;
         
         return false;
+    }
+
+    public DialogueStateActionDTO getLastDialog()
+    {
+        return lastDialog;
     }
 }
 

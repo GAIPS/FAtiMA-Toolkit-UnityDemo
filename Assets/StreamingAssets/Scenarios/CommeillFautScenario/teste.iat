@@ -1,0 +1,22 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": null,
+			"Description": null,
+			"Dialogues": [
+				{
+					"CurrentState": "cenas",
+					"NextState": "cenas2",
+					"Meaning": "da",
+					"Style": "ad",
+					"Utterance": "Aqui",
+					"UtteranceId": "TTS-176480EBB4D064B18D8397F359F8FB7F"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

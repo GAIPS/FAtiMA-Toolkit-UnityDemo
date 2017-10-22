@@ -10,3 +10,5 @@
 	PJ-Demo
 \Scenarios\SpaceModules\MinSysKnwNov.iat
 	SpaceModules
+\Scenarios\Office\office.iat
+	Office

@@ -15,6 +15,8 @@ TagManager:
   - Sarah
   - Kate
   - Mary
+  - John
+  - Boss
   layers:
   - Default
   - TransparentFX

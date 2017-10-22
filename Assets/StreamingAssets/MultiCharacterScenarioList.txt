@@ -1,4 +1,4 @@
-\Scenarios\PJ\PJScenario.iat
-	PJ-Demo
 \Scenarios\CommeillFautScenario\cifIAT.iat
 	CiF-Demo
+\Scenarios\Drama\dramaIAT.iat
+	Drama

@@ -12,13 +12,14 @@
 				},
 			"BodyName": "Male",
 			"VoiceName": "Sheppard",
-		    "EmotionalAppraisalAssetSource": "Suspect.ea",
+			"EmotionalAppraisalAssetSource": "Suspect.ea",
 			"EmotionalDecisionMakingSource": "Suspect.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
 			"EmotionalState":
 				{
 					"Mood": 0,
+					"initialTick": 0,
 					"EmotionalPool": [],
 					"AppraisalConfiguration":
 						{

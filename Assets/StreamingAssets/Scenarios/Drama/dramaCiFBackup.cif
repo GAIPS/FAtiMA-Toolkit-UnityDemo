@@ -1,0 +1,51 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"SocialExchanges": [
+				
+				{
+					"Action": "Complain",
+					"Conditions":
+						{
+							"Set": []
+						},
+					"Intent": "",
+					"Instantiation": "",
+					"InfluenceRules": [
+						{
+							"RuleName": "Low Friendship",
+							"Target": "[x]",
+							"Value": 10,
+							"RuleConditions":
+								{
+									"Set": ["Friendship(SELF, [y]) < -5", "Friendship(SELF, [x]) > 5", "[x] != [y]" ]
+								}
+						}],
+					"EffectsList":
+						{
+							"dictionary": [{
+									"key": "Positive",
+									"value": ["Friendship(Initiator, Target, 4)", "Friendship(Target, Initiator, 5)"]},
+									{
+									"key": "Negative",
+									"value": ["Friendship(Initiator, Target, -4)", "Friendship(Target, Initiator, -5)"]}
+									]
+						}
+				
+				},				
+				],
+			"_triggerRules":
+				{
+					"_triggerRules":
+						{
+							"dictionary": []
+						}
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "CommeillFaut.CommeillFautAsset, CommeillFaut, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

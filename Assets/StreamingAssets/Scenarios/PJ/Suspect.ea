@@ -22,10 +22,19 @@
 							"EventName": "Event(*, *, Speak(*, *, *, Aggression([x])), *)",
 							"Conditions":
 								{
-									"Set": ["[x] > 0"]
+									"Set": ["[x] > 0", "[x]<5"]
 								},
-							"Desirability": -5,
-							"Praiseworthiness": -5
+							"Desirability": -3,
+							"Praiseworthiness": -3
+						},
+						{
+							"EventName": "Event(*, *, Speak(*, *, *, Aggression([x])), *)",
+							"Conditions":
+								{
+									"Set": ["[x] > 5"]
+								},
+							"Desirability": -7,
+							"Praiseworthiness": -7
 						}]
 				},
 			"EmotionDispositions": [

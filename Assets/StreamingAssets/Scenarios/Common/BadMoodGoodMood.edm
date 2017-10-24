@@ -7,6 +7,7 @@
 				{
 					"Action": "Speak([cs], [ns], [m], BadMood)",
 					"Target": "[x]",
+					"Type": "[x]",
 					"Conditions":
 						{
 							"Set": ["ValidDialogue([cs], [ns], [m], BadMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) < 0"]
@@ -16,6 +17,7 @@
 				{
 					"Action": "Speak([cs], [ns], [m], GoodMood)",
 					"Target": "[x]",
+					"Type": "[x]",
 					"Conditions":
 						{
 							"Set": ["ValidDialogue([cs], [ns], [m], GoodMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) >= 0"]
@@ -24,16 +26,17 @@
 				}, 
 				{
 					"Action": "Disconnect",
+					"Target": "-",
+					"Type": "-",
 					"Conditions":
 						{
 							"Set": ["DialogueState(Player) = End"]
-						},
-					"Priority": 0
+						}
 				}]
 		},
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "EmotionalDecisionMaking.EmotionalDecisionMakingAsset, EmotionalDecisionMaking, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "EmotionalDecisionMaking.EmotionalDecisionMakingAsset, EmotionalDecisionMaking, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

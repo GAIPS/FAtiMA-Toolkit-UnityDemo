@@ -179,7 +179,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
         Name meaning = speakAction.Parameters[2];
         Name style = speakAction.Parameters[3];
 
-        var dialogs = m_iat.GetDialogueActions(IATConsts.AGENT, currentState, nextState, meaning, style);
+        var dialogs = m_iat.GetDialogueActions(currentState, nextState, meaning, style);
 
      
 

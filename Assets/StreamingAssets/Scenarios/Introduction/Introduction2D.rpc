@@ -1,7 +1,7 @@
 {
 	"root":
 		{
-			"classId": 0,
+			"classId": 1,
 			"KnowledgeBase":
 				{
 					"Perspective": "Mary",
@@ -11,7 +11,7 @@
 						}
 				},
 			"BodyName": "Female-2D",
-			"VoiceName": "Zira",
+			"VoiceName": "Hazel",
 			"EmotionalAppraisalAssetSource": "IntroductionAppraisal.ea",
 			"EmotionalDecisionMakingSource": "..\\Common\\SingleResponse.edm",
 			"SocialImportanceAssetSource": null,
@@ -19,6 +19,7 @@
 			"EmotionalState":
 				{
 					"Mood": 0,
+					"initialTick": 0,
 					"EmotionalPool": [],
 					"AppraisalConfiguration":
 						{
@@ -33,7 +34,16 @@
 			"AutobiographicMemory":
 				{
 					"Tick": 0,
-					"records": []
+					"records": [
+						{
+							"classId": 0,
+							"Id": 2,
+							"Type": "Action-Start",
+							"Subject": "sd",
+							"Timestamp": 0,
+							"Action": "ss",
+							"Target": "sef"
+						}]
 				},
 			"OtherAgents":
 				{
@@ -43,6 +53,10 @@
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "AutobiographicMemory.AM+ActionEvent, AutobiographicMemory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}, 
+		{
+			"TypeId": 1,
+			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

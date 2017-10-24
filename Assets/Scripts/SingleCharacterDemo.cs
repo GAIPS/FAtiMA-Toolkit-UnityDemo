@@ -135,7 +135,7 @@ public class SingleCharacterDemo : MonoBehaviour
             {
                 var path = entries[i].Trim();
                 var tts = entries[i + 1].Trim();
-            //    Debug.Log(path  + " e " + tts);
+                Debug.Log(path  + " e " + tts);
                 data.Add(new ScenarioData(path, tts));
             }
 
@@ -283,8 +283,8 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             return;
         }
-        var reply = _iat.GetDialogActionById(IATConsts.PLAYER, dialogId);
-        var actionFormat = string.Format("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.GetMeaningName(), reply.GetStylesName());
+        var reply = _iat.GetDialogActionById(dialogId);
+        var actionFormat = string.Format("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.Meaning, reply.Style);
 
 
         StartCoroutine(PlayerReplyAction(actionFormat, reply.NextState));
@@ -301,7 +301,7 @@ public class SingleCharacterDemo : MonoBehaviour
         _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
-        _agentController.AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF").ToString());
+        _agentController.AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "Player").ToString());
 
         
     }
@@ -342,7 +342,7 @@ public class SingleCharacterDemo : MonoBehaviour
         _agentController.UpdateEmotionExpression();
 
         var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
-        var possibleOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, state.ToString());
+        var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
 
         var originalPossibleActions = possibleOptions;
 
@@ -367,7 +367,7 @@ public class SingleCharacterDemo : MonoBehaviour
                             .Shuffle()
                             .ToList();
 
-                    newOptions.AddRange(_iat.GetDialogueActionsByState(IATConsts.PLAYER, "Introduction"));
+                    newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
                     possibleOptions = newOptions;
                     waitingforReply = true;
                     UpdateButtonTexts(false, possibleOptions);
@@ -382,20 +382,20 @@ public class SingleCharacterDemo : MonoBehaviour
                             .Take(3)
                             .ToList();
                 //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
-                    var additionalOptions = _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Start")
+                    var additionalOptions = _iat.GetDialogueActionsByState("Start")
                         .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
                         .Shuffle()
                         .Take(2);
 
-                 
-                possibleOptions =   newOptions.Concat(additionalOptions).Shuffle();
+
+                    possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
 
                     if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
                     {
                         var ClosureOptions =
-                            _iat.GetDialogueActionsByState(IATConsts.PLAYER, "Closure").Take(1).ToList();
+                            _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
 
-                        possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle();
+                        possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
                     }
 
                     waitingforReply = true;
@@ -447,13 +447,13 @@ public class SingleCharacterDemo : MonoBehaviour
         foreach (var meaning in reply.Meaning)
         {
 
-            HandleKeywords(meaning);
+            HandleKeywords(meaning.ToString());
         }
 
         foreach (var style in reply.Style)
         {
 
-            HandleKeywords(style);
+            HandleKeywords(style.ToString());
         }
     }
 

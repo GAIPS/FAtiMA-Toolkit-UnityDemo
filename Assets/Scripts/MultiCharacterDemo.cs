@@ -355,7 +355,7 @@ public class MultiCharacterDemo : MonoBehaviour {
         {
             return;
         }*/
-        var reply = _iat.GetDialogActionById(IATConsts.AGENT, dialogId);
+        var reply = _iat.GetDialogActionById(dialogId);
      
         Name actionName = Name.BuildName("Speak");
         Name actionCS = Name.BuildName(reply.CurrentState);      
@@ -533,13 +533,13 @@ public class MultiCharacterDemo : MonoBehaviour {
         foreach (var meaning in reply.Meaning)
         {
 
-            HandleKeywords(meaning);
+            HandleKeywords(meaning.ToString());
         }
 
         foreach (var style in reply.Style)
         {
 
-            HandleKeywords(style);
+            HandleKeywords(style.ToString());
         }
     }
 
@@ -630,7 +630,7 @@ public class MultiCharacterDemo : MonoBehaviour {
 
   
      
-       var actionList =  _iat.GetDialogueActionsBySpeaker(IATConsts.AGENT).ToList();
+       var actionList =  _iat.GetDialogueActionsByState(IATConsts.INITIAL_DIALOGUE_STATE).ToList();
         var newList = actionList.FindAll(x => x.Meaning.First().ToString().Contains("Initiate"));
         
         CommeillFaut.CommeillFautAsset cif = CommeillFaut.CommeillFautAsset.LoadFromFile(rpcList.First().CommeillFautAssetSource);
@@ -685,7 +685,7 @@ public class MultiCharacterDemo : MonoBehaviour {
             Name meaning = action.Parameters[2];
             Debug.Log(" meaning: " + meaning);
             Name style = Name.BuildName("*");
-            dialogs = _iat.GetDialogueActions(IATConsts.AGENT, currentState, nextState, meaning, style);
+            dialogs = _iat.GetDialogueActions(currentState, nextState, meaning, style);
             //Debug.Log(" dialog: " + dialogs.Count +  " first: " + dialogs[0].Utterance);
             availableDialogs = dialogs;
 

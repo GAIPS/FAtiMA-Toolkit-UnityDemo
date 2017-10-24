@@ -385,7 +385,7 @@ public class TheOfficeDemo : MonoBehaviour {
              {
                  return;
              }*/
-        var reply = _iat.GetDialogActionById(IATConsts.AGENT, dialogId);
+        var reply = _iat.GetDialogActionById(dialogId);
         Name actionMean = Name.BuildName("-");
         Name actionStyle = Name.BuildName("-");
         Name actionName = Name.BuildName("Speak");
@@ -658,7 +658,7 @@ public class TheOfficeDemo : MonoBehaviour {
 
 
       
-        var actionList = _iat.GetDialogueActionsBySpeaker(IATConsts.AGENT).ToList();
+        var actionList = _iat.GetAllDialogueActions().ToList();
         List<DialogueStateActionDTO> newList = new List<DialogueStateActionDTO>();
     
 
@@ -666,9 +666,9 @@ public class TheOfficeDemo : MonoBehaviour {
         foreach (var act in actionList)
         {
         
-            if(act.Meaning.FirstOrDefault() != null)
-            if (act.Meaning.FirstOrDefault().ToString().Contains("Initiate"))
-                newList.Add(act);
+            if(act.Meaning != null)
+            if (act.Meaning.ToString().Contains("Initiate"))
+                newList.Add(act.ToDTO());
         }
   
       
@@ -719,13 +719,13 @@ public class TheOfficeDemo : MonoBehaviour {
                 {
                     meaning = decidedList.ElementAt(i).Parameters[2];
                     style = Name.BuildName("*");
-                    dialogs = _iat.GetDialogueActions(IATConsts.AGENT, currentState, nextState, meaning, style);
+                    dialogs = _iat.GetDialogueActions(currentState, nextState, meaning, style);
                 }
                 else
                 {
 
                  //   Debug.Log("Decided list: " + "currentstate " + currentState.ToString() + meaning.ToString() + " style " + style.ToString());
-                    dialogs.Add(_iat.GetDialogueActions(IATConsts.AGENT, currentState, nextState, meaning, style).FirstOrDefault());
+                    dialogs.Add(_iat.GetDialogueActions(currentState, nextState, meaning, style).FirstOrDefault());
                 }
             }
             else break;

@@ -4,11 +4,3 @@
 	AssetDemos
 \Scenarios\AssetDemos\EDMDemo.iat
 	AssetDemos
-\Scenarios\AssetDemos\SIDemo.iat
-	AssetDemos
-\Scenarios\PJ\PJScenario.iat
-	PJ-Demo
-\Scenarios\SpaceModules\MinSysKnwNov.iat
-	SpaceModules
-\Scenarios\Office\office.iat
-	Office

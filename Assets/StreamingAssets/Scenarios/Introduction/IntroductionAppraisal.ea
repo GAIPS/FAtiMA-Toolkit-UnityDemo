@@ -3,31 +3,21 @@
 		{
 			"classId": 0,
 			"Description": "Contains the appraisal rules for the character used in the introduction scenario",
-			"KnowledgeBase":
-				{
-					"Perspective": "IntroductionAgent",
-					"Knowledge":
-						{
-							"SELF":
-								{
-									"DialogueState(Player)": "Start"
-								}
-						}
-				},
 			"AppraisalRules":
 				{
 					"AppraisalWeight": 1,
 					"Rules": [
 						{
-							"EventName": "Event(Action-End, Self, Speak(A13, *, *, *), *)",
+							"EventName": "Event(Action-End, SELF, Speak(A13, *, *, *), *)",
 							"Conditions":
 								{
 									"Set": []
 								},
-							"Desirability": 5
+							"Desirability": 5,
+							"Praiseworthiness": 0
 						}, 
 						{
-							"EventName": "Event(Action-End, Self, Speak(A2, *, *, *), *)",
+							"EventName": "Event(Action-End, SELF, Speak(A2, *, *, *), *)",
 							"Conditions":
 								{
 									"Set": []
@@ -36,7 +26,7 @@
 							"Praiseworthiness": -6
 						}, 
 						{
-							"EventName": "Event(Action-End, Self, Speak(A3, *, *, *), *)",
+							"EventName": "Event(Action-End, SELf, Speak(A3, *, *, *), *)",
 							"Conditions":
 								{
 									"Set": []
@@ -50,7 +40,8 @@
 								{
 									"Set": []
 								},
-							"Desirability": 5
+							"Desirability": 5,
+							"Praiseworthiness": 0
 						}]
 				},
 			"EmotionDispositions": [
@@ -63,6 +54,6 @@
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

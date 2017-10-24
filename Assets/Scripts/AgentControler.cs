@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ActionLibrary;
-using AssetManagerPackage;
 using IntegratedAuthoringTool;
 using IntegratedAuthoringTool.DTOs;
 using RolePlayCharacter;
 using UnityEngine;
+using Assets.Plugins;
 using Utilities;
 using WellFormedNames;
 using Object = UnityEngine.Object;
@@ -114,7 +114,11 @@ namespace Assets.Scripts
                     m_rpc.Update();
                     continue;
                 }
-
+                foreach(var ev in _events)
+                {
+                    Debug.Log(ev);
+                }
+               
                 m_rpc.Perceive(_events);
                 var action = m_rpc.Decide().Shuffle().FirstOrDefault();
 
@@ -155,9 +159,9 @@ namespace Assets.Scripts
             Name meaning = speakAction.Parameters[2];
             Name style = speakAction.Parameters[3];
 
-            var dialogs = m_iat.GetDialogueActions(IATConsts.AGENT, currentState, nextState, meaning, style);
-           
-	
+            var dialogs = m_iat.GetDialogueActions(currentState, nextState, meaning, style);
+
+            Debug.Log("Here we go speaking: " + currentState.ToString() + " ns " + nextState.ToString() + " meaning " + meaning.ToString());
 
 		    var dialog = dialogs.Shuffle().FirstOrDefault();
 
@@ -208,66 +212,7 @@ namespace Assets.Scripts
 						clip.UnloadAudioData();
 					}
 
-					//AudioClip clip = null; //Resources.Load<AudioClip>(path);
-					//string xml = null; //Resources.Load<TextAsset>(path);
-
-					//var xmlPath = path + ".xml";
-					//if (provider.FileExists(xmlPath))
-					//{
-					//	try
-					//	{
-					//		using (var xmlStream = provider.LoadFile(xmlPath, FileMode.Open, FileAccess.Read))
-					//		{
-					//			using (var reader = new StreamReader(xmlStream))
-					//			{
-					//				xml = reader.ReadToEnd();
-					//			}
-					//		}
-					//	}
-					//	catch (Exception e)
-					//	{
-					//		Debug.LogException(e);
-					//	}
-
-					//	if (!string.IsNullOrEmpty(xml))
-					//	{
-					//		var wavPath = path + ".wav";
-					//		if (provider.FileExists(wavPath))
-					//		{
-					//			try
-					//			{
-					//				using (var wavStream = provider.LoadFile(wavPath, FileMode.Open, FileAccess.Read))
-					//				{
-					//					var wav = new WavStreamReader(wavStream);
-
-					//					clip = AudioClip.Create("tmp", (int)wav.SamplesLength, wav.NumOfChannels, (int)wav.SampleRate, false);
-					//					clip.SetData(wav.GetRawSamples(), 0);
-					//				}
-					//			}
-					//			catch (Exception e)
-					//			{
-					//				Debug.LogException(e);
-					//				if (clip != null)
-					//				{
-					//					clip.UnloadAudioData();
-					//					clip = null;
-					//				}
-					//			}
-					//		}
-					//	}
-					//}
-
-					//if (clip != null && xml != null)
-					//{
-					//	yield return _body.PlaySpeech(clip, xml);
-					//	clip.UnloadAudioData();
-					//}
-					//else
-					//{
-					//	Debug.LogWarning("Could not found speech assets for a dialog");
-					//	yield return new WaitForSeconds(2);
-					//}
-
+				
 					reply = dialog;
 					just_talked = true;
 				}
@@ -280,20 +225,22 @@ namespace Assets.Scripts
 					just_talked = true;
 				}
 
-				if (nextState.ToString() != "-") //todo: replace with a constant
-					AddEvent(string.Format("Event(Property-change,self,DialogueState(Player),{0})", nextState));
-			}
+                if (nextState.ToString() != "-") //todo: replace with a constant
+                {
+                    Debug.Log("I'm here!1111");
+                    AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState.ToString(), this.RPC.CharacterName.ToString()).ToString());
+                }
+            }
 
-			if (speakAction.Parameters[1].ToString() != "-") //todo: replace with a constant
-			{
-				var dialogueStateUpdateEvent = string.Format("Event(Property-Change,SELF,DialogueState({0}),{1})", speakAction.Target, speakAction.Parameters[1]);
-				AddEvent(dialogueStateUpdateEvent);
-			}
+			
 		    if (nextState.ToString() == "Disconnect")
 		    {
                this.End();
 		    }
-		    m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
+
+
+            AddEvent(EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER).ToString());
+
 		}
 
 		private IEnumerator HandleDisconnectAction(IAction actionRpc)

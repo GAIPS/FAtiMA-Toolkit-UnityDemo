@@ -1,5 +1,3 @@
-\Scenarios\Introduction\IntroductionScenario.iat
-	Introduction
 \Scenarios\AssetDemos\EADemo.iat
 	AssetDemos
 \Scenarios\AssetDemos\EDMDemo.iat
@@ -10,3 +8,5 @@
 	PJ-Demo
 \Scenarios\SpaceModules\MinSysKnwNov.iat
 	SpaceModules
+\Scenarios\Office\office.iat
+	Office

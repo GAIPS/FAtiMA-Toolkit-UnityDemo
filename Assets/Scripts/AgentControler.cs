@@ -105,24 +105,17 @@ namespace Assets.Scripts
 
 		private IEnumerator UpdateCoroutine()
 		{
-			_events.Clear();
-			while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE)
+		//	_events.Clear();
+         
+
+            while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE) 
 			{
 				yield return new WaitForSeconds(1);
-                if (_events.Count == 0)
-                {
-                    m_rpc.Update();
-                    continue;
-                }
-                foreach(var ev in _events)
-                {
-                    Debug.Log(ev);
-                }
                
                 m_rpc.Perceive(_events);
                 var action = m_rpc.Decide().Shuffle().FirstOrDefault();
-
-				_events.Clear(); 
+               
+                _events.Clear(); 
 				m_rpc.Update();
 
 				if (action == null)
@@ -165,7 +158,7 @@ namespace Assets.Scripts
 
 		    var dialog = dialogs.Shuffle().FirstOrDefault();
 
-		   
+            Debug.Log("Going to say: " + dialog.Utterance);
 
 		    if (dialog == null)
 			{
@@ -174,7 +167,8 @@ namespace Assets.Scripts
 			}
 			else
 			{
-				string subFolder = m_scenarioData.TTSFolder;
+                RPC.m_kb.Tell(Name.BuildName("HasFloor(SELF)"), Name.BuildName("False"));
+                string subFolder = m_scenarioData.TTSFolder;
 				if (subFolder != "<none>")
 				{
 					var path = string.Format("/TTS-Dialogs/{0}/{1}/{2}", subFolder, m_rpc.VoiceName, dialog.UtteranceId);
@@ -213,22 +207,24 @@ namespace Assets.Scripts
 					}
 
 				
-					reply = dialog;
-					just_talked = true;
+				
 				}
 				else
 				{
 					m_dialogController.AddDialogLine(dialog.Utterance);
 					yield return new WaitForSeconds(2);
 
-					reply = dialog;
-					just_talked = true;
+				
 				}
 
                 if (nextState.ToString() != "-") //todo: replace with a constant
                 {
-                    Debug.Log("I'm here!1111");
-                    AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState.ToString(), this.RPC.CharacterName.ToString()).ToString());
+                       Debug.Log(" Cmon its over next state is:"  + nextState.ToString());
+                        RPC.m_kb.Tell(Name.BuildName("HasFloor(SELF)"), Name.BuildName("False"));
+                    //  AddEvent(EventHelper.PropertyChange("DialogueState", "False", this.RPC.CharacterName.ToString()).ToString());
+                   RPC.Perceive(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState.ToString(), IATConsts.PLAYER));
+                    reply = dialog;
+                    just_talked = true;
                 }
             }
 
@@ -300,6 +296,12 @@ namespace Assets.Scripts
         public bool getJustReplied()
         {
             return just_talked;
+        }
+
+
+        public void WaitingToSpeak()
+        {
+
         }
 	}
 }

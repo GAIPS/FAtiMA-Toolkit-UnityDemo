@@ -10,7 +10,7 @@
 					"Type": "[x]",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]"]
+							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]", "HasFloor(SELF) = True"]
 						}
 				}, 
 				{

@@ -4,7 +4,7 @@
 			"classId": 0,
 			"ScenarioName": "Emotional Appraisal Demo",
 			"Description": "This scenario contains three examples of how the Emotional Appraisal Asset can be configured.\r\n\r\nThe Emotionless character will not feel any emotion.\r\n\r\nThe Happy character will become happier if you are polite. \r\n\r\nThe Angry character will become angrier if you are rude.",
-			"CharacterSources": ["Emotionless.rpc", "Happy.rpc", "Angry.rpc"],
+			"CharacterSources": ["Emotionless.rpc", "Happy.rpc"],
 			"Dialogues": [
 				{
 					"CurrentState": "Start",
@@ -112,10 +112,10 @@
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
-					"NextState": "TestingSolution",
+					"NextState": "ProblemSolved",
 					"Meaning": "CheckSolution",
 					"Style": "BadMood",
-					"Utterance": "Let me see.",
+					"Utterance": "Let me see....It seems to be working now.",
 					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
 				}, 
 				{
@@ -160,10 +160,10 @@
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
-					"NextState": "TestingSolution",
+					"NextState": "ProblemSolved",
 					"Meaning": "CheckSolution",
 					"Style": "GoodMood",
-					"Utterance": "Thank you. Could you wait just a moment?",
+					"Utterance": "Thank you. Could you wait just a moment?  .... It worked!! Thank you",
 					"UtteranceId": "TTS-AD2CE59A8552138A85A58A1B75E410B0"
 				}, 
 				{
@@ -171,11 +171,11 @@
 					"NextState": "GreetingEnd",
 					"Meaning": "Greeting",
 					"Style": "BadMood",
-					"Utterance": "I need this fixed quickly!",
-					"UtteranceId": "TTS-A3C1191B1D2013A5B58B225E950F6D83"
+					"Utterance": "I am having some problems and I need this fixed quickly!",
+					"UtteranceId": "TTS-663834B0D42089B84DEFBCF07BE6ECF4"
 				}, 
 				{
-					"CurrentState": "GreetingEnd",
+					"CurrentState": "ExplainProblem",
 					"NextState": "Problem",
 					"Meaning": "ExplainComputerProblem",
 					"Style": "BadMood",
@@ -183,7 +183,7 @@
 					"UtteranceId": "TTS-5A45A23D6B6F74E4205E061BB7D0A05F"
 				}, 
 				{
-					"CurrentState": "GreetingEnd",
+					"CurrentState": "ExplainProblem",
 					"NextState": "Problem",
 					"Meaning": "ExplainComputerProblem",
 					"Style": "GoodMood",
@@ -197,6 +197,22 @@
 					"Style": "GoodMood",
 					"Utterance": "It worked!! Thank you.",
 					"UtteranceId": "TTS-E677522A6129D83DE6DE96C0555FB0AD"
+				}, 
+				{
+					"CurrentState": "GreetingEnd",
+					"NextState": "ExplainProblem",
+					"Meaning": "ExplainComputerProblem",
+					"Style": "BadMood",
+					"Utterance": "I see, well tell me about it then...",
+					"UtteranceId": ""
+				}, 
+				{
+					"CurrentState": "GreetingEnd",
+					"NextState": "ExplainProblem",
+					"Meaning": "ExplainComputerProblem",
+					"Style": "GoodMood",
+					"Utterance": "I am terribly sorry, what is the matter?",
+					"UtteranceId": ""
 				}]
 		},
 	"types": [

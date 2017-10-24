@@ -1,7 +1,7 @@
 {
 	"root":
 		{
-			"classId": 1,
+			"classId": 2,
 			"KnowledgeBase":
 				{
 					"Perspective": "Mary",
@@ -20,7 +20,18 @@
 				{
 					"Mood": 0,
 					"initialTick": 0,
-					"EmotionalPool": [],
+					"EmotionalPool": [
+						{
+							"Intensity": 1,
+							"Decay": 1,
+							"Threshold": 1,
+							"CauseId": 2,
+							"EventName": "Event(Action-Start, sd, ss, sef)",
+							"EmotionType": "Admiration",
+							"Valence": "Positive",
+							"AppraisalVariables": ["PRAISEWORTHINESS"],
+							"InfluenceMood": true
+						}],
 					"AppraisalConfiguration":
 						{
 							"HalfLifeDecayConstant": 0.5,
@@ -41,8 +52,18 @@
 							"Type": "Action-Start",
 							"Subject": "sd",
 							"Timestamp": 0,
+							"LinkedEmotions": ["Admiration"],
 							"Action": "ss",
 							"Target": "sef"
+						}, 
+						{
+							"classId": 1,
+							"Id": 3,
+							"Type": "Property-Change",
+							"Subject": "aaa",
+							"Timestamp": 2,
+							"Property": "sss",
+							"NewValue": "dddd"
 						}]
 				},
 			"OtherAgents":
@@ -57,6 +78,10 @@
 		}, 
 		{
 			"TypeId": 1,
+			"ClassName": "AutobiographicMemory.AM+PropertyChangeEvent, AutobiographicMemory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}, 
+		{
+			"TypeId": 2,
 			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

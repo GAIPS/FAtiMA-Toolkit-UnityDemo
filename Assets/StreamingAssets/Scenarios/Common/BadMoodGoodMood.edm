@@ -10,7 +10,7 @@
 					"Type": "[x]",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], BadMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) < 0"]
+							"Set": ["ValidDialogue([cs], [ns], [m], BadMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) < 0", "HasFloor(Self)=True"]
 						},
 					"Priority": 1
 				}, 
@@ -20,7 +20,7 @@
 					"Type": "[x]",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], GoodMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) >= 0"]
+							"Set": ["ValidDialogue([cs], [ns], [m], GoodMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) >= 0", "HasFloor(Self) = True"]
 						},
 					"Priority": 1
 				}, 

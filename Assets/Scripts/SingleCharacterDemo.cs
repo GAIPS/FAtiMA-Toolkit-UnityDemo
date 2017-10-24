@@ -102,7 +102,7 @@ public class SingleCharacterDemo : MonoBehaviour
         _finalScore = GameObject.FindGameObjectWithTag("FinalScore");
         _finalScore.SetActive(false);
         AssetManager.Instance.Bridge = new AssetManagerBridge();
-        ;
+        
         m_dialogController.AddDialogLine("Loading...");
 
         alreadyUsedDialogs = new Dictionary<string, string>();
@@ -112,6 +112,7 @@ public class SingleCharacterDemo : MonoBehaviour
 #if UNITY_EDITOR || UNITY_STANDALONE
         streamingAssetsPath = "file://" + streamingAssetsPath;
 #endif
+
         var www = new WWW(streamingAssetsPath + "/scenarioList.txt");
         yield return www;
 
@@ -182,6 +183,11 @@ public class SingleCharacterDemo : MonoBehaviour
             Destroy(b.gameObject);
         }
         m_currentMenuButtons.Clear();
+
+        foreach (var m in m_buttonList)
+            Destroy(m.gameObject);
+
+        m_buttonList = new List<Button>();
     }
 
     private void LoadScenario(ScenarioData data)
@@ -227,6 +233,8 @@ public class SingleCharacterDemo : MonoBehaviour
                     _agentController.storeFinalScore(_finalScore);
                     _agentController.Start(this, VersionMenu);
                    if(PJScenario || SpaceModulesScenario) InstantiateScore();
+
+                    AddDialogueOptions();
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -245,6 +253,7 @@ public class SingleCharacterDemo : MonoBehaviour
     {
         if (hide)
         {
+           
             if (!m_buttonList.Any())
                 return;
             foreach (var b in m_buttonList)
@@ -255,20 +264,36 @@ public class SingleCharacterDemo : MonoBehaviour
         }
         else
         {
-        
-          if (m_buttonList.Count == dialogOptions.Count())
+            var dif = false;
+            if (m_buttonList.Count() == dialogOptions.Count())
+                foreach (var b in m_buttonList)
+                {
+                    foreach (var d in dialogOptions)
+                    {
+                        if (b.GetComponentInChildren<Text>().text != d.Utterance)
+                        {
+                            dif = true;
+                            break;
+                        }
+                    }
+                }
+            else dif = true;
+
+            if (!dif)
                 return;
+
           
-
-
             foreach (var d in dialogOptions)
             {
+                
+                  
                 if (isInButtonList(d.Utterance)) continue;
                 var b = Instantiate(m_dialogButtonArchetype);
                 var t = b.transform;
                 t.SetParent(m_dialogButtonZone, false);
                 b.GetComponentInChildren<Text>().text = d.Utterance;
                 var id = d.Id;
+                Debug.Log("I want to put this here: " + d.Utterance);
                 b.onClick.AddListener((() => Reply(id)));
                 m_buttonList.Add(b);
             }
@@ -297,13 +322,14 @@ public class SingleCharacterDemo : MonoBehaviour
 
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
     {
+        ClearButtons();
         const float WAIT_TIME = 0.5f;
         _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         _agentController.AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "Player").ToString());
-
-        
+        _agentController.AddEvent(EventHelper.PropertyChange("HasFloor(" + _agentController.RPC.CharacterName + ")", "True", _agentController.RPC.CharacterName.ToString()).ToString());
+      
     }
 
     // Update is called once per frame
@@ -317,8 +343,12 @@ public class SingleCharacterDemo : MonoBehaviour
 
         if (_agentController.getJustReplied())
         {
-            UpdateScore(_agentController.getReply());
+            var reply = _agentController.getReply();
+            UpdateScore(reply);
+
            if(Initialized) waitingforReply = false;
+            if ((Name)_agentController.RPC.GetBeliefValue("HasFloor(SELF)", "SELF") != Name.BuildName(true))
+                AddDialogueOptions();
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -341,72 +371,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
         _agentController.UpdateEmotionExpression();
 
-        var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
-        var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
-
-        var originalPossibleActions = possibleOptions;
-
-        if (!possibleOptions.Any())
-        {
-            UpdateButtonTexts(true, null);
-            Initialized = true;
-
-
-        }
-        else
-        {
-            if (PJScenario)
-            {
-                if (waitingforReply) return;
-                if (!Initialized)
-                {
-                     
-                    var newOptions =
-                        possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
-                            .Take(3)
-                            .Shuffle()
-                            .ToList();
-
-                    newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
-                    possibleOptions = newOptions;
-                    waitingforReply = true;
-                    UpdateButtonTexts(false, possibleOptions);
-                }
-                else
-                {
-
-                   
-                    var newOptions =
-                        possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
-                            .Shuffle()
-                            .Take(3)
-                            .ToList();
-                //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
-                    var additionalOptions = _iat.GetDialogueActionsByState("Start")
-                        .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
-                        .Shuffle()
-                        .Take(2);
-
-
-                    possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
-
-                    if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
-                    {
-                        var ClosureOptions =
-                            _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
-
-                        possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
-                    }
-
-                    waitingforReply = true;
-                    UpdateButtonTexts(false, possibleOptions);
-                }
-            }
-
-        else UpdateButtonTexts(false, possibleOptions);
-
-        }
-   
+       
 
     }
 
@@ -540,5 +505,80 @@ public class SingleCharacterDemo : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+
+    public void AddDialogueOptions()
+    {
+            var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
+            Debug.Log("CurrentState: " + state.ToString());
+            var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
+            foreach (var p in possibleOptions)
+            {
+                Debug.Log(state.ToString() + " possibleoptions: " + p.Utterance);
+            }
+            var originalPossibleActions = possibleOptions;
+
+            if (!possibleOptions.Any())
+            {
+                UpdateButtonTexts(true, null);
+                Initialized = true;
+
+
+            }
+            else
+            {
+                if (PJScenario)
+                {
+                    if (waitingforReply) return;
+                    if (!Initialized)
+                    {
+
+                        var newOptions =
+                            possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
+                                .Take(3)
+                                .Shuffle()
+                                .ToList();
+
+                        newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
+                        possibleOptions = newOptions;
+                        waitingforReply = true;
+                        UpdateButtonTexts(false, possibleOptions);
+                    }
+                    else
+                    {
+
+
+                        var newOptions =
+                            possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
+                                .Shuffle()
+                                .Take(3)
+                                .ToList();
+                        //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
+                        var additionalOptions = _iat.GetDialogueActionsByState("Start")
+                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
+                            .Shuffle()
+                            .Take(2);
+
+
+                        possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
+
+                        if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
+                        {
+                            var ClosureOptions =
+                                _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
+
+                            possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
+                        }
+
+                        waitingforReply = true;
+                        UpdateButtonTexts(false, possibleOptions);
+                    }
+                }
+
+
+                else UpdateButtonTexts(false, possibleOptions);
+
+            }
     }
 }

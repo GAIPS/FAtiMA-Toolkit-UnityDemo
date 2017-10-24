@@ -2,5 +2,3 @@
 	Introduction
 \Scenarios\AssetDemos\EADemo.iat
 	AssetDemos
-\Scenarios\AssetDemos\EDMDemo.iat
-	AssetDemos

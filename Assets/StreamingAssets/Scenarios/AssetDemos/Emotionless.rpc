@@ -7,13 +7,16 @@
 					"Perspective": "Emotionless",
 					"Knowledge":
 						{
-
+							"SELF":
+								{
+									"HasFloor(Emotionless)": "False, 1"
+								}
 						}
 				},
 			"BodyName": "Female",
 			"VoiceName": null,
-			"EmotionalAppraisalAssetSource": null,
-			"EmotionalDecisionMakingSource": "..\\Common\\BadMoodGoodMood.edm",
+			"EmotionalAppraisalAssetSource": "PoliteAppraisal.ea",
+			"EmotionalDecisionMakingSource": "..\\Common\\SingleResponse.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
 			"EmotionalState":

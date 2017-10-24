@@ -175,7 +175,7 @@
 					"UtteranceId": "TTS-A3C1191B1D2013A5B58B225E950F6D83"
 				}, 
 				{
-					"CurrentState": "GreetingEnd",
+					"CurrentState": "ExplainProblem",
 					"NextState": "Problem",
 					"Meaning": "ExplainComputerProblem",
 					"Style": "BadMood",
@@ -183,7 +183,7 @@
 					"UtteranceId": "TTS-5A45A23D6B6F74E4205E061BB7D0A05F"
 				}, 
 				{
-					"CurrentState": "GreetingEnd",
+					"CurrentState": "ExplainProblem",
 					"NextState": "Problem",
 					"Meaning": "ExplainComputerProblem",
 					"Style": "GoodMood",
@@ -197,7 +197,24 @@
 					"Style": "GoodMood",
 					"Utterance": "It worked!! Thank you.",
 					"UtteranceId": "TTS-E677522A6129D83DE6DE96C0555FB0AD"
-				}]
+				},
+				{
+					"CurrentState": "GreetingEnd",
+					"NextState": "ExplainProblem",
+					"Meaning": "ExplainComputerProblem",
+					"Style": "GoodMood",
+					"Utterance": "How may I help you?",
+					"UtteranceId": ""
+				},
+				{
+					"CurrentState": "GreetingEnd",
+					"NextState": "ExplainProblem",
+					"Meaning": "ExplainComputerProblem",
+					"Style": "BadMood",
+					"Utterance": "Let's skip the chit-chat, what can I do for you?",
+					"UtteranceId": ""
+				}
+				]
 		},
 	"types": [
 		{

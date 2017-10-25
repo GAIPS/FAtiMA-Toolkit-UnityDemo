@@ -116,7 +116,7 @@
 					"Meaning": "CheckSolution",
 					"Style": "BadMood",
 					"Utterance": "Let me see....It seems to be working now.",
-					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
+					"UtteranceId": "TTS-CF7272963959FCBA4D0670F783EF3E6D"
 				}, 
 				{
 					"CurrentState": "Farewell",
@@ -164,7 +164,7 @@
 					"Meaning": "CheckSolution",
 					"Style": "GoodMood",
 					"Utterance": "Thank you. Could you wait just a moment?  .... It worked!! Thank you",
-					"UtteranceId": "TTS-AD2CE59A8552138A85A58A1B75E410B0"
+					"UtteranceId": "TTS-9B7B53E8321C6FD805BD37DF95D5B466"
 				}, 
 				{
 					"CurrentState": "AfterPlayerGreeting",

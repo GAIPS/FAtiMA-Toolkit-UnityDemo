@@ -139,7 +139,7 @@ public class SingleCharacterDemo : MonoBehaviour
             {
                 var path = entries[i].Trim();
                 var tts = entries[i + 1].Trim();
-                Debug.Log(path  + " e " + tts);
+             //   Debug.Log(path  + " e " + tts);
                 data.Add(new ScenarioData(path, tts));
             }
 
@@ -296,7 +296,7 @@ public class SingleCharacterDemo : MonoBehaviour
                 t.SetParent(m_dialogButtonZone, false);
                 b.GetComponentInChildren<Text>().text = d.Utterance;
                 var id = d.Id;
-                Debug.Log("I want to put this here: " + d.Utterance);
+              //  Debug.Log("I want to put this here: " + d.Utterance);
                 b.onClick.AddListener((() => Reply(id)));
                 m_buttonList.Add(b);
             }
@@ -514,11 +514,11 @@ public class SingleCharacterDemo : MonoBehaviour
     public void AddDialogueOptions()
     {
             var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
-            Debug.Log("CurrentState: " + state.ToString());
+         //   Debug.Log("CurrentState: " + state.ToString());
             var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
             foreach (var p in possibleOptions)
             {
-                Debug.Log(state.ToString() + " possibleoptions: " + p.Utterance);
+          //      Debug.Log(state.ToString() + " possibleoptions: " + p.Utterance);
             }
             var originalPossibleActions = possibleOptions;
 

@@ -112,11 +112,11 @@
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
-					"NextState": "TestingSolution",
+					"NextState": "ProblemSolved",
 					"Meaning": "CheckSolution",
 					"Style": "BadMood",
-					"Utterance": "Let me see.",
-					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
+					"Utterance": "Let me see....It seems to be working now.",
+					"UtteranceId": "TTS-CF7272963959FCBA4D0670F783EF3E6D"
 				}, 
 				{
 					"CurrentState": "Farewell",
@@ -160,19 +160,19 @@
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
-					"NextState": "TestingSolution",
+					"NextState": "ProblemSolved",
 					"Meaning": "CheckSolution",
 					"Style": "GoodMood",
-					"Utterance": "Thank you. Could you wait just a moment?",
-					"UtteranceId": "TTS-AD2CE59A8552138A85A58A1B75E410B0"
+					"Utterance": "Thank you. Could you wait just a moment?  .... It worked!! Thank you",
+					"UtteranceId": "TTS-9B7B53E8321C6FD805BD37DF95D5B466"
 				}, 
 				{
 					"CurrentState": "AfterPlayerGreeting",
 					"NextState": "GreetingEnd",
 					"Meaning": "Greeting",
 					"Style": "BadMood",
-					"Utterance": "I need this fixed quickly!",
-					"UtteranceId": "TTS-A3C1191B1D2013A5B58B225E950F6D83"
+					"Utterance": "I am having some problems and I need this fixed quickly!",
+					"UtteranceId": "TTS-663834B0D42089B84DEFBCF07BE6ECF4"
 				}, 
 				{
 					"CurrentState": "ExplainProblem",
@@ -197,24 +197,23 @@
 					"Style": "GoodMood",
 					"Utterance": "It worked!! Thank you.",
 					"UtteranceId": "TTS-E677522A6129D83DE6DE96C0555FB0AD"
-				},
-				{
-					"CurrentState": "GreetingEnd",
-					"NextState": "ExplainProblem",
-					"Meaning": "ExplainComputerProblem",
-					"Style": "GoodMood",
-					"Utterance": "How may I help you?",
-					"UtteranceId": ""
-				},
+				}, 
 				{
 					"CurrentState": "GreetingEnd",
 					"NextState": "ExplainProblem",
 					"Meaning": "ExplainComputerProblem",
 					"Style": "BadMood",
-					"Utterance": "Let's skip the chit-chat, what can I do for you?",
+					"Utterance": "I see, well tell me about it then...",
 					"UtteranceId": ""
-				}
-				]
+				}, 
+				{
+					"CurrentState": "GreetingEnd",
+					"NextState": "ExplainProblem",
+					"Meaning": "ExplainComputerProblem",
+					"Style": "GoodMood",
+					"Utterance": "I am terribly sorry, what is the matter?",
+					"UtteranceId": ""
+				}]
 		},
 	"types": [
 		{

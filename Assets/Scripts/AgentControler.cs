@@ -154,11 +154,11 @@ namespace Assets.Scripts
 
             var dialogs = m_iat.GetDialogueActions(currentState, nextState, meaning, style);
 
-            Debug.Log("Here we go speaking: " + currentState.ToString() + " ns " + nextState.ToString() + " meaning " + meaning.ToString());
+      //      Debug.Log("Here we go speaking: " + currentState.ToString() + " ns " + nextState.ToString() + " meaning " + meaning.ToString());
 
 		    var dialog = dialogs.Shuffle().FirstOrDefault();
 
-            Debug.Log("Going to say: " + dialog.Utterance);
+       //     Debug.Log("Going to say: " + dialog.Utterance);
 
 		    if (dialog == null)
 			{
@@ -219,7 +219,7 @@ namespace Assets.Scripts
 
                 if (nextState.ToString() != "-") //todo: replace with a constant
                 {
-                       Debug.Log(" Cmon its over next state is:"  + nextState.ToString());
+                    //   Debug.Log(" Cmon its over next state is:"  + nextState.ToString());
                         RPC.m_kb.Tell(Name.BuildName("HasFloor(SELF)"), Name.BuildName("False"));
                     //  AddEvent(EventHelper.PropertyChange("DialogueState", "False", this.RPC.CharacterName.ToString()).ToString());
                    RPC.Perceive(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState.ToString(), IATConsts.PLAYER));

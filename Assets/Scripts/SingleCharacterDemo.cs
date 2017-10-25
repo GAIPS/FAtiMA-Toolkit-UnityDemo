@@ -29,8 +29,11 @@ public class SingleCharacterDemo : MonoBehaviour
         {
             ScenarioPath = path;
             TTSFolder = tts;
-
-            _iat = IntegratedAuthoringToolAsset.LoadFromFile(ScenarioPath);
+            var auxPath = "";
+            if (Application.platform.ToString().Contains("OS"))
+                auxPath = path.Replace('\\', '/');
+            else auxPath = path;
+            _iat = IntegratedAuthoringToolAsset.LoadFromFile(auxPath);
         }
     }
 

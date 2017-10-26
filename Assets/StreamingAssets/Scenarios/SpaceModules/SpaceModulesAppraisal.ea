@@ -3,17 +3,6 @@
 		{
 			"classId": 0,
 			"Description": null,
-			"KnowledgeBase":
-				{
-					"Perspective": "Client",
-					"Knowledge":
-						{
-							"SELF":
-								{
-									"DialogueState(Player)": "Start"
-								}
-						}
-				},
 			"AppraisalRules":
 				{
 					"AppraisalWeight": 1,
@@ -24,7 +13,8 @@
 								{
 									"Set": ["[x] > 0"]
 								},
-							"Desirability": 5
+							"Desirability": 5,
+							"Praiseworthiness": 0
 						}, 
 						{
 							"EventName": "Event(Action-Start, *, Speak(*, *, FAQ([x]), *), *)",
@@ -50,7 +40,8 @@
 								{
 									"Set": ["[x] > 0"]
 								},
-							"Desirability": 5
+							"Desirability": 5,
+							"Praiseworthiness": 0
 						}, 
 						{
 							"EventName": "Event(Action-Start, *, Speak(*, *, *, Polite([x])), *)",
@@ -72,6 +63,6 @@
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

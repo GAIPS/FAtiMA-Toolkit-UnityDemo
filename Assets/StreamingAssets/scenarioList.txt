@@ -6,3 +6,5 @@
 	AssetDemos
 \Scenarios\AssetDemos\SIDemo.iat
 	AssetDemos
+\Scenarios\SpaceModules\MinSysKnwNov.iat
+	SpaceModules

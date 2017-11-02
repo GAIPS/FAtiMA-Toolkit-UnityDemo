@@ -21,12 +21,6 @@ https://www.youtube.com/watch?v=6-oLZ_DJW2U
 ### FAtiMA-Toolkit Role Play Character Tool Video Demonstration:
 https://www.youtube.com/watch?v=2WgKs3-iI7g
 
-### WebGL
-Try the toolkit now directly from your browser: https://dl.dropboxusercontent.com/u/9291794/RAGE/SpaceModules-2016-Dec-30-WebGL/index.html
-
-### Android
-We also support android: https://dl.dropboxusercontent.com/u/9291794/RAGE/FAtiMA-Demo.apk
-
 ### License
 Apache 2.0
 

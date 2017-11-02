@@ -105,10 +105,10 @@ namespace Assets.Scripts
 
 		private IEnumerator UpdateCoroutine()
 		{
-		//	_events.Clear();
-         
+            //	_events.Clear();
+           // Debug.Log(m_rpc.GetBeliefValue("HasFloor(" + "SELF" + ")"));
 
-            while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE) 
+            while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE) 
 			{
 				yield return new WaitForSeconds(1);
                
@@ -121,11 +121,12 @@ namespace Assets.Scripts
 				if (action == null)
 					continue;
 
-				Debug.Log("Action Key: " + action.Key);
+			//	Debug.Log("Action Key: " + action.Key + " result: " + m_rpc.GetBeliefValue("HasFloor(SELF)"));
 
 				switch (action.Key.ToString())
 				{
 					case "Speak":
+                        if(m_rpc.GetBeliefValue("HasFloor(SELF)") == "True")
 						m_activeController.StartCoroutine(HandleSpeak(action));
 
 						break;
@@ -145,9 +146,10 @@ namespace Assets.Scripts
      
 		private IEnumerator HandleSpeak(IAction speakAction)
 		{
-			//m_rpc.Perceive(new [] { EventHelper.ActionStart(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
+            //m_rpc.Perceive(new [] { EventHelper.ActionStart(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
 
-			Name currentState = speakAction.Parameters[0];
+
+            Name currentState = speakAction.Parameters[0];
             Name nextState = speakAction.Parameters[1];
             Name meaning = speakAction.Parameters[2];
             Name style = speakAction.Parameters[3];
@@ -158,7 +160,7 @@ namespace Assets.Scripts
 
 		    var dialog = dialogs.Shuffle().FirstOrDefault();
 
-       //     Debug.Log("Going to say: " + dialog.Utterance);
+   //         Debug.Log("Going to say: " + dialog.Utterance);
 
 		    if (dialog == null)
 			{
@@ -217,12 +219,11 @@ namespace Assets.Scripts
 				
 				}
 
-                if (nextState.ToString() != "-") //todo: replace with a constant
+                if (nextState.ToString() != "-" && RPC.GetBeliefValue("HasFloor(SELF)") != "True") //todo: replace with a constant
                 {
-                    //   Debug.Log(" Cmon its over next state is:"  + nextState.ToString());
+                     
                         RPC.m_kb.Tell(Name.BuildName("HasFloor(SELF)"), Name.BuildName("False"));
-                    //  AddEvent(EventHelper.PropertyChange("DialogueState", "False", this.RPC.CharacterName.ToString()).ToString());
-                   RPC.Perceive(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState.ToString(), IATConsts.PLAYER));
+                        RPC.Perceive(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState.ToString(), IATConsts.PLAYER));
                     reply = dialog;
                     just_talked = true;
                 }
@@ -233,7 +234,6 @@ namespace Assets.Scripts
 		    {
                this.End();
 		    }
-
 
             AddEvent(EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER).ToString());
 

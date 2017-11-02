@@ -237,7 +237,7 @@ public class SingleCharacterDemo : MonoBehaviour
                     _agentController.Start(this, VersionMenu);
                    if(PJScenario || SpaceModulesScenario) InstantiateScore();
 
-                    AddDialogueOptions();
+                    StartCoroutine(AddDialogueOptions());
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -326,7 +326,7 @@ public class SingleCharacterDemo : MonoBehaviour
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
     {
         ClearButtons();
-        const float WAIT_TIME = 0.5f;
+        const float WAIT_TIME = 0.1f;
         _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
@@ -346,12 +346,16 @@ public class SingleCharacterDemo : MonoBehaviour
 
         if (_agentController.getJustReplied())
         {
+          
             var reply = _agentController.getReply();
             UpdateScore(reply);
-
+            // will probably need to launch a courotine
            if(Initialized) waitingforReply = false;
-            if ((Name)_agentController.RPC.GetBeliefValue("HasFloor(SELF)", "SELF") != Name.BuildName(true))
-                AddDialogueOptions();
+            if (_agentController.RPC.GetBeliefValue("HasFloor(SELF)", "SELF") != "True")
+            {
+                Debug.Log("Starting coroutine");
+                StartCoroutine(AddDialogueOptions());
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -511,8 +515,10 @@ public class SingleCharacterDemo : MonoBehaviour
     }
 
 
-    public void AddDialogueOptions()
+    private IEnumerator AddDialogueOptions()
     {
+
+        yield return new WaitForSeconds(1.3f);
             var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
          //   Debug.Log("CurrentState: " + state.ToString());
             var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
@@ -533,7 +539,7 @@ public class SingleCharacterDemo : MonoBehaviour
             {
                 if (PJScenario)
                 {
-                    if (waitingforReply) return;
+                    if (waitingforReply) yield break;
                     if (!Initialized)
                     {
 

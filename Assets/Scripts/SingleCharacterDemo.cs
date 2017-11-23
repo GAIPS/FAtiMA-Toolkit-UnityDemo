@@ -96,6 +96,7 @@ public class SingleCharacterDemo : MonoBehaviour
     public Dictionary<string, string> alreadyUsedDialogs;
     private bool Initialized;
     private bool waitingforReply;
+    private RolePlayCharacterAsset Player;
 
     // Use this for initialization
     private IEnumerator Start()
@@ -227,8 +228,12 @@ public class SingleCharacterDemo : MonoBehaviour
             rpc.LoadAssociatedAssets();
             _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
 
-            if (rpc.CharacterName.ToString() == "Player")
+            if (rpc.CharacterName.ToString().Contains("Player"))
+            {
+                Debug.Log("we have a player!");
+                Player = rpc;
                 return;
+            }
             AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(),
                 () =>
                 {
@@ -240,7 +245,7 @@ public class SingleCharacterDemo : MonoBehaviour
                     _agentController.Start(this, VersionMenu);
                     if (PJScenario || SpaceModulesScenario) InstantiateScore();
 
-                    StartCoroutine(AddDialogueOptions());
+                    StartCoroutine(AddDialoguePlayerOptions());
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -352,12 +357,15 @@ public class SingleCharacterDemo : MonoBehaviour
 
             var reply = _agentController.getReply();
             UpdateScore(reply);
+
+            if (_iat.ScenarioName.ToString().Contains("Intro"))
+                GiveFloor();
             // will probably need to launch a courotine
             if (Initialized) waitingforReply = false;
             if (_agentController.RPC.GetBeliefValue("HasFloor(SELF)", "SELF") != "True")
             {
                 Debug.Log("Starting coroutine");
-                StartCoroutine(AddDialogueOptions());
+                StartCoroutine(AddDialoguePlayerOptions());
             }
         }
 
@@ -542,7 +550,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
             if (_iat.ScenarioName.Contains("Intro"))
             {
-
+                GiveFloor();
             }
 
             else if (PJScenario)
@@ -597,6 +605,107 @@ public class SingleCharacterDemo : MonoBehaviour
             else UpdateButtonTexts(false, possibleOptions);
 
         }
+    }
+
+
+    private IEnumerator AddDialoguePlayerOptions()
+    {
+        if (Player != null)
+        {
+            yield return new WaitForSeconds(0.6f);
+            //   Debug.Log("CurrentState: " + state.ToString());
+            var decision = Player.Decide().FirstOrDefault();
+            foreach(var d in Player.Decide())
+                Debug.Log(" Decision: " + decision.Name);
+
+
+            /*     Debug.Log(" Decision" + decision.Name);
+                 Debug.Log(" Uhm 1" + decision.Parameters.ElementAt(1).ToString() + " 2 " + decision.Parameters.ElementAt(2));
+                 Debug.Log(" 3 " + decision.Parameters.ElementAt(3) + " 4 " + decision.Parameters.ElementAt(4));*/
+
+            var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), decision.Parameters.ElementAt(1), Name.BuildName("*"), Name.BuildName("*"));
+
+            var generalOptions = _iat.GetDialogueActionsByState("*");
+            List<DialogueStateActionDTO> possibleOptions = new List<DialogueStateActionDTO>(dialogActions);
+
+            var originalPossibleActions = possibleOptions;
+
+            if (!possibleOptions.Any())
+            {
+                UpdateButtonTexts(true, null);
+                Initialized = true;
+
+
+            }
+            else
+            {
+
+            
+              if (PJScenario)
+                {
+                    if (waitingforReply) yield break;
+                    if (!Initialized)
+                    {
+
+                        var newOptions =
+                            possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
+                                .Take(3)
+                                .Shuffle()
+                                .ToList();
+
+                        newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
+                        possibleOptions = newOptions;
+                        waitingforReply = true;
+                        UpdateButtonTexts(false, possibleOptions);
+                    }
+                    else
+                    {
+
+
+                        var newOptions =
+                            possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
+                                .Shuffle()
+                                .Take(3)
+                                .ToList();
+                        //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
+                        var additionalOptions = _iat.GetDialogueActionsByState("Start")
+                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
+                            .Shuffle()
+                            .Take(2);
+
+
+                        possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
+
+                        if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
+                        {
+                            var ClosureOptions =
+                                _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
+
+                            possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
+                        }
+
+                        waitingforReply = true;
+                        UpdateButtonTexts(false, possibleOptions);
+                    }
+                }
+
+
+                else UpdateButtonTexts(false, possibleOptions);
+
+            }
+        }
+        else AddDialogueOptions();
+    }
+
+
+
+    public void GiveFloor()
+    {
+        if(Player != null)
+          Player.Perceive(EventHelper.PropertyChange("HasFloor(Player)", "False","Player"));
+
+        _agentController.AddEvent(EventHelper.PropertyChange("HasFloor(" + _agentController.RPC.CharacterName + ")", "True", _agentController.RPC.CharacterName.ToString()).ToString());
+
     }
 
 }

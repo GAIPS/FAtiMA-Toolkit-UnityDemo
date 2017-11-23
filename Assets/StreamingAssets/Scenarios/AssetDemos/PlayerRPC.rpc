@@ -9,7 +9,9 @@
 						{
 							"SELF":
 								{
-									"HasFloor(Player)": "True, 1"
+									"HasFloor(Player)": "True, 1",
+									"DialogueState(Friend)": "Start, 1",
+									"DialogueState(Emotionless)": "Start, 1"
 								}
 						}
 				},

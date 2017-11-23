@@ -4,7 +4,7 @@
 			"classId": 0,
 			"ScenarioName": "Emotional Appraisal Demo",
 			"Description": "This scenario contains three examples of how the Emotional Appraisal Asset can be configured.\r\n\r\nThe Emotionless character will not feel any emotion.\r\n\r\nThe Happy character will become happier if you are polite. \r\n\r\nThe Angry character will become angrier if you are rude.",
-			"CharacterSources": ["Emotionless.rpc", "Happy.rpc"],
+			"CharacterSources": ["Emotionless.rpc", "Happy.rpc", "PlayerRPC.rpc"],
 			"Dialogues": [
 				{
 					"CurrentState": "Start",

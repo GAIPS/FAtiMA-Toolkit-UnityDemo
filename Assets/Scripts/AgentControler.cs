@@ -136,6 +136,7 @@ namespace Assets.Scripts
 
                         _currentCoroutine = null;
                         Object.Destroy(_body.Body);
+                        GameObject.FindObjectOfType<SingleCharacterDemo>().Restart();
                         break;
 					default:
 						Debug.LogWarning("Unknown action: " + action.Key);

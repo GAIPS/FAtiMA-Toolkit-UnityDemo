@@ -5,21 +5,21 @@
 			"DefaultActionPriority": 0,
 			"ActionTendencies": [
 				{
-					"Action": "Speak([cs], [ns], [m], [s])",
-					"Target": "[x]",
-					"Type": "[x]",
-					"Conditions":
-						{
-							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]", "HasFloor(SELF) = True"]
-						}
-				}, 
-				{
 					"Action": "Disconnect",
 					"Target": "-",
 					"Type": "-",
 					"Conditions":
 						{
 							"Set": ["DialogueState(Player) = End"]
+						}
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [m], [s])",
+					"Target": "[x]",
+					"Type": "[x]",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]"]
 						}
 				}]
 		},

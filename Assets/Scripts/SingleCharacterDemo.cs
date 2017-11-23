@@ -53,7 +53,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
     [SerializeField]
     private BodyType[] m_bodies;
-    
+
     [Space]
     [SerializeField]
     private Button m_dialogButtonArchetype = null;
@@ -105,7 +105,7 @@ public class SingleCharacterDemo : MonoBehaviour
         _finalScore = GameObject.FindGameObjectWithTag("FinalScore");
         _finalScore.SetActive(false);
         AssetManager.Instance.Bridge = new AssetManagerBridge();
-        
+
         m_dialogController.AddDialogLine("Loading...");
 
         alreadyUsedDialogs = new Dictionary<string, string>();
@@ -139,7 +139,7 @@ public class SingleCharacterDemo : MonoBehaviour
             {
                 var path = entries[i].Trim();
                 var tts = entries[i + 1].Trim();
-             //   Debug.Log(path  + " e " + tts);
+                //   Debug.Log(path  + " e " + tts);
                 data.Add(new ScenarioData(path, tts));
             }
 
@@ -226,16 +226,19 @@ public class SingleCharacterDemo : MonoBehaviour
             var rpc = RolePlayCharacterAsset.LoadFromFile(source.Source);
             rpc.LoadAssociatedAssets();
             _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
+
+            if (rpc.CharacterName.ToString() == "Player")
+                return;
             AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(),
                 () =>
                 {
-                  //  Debug.Log("Body " + rpc.BodyName);
+                    //  Debug.Log("Body " + rpc.BodyName);
                     var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
                     _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
                     StopAllCoroutines();
                     _agentController.storeFinalScore(_finalScore);
                     _agentController.Start(this, VersionMenu);
-                   if(PJScenario || SpaceModulesScenario) InstantiateScore();
+                    if (PJScenario || SpaceModulesScenario) InstantiateScore();
 
                     StartCoroutine(AddDialogueOptions());
                 });
@@ -256,7 +259,7 @@ public class SingleCharacterDemo : MonoBehaviour
     {
         if (hide)
         {
-           
+
             if (!m_buttonList.Any())
                 return;
             foreach (var b in m_buttonList)
@@ -285,18 +288,18 @@ public class SingleCharacterDemo : MonoBehaviour
             if (!dif)
                 return;
 
-          
+
             foreach (var d in dialogOptions)
             {
-                
-                  
+
+
                 if (isInButtonList(d.Utterance)) continue;
                 var b = Instantiate(m_dialogButtonArchetype);
                 var t = b.transform;
                 t.SetParent(m_dialogButtonZone, false);
                 b.GetComponentInChildren<Text>().text = d.Utterance;
                 var id = d.Id;
-              //  Debug.Log("I want to put this here: " + d.Utterance);
+                //  Debug.Log("I want to put this here: " + d.Utterance);
                 b.onClick.AddListener((() => Reply(id)));
                 m_buttonList.Add(b);
             }
@@ -316,11 +319,11 @@ public class SingleCharacterDemo : MonoBehaviour
 
 
         StartCoroutine(PlayerReplyAction(actionFormat, reply.NextState));
-       if(PJScenario || SpaceModulesScenario) UpdateScore(reply);
+        if (PJScenario || SpaceModulesScenario) UpdateScore(reply);
 
         alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
-     
-       
+
+
     }
 
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
@@ -332,7 +335,7 @@ public class SingleCharacterDemo : MonoBehaviour
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         _agentController.AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "Player").ToString());
         _agentController.AddEvent(EventHelper.PropertyChange("HasFloor(" + _agentController.RPC.CharacterName + ")", "True", _agentController.RPC.CharacterName.ToString()).ToString());
-      
+
     }
 
     // Update is called once per frame
@@ -346,11 +349,11 @@ public class SingleCharacterDemo : MonoBehaviour
 
         if (_agentController.getJustReplied())
         {
-          
+
             var reply = _agentController.getReply();
             UpdateScore(reply);
             // will probably need to launch a courotine
-           if(Initialized) waitingforReply = false;
+            if (Initialized) waitingforReply = false;
             if (_agentController.RPC.GetBeliefValue("HasFloor(SELF)", "SELF") != "True")
             {
                 Debug.Log("Starting coroutine");
@@ -378,7 +381,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
         _agentController.UpdateEmotionExpression();
 
-       
+
 
     }
 
@@ -389,7 +392,7 @@ public class SingleCharacterDemo : MonoBehaviour
     }
 
 
-    
+
     private void InstantiateScore()
     {
 
@@ -404,7 +407,8 @@ public class SingleCharacterDemo : MonoBehaviour
             obj.GetComponent<ScoreManager>().SetPJ(true);
             obj.GetComponent<ScoreManager>().Refresh();
 
-        } else if (SpaceModulesScenario)
+        }
+        else if (SpaceModulesScenario)
         {
             var obj = GameObject.FindGameObjectWithTag("Score");
             obj.GetComponent<ScoreManager>().SetPJ(false);
@@ -518,76 +522,81 @@ public class SingleCharacterDemo : MonoBehaviour
     private IEnumerator AddDialogueOptions()
     {
 
-        yield return new WaitForSeconds(1.3f);
-            var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
-         //   Debug.Log("CurrentState: " + state.ToString());
-            var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
-            foreach (var p in possibleOptions)
+        yield return new WaitForSeconds(0.6f);
+        var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
+        //   Debug.Log("CurrentState: " + state.ToString());
+        var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
+
+
+        var originalPossibleActions = possibleOptions;
+
+        if (!possibleOptions.Any())
+        {
+            UpdateButtonTexts(true, null);
+            Initialized = true;
+
+
+        }
+        else
+        {
+
+            if (_iat.ScenarioName.Contains("Intro"))
             {
-          //      Debug.Log(state.ToString() + " possibleoptions: " + p.Utterance);
+
             }
-            var originalPossibleActions = possibleOptions;
 
-            if (!possibleOptions.Any())
+            else if (PJScenario)
             {
-                UpdateButtonTexts(true, null);
-                Initialized = true;
-
-
-            }
-            else
-            {
-                if (PJScenario)
+                if (waitingforReply) yield break;
+                if (!Initialized)
                 {
-                    if (waitingforReply) yield break;
-                    if (!Initialized)
-                    {
 
-                        var newOptions =
-                            possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
-                                .Take(3)
-                                .Shuffle()
-                                .ToList();
-
-                        newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
-                        possibleOptions = newOptions;
-                        waitingforReply = true;
-                        UpdateButtonTexts(false, possibleOptions);
-                    }
-                    else
-                    {
-
-
-                        var newOptions =
-                            possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
-                                .Shuffle()
-                                .Take(3)
-                                .ToList();
-                        //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
-                        var additionalOptions = _iat.GetDialogueActionsByState("Start")
-                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
+                    var newOptions =
+                        possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
+                            .Take(3)
                             .Shuffle()
-                            .Take(2);
+                            .ToList();
 
-
-                        possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
-
-                        if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
-                        {
-                            var ClosureOptions =
-                                _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
-
-                            possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
-                        }
-
-                        waitingforReply = true;
-                        UpdateButtonTexts(false, possibleOptions);
-                    }
+                    newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
+                    possibleOptions = newOptions;
+                    waitingforReply = true;
+                    UpdateButtonTexts(false, possibleOptions);
                 }
+                else
+                {
 
 
-                else UpdateButtonTexts(false, possibleOptions);
+                    var newOptions =
+                        possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
+                            .Shuffle()
+                            .Take(3)
+                            .ToList();
+                    //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
+                    var additionalOptions = _iat.GetDialogueActionsByState("Start")
+                        .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
+                        .Shuffle()
+                        .Take(2);
 
+
+                    possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
+
+                    if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
+                    {
+                        var ClosureOptions =
+                            _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
+
+                        possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
+                    }
+
+                    waitingforReply = true;
+                    UpdateButtonTexts(false, possibleOptions);
+                }
             }
+
+
+            else UpdateButtonTexts(false, possibleOptions);
+
+        }
     }
+
 }

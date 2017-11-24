@@ -230,7 +230,6 @@ public class SingleCharacterDemo : MonoBehaviour
 
             if (rpc.CharacterName.ToString().Contains("Player"))
             {
-                Debug.Log("we have a player!");
                 Player = rpc;
                 return;
             }
@@ -447,13 +446,6 @@ public class SingleCharacterDemo : MonoBehaviour
         }
     }
 
-    /* private IEnumerable<DialogueStateActionDTO> HandleContext(string s)
-     {
-         IEnumerable<DialogueStateActionDTO> ret =
-
-     }*/
-
-
     private void HandleKeywords(string s)
     {
 
@@ -619,18 +611,8 @@ public class SingleCharacterDemo : MonoBehaviour
         if (Player != null)
         {
             yield return new WaitForSeconds(0.6f);
-            //   Debug.Log("CurrentState: " + state.ToString());
             var decision = Player.Decide().FirstOrDefault();
 
-
-            Debug.Log("Player before Deciding" + Player.m_kb.AskProperty(Name.BuildName("DialogueState(" + _agentController.RPC.CharacterName.ToString() + ")")));
-            foreach (var d in Player.Decide())
-                Debug.Log(" Decision: " + decision.Name);
-
-
-            /*     Debug.Log(" Decision" + decision.Name);
-                 Debug.Log(" Uhm 1" + decision.Parameters.ElementAt(1).ToString() + " 2 " + decision.Parameters.ElementAt(2));
-                 Debug.Log(" 3 " + decision.Parameters.ElementAt(3) + " 4 " + decision.Parameters.ElementAt(4));*/
 
             var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), Name.BuildName("*"), Name.BuildName("*"), Name.BuildName("*"));
 
@@ -676,7 +658,6 @@ public class SingleCharacterDemo : MonoBehaviour
                                 .Shuffle()
                                 .Take(3)
                                 .ToList();
-                        //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
                         var additionalOptions = _iat.GetDialogueActionsByState("Start")
                             .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
                             .Shuffle()

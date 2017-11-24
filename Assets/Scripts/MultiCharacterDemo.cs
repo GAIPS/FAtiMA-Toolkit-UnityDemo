@@ -242,9 +242,7 @@ public class MultiCharacterDemo : MonoBehaviour {
             _agentController = new MultiCharacterAgentController(data, rpc, _iat, body.CharaterArchtype, m_characterAnchors[CharacterCount], m_dialogController);
                     StopAllCoroutines();
                
-            //        if (PJScenario || SpaceModulesScenario) InstantiateScore();
               _agentControllers.Add(_agentController);
-    //       Debug.Log("Character count " + CharacterCount + " size " + characterSources.Count);
             CharacterCount++;
 
         }

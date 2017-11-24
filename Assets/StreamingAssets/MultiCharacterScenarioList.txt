@@ -1,4 +1,2 @@
 \Scenarios\CommeillFautScenario\cifIAT.iat
 	CiF-Demo
-\Scenarios\Drama\dramaIAT.iat
-	Drama

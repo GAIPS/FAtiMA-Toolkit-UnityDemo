@@ -2,9 +2,9 @@
 	"root":
 		{
 			"classId": 0,
-			"ScenarioName": "CifScenario",
-			"Description": "Testing the new cif dialogue combination",
-			"CharacterSources": ["John.rpc", "Sarah.rpc", "Mary.rpc"],
+			"ScenarioName": null,
+			"Description": null,
+			"CharacterSources": ["CIF1.rpc", "CIF2.rpc"],
 			"Dialogues": [
 				{
 					"CurrentState": "-",

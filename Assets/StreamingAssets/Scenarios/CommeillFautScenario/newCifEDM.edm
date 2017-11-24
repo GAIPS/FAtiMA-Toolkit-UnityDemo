@@ -5,37 +5,39 @@
 			"DefaultActionPriority": 2,
 			"ActionTendencies": [
 				{
-					"Action": "Speak(-, -,SE([se],Initiate), [sty])",
+					"Action": "Speak(-, -, SE([se], Initiate), [sty])",
 					"Target": "[x]",
+					"Type": "[x]",
 					"Conditions":
 						{
-							"Set": ["IsAgent([x]) = true", "[x] != SELF", "[sty] = Volition([se], SELF,[x])"] 
+							"Set": ["IsAgent([x]) = True", "[x] != SELF", "HasFloor(SELF) = True" ,"Volition([se], SELF, [x]) = [sty]", "Positive = [sty]"]
 						},
 					"Priority": 1
-				},				
+				}, 
 				{
-					"Action": "Speak(-, -,SE([se],Answer), [sty])",
+					"Action": "Speak(-, -, SE([se], Answer), [sty])",
 					"Target": "[x]",
+					"Type": "[x]",
 					"Conditions":
 						{
-							"Set": ["IsAgent([x]) = true", "[x] != SELF", "[sty] = Volition([se], SELF,[x])", "LastEventId(Action-End, [x], Speak(-, -,SE([se],Initiate), [sty]), SELF) = [id]"] 
+							"Set": ["IsAgent([x]) = True", "[x] != SELF","HasFloor(SELF) = True" , "LastEventId(Action-End, [x], Speak(-, -, SE([se], Initiate), Positive), SELF) = [id]", "Volition([se], SELF, [x]) = [sty]"]
 						},
-					"Priority": 2
-				},
+						"Priority": 2
+				}, 
 				{
-					"Action": "Speak(-,-,SE([se],Finalize), [sty])",
+					"Action": "Speak(-, -, SE([se], Finalize), [sty])",
 					"Target": "[x]",
+					"Type": "[x]",
 					"Conditions":
 						{
-							"Set": ["IsAgent([x]) = true", "[x] != SELF", "[sty] = Volition([se], SELF,[x])", "LastEventId(Action-End, [x], Speak(-, -,SE([se],Answer), [sty]), SELF) = [id]"] 
+							"Set": ["IsAgent([x]) = True", "[x] != SELF","HasFloor(SELF) = True" , "LastEventId(Action-End, [x], Speak(-, -, SE([se], Answer), [sty]), SELF) = [id]", "Volition([se], SELF, [x]) = [sty]"]
 						},
 					"Priority": 3
-				}
-				]
+				}]
 		},
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "EmotionalDecisionMaking.EmotionalDecisionMakingAsset, EmotionalDecisionMaking, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "EmotionalDecisionMaking.EmotionalDecisionMakingAsset, EmotionalDecisionMaking, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

@@ -7,18 +7,24 @@
 					"Perspective": "Mary",
 					"Knowledge":
 						{
-
+							"SELF":
+								{
+									"IsAttracted(Mary, Sarah)": "True, 0.6",
+									"IsFriend(Mary, John)": "False, 1",
+									"HasFloor(Mary)": "False, 1"
+								}
 						}
 				},
 			"BodyName": "Female",
-			"VoiceName": "Hazel",
-			"EmotionalAppraisalAssetSource": "Mary.ea",
+			"VoiceName": null,
+			"EmotionalAppraisalAssetSource": "EAVERSION3.ea",
 			"EmotionalDecisionMakingSource": "newCifEDM.edm",
-			"SocialImportanceAssetSource": null,
-			"CommeillFautAssetSource": "newTest.cif",
+			"SocialImportanceAssetSource": "CIFVERSION3.si",
+			"CommeillFautAssetSource": "wtv.cif",
 			"EmotionalState":
 				{
 					"Mood": 0,
+					"initialTick": 0,
 					"EmotionalPool": [],
 					"AppraisalConfiguration":
 						{
@@ -34,11 +40,15 @@
 				{
 					"Tick": 0,
 					"records": []
+				},
+			"OtherAgents":
+				{
+					"dictionary": []
 				}
 		},
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

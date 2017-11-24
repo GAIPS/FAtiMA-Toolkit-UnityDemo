@@ -15,14 +15,13 @@
 				},
 			"BodyName": "Female",
 			"VoiceName": null,
-			"EmotionalAppraisalAssetSource": "PoliteAppraisal.ea",
+			"EmotionalAppraisalAssetSource": "SpaceModulesAppraisal.ea",
 			"EmotionalDecisionMakingSource": "..\\Common\\SingleResponse.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
 			"EmotionalState":
 				{
 					"Mood": 0,
-					"initialTick": 0,
 					"EmotionalPool": [],
 					"AppraisalConfiguration":
 						{
@@ -38,10 +37,6 @@
 				{
 					"Tick": 0,
 					"records": []
-				},
-			"OtherAgents":
-				{
-					"dictionary": []
 				}
 		},
 	"types": [

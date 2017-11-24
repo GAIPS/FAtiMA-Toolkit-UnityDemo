@@ -294,6 +294,7 @@ namespace Assets.Scripts
             just_talked = false;
             return reply;
         }
+
         public bool getJustReplied()
         {
             return just_talked;

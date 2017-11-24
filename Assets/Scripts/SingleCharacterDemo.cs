@@ -245,6 +245,7 @@ public class SingleCharacterDemo : MonoBehaviour
                     _agentController.Start(this, VersionMenu);
                     if (PJScenario || SpaceModulesScenario) InstantiateScore();
 
+                    InitializePlayerKnowledgeBase();
                     StartCoroutine(AddDialoguePlayerOptions());
                 });
         }
@@ -360,6 +361,11 @@ public class SingleCharacterDemo : MonoBehaviour
 
             if (_iat.ScenarioName.ToString().Contains("Intro"))
                 GiveFloor();
+
+            if (Player != null)
+            {
+                PlayerPerceiveReply(reply);
+            }
             // will probably need to launch a courotine
             if (Initialized) waitingforReply = false;
             if (_agentController.RPC.GetBeliefValue("HasFloor(SELF)", "SELF") != "True")
@@ -615,7 +621,10 @@ public class SingleCharacterDemo : MonoBehaviour
             yield return new WaitForSeconds(0.6f);
             //   Debug.Log("CurrentState: " + state.ToString());
             var decision = Player.Decide().FirstOrDefault();
-            foreach(var d in Player.Decide())
+
+
+            Debug.Log("Player before Deciding" + Player.m_kb.AskProperty(Name.BuildName("DialogueState(" + _agentController.RPC.CharacterName.ToString() + ")")));
+            foreach (var d in Player.Decide())
                 Debug.Log(" Decision: " + decision.Name);
 
 
@@ -623,7 +632,7 @@ public class SingleCharacterDemo : MonoBehaviour
                  Debug.Log(" Uhm 1" + decision.Parameters.ElementAt(1).ToString() + " 2 " + decision.Parameters.ElementAt(2));
                  Debug.Log(" 3 " + decision.Parameters.ElementAt(3) + " 4 " + decision.Parameters.ElementAt(4));*/
 
-            var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), decision.Parameters.ElementAt(1), Name.BuildName("*"), Name.BuildName("*"));
+            var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), Name.BuildName("*"), Name.BuildName("*"), Name.BuildName("*"));
 
             var generalOptions = _iat.GetDialogueActionsByState("*");
             List<DialogueStateActionDTO> possibleOptions = new List<DialogueStateActionDTO>(dialogActions);
@@ -708,4 +717,20 @@ public class SingleCharacterDemo : MonoBehaviour
 
     }
 
+
+    private void PlayerPerceiveReply(DialogueStateActionDTO d)
+    {
+        if (Player != null)
+        {
+            Player.Perceive(EventHelper.ActionEnd(_agentController.RPC.CharacterName.ToString(), "Speak(" + d.CurrentState + "," + d.NextState + "," + d.Meaning + "," + d.Style + ")", Player.CharacterName.ToString()));
+            Player.Perceive(EventHelper.PropertyChange("DialogueState(" + _agentController.RPC.CharacterName.ToString() + ")", d.NextState, Player.CharacterName.ToString()));
+        }
+    }
+
+
+    private void InitializePlayerKnowledgeBase()
+    {
+        if(Player !=null)
+        Player.m_kb.Tell(Name.BuildName("DialogueState(" + _agentController.RPC.CharacterName.ToString() + ")"), Name.BuildName("Start"));
+    }
 }

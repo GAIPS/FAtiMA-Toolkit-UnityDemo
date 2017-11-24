@@ -4,7 +4,7 @@
 			"classId": 0,
 			"ScenarioName": "Space Modules Example",
 			"Description": "In this scenario the player has to solve a minor problem that is related to a known system failure.",
-			"CharacterSources": ["RPCNegative.rpc", "RPCNeutral.rpc", "RPCPositive.rpc"],
+			"CharacterSources": ["RPCNegative.rpc", "RPCNeutral.rpc", "RPCPositive.rpc", "Player.rpc"],
 			"Dialogues": [
 				{
 					"CurrentState": "Start",

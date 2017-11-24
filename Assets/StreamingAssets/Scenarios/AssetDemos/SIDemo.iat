@@ -4,7 +4,7 @@
 			"classId": 0,
 			"ScenarioName": "Social Importance Demo",
 			"Description": "This is a scenario to showcase how the Social Importance model works",
-			"CharacterSources": ["Friend.rpc", "Stranger.rpc"],
+			"CharacterSources": ["Friend.rpc", "Stranger.rpc", "PlayerRPC.rpc"],
 			"Dialogues": [
 				{
 					"CurrentState": "Start",
@@ -88,7 +88,7 @@
 				}, 
 				{
 					"CurrentState": "AfterPlayerGreeting",
-					"NextState": "GreetingEnd",
+					"NextState": "GreetingEnd1",
 					"Meaning": "Greeting",
 					"Style": "GoodMood",
 					"Utterance": "Good Day! How are you? I was wondering if you could help me...",
@@ -112,20 +112,60 @@
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
-					"NextState": "TestingSolution",
+					"NextState": "TestingSolutionReply",
 					"Meaning": "CheckSolution",
 					"Style": "BadMood",
-					"Utterance": "Let me see.",
+					"Utterance": "Let me see...",
+					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
+				}, 
+				{
+					"CurrentState": "TestingSolutionReply",
+					"NextState": "TestingSolution",
+					"Meaning": "CheckSolution",
+					"Style": "Rude",
+					"Utterance": "Hurry up!",
+					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
+				}, 
+				{
+					"CurrentState": "TestingSolutionReply",
+					"NextState": "TestingSolution",
+					"Meaning": "CheckSolution",
+					"Style": "Polite",
+					"Utterance": "Take as long as you want...",
 					"UtteranceId": "TTS-6AE6FF7AC86B22334B08740181F9F159"
 				}, 
 				{
 					"CurrentState": "Farewell",
 					"NextState": "End",
-					"Meaning": "Farewell",
+					"Meaning": "-",
 					"Style": "Gratitude",
 					"Utterance": "You were a great help. Thank you very much. More people like you should exist in this world.",
 					"UtteranceId": "TTS-9F37DD5BA4AE63ECC1795C8FBAA48F84"
-				}, 
+				},
+				{	
+					"CurrentState": "Goodbye",
+					"NextState": "Farewell",
+					"Meaning": "-",
+					"Style": "Polite",
+					"Utterance": "We will be happy to help if you have any other problem.",
+					"UtteranceId": "TTS-9F37DD5BA4AE63ECC1795C8FBAA48F84"
+				},	
+				{	
+					"CurrentState": "Goodbye",
+					"NextState": "Farewell",
+					"Meaning": "-",
+					"Style": "Polite",
+					"Utterance": "Have a good day.",
+					"UtteranceId": "TTS-9F37DD5BA4AE63ECC1795C8FBAA48F84"
+				},
+				{	
+					"CurrentState": "Goodbye",
+					"NextState": "Farewell",
+					"Meaning": "Farewell",
+					"Style": "Rude",
+					"Utterance": "See ya!",
+					"UtteranceId": "TTS-9F37DD5BA4AE63ECC1795C8FBAA48F84"
+				},				
 				{
 					"CurrentState": "Farewell",
 					"NextState": "End",
@@ -136,7 +176,7 @@
 				}, 
 				{
 					"CurrentState": "AnythingElse",
-					"NextState": "Farewell",
+					"NextState": "Goodbye",
 					"Meaning": "NoAdditionalProblem",
 					"Style": "BadMood",
 					"Utterance": "No, I'm fine.",
@@ -144,7 +184,7 @@
 				}, 
 				{
 					"CurrentState": "AnythingElse",
-					"NextState": "Farewell",
+					"NextState": "Goodbye",
 					"Meaning": "NoAdditionalProblem",
 					"Style": "GoodMood",
 					"Utterance": "No, that was the only problem I had.",
@@ -160,7 +200,7 @@
 				}, 
 				{
 					"CurrentState": "SolutionProposed",
-					"NextState": "TestingSolution",
+					"NextState": "TestingSolutionReply",
 					"Meaning": "CheckSolution",
 					"Style": "GoodMood",
 					"Utterance": "Thank you. Could you wait just a moment?",
@@ -168,14 +208,30 @@
 				}, 
 				{
 					"CurrentState": "AfterPlayerGreeting",
-					"NextState": "GreetingEnd",
+					"NextState": "GreetingEnd1",
 					"Meaning": "Greeting",
 					"Style": "BadMood",
 					"Utterance": "I need this fixed quickly!",
 					"UtteranceId": "TTS-A3C1191B1D2013A5B58B225E950F6D83"
 				}, 
 				{
-					"CurrentState": "GreetingEnd",
+					"CurrentState": "GreetingEnd1",
+					"NextState": "GreetingEnd2",
+					"Meaning": "ExplainComputerProblem",
+					"Style": "Rude",
+					"Utterance": "*Sigh* Go ahead, what is the problem?",
+					"UtteranceId": "TTS-5A45A23D6B6F74E4205E061BB7D0A05F"
+				},
+				{
+					"CurrentState": "GreetingEnd1",
+					"NextState": "GreetingEnd2",
+					"Meaning": "ExplainComputerProblem",
+					"Style": "Polite",
+					"Utterance": "I'm sorry to hear that, what seems to be the problem?",
+					"UtteranceId": "TTS-5A45A23D6B6F74E4205E061BB7D0A05F"
+				},				
+				{
+					"CurrentState": "GreetingEnd2",
 					"NextState": "Problem",
 					"Meaning": "ExplainComputerProblem",
 					"Style": "BadMood",
@@ -183,7 +239,7 @@
 					"UtteranceId": "TTS-5A45A23D6B6F74E4205E061BB7D0A05F"
 				}, 
 				{
-					"CurrentState": "GreetingEnd",
+					"CurrentState": "GreetingEnd2",
 					"NextState": "Problem",
 					"Meaning": "ExplainComputerProblem",
 					"Style": "GoodMood",

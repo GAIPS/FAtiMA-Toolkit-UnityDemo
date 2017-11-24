@@ -272,6 +272,7 @@ public class MultiCharacterDemo : MonoBehaviour {
         }
 
      RandomizeNext();
+        SetCamera();
     }
 
     public void SaveState()
@@ -697,6 +698,30 @@ public class MultiCharacterDemo : MonoBehaviour {
         var notPlayerAgents = rpcList.FindAll(x => x.CharacterName != _chosenCharacter);
 
         TargetOptionsButton(false, notPlayerAgents);
+
+
+    }
+
+    public void SetCamera()
+    {
+        var camera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        var rpc = GameObject.FindGameObjectWithTag(_chosenCharacter.ToString());
+
+        camera.transform.position = rpc.transform.position;
+        camera.transform.rotation = rpc.transform.rotation;
+
+        camera.GetComponent<Camera>().fieldOfView = 40;
+
+        camera.transform.Translate(new Vector3(-0.02f, 1.375f, 0));
+        //   Camera.main.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        //  camera.transform.Rotate(new Vector3(90,180 ,0));
+        var MouseLook = camera.GetComponent<MouseLookController>();
+
+        MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x => x.CharacterName != _chosenCharacter).CharacterName.ToString()).transform.position;
+        MouseLook.Online(true);
+
+
 
 
     }

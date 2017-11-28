@@ -10,13 +10,13 @@
 							"SELF":
 								{
 									"IsAttracted(Sarah, John)": "True, 0.6",
-									"IsFriend(Sarah, Mary)": "False, 1",
+									"IsFriend(Sarah, Mary)": "True, 1",
 									"HasFloor(Sarah)": "False, 1"
 								}
 						}
 				},
 			"BodyName": "Female",
-			"VoiceName": null,
+			"VoiceName": "Female",
 			"EmotionalAppraisalAssetSource": "EAVERSION3.ea",
 			"EmotionalDecisionMakingSource": "newCifEDM.edm",
 			"SocialImportanceAssetSource": "CIFVERSION3.si",

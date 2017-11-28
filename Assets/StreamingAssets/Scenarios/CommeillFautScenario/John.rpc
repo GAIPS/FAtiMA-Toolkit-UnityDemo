@@ -11,12 +11,12 @@
 								{
 									"IsAttracted(John, Sarah)": "False, 1",
 									"IsFriend(John, Mary)": "True, 1",
-									"HasFloor(John)": "True, 1"
+									"HasFloor(John)": "False, 1"
 								}
 						}
 				},
 			"BodyName": "Male",
-			"VoiceName": null,
+			"VoiceName": "Male",
 			"EmotionalAppraisalAssetSource": "EAVERSION3.ea",
 			"EmotionalDecisionMakingSource": "newCifEDM.edm",
 			"SocialImportanceAssetSource": "CIFVERSION3.si",

@@ -387,11 +387,11 @@ public class MultiCharacterDemo : MonoBehaviour {
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
     {
         const float WAIT_TIME = 0.5f;
-        _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
+        
+        _agentController.RPC.Perceive(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
         yield return new WaitForSeconds(WAIT_TIME);
-        _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
-        _agentController.AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF").ToString());
-
+        _agentController.RPC.Perceive(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
+        _agentController.RPC.Perceive(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "SELF"));
 
     }
 
@@ -439,14 +439,11 @@ public class MultiCharacterDemo : MonoBehaviour {
             {
                 if (agent.getJustReplied())
                 {
-                    var lastEvent = agent.GetLastEvent().FirstOrDefault();
-                    Debug.Log(" to perceive " + lastEvent.ToString());
-                    eventsToPerceive.Add(lastEvent);
+                    var lastAction = agent.getLastAction();
                     var actionTarget = agent.getLastAction().Target;
                     var TargetRPC = _agentControllers.Find(x => x.RPC.CharacterName == actionTarget);
                     agent.setFloor(false);
                     justSpokeAgent = agent;
-                    Debug.Log("Justspoke agent" + justSpokeAgent.RPC.CharacterName + lastEvent);
                     Debug.Log(justSpokeAgent.RPC.CharacterName + " property Friendship towards "  + actionTarget + justSpokeAgent.RPC.m_kb.AskProperty(Name.BuildName("Friendship(" + justSpokeAgent.RPC.CharacterName + "," + TargetRPC.RPC.CharacterName + ")" )));
                     Debug.Log(justSpokeAgent.RPC.CharacterName + " property Attraction towards " + actionTarget + justSpokeAgent.RPC.m_kb.AskProperty(Name.BuildName("Attraction(" + justSpokeAgent.RPC.CharacterName + "," + TargetRPC.RPC.CharacterName + ")")));
                     Debug.Log(TargetRPC.RPC.CharacterName + " property Friendship towards " + justSpokeAgent.RPC.CharacterName + TargetRPC.RPC.m_kb.AskProperty(Name.BuildName("Friendship(" + TargetRPC.RPC.CharacterName + "," + justSpokeAgent.RPC.CharacterName + ")")));
@@ -463,7 +460,7 @@ public class MultiCharacterDemo : MonoBehaviour {
                     }
                 
          
-                    if (lastEvent.ToString().Contains("Finalize"))
+                    if (lastAction.Name.ToString().Contains("Finalize"))
                     {
                       //  Debug.Log(" last event " + lastEvent.ToString());
                         RandomizeNext();

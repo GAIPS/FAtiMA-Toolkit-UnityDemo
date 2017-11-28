@@ -70,11 +70,6 @@ public class MultiCharacterAgentController : MonoBehaviour {
         
     }
 
-    public void AddEvent(string eventName)
-    {
-        _events.Add((Name)eventName);
-    }
-
     public void updateHeadController(string TargetName)
     {
 
@@ -124,11 +119,13 @@ public class MultiCharacterAgentController : MonoBehaviour {
     public IEnumerator UpdateCoroutine()
     {
         _events.Clear();
-        var action = m_rpc.Decide().Shuffle().FirstOrDefault();
-        
-        _events.Clear();
-        m_rpc.Update();
 
+        var action = m_rpc.Decide().FirstOrDefault();
+        
+       Debug.Log("So the first decision is:" + action.Name);
+
+
+        lastAction = action;
         if (action != null)
         {
 
@@ -165,6 +162,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
         // if(m_activeController)
         m_activeController = controler;
         updateHeadController(speakAction.Target.ToString());
+        lastAction = speakAction;
         m_activeController.StartCoroutine(HandleSpeak(speakAction));
       
     }
@@ -173,19 +171,20 @@ public class MultiCharacterAgentController : MonoBehaviour {
     {
         //m_rpc.Perceive(new [] { EventHelper.ActionStart(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
 
-       
+
         Name currentState = speakAction.Parameters[0];
         Name nextState = speakAction.Parameters[1];
         Name meaning = speakAction.Parameters[2];
         Name style = speakAction.Parameters[3];
+        var Target = speakAction.Target;
 
         var dialogs = m_iat.GetDialogueActions(currentState, nextState, meaning, style);
 
-     
+        //      Debug.Log("Here we go speaking: " + currentState.ToString() + " ns " + nextState.ToString() + " meaning " + meaning.ToString());
 
         var dialog = dialogs.Shuffle().FirstOrDefault();
-        lastDialog = dialog;
 
+        //         Debug.Log("Going to say: " + dialog.Utterance);
 
         if (dialog == null)
         {
@@ -194,17 +193,18 @@ public class MultiCharacterAgentController : MonoBehaviour {
         }
         else
         {
+            this.setFloor(false);
             string subFolder = m_scenarioData.TTSFolder;
             if (subFolder != "<none>")
             {
                 var path = string.Format("/TTS-Dialogs/{0}/{1}/{2}", subFolder, m_rpc.VoiceName, dialog.UtteranceId);
                 var absolutePath = Application.streamingAssetsPath;
 #if UNITY_EDITOR || UNITY_STANDALONE
-					absolutePath = "file://" + absolutePath;
+                absolutePath = "file://" + absolutePath;
 #endif
                 string audioUrl = absolutePath + path + ".wav";
                 string xmlUrl = absolutePath + path + ".xml";
-             
+
                 var audio = new WWW(audioUrl);
                 var xml = new WWW(xmlUrl);
 
@@ -232,46 +232,36 @@ public class MultiCharacterAgentController : MonoBehaviour {
                     clip.UnloadAudioData();
                 }
 
-              
-                reply = dialog;
-                just_talked = true;
-                lastAction = speakAction;
-                lastEvent = new[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), speakAction.Target.ToString()) };
-                
+
+
             }
             else
             {
                 m_dialogController.AddDialogLine(dialog.Utterance);
                 yield return new WaitForSeconds(2);
 
-                reply = dialog;
-                just_talked = true;
-                lastAction = speakAction;
-                lastEvent = new[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), speakAction.Target.ToString()) };
-             
+
             }
 
-            if (nextState.ToString() != "-") //todo: replace with a constant
-                AddEvent(string.Format("Event(Property-change,self,DialogueState(Player),{0})", nextState));
+            if (RPC.GetBeliefValue("HasFloor(SELF)") != "True") //todo: replace with a constant
+            {
+                this.SetDialogueState(Target.ToString(), nextState.ToString());
+                reply = dialog;
+                just_talked = true;
+            }
         }
 
-        if (speakAction.Parameters[1].ToString() != "-") //todo: replace with a constant
-        {
-            var dialogueStateUpdateEvent = string.Format("Event(Property-Change,SELF,DialogueState({0}),{1})", speakAction.Target, speakAction.Parameters[1]);
-            AddEvent(dialogueStateUpdateEvent);
-        }
+
         if (nextState.ToString() == "Disconnect")
         {
             this.End();
         }
-     lastEvent = new [] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), speakAction.Target.ToString())};
-    }
 
+    }
     private IEnumerator HandleDisconnectAction(IAction actionRpc)
     {
         yield return null;
         m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
-        AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), "Disconnected", "SELF").ToString());
         if (_body)
             _body.Hide();
         yield return new WaitForSeconds(2);
@@ -316,31 +306,27 @@ public class MultiCharacterAgentController : MonoBehaviour {
         _finalScore = g;
 
     }
+   
+    public IAction getLastAction()
+    {
+        return lastAction;
+    }
+
+  
     public DialogueStateActionDTO getReply()
     {
         just_talked = false;
         return reply;
     }
 
-    public IAction getLastAction()
-    {
-        return lastAction;
-    }
-
-    public Name[] GetLastEvent()
-    {
-        return lastEvent;
-    }
     public bool getJustReplied()
     {
-        var temp = just_talked;
-        just_talked = false;
-        return temp;
+        return just_talked;
     }
 
     public void ClearTempVariables()
     {
-        lastAction = null;
+      //  lastAction = null;
         
     }
 
@@ -362,6 +348,12 @@ public class MultiCharacterAgentController : MonoBehaviour {
     public DialogueStateActionDTO getLastDialog()
     {
         return lastDialog;
+    }
+
+
+    public void SetDialogueState(string target, string value)
+    {
+        this.RPC.m_kb.Tell(Name.BuildName("DialogueState(" + target + ")"), Name.BuildName(value));
     }
 }
 

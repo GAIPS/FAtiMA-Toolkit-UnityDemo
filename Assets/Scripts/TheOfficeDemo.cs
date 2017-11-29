@@ -332,9 +332,9 @@ public class TheOfficeDemo : MonoBehaviour {
                 i += 1;
                 t.SetParent(m_dialogButtonZone, false);
                 if(!playerInitiating)
-                b.GetComponentInChildren<Text>().text = i + ". " + d.Utterance;
+                b.GetComponentInChildren<Text>().text = i + ": " + d.Utterance;
                 else
-                    b.GetComponentInChildren<Text>().text = i + ". " + getActionFromMeaning(d.Meaning.First().ToString());
+                    b.GetComponentInChildren<Text>().text = i + "[" + getActionFromMeaning(d.Meaning.ToString()) + "]: " + d.Utterance;
 
                 var id = d.Id;
                 b.onClick.AddListener((() => Reply(id)));
@@ -609,7 +609,7 @@ public class TheOfficeDemo : MonoBehaviour {
         char[] words = { ',', '(', ')' };
 
         string[] result = meaning.Split(words);
-     
+        Debug.Log("Get action from meaning " + " original" + meaning  + " result " + result[0] + " 1: "); //+ result[1]);
        
         return result[1];
      }
@@ -654,7 +654,7 @@ public class TheOfficeDemo : MonoBehaviour {
 
         foreach (var act in actionList)
         {
-        
+            Debug.Log(act.Utterance + " meaning " + act.Meaning);
             if(act.Meaning != null)
             if (act.Meaning.ToString().Contains("Initiate"))
                 newList.Add(act.ToDTO());

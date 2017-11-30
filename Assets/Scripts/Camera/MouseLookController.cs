@@ -40,22 +40,26 @@ public class MouseLookController : MonoBehaviour
     {
         if (online)
         {
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = -Input.GetAxis("Mouse Y");
-           
-            rotY += mouseX * mouseSensitivity * Time.deltaTime;
-           
-                rotX += mouseY * mouseSensitivity * Time.deltaTime;
-      //      Debug.Log(rotX + "   " + rotY);
+            if (Input.GetMouseButton(1) || Input.GetMouseButton(0))
+            {
+                float mouseX = Input.GetAxis("Mouse X");
+                float mouseY = -Input.GetAxis("Mouse Y");
 
-        //    if (rotX > -50 && rotX < 250 && rotY > -200 & rotY < 250)
-         //   {
+                rotY += mouseX * mouseSensitivity * Time.deltaTime;
+
+                rotX += mouseY * mouseSensitivity * Time.deltaTime;
+                //      Debug.Log(rotX + "   " + rotY);
+
+                //    if (rotX > -50 && rotX < 250 && rotY > -200 & rotY < 250)
+                //   {
 
                 rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
 
                 Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
                 transform.rotation = localRotation;
-          //  }
+                //  }
+            }
+
         }
     }
     public void Online(bool _on)
@@ -67,5 +71,10 @@ public class MouseLookController : MonoBehaviour
             rotX = transform.rotation.x;
         }
         online = _on;
+    }
+    public void setMainTarget(Transform t){
+
+
+        target = new Vector3(t.position.x, t.position.y, t.position.z);
     }
 }

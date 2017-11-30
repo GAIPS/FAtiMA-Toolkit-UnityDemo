@@ -274,8 +274,8 @@ public class TheOfficeDemo : MonoBehaviour {
 
         }
         SetCamera();
-        StartDrama();
-  //      RandomizeNext();
+    //    StartDrama();
+        RandomizeNext();
     }
 
     public void SetCamera()
@@ -334,7 +334,7 @@ public class TheOfficeDemo : MonoBehaviour {
                 if(!playerInitiating)
                 b.GetComponentInChildren<Text>().text = i + ": " + d.Utterance;
                 else
-                    b.GetComponentInChildren<Text>().text = i + "[" + getActionFromMeaning(d.Meaning.ToString()) + "]: " + d.Utterance;
+                    b.GetComponentInChildren<Text>().text = "[" + getActionFromMeaning(d.Meaning.ToString()) + "] " + i + ". " + d.Utterance;
 
                 var id = d.Id;
                 b.onClick.AddListener((() => Reply(id)));
@@ -401,7 +401,6 @@ public class TheOfficeDemo : MonoBehaviour {
         Name utteranceID = Name.BuildName(reply.UtteranceId);
 
         var act = new ActionLibrary.Action(new List<Name>() { actionName, actionCS, actionNS, actionMean, actionStyle }, chosenTarget);
-        Debug.Log("Action " + act.Name + " t: " + act.Target);
         _agentControllers.Find(x => x.RPC.CharacterName == _chosenCharacter).Speak(this, act);
         UpdateButtonTexts(true, new DialogueStateActionDTO[1], false);
 
@@ -424,7 +423,7 @@ public class TheOfficeDemo : MonoBehaviour {
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
     {
         const float WAIT_TIME = 0.5f;
-
+       GameObject.Find("Main Camera").GetComponent<MouseLookController>().setMainTarget(GameObject.FindGameObjectWithTag(rpcList.Find(x => x.CharacterName != _chosenCharacter).CharacterName.ToString()).transform);
         _agentController.RPC.Perceive(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.RPC.Perceive(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
@@ -649,32 +648,22 @@ public class TheOfficeDemo : MonoBehaviour {
 
         var actionList = _iat.GetAllDialogueActions().ToList();
         List<DialogueStateActionDTO> newList = new List<DialogueStateActionDTO>();
-    
 
+        var seList = new List<string>();
 
         foreach (var act in actionList)
         {
-            Debug.Log(act.Utterance + " meaning " + act.Meaning);
-            if(act.Meaning != null)
-            if (act.Meaning.ToString().Contains("Initiate"))
-                newList.Add(act.ToDTO());
+            if (act.Meaning != null)
+                if (act.Meaning.ToString().Contains("Initiate"))
+                {
+                    if (!seList.Contains(getActionFromMeaning(act.Meaning.ToString())))
+                    {
+                        seList.Add(getActionFromMeaning(act.Meaning.ToString()));
+                        newList.Add(act.ToDTO());
+                    }
+                }
         }
   
-      
-/*
-            CommeillFaut.CommeillFautAsset cif = CommeillFaut.CommeillFautAsset.LoadFromFile(rpcList.First().CommeillFautAssetSource);
-
-        List<DialogueStateActionDTO> dialogs = new List<DialogueStateActionDTO>();
-
-        foreach (var social in cif.m_SocialExchanges)
-        {
-         
-            var member = newList.FindAll(x => x.Meaning.FirstOrDefault().ToString().Contains(social.ActionName.ToString())).Shuffle().FirstOrDefault();
-
-            dialogs.Add(member);
-        }
-        */
-   
         stopTime = true;
    
         UpdateButtonTexts(false, newList, true);

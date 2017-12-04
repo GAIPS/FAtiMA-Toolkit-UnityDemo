@@ -42,7 +42,7 @@
 									"Set": ["SI([x]) >= 10", "IsFriend(SELF, [x]) = True"]
 								}
 						}
-				},
+				}, 
 				{
 					"Action": "Insult",
 					"Target": "-",

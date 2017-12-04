@@ -12,7 +12,7 @@
 					"Meaning": "SE(Flirt, Initiate)",
 					"Style": "Positive",
 					"Utterance": "Hii, I just wanted to say that I think you really cute",
-					"UtteranceId": "TTS-19ED81DFFC0B15522E8B02FF8AD1A836"
+					"UtteranceId": "TTS-D70ADC8D58BD14E5126508571D48DB7F"
 				}, 
 				{
 					"CurrentState": "-",
@@ -20,7 +20,7 @@
 					"Meaning": "SE(Compliment, Initiate)",
 					"Style": "Positive",
 					"Utterance": "I think you are a really good friend",
-					"UtteranceId": "TTS-623F94FCE48D4DBC27E9CAA20E922686"
+					"UtteranceId": "TTS-982D34C6EEE2C5931C512158CF742E8E"
 				}, 
 				{
 					"CurrentState": "-",
@@ -28,7 +28,7 @@
 					"Meaning": "SE(Flirt, Finalize)",
 					"Style": "Positive",
 					"Utterance": "I'm glad we talked!",
-					"UtteranceId": "TTS-F299AED4571B9565773AD15A3E15ADAC"
+					"UtteranceId": "TTS-AF7BD631D37BDD55DCDFC162D7DA93F5"
 				}, 
 				{
 					"CurrentState": "-",
@@ -36,7 +36,7 @@
 					"Meaning": "SE(Flirt, Finalize)",
 					"Style": "Neutral",
 					"Utterance": "I see....",
-					"UtteranceId": "TTS-658EF0728501D425AE35F3FB641B154F"
+					"UtteranceId": "TTS-66F7D83B19540F96100601895EBB92F2"
 				}, 
 				{
 					"CurrentState": "-",
@@ -44,7 +44,7 @@
 					"Meaning": "SE(Flirt, Finalize)",
 					"Style": "Negative",
 					"Utterance": "Piss off!",
-					"UtteranceId": "TTS-23213E2E2423936BB6B3EA091098EA0C"
+					"UtteranceId": "TTS-93AA4E26A48D42F0187B6FB99753FA82"
 				}, 
 				{
 					"CurrentState": "-",
@@ -52,7 +52,7 @@
 					"Meaning": "SE(Compliment, Finalize)",
 					"Style": "Negative",
 					"Utterance": "Why did I even talk to you",
-					"UtteranceId": "TTS-F2A45A4FA9F721CCC11D1E576AC8BB06"
+					"UtteranceId": "TTS-3A477C62FC9295C8878CE1ABE77C7674"
 				}, 
 				{
 					"CurrentState": "-",
@@ -60,7 +60,7 @@
 					"Meaning": "SE(Compliment, Finalize)",
 					"Style": "Positive",
 					"Utterance": "See you later my friend",
-					"UtteranceId": "TTS-2757649344FA67C2EEF03FE8C4DB3D6F"
+					"UtteranceId": "TTS-D9FF52347CFDB243379B47AAFDCB1CD3"
 				}, 
 				{
 					"CurrentState": "-",
@@ -68,7 +68,7 @@
 					"Meaning": "SE(Compliment, Finalize)",
 					"Style": "Neutral",
 					"Utterance": "OK....I guess I'll see you around",
-					"UtteranceId": "TTS-A4A186AF4AEFD03045A85702306DA39D"
+					"UtteranceId": "TTS-056F54233CAFFCEAC7E4301C58992F82"
 				}, 
 				{
 					"CurrentState": "-",
@@ -84,7 +84,7 @@
 					"Meaning": "SE(Compliment, Answer)",
 					"Style": "Positive",
 					"Utterance": "Thank you, that means so much to me",
-					"UtteranceId": "TTS-2E37FE09B3BA44087093064EA1FB5A19"
+					"UtteranceId": "TTS-50813C7E614CFC064104F169E0C6B7BB"
 				}, 
 				{
 					"CurrentState": "-",
@@ -100,7 +100,7 @@
 					"Meaning": "SE(Flirt, Answer)",
 					"Style": "Positive",
 					"Utterance": "Thank you babe! You are really cute too",
-					"UtteranceId": "TTS-C14883B6114ED6323A05E1A965B84F56"
+					"UtteranceId": "TTS-92B74288AF6A293E9AD6FD6C03438408"
 				}, 
 				{
 					"CurrentState": "-",
@@ -116,7 +116,7 @@
 					"Meaning": "SE(Insult, Finalize)",
 					"Style": "Positive",
 					"Utterance": "Glad we talked",
-					"UtteranceId": "TTS-F299AED4571B9565773AD15A3E15ADAC"
+					"UtteranceId": "TTS-F9EF5777D7F806C03B10AD4CC3A7C9C8"
 				}, 
 				{
 					"CurrentState": "-",
@@ -132,7 +132,7 @@
 					"Meaning": "SE(Insult, Finalize)",
 					"Style": "Negative",
 					"Utterance": "If you die, I won't go to your funeral",
-					"UtteranceId": "TTS-335C146A85259D2093E0932E24ED75F4"
+					"UtteranceId": "TTS-67D793FE53888B4B95EBBA0A41AE7211"
 				}, 
 				{
 					"CurrentState": "-",
@@ -140,7 +140,7 @@
 					"Meaning": "SE(Insult, Answer)",
 					"Style": "Neutral",
 					"Utterance": "What did you just say?",
-					"UtteranceId": "TTS-A3A063FC8EF92D71682A15E23A282F21"
+					"UtteranceId": "TTS-A7A19BB11D67766D7873BC2AA7F31F0A"
 				}, 
 				{
 					"CurrentState": "-",
@@ -180,7 +180,7 @@
 					"Meaning": "SE(Insult, Initiate)",
 					"Style": "Positive",
 					"Utterance": "You bring everyone a lot of joy, when you leave the room",
-					"UtteranceId": "TTS-4B70FDD4E5B4C9618778BE455DC09AF8"
+					"UtteranceId": "TTS-B1CCAE5E24A675DEA2DBE213F7080C76"
 				}]
 		},
 	"types": [

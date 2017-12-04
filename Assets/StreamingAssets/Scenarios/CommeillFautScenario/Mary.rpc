@@ -17,10 +17,10 @@
 				},
 			"BodyName": "Female",
 			"VoiceName": "Female",
-			"EmotionalAppraisalAssetSource": "EAVERSION3.ea",
-			"EmotionalDecisionMakingSource": "newCifEDM.edm",
-			"SocialImportanceAssetSource": "CIFVERSION3.si",
-			"CommeillFautAssetSource": "wtv.cif",
+			"EmotionalAppraisalAssetSource": "CiF-Scenario-EA.ea",
+			"EmotionalDecisionMakingSource": "CiF-Scenario-EDM.edm",
+			"SocialImportanceAssetSource": "CiF-Scenario-SI.si",
+			"CommeillFautAssetSource": "CiF-Scenario-CiF.cif",
 			"EmotionalState":
 				{
 					"Mood": 0,

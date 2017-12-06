@@ -1,2 +1,2 @@
-\Scenarios\CommeillFautScenario\cifIAT.iat
+\Scenarios\CommeillFautScenario\CiF-Scenario-IAT.iat
 	CiF-Demo

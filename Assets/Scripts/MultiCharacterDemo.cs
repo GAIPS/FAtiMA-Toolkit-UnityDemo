@@ -633,10 +633,10 @@ public class MultiCharacterDemo : MonoBehaviour {
 
         List<DialogueStateActionDTO> dialogs = new List<DialogueStateActionDTO>();
 
-        foreach (var social in cif.m_SocialExchanges)
+        foreach (var social in cif.GetAllSocialExchanges())
         {
-            Debug.Log(social.ActionName.ToString() + " and " + newList.FirstOrDefault().Meaning.First());
-        var member = newList.FindAll(x => x.Meaning.First().ToString().Contains(social.ActionName.ToString())).Shuffle().FirstOrDefault();
+            Debug.Log(social.Name.ToString() + " and " + newList.FirstOrDefault().Meaning.First());
+        var member = newList.FindAll(x => x.Meaning.First().ToString().Contains(social.Name.ToString())).Shuffle().FirstOrDefault();
             dialogs.Add(member);
         }
 

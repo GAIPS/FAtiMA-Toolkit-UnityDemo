@@ -20,6 +20,8 @@ namespace Assets.Scripts
 
 		[SerializeField]
 		private Text m_dialogOne = null;
+
+        private string currentLine = "";
 		
 		public void SetCharacterLabel(string text)
 		{
@@ -45,12 +47,17 @@ namespace Assets.Scripts
 
 		public void AddDialogLine(string line, Name evt = null)
 		{
+
+            if(line != currentLine){
+
+                currentLine = line;
             //small hack to draw the text background in the agent dialogue
             GameObject.Find("TextBackground1").GetComponent<Image>().enabled = true;
             //    GameObject.Find("TextBackground2").GetComponent<Image>().enabled = true;
 
             //  enterDialog(string.Format(@"<i>{0}: {1}</i>", m_charLabel, line), evt);
             enterDialog(string.Format(@"<i>{1}</i>", m_charLabel, line), evt);
+            }
         }
 
 		public void Clear()

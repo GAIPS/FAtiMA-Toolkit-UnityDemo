@@ -1,0 +1,111 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "Introduction",
+			"Description": "This is a scenario designed to showcase what the toolkit is able to do.",
+			"CharacterSources": ["Introduction2D.rpc", "Introduction3D.rpc"],
+			"Dialogues": [
+				{
+					"CurrentState": "Start",
+					"NextState": "A1",
+					"Meaning": "Greeting",
+					"Style": "Formal",
+					"Utterance": "Hi!",
+					"UtteranceId": ""
+				}, 
+				{
+					"CurrentState": "A2",
+					"NextState": "A3",
+					"Meaning": "M2",
+					"Style": "-",
+					"Utterance": "I have a dynamic emotional state that I can convey through facial expressions.",
+					"UtteranceId": "TTS-F5C4B272F96D068C5FA15F2EB2461AF6"
+				}, 
+				{
+					"CurrentState": "A1",
+					"NextState": "A2",
+					"Meaning": "M1",
+					"Style": "-",
+					"Utterance": "Hi, nice to meet you! I am a character created with the help of the Role Play Virtual Character asset.",
+					"UtteranceId": "TTS-102E3860A96A4F38492ECEBF9E197F09"
+				}, 
+				{
+					"CurrentState": "A3",
+					"NextState": "A4",
+					"Meaning": "M3",
+					"Style": "-",
+					"Utterance": "For instance, this is me feeling anger.",
+					"UtteranceId": "TTS-3D50560631EB8FD9716C9108BC26BA56"
+				}, 
+				{
+					"CurrentState": "A4",
+					"NextState": "A5",
+					"Meaning": "M4",
+					"Style": "-",
+					"Utterance": "And this is me feeling joy.",
+					"UtteranceId": "TTS-B7DF83D1D13FC2D68B40B8A278BC52B2"
+				}, 
+				{
+					"CurrentState": "A5",
+					"NextState": "A6",
+					"Meaning": "M5",
+					"Style": "-",
+					"Utterance": "This helps me to be more believable and engaging to players that interact with me.",
+					"UtteranceId": "TTS-3210D49281210B88B2424666C4B464CD"
+				}, 
+				{
+					"CurrentState": "A10",
+					"NextState": "A11",
+					"Meaning": "M11",
+					"Style": "-",
+					"Utterance": "All this flexibility promotes a closer collaboration between teachers and game developers.",
+					"UtteranceId": "TTS-7EC3067F1A725013C401052A0647538E"
+				}, 
+				{
+					"CurrentState": "A11",
+					"NextState": "A12",
+					"Meaning": "A11",
+					"Style": "-",
+					"Utterance": "I hope this was informative to you, for more information please check our website.",
+					"UtteranceId": "TTS-FBCD91B9E12976DFD11B060D44183386"
+				}, 
+				{
+					"CurrentState": "A12",
+					"NextState": "A13",
+					"Meaning": "M12",
+					"Style": "-",
+					"Utterance": "Thank you for listening. Have a nice day!",
+					"UtteranceId": "TTS-D7A2BCA42C891147A8149CD108C86205"
+				}, 
+				{
+					"CurrentState": "A6",
+					"NextState": "A7",
+					"Meaning": "M6",
+					"Style": "-",
+					"Utterance": "Also, all of my emotional reactions and decisions can be configured using a dedicated authoring tool without changing the game code.",
+					"UtteranceId": "TTS-0430427C80B35C7FEFAB619747AC680D"
+				}, 
+				{
+					"CurrentState": "A7",
+					"NextState": "A10",
+					"Meaning": "M7",
+					"Style": "-",
+					"Utterance": "The same is true for my voice, my embodiment, and the dialogues that are available to me.",
+					"UtteranceId": "TTS-1D9458BE83A21076D56C31D6102F613E"
+				}, 
+				{
+					"CurrentState": "A13",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "...",
+					"UtteranceId": "TTS-2F43B42FD833D1E77420A8DAE7419000"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

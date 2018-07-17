@@ -1,10 +1,2 @@
 \Scenarios\Introduction\IntroductionScenario.iat
 	Introduction
-\Scenarios\AssetDemos\EADemo.iat
-	AssetDemos
-\Scenarios\AssetDemos\EDMDemo.iat
-	AssetDemos
-\Scenarios\AssetDemos\SIDemo.iat
-	AssetDemos
-\Scenarios\SpaceModules\MinSysKnwNov.iat
-	SpaceModules

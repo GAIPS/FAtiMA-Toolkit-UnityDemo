@@ -203,24 +203,6 @@ public class SingleCharacterDemo : MonoBehaviour
         _introPanel.SetActive(true);
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
 
-        if (_iat.ScenarioName.Contains("PJ"))
-        {
-            PJScenario = true;
-        }
-        else
-        {
-            PJScenario = false;
-        }
-
-        if (_iat.ScenarioName.Contains("Space"))
-        {
-            SpaceModulesScenario = true;
-        }
-        else
-        {
-            SpaceModulesScenario = false;
-        }
-
         var characterSources = _iat.GetAllCharacterSources().ToList();
         foreach (var source in characterSources)
         {
@@ -231,7 +213,7 @@ public class SingleCharacterDemo : MonoBehaviour
             if (rpc.CharacterName.ToString().Contains("Player"))
             {
                 Player = rpc;
-                return;
+                continue;
             }
             AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(),
                 () =>
@@ -240,12 +222,9 @@ public class SingleCharacterDemo : MonoBehaviour
                     var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
                     _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
                     StopAllCoroutines();
-                    _agentController.storeFinalScore(_finalScore);
                     _agentController.Start(this, VersionMenu);
-                    if (PJScenario || SpaceModulesScenario) InstantiateScore();
 
                     InitializePlayerKnowledgeBase();
-                    StartCoroutine(AddDialoguePlayerOptions());
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -324,7 +303,6 @@ public class SingleCharacterDemo : MonoBehaviour
 
 
         StartCoroutine(PlayerReplyAction(actionFormat, reply.NextState));
-        if (PJScenario || SpaceModulesScenario) UpdateScore(reply);
 
         alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
 
@@ -338,8 +316,6 @@ public class SingleCharacterDemo : MonoBehaviour
         _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
         yield return new WaitForSeconds(WAIT_TIME);
         _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
-        _agentController.AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState, "Player").ToString());
-        _agentController.AddEvent(EventHelper.PropertyChange("HasFloor(" + _agentController.RPC.CharacterName + ")", "True", _agentController.RPC.CharacterName.ToString()).ToString());
 
     }
 
@@ -356,10 +332,6 @@ public class SingleCharacterDemo : MonoBehaviour
         {
 
             var reply = _agentController.getReply();
-            UpdateScore(reply);
-
-            if (_iat.ScenarioName.ToString().Contains("Intro"))
-                GiveFloor();
 
             if (Player != null)
             {
@@ -367,11 +339,6 @@ public class SingleCharacterDemo : MonoBehaviour
             }
             // will probably need to launch a courotine
             if (Initialized) waitingforReply = false;
-            if (_agentController.RPC.GetBeliefValue("HasFloor(SELF)", "SELF") != "True")
-            {
-                Debug.Log("Starting coroutine");
-                StartCoroutine(AddDialoguePlayerOptions());
-            }
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -394,111 +361,61 @@ public class SingleCharacterDemo : MonoBehaviour
 
         _agentController.UpdateEmotionExpression();
 
+         if (Player != null)
+        {
+           
+            var decision = Player.Decide().FirstOrDefault();
+            if(decision == null)
+             return;
+
+            var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), Name.BuildName("*"), Name.BuildName("*"), Name.BuildName("*"));
+
+            var generalOptions = _iat.GetDialogueActionsByState("*");
+            List<DialogueStateActionDTO> possibleOptions = new List<DialogueStateActionDTO>(dialogActions);
+
+            var originalPossibleActions = possibleOptions;
+
+            if (!possibleOptions.Any())
+            {
+                UpdateButtonTexts(true, null);
+                Initialized = true;
 
 
+            }
+            else
+            {
+
+         
+                        var newOptions =
+                            possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
+                                .Shuffle()
+                                .Take(3)
+                                .ToList();
+                        var additionalOptions = _iat.GetDialogueActionsByState("Start")
+                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
+                            .Shuffle()
+                            .Take(2);
+
+
+                        possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
+
+                        waitingforReply = true;
+                        UpdateButtonTexts(false, possibleOptions);
+                    }
+                
+
+
+            }
+        else AddDialogueOptions();
     }
+
+
+
 
     private void LateUpdate()
     {
         if (_agentController != null)
             _agentController.UpdateFields();
-    }
-
-
-
-    private void InstantiateScore()
-    {
-
-        score = Instantiate(ScoreTextPrefab);
-
-        var t = score.transform;
-        t.SetParent(m_scoreZone, false);
-
-        if (PJScenario)
-        {
-            var obj = GameObject.FindGameObjectWithTag("Score");
-            obj.GetComponent<ScoreManager>().SetPJ(true);
-            obj.GetComponent<ScoreManager>().Refresh();
-
-        }
-        else if (SpaceModulesScenario)
-        {
-            var obj = GameObject.FindGameObjectWithTag("Score");
-            obj.GetComponent<ScoreManager>().SetPJ(false);
-            obj.GetComponent<ScoreManager>().Refresh();
-        }
-    }
-
-    public void UpdateScore(DialogueStateActionDTO reply)
-    {
-
-
-        foreach (var meaning in reply.Meaning)
-        {
-
-            HandleKeywords(meaning.ToString());
-        }
-
-        foreach (var style in reply.Style)
-        {
-
-            HandleKeywords(style.ToString());
-        }
-    }
-
-    private void HandleKeywords(string s)
-    {
-
-        char[] delimitedChars = { '(', ')' };
-
-        string[] result = s.Split(delimitedChars);
-
-
-
-        if (result.Length > 1)
-
-            if (PJScenario)
-            {
-                switch (result[0])
-                {
-                    case "Aggression":
-                        score.GetComponent<ScoreManager>().addAggression(Int32.Parse(result[1]));
-                        break;
-
-                    case "Information":
-                        score.GetComponent<ScoreManager>().addInformation(Int32.Parse(result[1]));
-                        break;
-
-                    case "Truth":
-                        score.GetComponent<ScoreManager>().addTruth(Int32.Parse(result[1]));
-                        break;
-
-                }
-            }
-            else
-                switch (result[0])
-                {
-                    case "Inquire":
-                        score.GetComponent<ScoreManager>().AddI(Int32.Parse(result[1]));
-                        break;
-
-                    case "FAQ":
-                        score.GetComponent<ScoreManager>().AddF(Int32.Parse(result[1]));
-                        break;
-
-                    case "Closure":
-                        score.GetComponent<ScoreManager>().AddC(Int32.Parse(result[1]));
-                        break;
-
-                    case "Empathy":
-                        score.GetComponent<ScoreManager>().AddE(Int32.Parse(result[1]));
-                        break;
-
-                    case "Polite":
-                        score.GetComponent<ScoreManager>().AddP(Int32.Parse(result[1]));
-                        break;
-                }
-
     }
 
 
@@ -606,87 +523,7 @@ public class SingleCharacterDemo : MonoBehaviour
     }
 
 
-    private IEnumerator AddDialoguePlayerOptions()
-    {
-        if (Player != null)
-        {
-            yield return new WaitForSeconds(0.6f);
-            var decision = Player.Decide().FirstOrDefault();
-
-
-            var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), Name.BuildName("*"), Name.BuildName("*"), Name.BuildName("*"));
-
-            var generalOptions = _iat.GetDialogueActionsByState("*");
-            List<DialogueStateActionDTO> possibleOptions = new List<DialogueStateActionDTO>(dialogActions);
-
-            var originalPossibleActions = possibleOptions;
-
-            if (!possibleOptions.Any())
-            {
-                UpdateButtonTexts(true, null);
-                Initialized = true;
-
-
-            }
-            else
-            {
-
-            
-              if (PJScenario)
-                {
-                    if (waitingforReply) yield break;
-                    if (!Initialized)
-                    {
-
-                        var newOptions =
-                            possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
-                                .Take(3)
-                                .Shuffle()
-                                .ToList();
-
-                        newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
-                        possibleOptions = newOptions;
-                        waitingforReply = true;
-                        UpdateButtonTexts(false, possibleOptions);
-                    }
-                    else
-                    {
-
-
-                        var newOptions =
-                            possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
-                                .Shuffle()
-                                .Take(3)
-                                .ToList();
-                        var additionalOptions = _iat.GetDialogueActionsByState("Start")
-                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
-                            .Shuffle()
-                            .Take(2);
-
-
-                        possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
-
-                        if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
-                        {
-                            var ClosureOptions =
-                                _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
-
-                            possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
-                        }
-
-                        waitingforReply = true;
-                        UpdateButtonTexts(false, possibleOptions);
-                    }
-                }
-
-
-                else UpdateButtonTexts(false, possibleOptions);
-
-            }
-        }
-        else AddDialogueOptions();
-    }
-
+    
 
 
     public void GiveFloor()

@@ -9,7 +9,7 @@ public class UnityBodyImplement : MonoBehaviour
 	[SerializeField]
 	private FaceController _faceController = null;
 	[SerializeField]
-	private LipSyncBehaviour _speechController = null;
+	public LipSyncBehaviour _speechController = null;
 
 	public GameObject Body {
 		get { return gameObject; }

@@ -659,7 +659,7 @@ public class TheOfficeDemo : MonoBehaviour {
                     if (!seList.Contains(getActionFromMeaning(act.Meaning.ToString())))
                     {
                         seList.Add(getActionFromMeaning(act.Meaning.ToString()));
-                        newList.Add(act.ToDTO());
+                        newList.Add(act);
                     }
                 }
         }

@@ -2,9 +2,10 @@
 	"root":
 		{
 			"classId": 0,
-			"ScenarioName": "Introduction",
+			"ScenarioName": "IntroductionScenario",
 			"Description": "This is a scenario designed to showcase what the toolkit is able to do.",
-			"CharacterSources": ["Introduction2D.rpc", "Introduction3D.rpc"],
+			"WorldModelSource": "",
+			"CharacterSources": ["Introduction2D.rpc", "Player.rpc", "Mary.rpc"],
 			"Dialogues": [
 				{
 					"CurrentState": "Start",
@@ -12,7 +13,7 @@
 					"Meaning": "Greeting",
 					"Style": "Formal",
 					"Utterance": "Hi!",
-					"UtteranceId": ""
+					"UtteranceId": "TTS-AFF97160474A056E838C1F721AF01EDF"
 				}, 
 				{
 					"CurrentState": "A2",
@@ -52,7 +53,7 @@
 					"Meaning": "M5",
 					"Style": "-",
 					"Utterance": "This helps me to be more believable and engaging to players that interact with me.",
-					"UtteranceId": "TTS-3210D49281210B88B2424666C4B464CD"
+					"UtteranceId": ""
 				}, 
 				{
 					"CurrentState": "A10",

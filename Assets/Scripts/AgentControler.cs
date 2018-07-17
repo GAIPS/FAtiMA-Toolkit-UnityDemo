@@ -112,9 +112,11 @@ namespace Assets.Scripts
 			{
 				yield return new WaitForSeconds(1);
                
+              if(  _body._speechController.IsPlaying)
+                    continue;
+
                 m_rpc.Perceive(_events);
                 var action = m_rpc.Decide().Shuffle().FirstOrDefault();
-               
                 _events.Clear(); 
 				m_rpc.Update();
 
@@ -126,7 +128,6 @@ namespace Assets.Scripts
 				switch (action.Key.ToString())
 				{
 					case "Speak":
-                        if(m_rpc.GetBeliefValue("HasFloor(SELF)") == "True")
 						m_activeController.StartCoroutine(HandleSpeak(action));
 
 						break;
@@ -157,7 +158,6 @@ namespace Assets.Scripts
 
             var dialogs = m_iat.GetDialogueActions(currentState, nextState, meaning, style);
 
-      //      Debug.Log("Here we go speaking: " + currentState.ToString() + " ns " + nextState.ToString() + " meaning " + meaning.ToString());
 
 		    var dialog = dialogs.Shuffle().FirstOrDefault();
 
@@ -170,7 +170,6 @@ namespace Assets.Scripts
 			}
 			else
 			{
-                RPC.m_kb.Tell(Name.BuildName("HasFloor(SELF)"), Name.BuildName("False"));
                 string subFolder = m_scenarioData.TTSFolder;
 				if (subFolder != "<none>")
 				{

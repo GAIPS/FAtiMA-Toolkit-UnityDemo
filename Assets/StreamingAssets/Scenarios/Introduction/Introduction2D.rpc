@@ -1,37 +1,29 @@
 {
 	"root":
 		{
-			"classId": 2,
+			"classId": 0,
 			"KnowledgeBase":
 				{
-					"Perspective": "Mary",
+					"Perspective": "Yui",
 					"Knowledge":
 						{
-
+							"SELF":
+								{
+									"DialogueState(Player)": "Start, 1"
+								}
 						}
 				},
 			"BodyName": "Female-2D",
 			"VoiceName": "Hazel",
-			"EmotionalAppraisalAssetSource": "IntroductionAppraisal.ea",
-			"EmotionalDecisionMakingSource": "..\\Common\\SingleResponse.edm",
+			"EmotionalAppraisalAssetSource": "IntroductionEA.ea",
+			"EmotionalDecisionMakingSource": "SingleResponse.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
 			"EmotionalState":
 				{
 					"Mood": 0,
 					"initialTick": 0,
-					"EmotionalPool": [
-						{
-							"Intensity": 1,
-							"Decay": 1,
-							"Threshold": 1,
-							"CauseId": 2,
-							"EventName": "Event(Action-Start, sd, ss, sef)",
-							"EmotionType": "Admiration",
-							"Valence": "Positive",
-							"AppraisalVariables": ["PRAISEWORTHINESS"],
-							"InfluenceMood": true
-						}],
+					"EmotionalPool": [],
 					"AppraisalConfiguration":
 						{
 							"HalfLifeDecayConstant": 0.5,
@@ -45,26 +37,7 @@
 			"AutobiographicMemory":
 				{
 					"Tick": 0,
-					"records": [
-						{
-							"classId": 0,
-							"Id": 2,
-							"Type": "Action-Start",
-							"Subject": "sd",
-							"Timestamp": 0,
-							"LinkedEmotions": ["Admiration"],
-							"Action": "ss",
-							"Target": "sef"
-						}, 
-						{
-							"classId": 1,
-							"Id": 3,
-							"Type": "Property-Change",
-							"Subject": "aaa",
-							"Timestamp": 2,
-							"Property": "sss",
-							"NewValue": "dddd"
-						}]
+					"records": []
 				},
 			"OtherAgents":
 				{
@@ -74,14 +47,6 @@
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "AutobiographicMemory.AM+ActionEvent, AutobiographicMemory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-		}, 
-		{
-			"TypeId": 1,
-			"ClassName": "AutobiographicMemory.AM+PropertyChangeEvent, AutobiographicMemory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-		}, 
-		{
-			"TypeId": 2,
 			"ClassName": "RolePlayCharacter.RolePlayCharacterAsset, RolePlayCharacter, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

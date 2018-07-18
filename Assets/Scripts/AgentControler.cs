@@ -21,7 +21,7 @@ namespace Assets.Scripts
 		private RolePlayCharacterAsset m_rpc;
 		private DialogController m_dialogController;
 		private IntegratedAuthoringToolAsset m_iat;
-		private UnityBodyImplement _body;
+		public UnityBodyImplement _body;
 
 		private List<Name> _events = new List<Name>();
 		private string lastEmotionRPC;
@@ -115,7 +115,6 @@ namespace Assets.Scripts
               if(  _body._speechController.IsPlaying)
                     continue;
 
-                m_rpc.Perceive(_events);
                 var action = m_rpc.Decide().Shuffle().FirstOrDefault();
                 _events.Clear(); 
 				m_rpc.Update();
@@ -123,7 +122,7 @@ namespace Assets.Scripts
 				if (action == null)
 					continue;
 
-			//	Debug.Log("Action Key: " + action.Key + " result: " + m_rpc.GetBeliefValue("HasFloor(SELF)"));
+				Debug.Log("Action Key: " + action.Key);
 
 				switch (action.Key.ToString())
 				{
@@ -219,14 +218,10 @@ namespace Assets.Scripts
 				
 				}
 
-                if (nextState.ToString() != "-" && RPC.GetBeliefValue("HasFloor(SELF)") != "True") //todo: replace with a constant
-                {
-                     
-                        RPC.m_kb.Tell(Name.BuildName("HasFloor(SELF)"), Name.BuildName("False"));
-                        RPC.Perceive(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER), nextState.ToString(), IATConsts.PLAYER));
+                  Debug.Log("Just talked");
                     reply = dialog;
                     just_talked = true;
-                }
+                
             }
 
 			

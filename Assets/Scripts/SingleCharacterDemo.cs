@@ -97,6 +97,7 @@ public class SingleCharacterDemo : MonoBehaviour
     private bool Initialized;
     private bool waitingforReply;
     private RolePlayCharacterAsset Player;
+    private WorldModel.WorldModelAsset _wm;
 
     // Use this for initialization
     private IEnumerator Start()
@@ -203,9 +204,14 @@ public class SingleCharacterDemo : MonoBehaviour
         _introPanel.SetActive(true);
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
 
+
+       // Debug.Log("World model is here " + _iat.GetWorldModelSource());
+        _wm = WorldModel.WorldModelAsset.LoadFromFile(_iat.GetWorldModelSource().Source);
+
         var characterSources = _iat.GetAllCharacterSources().ToList();
         foreach (var source in characterSources)
         {
+         //   Debug.Log("RPC source is here" + source.Source );
             var rpc = RolePlayCharacterAsset.LoadFromFile(source.Source);
             rpc.LoadAssociatedAssets();
             _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
@@ -224,7 +230,6 @@ public class SingleCharacterDemo : MonoBehaviour
                     StopAllCoroutines();
                     _agentController.Start(this, VersionMenu);
 
-                    InitializePlayerKnowledgeBase();
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -254,25 +259,6 @@ public class SingleCharacterDemo : MonoBehaviour
         }
         else
         {
-            var dif = false;
-            if (m_buttonList.Count() == dialogOptions.Count())
-                foreach (var b in m_buttonList)
-                {
-                    foreach (var d in dialogOptions)
-                    {
-                        if (b.GetComponentInChildren<Text>().text != d.Utterance)
-                        {
-                            dif = true;
-                            break;
-                        }
-                    }
-                }
-            else dif = true;
-
-            if (!dif)
-                return;
-
-
             foreach (var d in dialogOptions)
             {
 
@@ -283,7 +269,6 @@ public class SingleCharacterDemo : MonoBehaviour
                 t.SetParent(m_dialogButtonZone, false);
                 b.GetComponentInChildren<Text>().text = d.Utterance;
                 var id = d.Id;
-                //  Debug.Log("I want to put this here: " + d.Utterance);
                 b.onClick.AddListener((() => Reply(id)));
                 m_buttonList.Add(b);
             }
@@ -307,15 +292,22 @@ public class SingleCharacterDemo : MonoBehaviour
         alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
 
 
+          foreach (var b in m_buttonList)
+            {
+                Destroy(b.gameObject);
+            }
+            m_buttonList.Clear(); 
     }
 
     private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
     {
         ClearButtons();
         const float WAIT_TIME = 0.1f;
-        _agentController.AddEvent(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
+        _agentController.RPC.Perceive(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
         yield return new WaitForSeconds(WAIT_TIME);
-        _agentController.AddEvent(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()).ToString());
+        _agentController.RPC.Perceive(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
+
+       HandleEffects(new List<Name>{ EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString())});
 
     }
 
@@ -328,17 +320,21 @@ public class SingleCharacterDemo : MonoBehaviour
         if (!_agentController.IsRunning)
             return;
 
+        
+        if (  _agentController._body._speechController.IsPlaying)
+            return;
+
         if (_agentController.getJustReplied())
         {
-
+           // Debug.Log("we got a reply!");
             var reply = _agentController.getReply();
 
-            if (Player != null)
-            {
-                PlayerPerceiveReply(reply);
-            }
+            
+       HandleEffects(new List<Name>{ EventHelper.ActionEnd(_agentController.RPC.CharacterName, (Name)("Speak(" + reply.CurrentState.ToString() + "," + reply.NextState.ToString() + "," + reply.Meaning.ToString() + "," + reply.Style.ToString() + ")"), (Name)"Player")});
+
+
             // will probably need to launch a courotine
-            if (Initialized) waitingforReply = false;
+          waitingforReply = false;
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -365,65 +361,18 @@ public class SingleCharacterDemo : MonoBehaviour
         {
            
             var decision = Player.Decide().FirstOrDefault();
-            if(decision == null)
+            if(decision == null || waitingforReply)
              return;
 
             var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), Name.BuildName("*"), Name.BuildName("*"), Name.BuildName("*"));
 
-            var generalOptions = _iat.GetDialogueActionsByState("*");
-            List<DialogueStateActionDTO> possibleOptions = new List<DialogueStateActionDTO>(dialogActions);
+            UpdateButtonTexts(false, dialogActions);
 
-            var originalPossibleActions = possibleOptions;
+            waitingforReply = true;
 
-            if (!possibleOptions.Any())
-            {
-                UpdateButtonTexts(true, null);
-                Initialized = true;
-
-
-            }
-            else
-            {
-
-         
-                        var newOptions =
-                            possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
-                                .Shuffle()
-                                .Take(3)
-                                .ToList();
-                        var additionalOptions = _iat.GetDialogueActionsByState("Start")
-                            .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
-                            .Shuffle()
-                            .Take(2);
-
-
-                        possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
-
-                        waitingforReply = true;
-                        UpdateButtonTexts(false, possibleOptions);
-                    }
-                
-
-
-            }
-        else AddDialogueOptions();
+        }
     }
-
-
-
-
-    private void LateUpdate()
-    {
-        if (_agentController != null)
-            _agentController.UpdateFields();
-    }
-
-
-    public void ClearScore()
-    {
-        Destroy(score);
-    }
-
+    
     public void Restart()
     {
         SceneManager.LoadScene(0);
@@ -442,113 +391,26 @@ public class SingleCharacterDemo : MonoBehaviour
     }
 
 
-    private IEnumerator AddDialogueOptions()
+    public void HandleEffects(List<Name> _events)
     {
+            var effects = _wm.Simulate(_events.ToArray());
 
-        yield return new WaitForSeconds(0.6f);
-        var state = (Name)_agentController.RPC.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER));
-        //   Debug.Log("CurrentState: " + state.ToString());
-        var possibleOptions = _iat.GetDialogueActionsByState(state.ToString());
-
-
-        var originalPossibleActions = possibleOptions;
-
-        if (!possibleOptions.Any())
+        foreach(var eff in effects)
         {
-            UpdateButtonTexts(true, null);
-            Initialized = true;
-
-
-        }
-        else
-        {
-
-            if (_iat.ScenarioName.Contains("Intro"))
+         //   Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
+            if(eff.ObserverAgent.ToString() == "Player")
             {
-                GiveFloor();
+                Player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
+            } else if(eff.ObserverAgent.ToString() == _agentController.RPC.CharacterName.ToString())
+            {
+                 _agentController.RPC.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
             }
 
-            else if (PJScenario)
+            else if(eff.ObserverAgent.IsUniversal)
             {
-                if (waitingforReply) yield break;
-                if (!Initialized)
-                {
-
-                    var newOptions =
-                        possibleOptions.Where(x => x.CurrentState == IATConsts.INITIAL_DIALOGUE_STATE)
-                            .Take(3)
-                            .Shuffle()
-                            .ToList();
-
-                    newOptions.AddRange(_iat.GetDialogueActionsByState("Introduction"));
-                    possibleOptions = newOptions;
-                    waitingforReply = true;
-                    UpdateButtonTexts(false, possibleOptions);
-                }
-                else
-                {
-
-
-                    var newOptions =
-                        possibleOptions.Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance))
-                            .Shuffle()
-                            .Take(3)
-                            .ToList();
-                    //if(newOptions.Count > 2)    Debug.Log("NEW OPTIOns: " + newOptions.ElementAt(0).Utterance + newOptions.ElementAt(1).Utterance + newOptions.ElementAt(2).Utterance);
-                    var additionalOptions = _iat.GetDialogueActionsByState("Start")
-                        .Where(x => !alreadyUsedDialogs.ContainsKey(x.Utterance) && !newOptions.Contains(x))
-                        .Shuffle()
-                        .Take(2);
-
-
-                    possibleOptions = newOptions.Concat(additionalOptions).Shuffle().ToList();
-
-                    if (alreadyUsedDialogs.Count() > 12 && possibleOptions.Count() < 6)
-                    {
-                        var ClosureOptions =
-                            _iat.GetDialogueActionsByState("Closure").Take(1).ToList();
-
-                        possibleOptions = newOptions.Concat(additionalOptions).Concat(ClosureOptions).Shuffle().ToList();
-                    }
-
-                    waitingforReply = true;
-                    UpdateButtonTexts(false, possibleOptions);
-                }
+                Player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
+                _agentController.RPC.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
             }
-
-
-            else UpdateButtonTexts(false, possibleOptions);
-
-        }
     }
-
-
-    
-
-
-    public void GiveFloor()
-    {
-        if(Player != null)
-          Player.Perceive(EventHelper.PropertyChange("HasFloor(Player)", "False","Player"));
-
-        _agentController.AddEvent(EventHelper.PropertyChange("HasFloor(" + _agentController.RPC.CharacterName + ")", "True", _agentController.RPC.CharacterName.ToString()).ToString());
-
-    }
-
-
-    private void PlayerPerceiveReply(DialogueStateActionDTO d)
-    {
-        if (Player != null)
-        {
-            Player.Perceive(EventHelper.ActionEnd(_agentController.RPC.CharacterName.ToString(), "Speak(" + d.CurrentState + "," + d.NextState + "," + d.Meaning + "," + d.Style + ")", Player.CharacterName.ToString()));
-            Player.Perceive(EventHelper.PropertyChange("DialogueState(" + _agentController.RPC.CharacterName.ToString() + ")", d.NextState, Player.CharacterName.ToString()));
-        }
-    }
-
-
-    private void InitializePlayerKnowledgeBase()
-    {
-        if(Player !=null)
-        Player.m_kb.Tell(Name.BuildName("DialogueState(" + _agentController.RPC.CharacterName.ToString() + ")"), Name.BuildName("Start"));
     }
 }

@@ -9,8 +9,9 @@ EditorBuildSettings:
     path: Assets/SingleCharacterScene.unity
     guid: d64b813e710a6f34a9a97220c4715780
   - enabled: 0
-    path: Assets/SpaceModules.unity
+    path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Office.unity
     guid: 8815b1c3f65aa484ab31d0cc7bc4eb64
+  m_configObjects: {}

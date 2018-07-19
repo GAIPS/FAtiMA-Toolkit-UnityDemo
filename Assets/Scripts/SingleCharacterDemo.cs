@@ -206,6 +206,9 @@ public class SingleCharacterDemo : MonoBehaviour
 
 
        // Debug.Log("World model is here " + _iat.GetWorldModelSource());
+
+        if(_iat.m_worldModelSource != null)
+            if(_iat.m_worldModelSource.Source != "" && _iat.m_worldModelSource.Source != null)
         _wm = WorldModel.WorldModelAsset.LoadFromFile(_iat.GetWorldModelSource().Source);
 
         var characterSources = _iat.GetAllCharacterSources().ToList();
@@ -393,6 +396,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
     public void HandleEffects(List<Name> _events)
     {
+        if(_wm != null){
             var effects = _wm.Simulate(_events.ToArray());
 
         foreach(var eff in effects)
@@ -410,6 +414,7 @@ public class SingleCharacterDemo : MonoBehaviour
             {
                 Player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
                 _agentController.RPC.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
+            }
             }
     }
     }

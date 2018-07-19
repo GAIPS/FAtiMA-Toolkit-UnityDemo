@@ -4,7 +4,7 @@
 			"classId": 0,
 			"ScenarioName": "IntroductionScenario",
 			"Description": "This is a scenario designed to showcase what the toolkit is able to do.",
-			"WorldModelSource": "",
+			"WorldModelSource": "IntroductionWorldModel.wmo",
 			"CharacterSources": ["Introduction2D.rpc", "Player.rpc", "Mary.rpc"],
 			"Dialogues": [
 				{

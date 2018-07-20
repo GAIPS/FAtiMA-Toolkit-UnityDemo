@@ -98,6 +98,8 @@ public class SingleCharacterDemo : MonoBehaviour
     private bool waitingforReply;
     private RolePlayCharacterAsset Player;
     private WorldModel.WorldModelAsset _wm;
+    public GameObject _background;
+    public Material activeBackgroundMaterial;
 
     // Use this for initialization
     private IEnumerator Start()
@@ -233,6 +235,10 @@ public class SingleCharacterDemo : MonoBehaviour
                     StopAllCoroutines();
                     _agentController.Start(this, VersionMenu);
 
+                     _background.SetActive(true);
+                     if(activeBackgroundMaterial != null)
+                     _background.GetComponent<Renderer>().material = activeBackgroundMaterial;
+
                 });
         }
         AddButton("Back to Scenario Selection Menu", () =>
@@ -240,6 +246,9 @@ public class SingleCharacterDemo : MonoBehaviour
             _iat = null;
             LoadScenarioMenu();
         });
+
+
+       
     }
 
     public void SaveState()

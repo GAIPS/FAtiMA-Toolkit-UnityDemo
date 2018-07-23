@@ -97,6 +97,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
     {
         m_activeController = controller;
         m_versionMenu = versionMenu;
+        if(m_versionMenu.activeSelf)
         m_versionMenu.SetActive(false);
         _currentCoroutine = controller.StartCoroutine(UpdateCoroutine());
     }
@@ -118,16 +119,28 @@ public class MultiCharacterAgentController : MonoBehaviour {
 
     public IEnumerator UpdateCoroutine()
     {
-        _events.Clear();
 
-        var action = m_rpc.Decide().FirstOrDefault();
         
-       Debug.Log("So the first decision is:" + action.Name);
+    while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE) 
+    {
+	    yield return new WaitForSeconds(1);
+               
+        if(  _body._speechController.IsPlaying)
+                continue;
 
+       var action = m_rpc.Decide().Shuffle().FirstOrDefault();
+       _events.Clear(); 
+		m_rpc.Update();
+
+		if (action == null)
+		continue;
+
+	 Debug.Log("Action Key: " + action.Key);
 
         lastAction = action;
         if (action != null)
         {
+            Debug.Log(RPC.CharacterName.ToString() + " decision is:" + action.Name);
 
             switch (action.Key.ToString())
             {
@@ -153,8 +166,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
                     break;
             }
         }
-        yield return new WaitForSeconds(1.0f);
-}
+} }
 
 
     public void Speak(MonoBehaviour controler, IAction speakAction)

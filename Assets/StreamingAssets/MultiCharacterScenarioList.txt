@@ -1,2 +1,2 @@
-\Scenarios\CommeillFautScenario\CiF-Scenario-IAT.iat
-	CiF-Demo
+\Scenarios\JobInterview\JobInterview.iat
+	JobInterview

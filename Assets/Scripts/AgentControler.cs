@@ -122,7 +122,7 @@ namespace Assets.Scripts
 				if (action == null)
 					continue;
 
-				Debug.Log("Action Key: " + action.Key);
+			//	Debug.Log("Action Key: " + action.Key);
 
 				switch (action.Key.ToString())
 				{

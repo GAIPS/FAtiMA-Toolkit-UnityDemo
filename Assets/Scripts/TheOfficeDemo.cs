@@ -98,10 +98,12 @@ public class TheOfficeDemo : MonoBehaviour {
     private float TIME_LEFT_CONST = 5.0f;
     private float Timeleft = 15.0f;
     private bool stopTime = false;
-    private Name _chosenCharacter;
+    private RolePlayCharacterAsset _player;
     private int counter;
     private Name chosenTarget;
     private bool initiated;
+
+    private WorldModel.WorldModelAsset _wm;
 
 
     // Use this for initialization
@@ -163,11 +165,6 @@ public class TheOfficeDemo : MonoBehaviour {
 
         _events = new List<Name>();
         _actions = new List<IAction>();
-        currentSocialMoveAction = "";
-        initiated = true;
-        currentSocialMoveResult = "";
-        chosenTarget = Name.BuildName("ay");
-        m_dialogController.Clear();
         LoadScenarioMenu();
     }
 
@@ -193,7 +190,7 @@ public class TheOfficeDemo : MonoBehaviour {
             var rpc = RolePlayCharacterAsset.LoadFromFile(agent.Source);
             AddButton(rpc.CharacterName.ToString(), () =>
             {
-                _chosenCharacter = rpc.CharacterName;
+                _player = rpc;
                 LoadScenario(data);
             });
         }
@@ -230,8 +227,13 @@ public class TheOfficeDemo : MonoBehaviour {
 
         _iat = data.IAT;
 
+
         _introPanel.SetActive(true);
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
+
+         if(_iat.m_worldModelSource != null)
+            if(_iat.m_worldModelSource.Source != "" && _iat.m_worldModelSource.Source != null)
+        _wm = WorldModel.WorldModelAsset.LoadFromFile(_iat.GetWorldModelSource().Source);
 
 
         var characterSources = _iat.GetAllCharacterSources().ToList();
@@ -243,19 +245,25 @@ public class TheOfficeDemo : MonoBehaviour {
             _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
             rpcList.Add(rpc);
             var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
+
+           
             _agentController = new MultiCharacterAgentController(data, rpc, _iat, body.CharaterArchtype, m_characterAnchors[CharacterCount], m_dialogController);
             StopAllCoroutines();
             _agentControllers.Add(_agentController);
+            
+
+            if(rpc.CharacterName == _player.CharacterName) _player = rpc;
+
             CharacterCount++;
 
         }
 
-
-        AddButton("Back to Scenario Selection Menu", () =>
+        foreach(var agent in _agentControllers)
         {
-            _iat = null;
-            LoadScenarioMenu();
-        });
+            if(agent.RPC.CharacterName != _player.CharacterName)
+            agent.StartBehaviour(this, VersionMenu);
+        }
+
 
         foreach (var actor in rpcList)
         {
@@ -274,15 +282,14 @@ public class TheOfficeDemo : MonoBehaviour {
 
         }
         SetCamera();
-    //    StartDrama();
-        RandomizeNext();
+        PlayerDecide();
     }
 
     public void SetCamera()
     {
        var camera =  GameObject.FindGameObjectWithTag("MainCamera");
 
-      var rpc = GameObject.FindGameObjectWithTag(_chosenCharacter.ToString());
+      var rpc = GameObject.FindGameObjectWithTag(_player.CharacterName.ToString());
 
         camera.transform.position = rpc.transform.position;
         camera.transform.rotation = rpc.transform.rotation;
@@ -290,11 +297,10 @@ public class TheOfficeDemo : MonoBehaviour {
         camera.GetComponent<Camera>().fieldOfView = 40;
 
         camera.transform.Translate(new Vector3(-0.02f, 1.375f, 0));
-     //   Camera.main.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-      //  camera.transform.Rotate(new Vector3(90,180 ,0));
+   
         var MouseLook = camera.GetComponent<MouseLookController>();
 
-        MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _chosenCharacter).CharacterName.ToString()).transform.position;
+        MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _player.CharacterName).CharacterName.ToString()).transform.position;
         MouseLook.Online(true);
 
 
@@ -306,7 +312,7 @@ public class TheOfficeDemo : MonoBehaviour {
         _agentController.SaveOutput();
     }
 
-    private void UpdateButtonTexts(bool hide, IEnumerable<DialogueStateActionDTO> dialogOptions, bool playerInitiating)
+    private void UpdateButtonTexts(bool hide, List<IAction> decisions)
     {
         if (hide)
         {
@@ -320,114 +326,70 @@ public class TheOfficeDemo : MonoBehaviour {
         }
         else
         {
+            foreach(var a in decisions){
+            var dialogueOptions = _iat.GetDialogueActions(a.Parameters.ElementAt(0), a.Parameters.ElementAt(1), a.Parameters.ElementAt(2), a.Parameters.ElementAt(3));
 
-            if (m_buttonList.Count == dialogOptions.Count())
-                return;
+            
             int i = 0;
-            foreach (var d in dialogOptions)
+            foreach (var d in dialogueOptions)
             {
                 if (isInButtonList(d.Utterance)) continue;
                 var b = Instantiate(m_dialogButtonArchetype);
                 var t = b.transform;
                 i += 1;
                 t.SetParent(m_dialogButtonZone, false);
-                if(!playerInitiating)
-                b.GetComponentInChildren<Text>().text = i + ": " + d.Utterance;
-                else
-                    b.GetComponentInChildren<Text>().text = "[" + getActionFromMeaning(d.Meaning.ToString()) + "] " + i + ". " + d.Utterance;
-
+            
+                b.GetComponentInChildren<Text>().text = i + ": " + "[Towards " + a.Target + "] - " + d.Utterance;
                 var id = d.Id;
-                b.onClick.AddListener((() => Reply(id)));
+                b.onClick.AddListener((() => Reply(id, a.Target)));
                 m_buttonList.Add(b);
 
             }
 
+            }
+
         }
     }
 
 
-    private void TargetOptionsButton(bool hide, List<RolePlayCharacterAsset> targetOptions)
+  
+
+   public void Reply(Guid dialogId, Name target)
     {
-        if (hide)
-        {
-            if (!m_buttonList.Any())
-                return;
-            foreach (var b in m_buttonList)
+
+        var reply = _iat.GetDialogActionById(dialogId);
+        var actionFormat = string.Format("Speak({0},{1},{2},{3})", reply.CurrentState, reply.NextState, reply.Meaning, reply.Style);
+
+
+        StartCoroutine(PlayerReplyAction(actionFormat, target));
+
+        alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
+
+
+          foreach (var b in m_buttonList)
             {
                 Destroy(b.gameObject);
-
             }
-            m_buttonList.Clear();
-            return;
-        }
-
-
-        foreach (var d in targetOptions)
-        {
-
-            var b = Instantiate(m_dialogButtonArchetype);
-            var t = b.transform;
-            t.SetParent(m_dialogButtonZone, false);
-            b.GetComponentInChildren<Text>().text = d.CharacterName.ToString();
-
-            b.onClick.AddListener((() => ChosenTarget(d.CharacterName.ToString())));
-            m_buttonList.Add(b);
-
-        }
-
+            m_buttonList.Clear(); 
     }
 
-
-    public void Reply(Guid dialogId)
-    {
-        /*     var state = _agentController.RPC.GetBeliefValue("DialogState(Player)");
-             if (state == IATConsts.TERMINAL_DIALOGUE_STATE)
-             {
-                 return;
-             }*/
-        var reply = _iat.GetDialogActionById(dialogId);
-       
-        Name actionMean = Name.BuildName("-");
-        Name actionStyle = Name.BuildName("-");
-        Name actionName = Name.BuildName("Speak");
-        Name actionCS = Name.BuildName(reply.CurrentState);
-        Name actionNS = Name.BuildName(reply.NextState);
-        if (!reply.Meaning.IsEmpty())
-        actionMean = Name.BuildName(reply.Meaning);
-        
-        if (!reply.Style.IsEmpty())
-        actionStyle = Name.BuildName(reply.Style);
-
-        Name utteranceID = Name.BuildName(reply.UtteranceId);
-
-        var act = new ActionLibrary.Action(new List<Name>() { actionName, actionCS, actionNS, actionMean, actionStyle }, chosenTarget);
-        _agentControllers.Find(x => x.RPC.CharacterName == _chosenCharacter).Speak(this, act);
-        UpdateButtonTexts(true, new DialogueStateActionDTO[1], false);
-
-        //  alreadyUsedDialogs.Add(reply.Utterance, reply.UtteranceId);
-
-
-    }
-
-    public void ChosenTarget(string charId)
-    {
-        chosenTarget = Name.BuildName(charId);
-
-        var temp = new List<RolePlayCharacterAsset>();
-        TargetOptionsButton(true, temp);
-        PlayerInitiateTurn();
-
-
-    }
-
-    private IEnumerator PlayerReplyAction(string replyActionName, string nextState)
+    private IEnumerator PlayerReplyAction(string replyActionName, Name target)
     {
         const float WAIT_TIME = 0.5f;
-       GameObject.Find("Main Camera").GetComponent<MouseLookController>().setMainTarget(GameObject.FindGameObjectWithTag(rpcList.Find(x => x.CharacterName != _chosenCharacter).CharacterName.ToString()).transform);
-        _agentController.RPC.Perceive(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
+       
+      //  GameObject.Find("Main Camera").GetComponent<MouseLookController>().setMainTarget(GameObject.FindGameObjectWithTag(rpcList.Find(x => x.CharacterName == target).CharacterName.ToString()).transform);
+        
+        
+        _agentController.RPC.Perceive(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, target.ToString()));
+        
+
         yield return new WaitForSeconds(WAIT_TIME);
-        _agentController.RPC.Perceive(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, _agentController.RPC.CharacterName.ToString()));
-        _agentController.SetDialogueState(_chosenCharacter.ToString(), nextState);
+
+        _agentController.RPC.Perceive(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, target.ToString()));
+
+        Debug.Log("Hello, we are replying");
+       HandleEffects(new List<Name>{ EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, target.ToString())});
+
 
 
     }
@@ -505,122 +467,25 @@ public class TheOfficeDemo : MonoBehaviour {
             foreach (var agent in _agentControllers)
                 if (agent.getJustReplied())
                 {
-                    Debug.Log("Someone just replied");
-                    HandleDialogs();
+                   // Debug.Log("we got a reply!");
+                     var reply = agent.getReply();
+                    var lastAction = agent.getLastAction();
+            
+                     HandleEffects(new List<Name>{ EventHelper.ActionEnd(agent.RPC.CharacterName, (Name)("Speak(" + reply.CurrentState.ToString() + "," + reply.NextState.ToString() + "," + reply.Meaning.ToString() + "," + reply.Style.ToString() + ")"), lastAction.Target)});
+
+
+            // will probably need to launch a courotine
+                     waitingforReply = false;
+
+                      PlayerDecide();
+
                     break;
                 }
         }
+
+      
     }
     
-
-
-
-
-    private void HandleDialogs()
-    {
-        if (_agentController != null)
-            _agentController.UpdateFields();
-
-        List<Name> eventsToPerceive = new List<Name>();
-
-        if (rpcList != null && _agentControllers != null)
-        {
-            foreach (var agent in _agentControllers)
-            {
-                if (agent.getJustReplied())
-                {
-                    var reply = agent.getReply();
-                    var lastAction = agent.getLastAction();
-                    Debug.Log(agent.RPC.CharacterName.ToString() + " performed " + lastAction.Name + " to " + lastAction.Target);
-                    var actionTarget = agent.getLastAction().Target;
-                    var TargetRPC = _agentControllers.Find(x => x.RPC.CharacterName == actionTarget);
-                    justSpokeAgent = agent;
-            
-                    m_dialogController.Clear();
-
-                    var lastDialog = agent.getLastDialog();
-
-                    if (lastDialog.NextState != null)
-                    {
-                        if (lastDialog.NextState != "-")
-                        {
-                            Debug.Log(" telling the kb " + lastDialog.NextState.ToString() + " about " + agent.RPC.CharacterName);
-                            TargetRPC.SetDialogueState(agent.RPC.CharacterName.ToString(), lastDialog.NextState.ToString());
-                        }
-                    }
-
-
-                    var ev = EventHelper.ActionEnd(agent.RPC.CharacterName.ToString(), lastAction.Name.ToString(), lastAction.Target.ToString());
-                    foreach (var aux in _agentControllers)
-                    {
-                        Debug.Log(aux.RPC.CharacterName.ToString() + "Going to perceive" + ev);
-                        aux.RPC.Perceive(ev);
-                        aux.UpdateEmotionExpression();
-
-                    }
-
-
-                    if (ev.ToString().Contains("Finalize"))
-                    {
-                        //  Debug.Log(" last event " + lastEvent.ToString());
-                        RandomizeNext();
-                    }
-
-                    else
-                    {
-                        var go = _agentControllers.Find(x => x.RPC.CharacterName == actionTarget);
-
-                        if (go.RPC != null)
-                        {
-                            if (go.RPC.CharacterName == _chosenCharacter)
-                            {
-                                chosenTarget = agent.RPC.CharacterName;
-                                PlayerReplyTurn();
-
-                            }
-
-                            else
-                            {
-                                Debug.Log(" Next NPC: " + go.RPC.CharacterName);
-                                go.setFloor(true);
-                                Timeleft = TIME_LEFT_CONST;
-
-                                go.StartBehaviour(this, VersionMenu);
-                            }
-
-
-                        }
-                    }
-                    return;
-                }
-            }
-        }
-    }
-
-
-
-  
-
-    private string getActionFromMeaning(string meaning)
-    {
-       
-      
-        char[] words = { ',', '(', ')' };
-
-        string[] result = meaning.Split(words);
-        Debug.Log("Get action from meaning " + " original" + meaning  + " result " + result[0] + " 1: "); //+ result[1]);
-       
-        return result[1];
-     }
-
-
-
-
-
-    public void ClearScore()
-    {
-        Destroy(score);
-    }
 
     public void Restart()
     {
@@ -641,172 +506,51 @@ public class TheOfficeDemo : MonoBehaviour {
     }
 
 
-    public void PlayerInitiateTurn()
+    public void PlayerDecide()
     {
-        var playerAgent = rpcList.Find(x => x.CharacterName == _chosenCharacter);
 
-
-        var actionList = _iat.GetAllDialogueActions().ToList();
-        List<DialogueStateActionDTO> newList = new List<DialogueStateActionDTO>();
-
-        var seList = new List<string>();
-
-        foreach (var act in actionList)
+       
+         if (_player != null)
         {
-            if (act.Meaning != null)
-                if (act.Meaning.ToString().Contains("Initiate"))
-                {
-                    if (!seList.Contains(getActionFromMeaning(act.Meaning.ToString())))
-                    {
-                        seList.Add(getActionFromMeaning(act.Meaning.ToString()));
-                        newList.Add(act);
-                    }
-                }
+          
+            var decisions = _player.Decide();
+
+            if(decisions.IsEmpty() || waitingforReply)
+             return;
+
+
+              UpdateButtonTexts(false, decisions.ToList());
+
         }
-  
-        stopTime = true;
-   
-        UpdateButtonTexts(false, newList, true);
     }
 
 
-    public void PlayerReplyTurn()
+     public void HandleEffects(List<Name> _events)
     {
-        Debug.Log("Player Replying...");
-        var playerAgent = rpcList.Find(x => x.CharacterName == _chosenCharacter);
+        if(_wm != null){
+            var effects = _wm.Simulate(_events.ToArray());
 
-    //    Debug.Log("kb ask...? " + playerAgent.m_kb.AskProperty(Name.BuildName("DialogueState(Kate)")));
-        initiated = true;
-        var decidedList = playerAgent.Decide();
-        //var action = decidedList.FirstOrDefault();
-
-        IEnumerable<DialogueStateActionDTO> availableDialogs = new DialogueStateActionDTO[1];
-        List<DialogueStateActionDTO> dialogs = new List<DialogueStateActionDTO>();
-        stopTime = true;
-
-        if (_iat.ScenarioName.ToString().Contains("Cif")) {
-
-            Name meaning = decidedList.FirstOrDefault().Parameters[2];
-
-            Debug.Log("PlayerReply: " + meaning.ToString());
-            dialogs = _iat.GetDialogueActions(Name.BuildName("*"), Name.BuildName("*"), meaning, Name.BuildName("*"));
-        }
-
-        else
+        foreach(var eff in effects)
         {
-            for (var i = 0; i < 4; i++)
+         //   Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
+            if(eff.ObserverAgent.ToString() == "Player")
             {
-                if (decidedList.ElementAtOrDefault(i) != null)
-                {
-                    Name meaning = Name.BuildName("-");
-                    Name style = Name.BuildName("-");
-                    Name currentState = decidedList.ElementAt(i).Parameters[0];
+                _player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
 
-                    Name nextState = decidedList.ElementAt(i).Parameters[1];
-
-                    if (nextState.ToString() == "-")
-                    {
-                        meaning = decidedList.ElementAt(i).Parameters[2];
-                        style = Name.BuildName("*");
-                        dialogs = _iat.GetDialogueActions(currentState, nextState, meaning, style);
-                    }
-                    else
-                    {
-
-                        //   Debug.Log("Decided list: " + "currentstate " + currentState.ToString() + meaning.ToString() + " style " + style.ToString());
-                        dialogs.Add(_iat.GetDialogueActions(currentState, nextState, meaning, style).FirstOrDefault());
-                    }
-                }
-
-                else break;
             }
-        }
-       
-
-       
-    
-     
-      
-        //Debug.Log(" dialog: " + dialogs.Count +  " first: " + dialogs[0].Utterance);
-        availableDialogs = dialogs;
-
-
-        UpdateButtonTexts(false, availableDialogs, false);
-    }
-
-
-    public void ChoseTarget()
-    {
-        Debug.Log("Choosing Targets");
-        var notPlayerAgents = rpcList.FindAll(x => x.CharacterName != _chosenCharacter);
-
-        TargetOptionsButton(false, notPlayerAgents);
-
-
-    }
-
-    public void RandomizeNext()
-    {
-        var rand = new System.Random();
-        //   int next = rand.Next(0, _agentControllers.Count);
-
-
-        Debug.Log(counter + " " + _agentControllers[0].RPC.CharacterName + _agentControllers[1].RPC.CharacterName.ToString() + _agentControllers[2].RPC.CharacterName);
-        if (initiated)
-        {
-            if (counter < 2)
-                counter++;
-            else counter = 0;
-        }
-        else
-        {
-            if (_agentControllers[0].RPC.CharacterName != _chosenCharacter)
-                counter = 0;
-            else counter = 1;
-
-         
-            initiated = true;
-
-        }
-
-        //  Debug.Log(" randomizeNext: " + counter + " count : " + _agentControllers.Count);
-        Timeleft = TIME_LEFT_CONST;
-        var go = _agentControllers[counter];
-
-        if (go.RPC != null)
-        {
-
-            if (go.RPC.CharacterName == _chosenCharacter)
-                ChoseTarget();
-            else
+            else if(eff.ObserverAgent.IsUniversal)
             {
-                Debug.Log("Time's up! Next NPC: " + go.RPC.CharacterName);
-                go.setFloor(true);
-
-                go.StartBehaviour(this, VersionMenu);
+                _player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
+                _agentControllers.ForEach(x=>x.RPC.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World")));
             }
-            // go.RPC.SaveToFile("rpc-output.rpc");
+             else {
+            {
+                 _agentControllers.Find(x=>x.RPC.CharacterName == eff.ObserverAgent).RPC.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
+            }
+
+            }
+    }
         }
-
-
     }
-
-    public void StartDrama()
-    {
-        var startingAgent = _agentControllers[1];
-        Debug.Log("Starting " + startingAgent.RPC.CharacterName);
-
-        startingAgent.setFloor(true);
-
-        foreach (var r in rpcList)
-            if (r != startingAgent.RPC)
-                startingAgent.SetDialogueState(r.CharacterName.ToString(), "Start");
-
-
-
-       
-        _agentControllers[1].StartBehaviour(this, VersionMenu);
-    }
-
 
 }

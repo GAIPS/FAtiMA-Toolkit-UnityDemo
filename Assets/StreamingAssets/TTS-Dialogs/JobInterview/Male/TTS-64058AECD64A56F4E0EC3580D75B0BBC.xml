@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LipSyncVisemes wavFile="TTS-64058AECD64A56F4E0EC3580D75B0BBC.wav">
+  <viseme type="20" time="0.1" duration="0.07" />
+  <viseme type="4" time="0.17" duration="0.085" />
+  <viseme type="19" time="0.255" duration="0.05" />
+  <viseme type="20" time="0.305" duration="0.07" />
+  <viseme type="4" time="0.375" duration="0.2" />
+  <viseme type="19" time="0.575" duration="0.115" />
+</LipSyncVisemes>

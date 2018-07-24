@@ -6,7 +6,7 @@
 				{
 					"dictionary": [
 						{
-							"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+							"key": "Event(Action-End, [s], Speak([cs], [ns], -, *), [t])",
 							"value": [
 								{
 									"PropertyName": "DialogueState([s])",
@@ -22,6 +22,97 @@
 									"PropertyName": "Has(Floor)",
 									"NewValue": "[t]",
 									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], DoesSport, *), [t])",
+							"value": [
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "Sarah",
+									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DoesSport([s])",
+									"NewValue": true,
+									"ObserverAgent": "Sarah"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "Sarah"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], UnivTalk, *), [t])",
+							"value": [
+								{
+									"PropertyName": "GoesToUniversity([s])",
+									"NewValue": true,
+									"ObserverAgent": "Sarah"
+								}, 
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "Sarah",
+									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "Sarah"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], SE(*, *), *), [t])",
+							"value": [
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "[t]",
+									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[s]"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], SE(*, Finalize), *), [t])",
+							"value": [
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "John",
+									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[s]"
 								}]
 						}]
 				},
@@ -31,6 +122,26 @@
 						{
 							"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
 							"value": 1
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], DoesSport, *), [t])",
+							"value": 2
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], UnivTalk, *), [t])",
+							"value": 2
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], -, *), [t])",
+							"value": 1
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], SE(*, *), *), [t])",
+							"value": 3
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], SE(*, Finalize), *), [t])",
+							"value": 4
 						}]
 				}
 		},

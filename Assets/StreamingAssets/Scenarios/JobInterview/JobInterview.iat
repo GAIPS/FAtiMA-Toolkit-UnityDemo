@@ -16,12 +16,12 @@
 					"UtteranceId": "TTS-20272A7DA144D358C7095E09D0A89113"
 				}, 
 				{
-					"CurrentState": "StartUniv",
-					"NextState": "AnwserUniv",
-					"Meaning": "SE(Univ, Initiate)",
+					"CurrentState": "StartSport",
+					"NextState": "AnswerSport",
+					"Meaning": "SE(Sport, Initiate)",
 					"Style": "Positive",
-					"Utterance": "So what was your university?",
-					"UtteranceId": "TTS-4D0702AC704A046E761F71B629B7D7A8"
+					"Utterance": "So you like basketball? I used to play too when I was younger.",
+					"UtteranceId": "TTS-9D2A62745B5028173AF27B4CE1E68AA8"
 				}, 
 				{
 					"CurrentState": "S3",
@@ -464,12 +464,12 @@
 					"UtteranceId": "TTS-9D0199CFBD0A3037A9DED5E102E8F7CB"
 				}, 
 				{
-					"CurrentState": "AnwserSport",
-					"NextState": "EndSport",
-					"Meaning": "SE(Sport, Answer)",
-					"Style": "Negative",
-					"Utterance": "I dont like it anymore really. Dont talk about it.",
-					"UtteranceId": "TTS-1438E98723FA7E25D88DB4428BC1E352"
+					"CurrentState": "StartUniv",
+					"NextState": "AnswerUniv",
+					"Meaning": "SE(Univ, Initiate)",
+					"Style": "Positive",
+					"Utterance": "So what was your university?",
+					"UtteranceId": "TTS-4D0702AC704A046E761F71B629B7D7A8"
 				}, 
 				{
 					"CurrentState": "EndSport",
@@ -496,20 +496,12 @@
 					"UtteranceId": "TTS-92B42DB3FE57C4114FBBC2E206F3371D"
 				}, 
 				{
-					"CurrentState": "StartSport",
-					"NextState": "AnwserSport",
-					"Meaning": "SE(Sport, Initiate)",
-					"Style": "Positive",
-					"Utterance": "So you like basketball? I used to play too when I was younger.",
-					"UtteranceId": "TTS-9D2A62745B5028173AF27B4CE1E68AA8"
-				}, 
-				{
-					"CurrentState": "AnwserSport",
+					"CurrentState": "AnswerSport",
 					"NextState": "EndSport",
 					"Meaning": "SE(Sport, Answer)",
-					"Style": "Neutral",
-					"Utterance": "Yeah I like it a lot.",
-					"UtteranceId": "TTS-842379866FC9A6C715B3CAAA90E675D4"
+					"Style": "Negative",
+					"Utterance": "I dont like it anymore really. Dont talk about it.",
+					"UtteranceId": "TTS-1438E98723FA7E25D88DB4428BC1E352"
 				}, 
 				{
 					"CurrentState": "S14",
@@ -536,28 +528,28 @@
 					"UtteranceId": "TTS-5C6E338AAC0ADBD2245103397789247A"
 				}, 
 				{
-					"CurrentState": "AnwserUniv",
-					"NextState": "EndUniv",
-					"Meaning": "SE(Univ, Answer)",
-					"Style": "Positive",
-					"Utterance": "I went to IST. It is really great. ",
-					"UtteranceId": "TTS-533801BCB4618DD14E2E0CE627B2504E"
-				}, 
-				{
-					"CurrentState": "AnwserUniv",
-					"NextState": "EndUniv",
-					"Meaning": "SE(Univ, Answer)",
-					"Style": "Neutral",
-					"Utterance": "IST. Not a big deal really.",
-					"UtteranceId": "TTS-56B4CA37720AE54857F53A2FD61E8823"
-				}, 
-				{
-					"CurrentState": "AnwserUniv",
+					"CurrentState": "AnswerUniv",
 					"NextState": "EndUniv",
 					"Meaning": "SE(Univ, Answer)",
 					"Style": "Negative",
 					"Utterance": "IST but it does not matter.",
 					"UtteranceId": "TTS-9E33C4CF18A51BCAC5C24CBFDF7495EA"
+				}, 
+				{
+					"CurrentState": "AnswerSport",
+					"NextState": "EndSport",
+					"Meaning": "SE(Sport, Answer)",
+					"Style": "Neutral",
+					"Utterance": "Yeah I like it a lot.",
+					"UtteranceId": "TTS-842379866FC9A6C715B3CAAA90E675D4"
+				}, 
+				{
+					"CurrentState": "AnswerUniv",
+					"NextState": "EndUniv",
+					"Meaning": "SE(Univ, Answer)",
+					"Style": "Neutral",
+					"Utterance": "IST. Not a big deal really.",
+					"UtteranceId": "TTS-56B4CA37720AE54857F53A2FD61E8823"
 				}, 
 				{
 					"CurrentState": "EndUniv",
@@ -646,14 +638,6 @@
 					"Style": "Negative",
 					"Utterance": "Don't you think that FCT is much better?",
 					"UtteranceId": "TTS-BC5134C3E2B7CAC1DC240D92991B1678"
-				}, 
-				{
-					"CurrentState": "S7",
-					"NextState": "S8",
-					"Meaning": "GameTalk",
-					"Style": "Positive",
-					"Utterance": "I like a lot of things! The ones I enjoy the more are gaming, reading and watch movies.",
-					"UtteranceId": "TTS-4641911CB78F56C813026E004880BEC6"
 				}, 
 				{
 					"CurrentState": "AnswerFCT",
@@ -814,6 +798,22 @@
 					"Style": "Positive",
 					"Utterance": "Liked it? I loved it. Glad to know you like it too.",
 					"UtteranceId": "TTS-15CEA9158E3F907ECE37CFC134EFD175"
+				}, 
+				{
+					"CurrentState": "AnswerUniv",
+					"NextState": "EndUniv",
+					"Meaning": "SE(Univ, Answer)",
+					"Style": "Positive",
+					"Utterance": "I went to IST. It is really great. ",
+					"UtteranceId": "TTS-533801BCB4618DD14E2E0CE627B2504E"
+				}, 
+				{
+					"CurrentState": "S7",
+					"NextState": "S8",
+					"Meaning": "-",
+					"Style": "Positive",
+					"Utterance": "I like a lot of things! The ones I enjoy the more are gaming, reading and watch movies.",
+					"UtteranceId": "TTS-4641911CB78F56C813026E004880BEC6"
 				}]
 		},
 	"types": [

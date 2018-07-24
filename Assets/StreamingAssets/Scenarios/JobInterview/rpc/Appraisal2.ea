@@ -21,7 +21,9 @@
 							"Conditions":
 								{
 									"Set": ["ValidDialogue([cs], [ns], [m], Neutral) = True"]
-								}
+								},
+							"Desirability": 0,
+							"Praiseworthiness": 0
 						}, 
 						{
 							"EventName": "Event(Action-End, Player, Speak([cs], [ns], [m], Positive), [y])",
@@ -38,7 +40,8 @@
 								{
 									"Set": ["ValidDialogue([cs], [ns], [m], Negative) = True", "[x] != Player", "[x] != SELF"]
 								},
-							"Desirability": -5
+							"Desirability": -5,
+							"Praiseworthiness": 0
 						}, 
 						{
 							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [m], Neutral), SELF)",
@@ -46,7 +49,8 @@
 								{
 									"Set": ["ValidDialogue([cs], [ns], [m], Neutral) = True", "[x] != Player", "[x] != SELF"]
 								},
-							"Desirability": -1
+							"Desirability": -1,
+							"Praiseworthiness": 0
 						}, 
 						{
 							"EventName": "Event(Action-End, [x], Speak([cs], [ns], [m], Positive), SELF)",
@@ -54,7 +58,8 @@
 								{
 									"Set": ["ValidDialogue([cs], [ns], [m], Positive) = True", "[x] != Player", "[x] != SELF"]
 								},
-							"Desirability": 5
+							"Desirability": 5,
+							"Praiseworthiness": 0
 						}]
 				},
 			"EmotionDispositions": [

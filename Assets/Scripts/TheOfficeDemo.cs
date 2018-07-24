@@ -105,6 +105,11 @@ public class TheOfficeDemo : MonoBehaviour {
 
     private WorldModel.WorldModelAsset _wm;
 
+    
+    public bool skipCharacterSelection;
+
+    public bool skipScenarioSelection;
+
 
     // Use this for initialization
     private IEnumerator Start()
@@ -115,7 +120,7 @@ public class TheOfficeDemo : MonoBehaviour {
         _finalScore.SetActive(false);
         AssetManager.Instance.Bridge = new AssetManagerBridge();
         ;
-        m_dialogController.AddDialogLine("Loading...");
+      //  m_dialogController.AddDialogLine("Loading...");
 
         alreadyUsedDialogs = new Dictionary<string, string>();
 
@@ -171,7 +176,10 @@ public class TheOfficeDemo : MonoBehaviour {
     private void LoadScenarioMenu()
     {
         ClearButtons();
-        foreach (var s in m_scenarios)
+
+        if(skipScenarioSelection)
+            ChooseCharacterMenu(m_scenarios.FirstOrDefault());
+        else foreach (var s in m_scenarios)
         {
             var data = s;
             AddButton(s.IAT.ScenarioName, () =>
@@ -185,6 +193,16 @@ public class TheOfficeDemo : MonoBehaviour {
     private void ChooseCharacterMenu(SingleCharacterDemo.ScenarioData data)
     {
         ClearButtons();
+
+        if(skipCharacterSelection){
+
+              var rpc = RolePlayCharacterAsset.LoadFromFile(data.IAT.GetAllCharacterSources().FirstOrDefault().Source);
+            _player = rpc;
+             LoadScenario(data);
+           
+        }
+
+        else
         foreach (var agent in data.IAT.GetAllCharacterSources())
         {
             var rpc = RolePlayCharacterAsset.LoadFromFile(agent.Source);
@@ -297,11 +315,13 @@ public class TheOfficeDemo : MonoBehaviour {
         camera.GetComponent<Camera>().fieldOfView = 40;
 
         camera.transform.Translate(new Vector3(-0.02f, 1.375f, 0));
-   
-        var MouseLook = camera.GetComponent<MouseLookController>();
 
-        MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _player.CharacterName).CharacterName.ToString()).transform.position;
-        MouseLook.Online(true);
+         camera.transform.Rotate(new Vector3(10.0f,0.0f, 0));
+   
+  //      var MouseLook = camera.GetComponent<MouseLookController>();
+
+    //    MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _player.CharacterName).CharacterName.ToString()).transform.position;
+//        MouseLook.Online(true);
 
 
 
@@ -326,11 +346,12 @@ public class TheOfficeDemo : MonoBehaviour {
         }
         else
         {
-            foreach(var a in decisions){
-            var dialogueOptions = _iat.GetDialogueActions(a.Parameters.ElementAt(0), a.Parameters.ElementAt(1), a.Parameters.ElementAt(2), a.Parameters.ElementAt(3));
+             int i = 0;
+            var a = decisions.FirstOrDefault();
+            var dialogueOptions = _iat.GetDialogueActions(a.Parameters.ElementAt(0), a.Parameters.ElementAt(1), (Name)"*", (Name)"*");
 
             
-            int i = 0;
+           
             foreach (var d in dialogueOptions)
             {
                 if (isInButtonList(d.Utterance)) continue;
@@ -346,7 +367,7 @@ public class TheOfficeDemo : MonoBehaviour {
 
             }
 
-            }
+            
 
         }
     }

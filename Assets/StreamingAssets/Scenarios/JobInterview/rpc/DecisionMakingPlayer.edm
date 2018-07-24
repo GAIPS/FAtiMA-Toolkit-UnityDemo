@@ -9,9 +9,19 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF"]
+							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "[x] != SELF", "EventId(Action-End, *, Speak([cs], [ns], [m], *), [x]) = -1"]
 						},
-					"Priority": 1
+					"Priority": 2
+				}, 
+				{
+					"Action": "Speak([cs], [ns], SE([se], [step]), *)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["IsAgent([x]) = True", "ValidDialogue([cs], [ns], SE([se], [step]), *) = True", "Volition([se], [step], [x], *) > 0", "[x] != SELF"]
+						},
+					"Priority": 3
 				}]
 		},
 	"types": [

@@ -4,26 +4,6 @@
 			"classId": 0,
 			"ActionTendencies": [
 				{
-					"Action": "Speak(StartUniv, AnwserUniv, SE(Univ, Initiate), [volValue])",
-					"Target": "[x]",
-					"Layer": "-",
-					"Conditions":
-						{
-							"Set": ["Player = [x]", "Has(Floor) = SELF", "Volition([se], SELF, [x]) = [volValue]", "Univ = [se]", "Positive = [volValue]"]
-						},
-					"Priority": 2
-				}, 
-				{
-					"Action": "Speak(StartSport, AnwserSport, SE(Sport, Initiate), [volValue])",
-					"Target": "[x]",
-					"Layer": "-",
-					"Conditions":
-						{
-							"Set": ["Player = [x]", "Has(Floor) = SELF", "Volition([se], SELF, [x]) = [volValue]", "Sport = [se]", "Positive = [volValue]"]
-						},
-					"Priority": 2
-				}, 
-				{
 					"Action": "Speak([cs], [ns], [m], Negative)",
 					"Target": "[x]",
 					"Layer": "-",
@@ -39,7 +19,7 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], Positive) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] > 2", "[x] != Sarah"]
+							"Set": ["ValidDialogue([cs], [ns], [m], Positive) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] > -1", "[x] != Sarah"]
 						},
 					"Priority": 1
 				}, 
@@ -52,46 +32,6 @@
 							"Set": ["ValidDialogue([cs], [ns], [m], Neutral) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] > -2", "[y] < 2", "[x] != Sarah"]
 						},
 					"Priority": 1
-				}, 
-				{
-					"Action": "Speak(PreGame, StartGame, -, [volValue])",
-					"Target": "Sarah",
-					"Layer": "-",
-					"Conditions":
-						{
-							"Set": ["IsAgent([y]) = True", "Sarah = [y]", "Player = [x]", "Has(Floor) = SELF", "Volition([se], SELF, [x]) = [volValue]", "Game = [se]", "Positive = [volValue]"]
-						},
-					"Priority": 2
-				}, 
-				{
-					"Action": "Speak(PreFCT, StartFCT, -, [volValue])",
-					"Target": "Sarah",
-					"Layer": "-",
-					"Conditions":
-						{
-							"Set": ["IsAgent([y]) = True", "Sarah = [y]", "Player = [x]", "Has(Floor) = SELF", "Volition([se], SELF, [x]) = [volValue]", "FCT = [se]", "Positive = [volValue]"]
-						},
-					"Priority": 2
-				}, 
-				{
-					"Action": "Speak(AnswerFCT, EndFCT, SE(FCT, Answer), [sty])",
-					"Target": "Sarah",
-					"Layer": "-",
-					"Conditions":
-						{
-							"Set": ["IsAgent([x]) = True", "IsAgent([y]) = True", "Sarah = [y]", "[x] != SELF", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "EventId(Action-End, [x], Speak(*, *, SE(FCT, Initiate), [sty]), SELF) = True", "Volition([se], SELF, [x]) = [volValue]", "FCT = [se]", "Positive = [volValue]"]
-						},
-					"Priority": 3
-				}, 
-				{
-					"Action": "Speak(AnswerGame, EndGame, SE(Game, Answer), [sty])",
-					"Target": "Sarah",
-					"Layer": "-",
-					"Conditions":
-						{
-							"Set": ["IsAgent([x]) = True", "IsAgent([y]) = True", "Sarah = [y]", "[x] != SELF", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "EventId(Action-End, [x], Speak(*, *, SE(Game, Initiate), [sty]), SELF) = True", "Volition([se], SELF, [x]) = [volValue]", "Game = [se]", "Positive = [volValue]"]
-						},
-					"Priority": 3
 				}]
 		},
 	"types": [

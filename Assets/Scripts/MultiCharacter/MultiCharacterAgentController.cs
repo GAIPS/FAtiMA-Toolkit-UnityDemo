@@ -39,6 +39,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
     private DialogueStateActionDTO lastDialog;
 
 
+
     public RolePlayCharacterAsset RPC { get { return m_rpc; } }
 
     public MultiCharacterAgentController(SingleCharacterDemo.ScenarioData scenarioData, RolePlayCharacterAsset rpc,
@@ -128,14 +129,19 @@ public class MultiCharacterAgentController : MonoBehaviour {
         if(  _body._speechController.IsPlaying)
                 continue;
 
-       var action = m_rpc.Decide().Shuffle().FirstOrDefault();
+       var action = m_rpc.Decide().FirstOrDefault();
+        
+            if(action == null)
+                Debug.Log(RPC.CharacterName.ToString() + " decided: nothing");
+      else  Debug.Log(RPC.CharacterName.ToString() + " decided: " + action.Key);
+
        _events.Clear(); 
 		m_rpc.Update();
 
 		if (action == null)
 		continue;
 
-	 Debug.Log("Action Key: " + action.Key);
+	
 
         lastAction = action;
         if (action != null)

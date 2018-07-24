@@ -19,7 +19,7 @@
 			"EmotionalAppraisalAssetSource": "Appraisal2.ea",
 			"EmotionalDecisionMakingSource": "DecisionMaking1.edm",
 			"SocialImportanceAssetSource": "",
-			"CommeillFautAssetSource": "",
+			"CommeillFautAssetSource": "..\\JobInterviewCIF.cif",
 			"EmotionalState":
 				{
 					"Mood": 0,

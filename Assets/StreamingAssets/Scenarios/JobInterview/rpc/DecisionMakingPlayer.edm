@@ -11,7 +11,7 @@
 						{
 							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "[x] != SELF", "EventId(Action-End, *, Speak([cs], [ns], [m], *), [x]) = -1"]
 						},
-					"Priority": 2
+					"Priority": 1
 				}, 
 				{
 					"Action": "Speak([cs], [ns], SE([se], [step]), *)",
@@ -19,9 +19,9 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["IsAgent([x]) = True", "ValidDialogue([cs], [ns], SE([se], [step]), *) = True", "Volition([se], [step], [x], *) > 0", "[x] != SELF"]
+							"Set": ["IsAgent([x]) = True", "[x] != SELF", "ValidDialogue([cs], [ns], SE([se], [step]), *) = True", "Volition([se], [step], [x], *) > 0", "EventId(Action-End, *, Speak([cs], [ns], SE([se], [step]), *), [x]) = -1"]
 						},
-					"Priority": 3
+					"Priority": 4
 				}]
 		},
 	"types": [

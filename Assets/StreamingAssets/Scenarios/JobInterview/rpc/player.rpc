@@ -9,7 +9,8 @@
 						{
 							"SELF":
 								{
-									"Has(Floor)": "John, 1"
+									"Has(Floor)": "John, 1",
+									"WantsTheJob(Player)": "True, 1"
 								}
 						}
 				},
@@ -18,7 +19,7 @@
 			"EmotionalAppraisalAssetSource": null,
 			"EmotionalDecisionMakingSource": "DecisionMakingPlayer.edm",
 			"SocialImportanceAssetSource": "",
-			"CommeillFautAssetSource": "",
+			"CommeillFautAssetSource": "..\\JobInterviewCIF.cif",
 			"EmotionalState":
 				{
 					"Mood": 0,

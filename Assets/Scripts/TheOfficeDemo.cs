@@ -346,12 +346,15 @@ public class TheOfficeDemo : MonoBehaviour {
         }
         else
         {
-             int i = 0;
-            var a = decisions.FirstOrDefault();
-            var dialogueOptions = _iat.GetDialogueActions(a.Parameters.ElementAt(0), a.Parameters.ElementAt(1), (Name)"*", (Name)"*");
-
-            
+            var maxUtility = decisions.Max(x=>x.Utility);
+            var playerDecisions = decisions.Where(x=>x.Utility == maxUtility);
+            int i = 0;
+            foreach(var a in playerDecisions){
            
+           
+              var dialogueOptions =   _iat.GetDialogueActions(a.Parameters.ElementAt(0), a.Parameters.ElementAt(1), a.Parameters.ElementAt(2), a.Parameters.ElementAt(3));
+            
+             
             foreach (var d in dialogueOptions)
             {
                 if (isInButtonList(d.Utterance)) continue;
@@ -367,7 +370,7 @@ public class TheOfficeDemo : MonoBehaviour {
 
             }
 
-            
+            }
 
         }
     }
@@ -396,27 +399,14 @@ public class TheOfficeDemo : MonoBehaviour {
 
     private IEnumerator PlayerReplyAction(string replyActionName, Name target)
     {
-        const float WAIT_TIME = 0.5f;
        
-      //  GameObject.Find("Main Camera").GetComponent<MouseLookController>().setMainTarget(GameObject.FindGameObjectWithTag(rpcList.Find(x => x.CharacterName == target).CharacterName.ToString()).transform);
-        
-        
-        _agentController.RPC.Perceive(EventHelper.ActionStart(IATConsts.PLAYER, replyActionName, target.ToString()));
-        
-
-        yield return new WaitForSeconds(WAIT_TIME);
-
-        _agentController.RPC.Perceive(EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, target.ToString()));
-
-        Debug.Log("Hello, we are replying");
        HandleEffects(new List<Name>{ EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, target.ToString())});
 
-
-
+          yield return new WaitForSeconds(0.5f);
     }
 
     // Update is called once per frame
-    void Update()
+   void FixedUpdate()
     {
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -539,7 +529,6 @@ public class TheOfficeDemo : MonoBehaviour {
             if(decisions.IsEmpty() || waitingforReply)
              return;
 
-
               UpdateButtonTexts(false, decisions.ToList());
 
         }
@@ -548,13 +537,20 @@ public class TheOfficeDemo : MonoBehaviour {
 
      public void HandleEffects(List<Name> _events)
     {
+        foreach(var ev in _events){
+         _player.Perceive(ev);
+         _agentControllers.ForEach(x=>x.RPC.Perceive(ev));
+        }
+
         if(_wm != null){
             var effects = _wm.Simulate(_events.ToArray());
 
+        
         foreach(var eff in effects)
         {
-         //   Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
-            if(eff.ObserverAgent.ToString() == "Player")
+            Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
+         
+            if(eff.ObserverAgent.ToString() == _player.CharacterName.ToString())
             {
                 _player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
 

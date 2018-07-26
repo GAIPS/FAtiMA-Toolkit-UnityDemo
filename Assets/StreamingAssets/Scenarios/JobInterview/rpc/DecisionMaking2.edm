@@ -19,7 +19,7 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], Positive) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] > -1", "[x] != Sarah"]
+							"Set": ["ValidDialogue([cs], [ns], [m], Positive) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] >= 2", "[x] != Sarah"]
 						},
 					"Priority": 1
 				}, 

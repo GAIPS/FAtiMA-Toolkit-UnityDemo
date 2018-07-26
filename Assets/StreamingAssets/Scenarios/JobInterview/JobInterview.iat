@@ -473,7 +473,7 @@
 				}, 
 				{
 					"CurrentState": "EndSport",
-					"NextState": "OkSport",
+					"NextState": "-",
 					"Meaning": "SE(Sport, Finalize)",
 					"Style": "Neutral",
 					"Utterance": "I liked it, but not much.",
@@ -481,19 +481,11 @@
 				}, 
 				{
 					"CurrentState": "EndSport",
-					"NextState": "OkSport",
+					"NextState": "-",
 					"Meaning": "SE(Sport, Finalize)",
 					"Style": "Positive",
 					"Utterance": "Good good!",
 					"UtteranceId": "TTS-64058AECD64A56F4E0EC3580D75B0BBC"
-				}, 
-				{
-					"CurrentState": "EndSport",
-					"NextState": "OkSport",
-					"Meaning": "SE(Sport, Finalize)",
-					"Style": "Negative",
-					"Utterance": "We should get back to the interview.",
-					"UtteranceId": "TTS-92B42DB3FE57C4114FBBC2E206F3371D"
 				}, 
 				{
 					"CurrentState": "AnswerSport",
@@ -552,20 +544,20 @@
 					"UtteranceId": "TTS-56B4CA37720AE54857F53A2FD61E8823"
 				}, 
 				{
+					"CurrentState": "EndSport",
+					"NextState": "-",
+					"Meaning": "SE(Sport, Finalize)",
+					"Style": "Negative",
+					"Utterance": "We should get back to the interview.",
+					"UtteranceId": "TTS-92B42DB3FE57C4114FBBC2E206F3371D"
+				}, 
+				{
 					"CurrentState": "EndUniv",
-					"NextState": "OkUniv",
+					"NextState": "-",
 					"Meaning": "SE(Univ, Finalize)",
 					"Style": "Positive",
 					"Utterance": "Heard a lot of great things about IST. Glad you were there. ",
 					"UtteranceId": "TTS-9763E1E5D0D723598AD5B818D1316911"
-				}, 
-				{
-					"CurrentState": "EndUniv",
-					"NextState": "OkUniv",
-					"Meaning": "SE(Univ, Finalize)",
-					"Style": "Neutral",
-					"Utterance": "It is good for what I heard.",
-					"UtteranceId": "TTS-FBCBB932F34D6BB3946A78FFA37A3D58"
 				}, 
 				{
 					"CurrentState": "SC4",
@@ -574,14 +566,6 @@
 					"Style": "Positive",
 					"Utterance": "What is your salary expectation?",
 					"UtteranceId": "TTS-B055A786C942063D3D1F07F31AD453A0"
-				}, 
-				{
-					"CurrentState": "EndUniv",
-					"NextState": "OkUniv",
-					"Meaning": "SE(Univ, Finalize)",
-					"Style": "Negative",
-					"Utterance": "It was just curiosity...",
-					"UtteranceId": "TTS-CD8DBE467573144DBB8E6D4ED6D0D8ED"
 				}, 
 				{
 					"CurrentState": "OkUniv",
@@ -814,6 +798,22 @@
 					"Style": "Positive",
 					"Utterance": "I like a lot of things! The ones I enjoy the more are gaming, reading and watch movies.",
 					"UtteranceId": "TTS-4641911CB78F56C813026E004880BEC6"
+				}, 
+				{
+					"CurrentState": "EndUniv",
+					"NextState": "-",
+					"Meaning": "SE(Univ, Finalize)",
+					"Style": "Negative",
+					"Utterance": "It was just curiosity...",
+					"UtteranceId": "TTS-CD8DBE467573144DBB8E6D4ED6D0D8ED"
+				}, 
+				{
+					"CurrentState": "EndUniv",
+					"NextState": "-",
+					"Meaning": "SE(Univ, Finalize)",
+					"Style": "Neutral",
+					"Utterance": "It is good for what I heard.",
+					"UtteranceId": "TTS-FBCBB932F34D6BB3946A78FFA37A3D58"
 				}]
 		},
 	"types": [

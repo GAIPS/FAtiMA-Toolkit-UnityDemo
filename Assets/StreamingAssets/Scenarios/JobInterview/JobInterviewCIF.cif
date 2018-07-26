@@ -29,15 +29,23 @@
 					"Target": "[t]",
 					"StartingConditions":
 						{
-							"Set": ["Has(Floor) = SELF"]
+							"Set": ["GoesToUniversity([t]) = True", "Has(Floor) = SELF"]
 						},
 					"InfluenceRules": [
 						{
 							"Rules":
 								{
-									"Set": ["GoesToUniversity([t]) = True"]
+									"Set": ["Presentable([t]) = True"]
 								},
 							"Value": 5,
+							"Mode": "-"
+						}, 
+						{
+							"Rules":
+								{
+									"Set": ["WantsTheJob(SELF) = True"]
+								},
+							"Value": 4,
 							"Mode": "-"
 						}]
 				}]

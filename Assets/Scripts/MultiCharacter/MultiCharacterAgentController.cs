@@ -112,9 +112,11 @@ public class MultiCharacterAgentController : MonoBehaviour {
     {
       
         var emotion = m_rpc.GetStrongestActiveEmotion();
-  //      Debug.Log(" Mood :" + m_rpc.CharacterName + " " + m_rpc.Mood + " emotion " + emotion);
+        Debug.Log(" Mood :" + m_rpc.CharacterName + " " + m_rpc.Mood + " emotion " + emotion);
         if (emotion == null)
             return;
+
+        _body.SetExpression(emotion.EmotionType, emotion.Intensity/10f);
 
     }
 
@@ -137,11 +139,11 @@ public class MultiCharacterAgentController : MonoBehaviour {
 
        _events.Clear(); 
 		m_rpc.Update();
-
+        UpdateEmotionExpression();
 		if (action == null)
 		continue;
 
-	
+	   
 
         lastAction = action;
         if (action != null)

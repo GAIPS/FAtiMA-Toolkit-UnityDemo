@@ -9,7 +9,7 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], Negative) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] < -2", "[x] != Sarah"]
+							"Set": ["Has(Floor) = SELF", "[x] != Sarah", "Mood(SELF) = [y]", "[y] < -2", "DialogueState([x]) = [cs]", "ValidDialogue([cs], [ns], [m], Negative) = True"]
 						},
 					"Priority": 1
 				}, 

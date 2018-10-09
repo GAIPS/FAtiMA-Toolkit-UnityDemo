@@ -110,6 +110,8 @@ public class TheOfficeDemo : MonoBehaviour {
 
     public bool skipScenarioSelection;
 
+    public bool skipDescription;
+
 
     // Use this for initialization
     private IEnumerator Start()
@@ -221,6 +223,7 @@ public class TheOfficeDemo : MonoBehaviour {
         t.SetParent(m_menuButtonHolder);
         t.localScale = Vector3.one;
         button.image.color = new Color(0, 0, 0, 0);
+       
         button.image.color = new Color(200, 200, 200, 0);
 
         var buttonLabel = button.GetComponentInChildren<Text>();
@@ -246,8 +249,10 @@ public class TheOfficeDemo : MonoBehaviour {
         _iat = data.IAT;
 
 
+        if(skipDescription){
         _introPanel.SetActive(true);
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
+        }
 
          if(_iat.m_worldModelSource != null)
             if(_iat.m_worldModelSource.Source != "" && _iat.m_worldModelSource.Source != null)
@@ -264,9 +269,14 @@ public class TheOfficeDemo : MonoBehaviour {
             rpcList.Add(rpc);
             var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
 
+            UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
+
+           var r = UnityEngine.Random.Range(0, 30);
+            Debug.Log("Going to wait" + r);
+          StartCoroutine(JustWait(UnityEngine.Random.Range(0, 3)));
            
             _agentController = new MultiCharacterAgentController(data, rpc, _iat, body.CharaterArchtype, m_characterAnchors[CharacterCount], m_dialogController);
-            StopAllCoroutines();
+           // StopAllCoroutines();
             _agentControllers.Add(_agentController);
             
 
@@ -314,9 +324,9 @@ public class TheOfficeDemo : MonoBehaviour {
 
         camera.GetComponent<Camera>().fieldOfView = 40;
 
-        camera.transform.Translate(new Vector3(-0.02f, 1.375f, 0));
+        camera.transform.Translate(new Vector3(-0.02f, 1.475f, 0));
 
-         camera.transform.Rotate(new Vector3(10.0f,0.0f, 0));
+         camera.transform.Rotate(new Vector3(15.0f,0.0f, 0));
    
   //      var MouseLook = camera.GetComponent<MouseLookController>();
 
@@ -353,12 +363,25 @@ public class TheOfficeDemo : MonoBehaviour {
            
            
               var dialogueOptions =   _iat.GetDialogueActions(a.Parameters.ElementAt(0), a.Parameters.ElementAt(1), a.Parameters.ElementAt(2), a.Parameters.ElementAt(3));
-            
+        //     var block = new ColorBlock();
+          //    block.normalColor = new Color(0.0f, 0.0f, 0.0f, 0.0f);  
+           //   block.highlightedColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);  
+           //   block.pressedColor = new  Color(0.0f, 1.0f, 1.0f, 0.0f);  
+           //  block.disabledColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+            //    block.colorMultiplier = 1.0f;
+             //   m_dialogButtonArchetype.colors = block;
+                
+                
              
             foreach (var d in dialogueOptions)
             {
                 if (isInButtonList(d.Utterance)) continue;
                 var b = Instantiate(m_dialogButtonArchetype);
+
+
+                   b.GetComponent<Image>().color = Color.red;
+                   
+                  
                 var t = b.transform;
                 i += 1;
                 t.SetParent(m_dialogButtonZone, false);
@@ -368,6 +391,11 @@ public class TheOfficeDemo : MonoBehaviour {
                 b.onClick.AddListener((() => Reply(id, a.Target)));
                 m_buttonList.Add(b);
 
+
+             
+                 
+
+            
             }
 
             }
@@ -403,6 +431,13 @@ public class TheOfficeDemo : MonoBehaviour {
        HandleEffects(new List<Name>{ EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, target.ToString())});
 
           yield return new WaitForSeconds(0.5f);
+    }
+
+    IEnumerator JustWait(float a)
+    {
+        yield return new WaitForSeconds(a);
+
+
     }
 
     // Update is called once per frame

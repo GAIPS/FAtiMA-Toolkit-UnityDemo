@@ -143,7 +143,7 @@ public class SingleCharacterDemo : MonoBehaviour
             {
                 var path = entries[i].Trim();
                 var tts = entries[i + 1].Trim();
-                //   Debug.Log(path  + " e " + tts);
+                   Debug.Log(path  + " e " + tts);
                 data.Add(new ScenarioData(path, tts));
             }
 
@@ -410,7 +410,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
         foreach(var eff in effects)
         {
-         //   Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
+            Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
             if(eff.ObserverAgent.ToString() == "Player")
             {
                 Player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));

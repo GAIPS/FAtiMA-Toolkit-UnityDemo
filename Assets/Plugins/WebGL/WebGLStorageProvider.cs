@@ -68,8 +68,15 @@ namespace Assets.Scripts
 			if (access != FileAccess.Read)
 				throw new System.NotImplementedException("Only read access is implemented at the moment.");
 
+
 			byte[] data;
-			if (!m_retrievedFiles.TryGetValue(absoluteFilePath, out data))
+
+		    Debug.Log("Retrieving files WEBGLPROVIDER and this IS THE PATH " + absoluteFilePath);
+			
+		    
+		    
+		    
+		    if (!m_retrievedFiles.TryGetValue(absoluteFilePath, out data))
 			{
 				PullFile(absoluteFilePath);
 				data = m_retrievedFiles[absoluteFilePath];

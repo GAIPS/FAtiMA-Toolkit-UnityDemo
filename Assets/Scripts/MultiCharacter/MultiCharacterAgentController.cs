@@ -50,6 +50,11 @@ public class MultiCharacterAgentController : MonoBehaviour {
         m_rpc = rpc;
         m_dialogController = dialogCrt;
         _body = GameObject.Instantiate(archetype);
+
+          UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
+           var r = UnityEngine.Random.Range(0, 600);
+        _body.GetComponentInChildren<Animator>().Play(0,-1, r);
+
         _body.tag = rpc.CharacterName.ToString();
         just_talked = false;
         lastAction = null;
@@ -101,6 +106,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
         if(m_versionMenu.activeSelf)
         m_versionMenu.SetActive(false);
         _currentCoroutine = controller.StartCoroutine(UpdateCoroutine());
+
     }
 
     public void UpdateFields()

@@ -2,3 +2,5 @@
 	Introduction
 \Scenarios\SpaceModules\MinSysKnwNov.iat
 	SpaceModules
+\Scenarios\EmotionalAppraisalDemo\EADemo.iat
+	EADemo

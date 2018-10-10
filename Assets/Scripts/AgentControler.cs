@@ -100,13 +100,11 @@ namespace Assets.Scripts
 			if (emotion == null)
 				return;
 
-			//_body.SetExpression(emotion.EmotionType, emotion.Intensity/10f);
+			_body.SetExpression(emotion.EmotionType, emotion.Intensity/10f);
 		}
 
 		private IEnumerator UpdateCoroutine()
 		{
-            //	_events.Clear();
-           // Debug.Log(m_rpc.GetBeliefValue("HasFloor(" + "SELF" + ")"));
 
             while (m_rpc.GetBeliefValue(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY, IATConsts.PLAYER)) != IATConsts.TERMINAL_DIALOGUE_STATE) 
 			{

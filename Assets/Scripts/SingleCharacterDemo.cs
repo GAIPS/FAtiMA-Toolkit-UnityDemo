@@ -143,7 +143,6 @@ public class SingleCharacterDemo : MonoBehaviour
             {
                 var path = entries[i].Trim();
                 var tts = entries[i + 1].Trim();
-                   Debug.Log(path  + " e " + tts);
                 data.Add(new ScenarioData(path, tts));
             }
 
@@ -207,10 +206,9 @@ public class SingleCharacterDemo : MonoBehaviour
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
 
 
-       // Debug.Log("World model is here " + _iat.GetWorldModelSource());
 
         if(_iat.m_worldModelSource != null)
-            if(_iat.m_worldModelSource.Source != "" && _iat.m_worldModelSource.Source != null)
+            if(!string.IsNullOrEmpty(_iat.m_worldModelSource.Source))
         _wm = WorldModel.WorldModelAsset.LoadFromFile(_iat.GetWorldModelSource().Source);
 
         var characterSources = _iat.GetAllCharacterSources().ToList();
@@ -229,7 +227,7 @@ public class SingleCharacterDemo : MonoBehaviour
             AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(),
                 () =>
                 {
-                    //  Debug.Log("Body " + rpc.BodyName);
+                  
                     var body = m_bodies.FirstOrDefault(b => b.BodyName == rpc.BodyName);
                     _agentController = new AgentControler(data, rpc, _iat, body.CharaterArchtype, m_characterAnchor, m_dialogController);
                     StopAllCoroutines();
@@ -373,9 +371,12 @@ public class SingleCharacterDemo : MonoBehaviour
         {
            
             var decision = Player.Decide().FirstOrDefault();
+
             if(decision == null || waitingforReply)
              return;
-
+            
+            if (decision.Target != _agentController.RPC.CharacterName)
+                return;
             var dialogActions = _iat.GetDialogueActions(decision.Parameters.ElementAt(0), Name.BuildName("*"), Name.BuildName("*"), Name.BuildName("*"));
 
             UpdateButtonTexts(false, dialogActions);
@@ -405,6 +406,10 @@ public class SingleCharacterDemo : MonoBehaviour
 
     public void HandleEffects(List<Name> _events)
     {
+        Player.Perceive(_events);
+        _agentController.RPC.Perceive(_events);
+        _agentController.UpdateEmotionExpression();
+
         if(_wm != null){
             var effects = _wm.Simulate(_events.ToArray());
 
@@ -417,6 +422,7 @@ public class SingleCharacterDemo : MonoBehaviour
             } else if(eff.ObserverAgent.ToString() == _agentController.RPC.CharacterName.ToString())
             {
                  _agentController.RPC.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
+                
             }
 
             else if(eff.ObserverAgent.IsUniversal)
@@ -424,6 +430,8 @@ public class SingleCharacterDemo : MonoBehaviour
                 Player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
                 _agentController.RPC.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));
             }
+
+         
             }
     }
     }

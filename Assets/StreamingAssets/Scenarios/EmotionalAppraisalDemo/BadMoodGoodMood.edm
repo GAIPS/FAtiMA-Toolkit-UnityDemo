@@ -1,0 +1,42 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ActionTendencies": [
+				{
+					"Action": "Speak([cs], [ns], [m], BadMood)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], [m], BadMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) < 0", "Has(Floor) = SELF"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [m], GoodMood)",
+					"Target": "[x]",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], [m], GoodMood) = True", "DialogueState([x]) = [cs]", "Mood(Self) >= 0", "Has(Floor) = SELF"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Disconnect",
+					"Target": "-",
+					"Layer": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState(Player) = End"]
+						},
+					"Priority": 1
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "EmotionalDecisionMaking.EmotionalDecisionMakingAsset, EmotionalDecisionMaking, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

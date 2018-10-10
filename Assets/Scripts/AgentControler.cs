@@ -101,6 +101,7 @@ namespace Assets.Scripts
 				return;
 
 			_body.SetExpression(emotion.EmotionType, emotion.Intensity/10f);
+		    UpdateFields();
 		}
 
 		private IEnumerator UpdateCoroutine()
@@ -145,9 +146,7 @@ namespace Assets.Scripts
      
 		private IEnumerator HandleSpeak(IAction speakAction)
 		{
-            //m_rpc.Perceive(new [] { EventHelper.ActionStart(m_rpc.CharacterName.ToString(), speakAction.Name.ToString(), IATConsts.PLAYER) });
-
-
+        
             Name currentState = speakAction.Parameters[0];
             Name nextState = speakAction.Parameters[1];
             Name meaning = speakAction.Parameters[2];
@@ -158,7 +157,6 @@ namespace Assets.Scripts
 
 		    var dialog = dialogs.Shuffle().FirstOrDefault();
 
-   //         Debug.Log("Going to say: " + dialog.Utterance);
 
 		    if (dialog == null)
 			{
@@ -275,12 +273,7 @@ namespace Assets.Scripts
 
         }
 
-	    public void storeFinalScore(GameObject g)
-	    {
-
-	        _finalScore = g;
-         
-	    }
+	
         public DialogueStateActionDTO getReply()
         {
             just_talked = false;
@@ -292,10 +285,5 @@ namespace Assets.Scripts
             return just_talked;
         }
 
-
-        public void WaitingToSpeak()
-        {
-
-        }
 	}
 }

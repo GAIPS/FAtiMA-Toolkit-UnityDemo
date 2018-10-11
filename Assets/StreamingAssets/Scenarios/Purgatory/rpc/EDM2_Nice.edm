@@ -1,0 +1,73 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"DefaultActionPriority": null,
+			"ActionTendencies": [
+				{
+					"Action": "Speak([cs], [ns], [m], Bad)",
+					"Target": "[x]",
+					"Type": "[x]",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], [m], Bad) = True", "DialogueState([x]) = [cs]", "Mood(Self) < -5"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [m], Good)",
+					"Target": "[x]",
+					"Type": "[x]",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], [m], Good) = True", "DialogueState([x]) = [cs]", "Mood(Self) > 3"]
+						},
+					"Priority": 1
+				}, 
+				{
+					"Action": "Disconnect",
+					"Target": "-",
+					"Type": "-",
+					"Conditions":
+						{
+							"Set": ["DialogueState(Player) = End"]
+						},
+					"Priority": 0
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [m], Neutral)",
+					"Target": "[x]",
+					"Type": "[x]",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], [m], Neutral) = True", "DialogueState([x]) = [cs]"]
+						},
+					"Priority": 0
+				}, 
+				{
+					"Action": "Speak([cs], [ns], Heaven, [s])",
+					"Target": "[x]",
+					"Type": "[x]",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], Heaven, [s]) = True", "DialogueState([x]) = [cs]", "SI([x]) >= 10"]
+						},
+					"Priority": 2
+				}, 
+				{
+					"Action": "Speak([cs], [ns], [m], Luck)",
+					"Target": "[x]",
+					"Type": "[x]",
+					"Conditions":
+						{
+							"Set": ["ValidDialogue([cs], [ns], [m], Luck) = True", "DialogueState([x]) = [cs]"]
+						},
+					"Priority": 3
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "EmotionalDecisionMaking.EmotionalDecisionMakingAsset, EmotionalDecisionMaking, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

@@ -1,0 +1,103 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"AttributionRules": [
+				{
+					"RuleName": "Base",
+					"Target": "[x]",
+					"Value": 5,
+					"Conditions":
+						{
+							"Set": ["Player = [x]"]
+						}
+				}, 
+				{
+					"RuleName": "Niceness",
+					"Target": "[x]",
+					"Value": 2,
+					"Conditions":
+						{
+							"Set": ["Is(Nice) = True"]
+						}
+				}, 
+				{
+					"RuleName": "Kittens",
+					"Target": "[x]",
+					"Value": 10,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [x], Speak([cs], [ns], Kittens, [s]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Good Mood",
+					"Target": "[x]",
+					"Value": 2,
+					"Conditions":
+						{
+							"Set": ["Mood(SELF) > 5"]
+						}
+				}, 
+				{
+					"RuleName": "Bad Mood",
+					"Target": "[x]",
+					"Value": -2,
+					"Conditions":
+						{
+							"Set": ["Mood(SELF) < -5"]
+						}
+				}, 
+				{
+					"RuleName": "Best Deed",
+					"Target": "[x]",
+					"Value": 6,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [x], Speak([cs], [ns], BestDeed, [s]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Good Deed",
+					"Target": "[x]",
+					"Value": 4,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [x], Speak([cs], [ns], GoodDeed, [s]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Bad Deed",
+					"Target": "[x]",
+					"Value": -3,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [x], Speak([cs], [ns], BadDeed, [s]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Worst Deed",
+					"Target": "[x]",
+					"Value": -5,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [x], Speak([cs], [ns], WorstDeed, [s]), SELF) = [id]"]
+						}
+				}, 
+				{
+					"RuleName": "Lying",
+					"Target": "[x]",
+					"Value": -2,
+					"Conditions":
+						{
+							"Set": ["EventId(Action-End, [x], Speak([cs], [ns], Lie, [s]), SELF) = [id]"]
+						}
+				}],
+			"Claims": []
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "SocialImportance.SocialImportanceAsset, SocialImportanceAsset, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

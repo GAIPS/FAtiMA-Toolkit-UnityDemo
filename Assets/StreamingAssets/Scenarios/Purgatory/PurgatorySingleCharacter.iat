@@ -1,0 +1,1544 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "Purgatory",
+			"Description": "In this scenario the Player is put into the shoes of someone who has recently died. He ends up in Purgatory, where he faces a Judge who must decide whether to send him to Heaven or Hell, since the sum of the Player's good and bad actions has resulted in a draw. After an initial moment of confusion by the Player, the Judge begins his Trial by asking the Player questions about his life. The Player can defend himself by recounting his good deeds, or mention his virtues in life, talk about his bad deeds, or even ignore the Judge's rule and demand another type of trial. After all is said and done, the Player will be sent to Heaven or to Hell.\r\n\r\nThere are 4 versions of the Judge character, which are different combinations of 2 possible Emotional Appraisal models (Honest & Impatient) and 2 different Emotional Decision Making models (Nice & Neutral). The two EA models differ on how they react to what the Player says, for example the Honest Judge dislikes Lies and Aggressive behaviour and favours Honest and Calm responses, while the Impatient Judge is a bitter loser who dislikes Apologies. On the two EDM models, the Nice Judge is more likely to be nicer to the Player and say more things in his favour, while the Neutral Judge is more objective. Most times, the fate of the Player will be decided by the Judge's mood and emotions, except when the Player baets him fairly at a game.\r\n\r\nThere is also a Social Importance model, which takes into consideration the deed the Player chooses to talk about, as well as some other stuff. If the Player has enough SI with the Judge, he can go to Heaven regardless of the Judge's mood.",
+			"WorldModelSource": "rpc\\SimpleWorldModel.wmo",
+			"CharacterSources": ["rpc\\NPCApp1EDM1.rpc", "rpc\\Player.rpc"],
+			"Dialogues": [
+				{
+					"CurrentState": "J_AggroEnd",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Insolent fool, you have lost your chance.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-1EDA5BDD3A6A96809E1537CD2102F0C0"
+				}, 
+				{
+					"CurrentState": "J_AggroEnd",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Your insolence will be punished.\nNo longer do you have the chance of defending yourself.\nI will toss a coin to decide your fate. What do you call?",
+					"UtteranceId": "TTS-C10A8AE78B91678307B487ECBDAA927A"
+				}, 
+				{
+					"CurrentState": "J_HonestyEnd",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "At least in the end you are honest.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-E28D088E2C6A637C358FDAD1E0E3C75D"
+				}, 
+				{
+					"CurrentState": "J_HonestyEnd",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Your honesty will be considered.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-AC52CD284FFDB6DFDBDA5107C37AB295"
+				}, 
+				{
+					"CurrentState": "J_MDTrustMe",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your request will be considered.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-D70355CE9DA3F3E7F8B1C0CD77AB658F"
+				}, 
+				{
+					"CurrentState": "J_EnoughEnd",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "We shall see if it is enough, mortal.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-722A4E8C1FF485DE70EC0A4BF456AE48"
+				}, 
+				{
+					"CurrentState": "J_EnoughEnd",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Let's see if it's enough then.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-4A3C6750B87850D96AEE92A84A5D2ADE"
+				}, 
+				{
+					"CurrentState": "J_WKDeath",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your concern for life is clear to me.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-C2783233565989F53F5E3BC9019BDC92"
+				}, 
+				{
+					"CurrentState": "J_IntentionsPure",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Let's see if your intentions were enough.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-EF9533944457B3BECC20606B0B2A395B"
+				}, 
+				{
+					"CurrentState": "J_IntentionsPure",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Your intentions will be considered.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-3DC4803EA8B8A6E661EC8A6AF6D1C364"
+				}, 
+				{
+					"CurrentState": "J_MDUnsure",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your uncertainty shouldn't be of regret.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-36D75BA8B70B17BDFD50522299F1519A"
+				}, 
+				{
+					"CurrentState": "J_ShirleyEnd",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "With such a bad joke, Shirley you will go to Hell.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-F15BDC6E2F5872A4603801EC7C60B108"
+				}, 
+				{
+					"CurrentState": "J_SorryEnding",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Excuses are futile.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-6302C5C6B09123D0D99D191584858B39"
+				}, 
+				{
+					"CurrentState": "J_SorryEnding",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Apologies aside, it is time.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-B901A4AD99709893763718A2FDF44A80"
+				}, 
+				{
+					"CurrentState": "J_EnoughEnd",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your confidence deserves notice.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-DF4526E0FB427B80FE86140B1B8BDBCC"
+				}, 
+				{
+					"CurrentState": "J_Coin3",
+					"NextState": "P_CoinCall",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "If you think it doesn't matter, then neither will your fate then.\nI will toss a coin to decide your fate. What do you call?",
+					"UtteranceId": "TTS-B0C0F6F9D9AEA01D85E1C3325BF285EB"
+				}, 
+				{
+					"CurrentState": "J_MDHappy",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Unfortunately, they aren't the ones deciding your fate.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-2DCF3603E40D2F9C7D9EB50F722975CD"
+				}, 
+				{
+					"CurrentState": "J_MDHappy",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Let's see how your joy influences this outcome.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-530E40386D2BF2E54C01D7E1281DEC9F"
+				}, 
+				{
+					"CurrentState": "J_IntentionsPure",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your intentions will be considered, do not worry.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-7A65D9291F250DF3A71E8348FD837DFA"
+				}, 
+				{
+					"CurrentState": "J_MDTrustMe",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Such audacity, to do a request at this time.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-AD57C3EAD8B43167F70360841FCBC3F3"
+				}, 
+				{
+					"CurrentState": "J_MDTrustMe",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I will consider your case, mortal.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-FF5AF90F1237E90543BE3C34FFFD7506"
+				}, 
+				{
+					"CurrentState": "J_ILikeKittens",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Neutral",
+					"Utterance": "Your impecable taste cannot be reprimended.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-471A7196183C98A6D339834C8E4C7C87"
+				}, 
+				{
+					"CurrentState": "J_MDUnsure",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "I guarantee that I am not uncertain as you, mortal.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-5A63128A9EB10CDAF7CDF87C4BB7991C"
+				}, 
+				{
+					"CurrentState": "J_MDUnsure",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Such uncertainty...\nI will now pass your sentence.",
+					"UtteranceId": "TTS-219EC1D81DA6160F2C1309A343BC55FB"
+				}, 
+				{
+					"CurrentState": "J_SorryEnding",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your apologies will be regarded.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-E7D9D0BDC872C74D5BF3F34DDCF585FF"
+				}, 
+				{
+					"CurrentState": "J_Coin2",
+					"NextState": "P_CoinCall",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "After all this, you remain at a deadlock.\nTo finally solve this, I will toss a coin to decide your fate. What do you call?",
+					"UtteranceId": "TTS-17C890381F2AF9B24E5C97F136798713"
+				}, 
+				{
+					"CurrentState": "P_PreHell",
+					"NextState": "J_Hell",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Wait for the final sentence]",
+					"UtteranceId": "TTS-20A121F2BF0BAD8E5546375E3445A7F1"
+				}, 
+				{
+					"CurrentState": "P_PreNeutral",
+					"NextState": "J_Coin2",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Wait for the final sentence]",
+					"UtteranceId": "TTS-20A121F2BF0BAD8E5546375E3445A7F1"
+				}, 
+				{
+					"CurrentState": "P_PreHeaven",
+					"NextState": "J_Heaven",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Wait for the final sentence]",
+					"UtteranceId": "TTS-20A121F2BF0BAD8E5546375E3445A7F1"
+				}, 
+				{
+					"CurrentState": "J_WKAltruist",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "The least expected from you is the truth.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-C794735E6A9931DE0F3179F6D44CEB02"
+				}, 
+				{
+					"CurrentState": "J_WKAltruist",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "At least you are honest.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-AA24C05E3B54D52EDE68BA23D0DF02BB"
+				}, 
+				{
+					"CurrentState": "J_HonestyEnd",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your honesty should be rewarded.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-9F8960FAAA3691042FE645F8EE94C4DA"
+				}, 
+				{
+					"CurrentState": "J_WKDeath",
+					"NextState": "P_PreHell",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "And yet, no matter what, all that lives ends up here.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-BA9C975F345F0153E301170F51AB8131"
+				}, 
+				{
+					"CurrentState": "J_WKDeath",
+					"NextState": "P_PreNeutral",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Your views on death will be considered.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-24DA46471A779B9B8C39E4DFC40FA8B3"
+				}, 
+				{
+					"CurrentState": "J_WKAltruist",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your honesty is indeed truthful.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-F4767C3EFBD26AF706DE8254F302A2DA"
+				}, 
+				{
+					"CurrentState": "J_Hell",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Begone mortal. May the everlasting flames serve as your eternal companion in Hell.\n\n*STAMPS*\n\n[Gives ticket to Hell]",
+					"UtteranceId": "TTS-69442BD358722467A5EC8183843AFD69"
+				}, 
+				{
+					"CurrentState": "J_Hell",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "It is settled at last. Your journey will lead you to the lands of Hell.\n\n*STAMPS*\n\n[Gives ticket to Hell]",
+					"UtteranceId": "TTS-2B353EB0412B3A2E90F85D0DBBCF388D"
+				}, 
+				{
+					"CurrentState": "J_Hell",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Hmmm... I truly pity you mortal, may you embrace the eternity in Hell that awaits for you\n\n*STAMPS*\n\n[Gives ticket to Hell]",
+					"UtteranceId": "TTS-E1F2D03641F96CBBC9836B7D95C37FD7"
+				}, 
+				{
+					"CurrentState": "J_Heaven",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Hmmm... It seems that your fate has sided with you mortal. Begone to the upper realm.\n\n*STAMPS*\n\n[Gives ticket to Heaven]",
+					"UtteranceId": "TTS-43B7404C7CA42F20DBB916FF7C7ED563"
+				}, 
+				{
+					"CurrentState": "J_Heaven",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "So it is settled. Heaven will be your destination.\n\n*STAMPS*\n\n[Gives ticket to Heaven]",
+					"UtteranceId": "TTS-56BAE1503827D3FFA2DE8018AEC95A24"
+				}, 
+				{
+					"CurrentState": "J_Heaven",
+					"NextState": "End",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "So it is settled. You have earnt a one way ride to the upper realm. May Heaven be your new home.\n\n*STAMPS*\n\n[Gives ticket to Heaven]",
+					"UtteranceId": "TTS-372269CB9698F23DD0E8009D1ADFB5BB"
+				}, 
+				{
+					"CurrentState": "P_RPSTie",
+					"NextState": "J_RPSScissors",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Pick Scissors]",
+					"UtteranceId": "TTS-B92222503F7FFF84583D227C4E738CEC"
+				}, 
+				{
+					"CurrentState": "P_RPSTie",
+					"NextState": "J_RPSPaper",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Pick Paper]",
+					"UtteranceId": "TTS-577890F10EF6AF529CC2AA4465F4E5EC"
+				}, 
+				{
+					"CurrentState": "P_RPSTie",
+					"NextState": "J_RPSRock",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Pick Rock]",
+					"UtteranceId": "TTS-0C38DD8838EEB7209904D52EECAFE074"
+				}, 
+				{
+					"CurrentState": "J_RPSScissors",
+					"NextState": "P_Lose",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Rock*\nI guess luck wasn't on your side today.",
+					"UtteranceId": "TTS-CA756D1AE034D848007CDDCC9F672996"
+				}, 
+				{
+					"CurrentState": "J_RPSScissors",
+					"NextState": "P_RPSTie",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Scissors*\nIt's a tie. Play again!",
+					"UtteranceId": "TTS-13C713DAA29EB27B9B5EA6AEE0830F00"
+				}, 
+				{
+					"CurrentState": "J_RPSScissors",
+					"NextState": "P_Win",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Paper*\nI guess luck was on your side today.",
+					"UtteranceId": "TTS-73E7538676D361085409EDE763E26D3B"
+				}, 
+				{
+					"CurrentState": "J_RPSPaper",
+					"NextState": "P_Lose",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Scissors*\nI guess luck wasn't on your side today.",
+					"UtteranceId": "TTS-CCF1106AD6BC994AF99448DB1CBE9DC2"
+				}, 
+				{
+					"CurrentState": "J_RPSPaper",
+					"NextState": "P_RPSTie",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Paper*\nIt's a tie. Play again!",
+					"UtteranceId": "TTS-A25767EDA5143A4E6CCD047E86EB55CB"
+				}, 
+				{
+					"CurrentState": "J_RPSPaper",
+					"NextState": "P_Win",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Rock*\nI guess luck was on your side today.",
+					"UtteranceId": "TTS-8A1FBCE4D6BF88022FF81E3804793B17"
+				}, 
+				{
+					"CurrentState": "J_RPSRock",
+					"NextState": "P_Lose",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Paper*\nI guess luck wasn't on your side today.",
+					"UtteranceId": "TTS-FB3A743FA44B68D834F9D971A9938880"
+				}, 
+				{
+					"CurrentState": "J_RPSRock",
+					"NextState": "P_RPSTie",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Rock*\nIt's a tie. Play again!",
+					"UtteranceId": "TTS-478E1EA34B6C76E313D1773DCFD2527F"
+				}, 
+				{
+					"CurrentState": "J_RPSRock",
+					"NextState": "P_Win",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*throws Scissors*\nI guess luck was on your side today.",
+					"UtteranceId": "TTS-E804C043162941E9B06D064C23C06AA2"
+				}, 
+				{
+					"CurrentState": "P_RPSCall",
+					"NextState": "J_RPSScissors",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Pick Scissors]",
+					"UtteranceId": "TTS-B92222503F7FFF84583D227C4E738CEC"
+				}, 
+				{
+					"CurrentState": "P_RPSCall",
+					"NextState": "J_RPSPaper",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Pick Paper]",
+					"UtteranceId": "TTS-577890F10EF6AF529CC2AA4465F4E5EC"
+				}, 
+				{
+					"CurrentState": "P_RPSCall",
+					"NextState": "J_RPSRock",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Pick Rock]",
+					"UtteranceId": "TTS-0C38DD8838EEB7209904D52EECAFE074"
+				}, 
+				{
+					"CurrentState": "J_RPS",
+					"NextState": "P_RPSCall",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "A game of chance? Fine by me. Let's play then!\nRock! Paper! Scissors!",
+					"UtteranceId": "TTS-5EAC31E4E8E056AE4869DFF570892265"
+				}, 
+				{
+					"CurrentState": "J_AWWin",
+					"NextState": "P_Lose",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "*THUD* Did you really think you ever stood a chance?",
+					"UtteranceId": "TTS-856EC969573FBF817F1E5B3682E3CD62"
+				}, 
+				{
+					"CurrentState": "P_Lose",
+					"NextState": "J_Hell",
+					"Meaning": "Lose",
+					"Style": "-",
+					"Utterance": "Crap!",
+					"UtteranceId": "TTS-C4B1B585F8B6C1E028B05EE66352170E"
+				}, 
+				{
+					"CurrentState": "P_Lose",
+					"NextState": "J_Hell",
+					"Meaning": "Lose",
+					"Style": "-",
+					"Utterance": "Damn it!",
+					"UtteranceId": "TTS-B2FB94AA2029CFD24BDC928AAB5D643E"
+				}, 
+				{
+					"CurrentState": "P_Win",
+					"NextState": "J_Heaven",
+					"Meaning": "Win",
+					"Style": "-",
+					"Utterance": "Yay!",
+					"UtteranceId": "TTS-5FB03C1D1BD95024F981BAB428D0CBF1"
+				}, 
+				{
+					"CurrentState": "P_Win",
+					"NextState": "J_Heaven",
+					"Meaning": "Win",
+					"Style": "-",
+					"Utterance": "Woohoo!",
+					"UtteranceId": "TTS-950DD6143EAD80EFA17F4B8D484FA0F1"
+				}, 
+				{
+					"CurrentState": "J_CoinTails",
+					"NextState": "P_Win",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*tosses coin* Tails...\nI guess luck was on your side today.",
+					"UtteranceId": "TTS-976679B94895A1F2C63375BD5852953E"
+				}, 
+				{
+					"CurrentState": "J_CoinTails",
+					"NextState": "P_Lose",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*tosses coin* Heads...\nI guess luck wasn't on your side today.",
+					"UtteranceId": "TTS-0956822595962D5CCFF7ABD751AAB879"
+				}, 
+				{
+					"CurrentState": "J_CoinHeads",
+					"NextState": "P_Lose",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*tosses coin* Tails...\nI guess luck wasn't on your side today.",
+					"UtteranceId": "TTS-BD2084B56A3420B74D36FCC083487054"
+				}, 
+				{
+					"CurrentState": "J_CoinHeads",
+					"NextState": "P_Win",
+					"Meaning": "-",
+					"Style": "Luck",
+					"Utterance": "*tosses coin* Heads...\nI guess luck was on your side today.",
+					"UtteranceId": "TTS-686B24851BA76911C3C0D16DB97C0DD7"
+				}, 
+				{
+					"CurrentState": "P_CoinCall",
+					"NextState": "J_CoinTails",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "Tails",
+					"UtteranceId": "TTS-497D34EE2432AEFCD6C5985B207B2AFF"
+				}, 
+				{
+					"CurrentState": "P_CoinCall",
+					"NextState": "J_CoinHeads",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "Heads",
+					"UtteranceId": "TTS-0C7AD6D537045A61697E20D0CFA2BC66"
+				}, 
+				{
+					"CurrentState": "J_Coin",
+					"NextState": "P_CoinCall",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "May this coin decide your fate then. What do you call?",
+					"UtteranceId": "TTS-2E9B892086C39FAEBA903B1F8EF5FA55"
+				}, 
+				{
+					"CurrentState": "P_PlayArmW",
+					"NextState": "J_AWWin",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "[Start Arm Wrestling]",
+					"UtteranceId": "TTS-E5CF6DAE03DDBF32BDFF2F083F4F8565"
+				}, 
+				{
+					"CurrentState": "J_ArmYes",
+					"NextState": "P_PlayArmW",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Prepare yourself then.",
+					"UtteranceId": "TTS-6323E4BE299166AC9560A945A0DE5E80"
+				}, 
+				{
+					"CurrentState": "P_Suggest2",
+					"NextState": "J_Coin",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "You could toss a coin.",
+					"UtteranceId": "TTS-F38833BDD2F21760DB7EC48EE5D0174A"
+				}, 
+				{
+					"CurrentState": "P_Suggest2",
+					"NextState": "J_RPS",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "We could play a game of Rock-Paper-Scissors.",
+					"UtteranceId": "TTS-E23E4BDF81EAC77CFBC602349DC763DA"
+				}, 
+				{
+					"CurrentState": "J_ArmNo",
+					"NextState": "P_Suggest2",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Then what would you rather do?",
+					"UtteranceId": "TTS-0EB55542011622C88EDF622F9EF5B66A"
+				}, 
+				{
+					"CurrentState": "P_Sure",
+					"NextState": "J_ArmNo",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "No...",
+					"UtteranceId": "TTS-76EFB34FC9BA7F43F2CFAD94BCEAB637"
+				}, 
+				{
+					"CurrentState": "P_Sure",
+					"NextState": "J_ArmYes",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "Yes!",
+					"UtteranceId": "TTS-7A237079AEEA2DC158224E7DD4395852"
+				}, 
+				{
+					"CurrentState": "J_ArmWrestle",
+					"NextState": "P_PlayArmW",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Fool. Your choice is made then. Let us see if you will regret it.",
+					"UtteranceId": "TTS-BB847AFBB518569C12A3DCE9C8BB5D37"
+				}, 
+				{
+					"CurrentState": "J_ArmWrestle",
+					"NextState": "P_Sure",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Ha! I don't think that is your best option, are you sure you want to?",
+					"UtteranceId": "TTS-639E7DEBCB965C1A69E8552E472787DF"
+				}, 
+				{
+					"CurrentState": "P_Suggest",
+					"NextState": "J_ArmWrestle",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "We could arm wrestle!",
+					"UtteranceId": "TTS-99BF21E85F7B6DF7DBEDDB292FEDB2E0"
+				}, 
+				{
+					"CurrentState": "P_Suggest",
+					"NextState": "J_Coin",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "You could toss a coin.",
+					"UtteranceId": "TTS-F38833BDD2F21760DB7EC48EE5D0174A"
+				}, 
+				{
+					"CurrentState": "P_Suggest",
+					"NextState": "J_RPS",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "We could play a game of Rock-Paper-Scissors.",
+					"UtteranceId": "TTS-E23E4BDF81EAC77CFBC602349DC763DA"
+				}, 
+				{
+					"CurrentState": "P_Trial2",
+					"NextState": "J_BadDeeds",
+					"Meaning": "Honest",
+					"Style": "Uncertain",
+					"Utterance": "I don't think I can... I wasn't a good person, it wouldn't be right for me to go to Heaven...",
+					"UtteranceId": "TTS-D72E9E6F19CC3955E867F993A693FE08"
+				}, 
+				{
+					"CurrentState": "P_Trial2",
+					"NextState": "J_AvgDeeds",
+					"Meaning": "-",
+					"Style": "Uncertain",
+					"Utterance": "Well, I didn't do any outstanding deeds... But I don't think I was a bad person...",
+					"UtteranceId": "TTS-B04D3EB2900CE4827A933CEA649132DA"
+				}, 
+				{
+					"CurrentState": "P_Trial2",
+					"NextState": "J_MaxDeeds",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "I did great things while I was alive! I have made the world a better place.",
+					"UtteranceId": "TTS-81941846E6C7DFA994BE91A9A515F00F"
+				}, 
+				{
+					"CurrentState": "J_NotCare",
+					"NextState": "P_Trial2",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "My patience is at an end. You only have this chance to defend yourself. Do not waste it.",
+					"UtteranceId": "TTS-0F8BF6E458690FB5F1395C7C4B38CA56"
+				}, 
+				{
+					"CurrentState": "J_NotCare",
+					"NextState": "P_Suggest",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I am, but since you ended up tied, there needs to be a way to decide your fate.\nAlthough... I am in a good mood today.\nIf you could choose a way to settle this. what would it be?",
+					"UtteranceId": "TTS-835715A1C7360FADF977E59610F308D8"
+				}, 
+				{
+					"CurrentState": "J_BD_Kidnap",
+					"NextState": "P_Sorry",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Joking at the wrong times is NOT a type of virtue.",
+					"UtteranceId": "TTS-16CEC6A2163EDA360600F3CC1A3398C1"
+				}, 
+				{
+					"CurrentState": "P_BD_WhySteal",
+					"NextState": "J_MDLie",
+					"Meaning": "Lie",
+					"Style": "Confident",
+					"Utterance": "[Lie] No, there is no excuse for what I did.",
+					"UtteranceId": "TTS-BC2D3811245B64EA71FE353B41CC6533"
+				}, 
+				{
+					"CurrentState": "P_BD_WhySteal",
+					"NextState": "J_HonestyEnd",
+					"Meaning": "Honest",
+					"Style": "Calm",
+					"Utterance": "Yes, i needed the money for my family.",
+					"UtteranceId": "TTS-3316429F04DC4C3021820CD09495658C"
+				}, 
+				{
+					"CurrentState": "J_BD_Steal",
+					"NextState": "P_BD_WhySteal",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Do you have any excuse for your action?",
+					"UtteranceId": "TTS-34A07B346270A5E3954B92291F915D3D"
+				}, 
+				{
+					"CurrentState": "J_BD_Steal",
+					"NextState": "P_BD_WhySteal",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Why did you steal the money?",
+					"UtteranceId": "TTS-AC4783A8AEBCE6EF6F00CA7612A895A3"
+				}, 
+				{
+					"CurrentState": "P_BD_Punish",
+					"NextState": "J_AggroEnd",
+					"Meaning": "Question",
+					"Style": "Aggro",
+					"Utterance": "Isn't it your job to decide that?",
+					"UtteranceId": "TTS-017E9E072110949D5C92DB49643B748B"
+				}, 
+				{
+					"CurrentState": "P_BD_Punish",
+					"NextState": "J_HonestyEnd",
+					"Meaning": "Honest",
+					"Style": "Calm",
+					"Utterance": "I don't deserve to go to Heaven. So the only option would be Hell.",
+					"UtteranceId": "TTS-C0C03E49FD7A987BB88CCAD41B18897F"
+				}, 
+				{
+					"CurrentState": "P_BD_Confess",
+					"NextState": "J_Coin3",
+					"Meaning": "Question",
+					"Style": "Indifference",
+					"Utterance": "Would it matter? You already know the truth either way...",
+					"UtteranceId": "TTS-CB491F074729F4E4EADCC2BD5F847900"
+				}, 
+				{
+					"CurrentState": "P_BD_Confess",
+					"NextState": "J_HonestyEnd",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "Yes, it is the truth, and I should be judged accordingly.",
+					"UtteranceId": "TTS-521B6F25FA6E519015EC0D48568F8B66"
+				}, 
+				{
+					"CurrentState": "J_BD_Kill",
+					"NextState": "P_BD_Punish",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "What should your punishment be then, insolent fool?",
+					"UtteranceId": "TTS-BD4ADEA9DB8F7621E4A8519C615C3480"
+				}, 
+				{
+					"CurrentState": "J_BD_Kill",
+					"NextState": "P_BD_Punish",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Indeed that is a grave sin. What do you feel your punishment should be?",
+					"UtteranceId": "TTS-093061C702DB26AA6C13FA7CA8952975"
+				}, 
+				{
+					"CurrentState": "J_BD_Kill",
+					"NextState": "P_BD_Confess",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "The demise of a man due to one's lack of care is in fact a grave sin, and yet you confess it so willingly?",
+					"UtteranceId": "TTS-0D6667AC5E3FE007B069EC64D3E9644F"
+				}, 
+				{
+					"CurrentState": "P_BadDeeds",
+					"NextState": "J_BD_Kidnap",
+					"Meaning": "Lie",
+					"Style": "-",
+					"Utterance": "[Lie] I kidnapped the President's son.",
+					"UtteranceId": "TTS-C4F960E06A27281EF111E8E6B9589E43"
+				}, 
+				{
+					"CurrentState": "P_BadDeeds",
+					"NextState": "J_BD_Steal",
+					"Meaning": "BadDeed",
+					"Style": "-",
+					"Utterance": "I stole money from a lost purse.",
+					"UtteranceId": "TTS-269C59E13EE8EE52E668027A009DC62A"
+				}, 
+				{
+					"CurrentState": "P_BadDeeds",
+					"NextState": "J_BD_Kill",
+					"Meaning": "WorstDeed",
+					"Style": "-",
+					"Utterance": "I once killed a man in a car accident, while I was drunk.",
+					"UtteranceId": "TTS-420223A0F375AE010A4713E8B427C03A"
+				}, 
+				{
+					"CurrentState": "J_BadDeeds",
+					"NextState": "P_WhichVirtues",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "It must not be all that bad, you must have some virtues, do you?",
+					"UtteranceId": "TTS-E75762C2A86231F382B1AA7B4E3889BB"
+				}, 
+				{
+					"CurrentState": "J_BadDeeds",
+					"NextState": "P_BadDeeds",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Doesn't surprise me to hear that...",
+					"UtteranceId": "TTS-8D13749838DB47B4ADA1A3195A91029C"
+				}, 
+				{
+					"CurrentState": "J_BadDeeds",
+					"NextState": "P_BadDeeds",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "So? Have you commited that many bad deeds?",
+					"UtteranceId": "TTS-3B7ADFD2686B88AE72E2F697CAA83012"
+				}, 
+				{
+					"CurrentState": "P_WV_Enough",
+					"NextState": "J_EnoughEnd",
+					"Meaning": "-",
+					"Style": "Aggro",
+					"Utterance": "Of course it is! You're just playing with me!",
+					"UtteranceId": "TTS-5FEEE9578D4DF6C91B8D720F45E05E3C"
+				}, 
+				{
+					"CurrentState": "P_WV_Enough",
+					"NextState": "J_MDUnsure",
+					"Meaning": "-",
+					"Style": "Uncertain",
+					"Utterance": "I don't know if it's enough, but it probably doesn't hurt...",
+					"UtteranceId": "TTS-68646B3FBB5750ABA00040450ED7D1EE"
+				}, 
+				{
+					"CurrentState": "P_WV_Surely",
+					"NextState": "J_IntentionsPure",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "I assure you, my intentions were always pure.",
+					"UtteranceId": "TTS-4BB621AF672EE20E57DB8A9A601C0C04"
+				}, 
+				{
+					"CurrentState": "P_WV_Surely",
+					"NextState": "J_ShirleyEnd",
+					"Meaning": "-",
+					"Style": "Aggro",
+					"Utterance": "I most certainly did not! And don't call me Shirley!",
+					"UtteranceId": "TTS-D62A729BC2FAB5A7B689834E0BAE0FEF"
+				}, 
+				{
+					"CurrentState": "J_WV_HWorking",
+					"NextState": "P_WV_Enough",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Hard work? Is that enough I wonder...",
+					"UtteranceId": "TTS-DF22E211F559D4CD84350099451E5CCD"
+				}, 
+				{
+					"CurrentState": "J_WV_HWorking",
+					"NextState": "P_WV_Enough",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "And those children are very grateful, but do you think it's enough?",
+					"UtteranceId": "TTS-F4776D7500F2A7CD64D0EAF1D49FED27"
+				}, 
+				{
+					"CurrentState": "J_WV_Solidaire",
+					"NextState": "P_WV_Enough",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Clothes? Shelter? Is that enough for Heaven?",
+					"UtteranceId": "TTS-7CC7C6ACCDA18AE8897A0E8DDE4F211E"
+				}, 
+				{
+					"CurrentState": "J_WV_Solidaire",
+					"NextState": "P_WV_Surely",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Solidarity? Surely you did all that for the attention!",
+					"UtteranceId": "TTS-0C4DAB1E07E66C47EF4DFD3C1308318D"
+				}, 
+				{
+					"CurrentState": "J_WV_Patient",
+					"NextState": "P_WV_Enough",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "And you think that's enough?",
+					"UtteranceId": "TTS-A00391923A407F4ECE0B4F6FBB3522A9"
+				}, 
+				{
+					"CurrentState": "J_WV_Patient",
+					"NextState": "P_WV_Enough",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Indeed, patience is a virtue. But do you think that warrants Heaven?",
+					"UtteranceId": "TTS-725CEC133EDC646C95F89D3FE2BE4634"
+				}, 
+				{
+					"CurrentState": "P_WhichVirtues",
+					"NextState": "J_WV_HWorking",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "Hard-working. As a teacher, I always tried to give the children what they deserved.",
+					"UtteranceId": "TTS-0D47F5952207142141285B5BA34D30F2"
+				}, 
+				{
+					"CurrentState": "P_WhichVirtues",
+					"NextState": "J_WV_Solidaire",
+					"Meaning": "-",
+					"Style": "Calm",
+					"Utterance": "I would say Solidarity. I donated clothes and money several times to shelters.",
+					"UtteranceId": "TTS-69CAF819A72B20E319FE0408F595CBDF"
+				}, 
+				{
+					"CurrentState": "P_WhichVirtues",
+					"NextState": "J_WV_Patient",
+					"Meaning": "-",
+					"Style": "Uncertain",
+					"Utterance": "I guess I was always very patient with my friends and family.",
+					"UtteranceId": "TTS-E78480894A21750ED2A85AB4B1B19EBC"
+				}, 
+				{
+					"CurrentState": "J_AvgDeeds",
+					"NextState": "P_BadDeeds",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "You reek of uncertainty, what bad deeds have you commited to feel this way?",
+					"UtteranceId": "TTS-09BCCCFC8CEDCF91813254DD4D4ACA5A"
+				}, 
+				{
+					"CurrentState": "J_AvgDeeds",
+					"NextState": "P_WhichVirtues",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Deeds aren't everything. Tell me about your qualities.",
+					"UtteranceId": "TTS-5AF61378EB27E789E6D6BA94C0FDAF0A"
+				}, 
+				{
+					"CurrentState": "J_AvgDeeds",
+					"NextState": "P_WhichVirtues",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Worry not, flashy deeds aren't everything. Instead, tell me what your qualities are.",
+					"UtteranceId": "TTS-7DB28496C512466361B38440FBCC0781"
+				}, 
+				{
+					"CurrentState": "P_Sorry",
+					"NextState": "J_Coin3",
+					"Meaning": "-",
+					"Style": "Indifference",
+					"Utterance": "It doesn't really matter, at this point.",
+					"UtteranceId": "TTS-43A32F625B49FCC9B618684FFADA14C0"
+				}, 
+				{
+					"CurrentState": "P_Sorry",
+					"NextState": "J_SorryEnding",
+					"Meaning": "Apology",
+					"Style": "Calm",
+					"Utterance": "I'm sorry, I shouldn't have done that",
+					"UtteranceId": "TTS-FE29E29A0DDCBF8C00849FF03A8E7514"
+				}, 
+				{
+					"CurrentState": "J_MDLie",
+					"NextState": "P_Sorry",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "It's disgusting how even in your last attempt, you try to slither your way out.",
+					"UtteranceId": "TTS-541485E083793D7F4F2B04134FE3CA32"
+				}, 
+				{
+					"CurrentState": "J_MDLie",
+					"NextState": "P_Sorry",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "This isn't the best place to lie, you do realize that, don't you?",
+					"UtteranceId": "TTS-6B0745464395F0EF957E1A03392D690E"
+				}, 
+				{
+					"CurrentState": "P_MDC_Career",
+					"NextState": "J_MDHappy",
+					"Meaning": "Honest",
+					"Style": "Uncertain",
+					"Utterance": "I'm not sure if it was... But I was truly happy for the children I taught.",
+					"UtteranceId": "TTS-C4E545B0E51509E0744CE7397A50637E"
+				}, 
+				{
+					"CurrentState": "P_MDC_Career",
+					"NextState": "J_MDTrustMe",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "I can only ask you to trust me.",
+					"UtteranceId": "TTS-59C590767E9795A201EFB4F3A30CEB62"
+				}, 
+				{
+					"CurrentState": "P_MDC_Trust",
+					"NextState": "J_MDUnsure",
+					"Meaning": "-",
+					"Style": "Calm",
+					"Utterance": "No. I'm not sure.",
+					"UtteranceId": "TTS-43E45530BE662C47BEA83613531847D8"
+				}, 
+				{
+					"CurrentState": "P_MDC_Trust",
+					"NextState": "J_MDLie",
+					"Meaning": "Lie",
+					"Style": "Calm",
+					"Utterance": "[Lie] Yes. I'm sure.",
+					"UtteranceId": "TTS-17EC7F6950A4C660AB90632936D39FAE"
+				}, 
+				{
+					"CurrentState": "J_MDChildren",
+					"NextState": "P_MDC_Career",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Predictable. And yet how can you say that you didn't do that just to help your career and image?",
+					"UtteranceId": "TTS-928097741528540149DE4ED4723FDF20"
+				}, 
+				{
+					"CurrentState": "J_MDChildren",
+					"NextState": "P_MDC_Trust",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "The most obvious choice from all your life. Can I trust that you were purely altruistic with that act?",
+					"UtteranceId": "TTS-F5C30A37D45689DBE43A30B9AD9AB41D"
+				}, 
+				{
+					"CurrentState": "P_WhyKitten",
+					"NextState": "J_ILikeKittens",
+					"Meaning": "Kittens",
+					"Style": "Confident",
+					"Utterance": "I like kittens.",
+					"UtteranceId": "TTS-0EBF31C683C551F7EE2F4B16252DB084"
+				}, 
+				{
+					"CurrentState": "P_WhyKitten",
+					"NextState": "J_WKAltruist",
+					"Meaning": "Honest",
+					"Style": "Calm",
+					"Utterance": "Teaching had effect on my career progression... I couldn't say it was a purely altruist act.",
+					"UtteranceId": "TTS-0B8E1C1E0511CF7175C770C237F6D489"
+				}, 
+				{
+					"CurrentState": "P_WhyKitten",
+					"NextState": "J_WKDeath",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "Saving something from death seems like a bigger deal to me than teaching.",
+					"UtteranceId": "TTS-E252CF0A725B2E90CEA48C975864AF38"
+				}, 
+				{
+					"CurrentState": "J_MDKitten",
+					"NextState": "P_WhyKitten",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Your answer amuses me, human. Why would you choose that option over the most obvious one?",
+					"UtteranceId": "TTS-028E097BD03A6378286F86984A5DCA39"
+				}, 
+				{
+					"CurrentState": "J_MDKitten",
+					"NextState": "P_WhyKitten",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Indeed a good act, but I'm curious as to why you would choose that over the most obvious option?",
+					"UtteranceId": "TTS-61C1ED7C7CF56C4626C71077F05C4194"
+				}, 
+				{
+					"CurrentState": "P_WMaxDeeds",
+					"NextState": "J_MDLie",
+					"Meaning": "Lie",
+					"Style": "Confident",
+					"Utterance": "[Lie] I brought peace to Middle East.",
+					"UtteranceId": "TTS-8B669067B3A0F8D70CDEF501F118D759"
+				}, 
+				{
+					"CurrentState": "P_WMaxDeeds",
+					"NextState": "J_MDChildren",
+					"Meaning": "BestDeed",
+					"Style": "-",
+					"Utterance": "I helped teach a village of poor children in Mozambique.",
+					"UtteranceId": "TTS-4258A689CD5F821D767CFA8A844E076C"
+				}, 
+				{
+					"CurrentState": "P_WMaxDeeds",
+					"NextState": "J_MDKitten",
+					"Meaning": "GoodDeed",
+					"Style": "-",
+					"Utterance": "I saved a baby kitten from a sewer, otherwise he would die of starvation.",
+					"UtteranceId": "TTS-040AA1D3C2689B63BE5207D6FA63E724"
+				}, 
+				{
+					"CurrentState": "J_MaxDeeds",
+					"NextState": "P_WhichVirtues",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Humility clearly isn't a point in your favour,\nSo tell me if you have any worthy virtues besides that one?",
+					"UtteranceId": "TTS-C3DC1FBA84FFBEBAF00B132F0C5AE0C0"
+				}, 
+				{
+					"CurrentState": "J_MaxDeeds",
+					"NextState": "P_WMaxDeeds",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "More specifically?",
+					"UtteranceId": "TTS-EAB8724D07C31CE9FD56B25F581BDCF2"
+				}, 
+				{
+					"CurrentState": "J_MaxDeeds",
+					"NextState": "P_WMaxDeeds",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Tell me which of these deeds you think was the best.",
+					"UtteranceId": "TTS-79CD6334DC7A3F11F39CCADEEA7B4203"
+				}, 
+				{
+					"CurrentState": "P_Trial",
+					"NextState": "J_NotCare",
+					"Meaning": "Question",
+					"Style": "Indifference",
+					"Utterance": "I don't really care, do as you wish, aren't you all-seeing?",
+					"UtteranceId": "TTS-06B623315038A630BCAF5246E38AE0DE"
+				}, 
+				{
+					"CurrentState": "P_Trial",
+					"NextState": "J_BadDeeds",
+					"Meaning": "Honest",
+					"Style": "Uncertain",
+					"Utterance": "I don't think I can... I wasn't a good person, it wouldn't be right for me to go to Heaven...",
+					"UtteranceId": "TTS-D72E9E6F19CC3955E867F993A693FE08"
+				}, 
+				{
+					"CurrentState": "P_Trial",
+					"NextState": "J_AvgDeeds",
+					"Meaning": "-",
+					"Style": "Uncertain",
+					"Utterance": "Well, I didn't do any outstanding deeds... But I don't think I was a bad person...",
+					"UtteranceId": "TTS-B04D3EB2900CE4827A933CEA649132DA"
+				}, 
+				{
+					"CurrentState": "P_Trial",
+					"NextState": "J_MaxDeeds",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "I did great things while I was alive! I have made the world a better place.",
+					"UtteranceId": "TTS-81941846E6C7DFA994BE91A9A515F00F"
+				}, 
+				{
+					"CurrentState": "J_Trial",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Defend yourself, tell me why you shouldn't go to Hell, and rot for all eternity.",
+					"UtteranceId": "TTS-506EB2DD8F1970435A8D1E5C9438D3B8"
+				}, 
+				{
+					"CurrentState": "J_Trial",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Defend yourself, have your opening statement.",
+					"UtteranceId": "TTS-ADCDA23661BA0B29D756F284E4CEC558"
+				}, 
+				{
+					"CurrentState": "J_Trial",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Tell me Player, why do you think you should go to Heaven.",
+					"UtteranceId": "TTS-718F49CEDCF55C886625AB94C17537AA"
+				}, 
+				{
+					"CurrentState": "J_ConsoleHyp",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "There is no option, fool\nDefend yourself, tell me why you shouldn't go to Hell, and rot for all eternity.",
+					"UtteranceId": "TTS-C14DFC5FA7FE25143932C962F642A8C6"
+				}, 
+				{
+					"CurrentState": "J_ConsoleHyp",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "There is no option.\nDefend yourself, have your opening statement.",
+					"UtteranceId": "TTS-C01D56FD81469BBE752CC95209D4B1A1"
+				}, 
+				{
+					"CurrentState": "J_ConsoleHyp",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Have faith, this is only necessary. Staying in this limbo is sadly, not an option.\nTell me Player, why do you think you should go to Heaven.",
+					"UtteranceId": "TTS-92E741A484385A5A6933F85A1E5A1426"
+				}, 
+				{
+					"CurrentState": "J_ConfidenceHyp",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Hmph, you shall regret such confidence.\nDefend yourself, tell me why you shouldn't go to Hell, and rot for all eternity.",
+					"UtteranceId": "TTS-EC81C2D84B5D0D6D997B77E06C6079EE"
+				}, 
+				{
+					"CurrentState": "J_ConfidenceHyp",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "So be it.\nDefend yourself, have your opening statement.",
+					"UtteranceId": "TTS-5369CEB73A26D79FE9F310661E9C8EC0"
+				}, 
+				{
+					"CurrentState": "J_ConfidenceHyp",
+					"NextState": "P_Trial",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "So be it.\nTell me Player, why do you think you should go to Heaven.",
+					"UtteranceId": "TTS-91C9842D67136C09964DF3BF7AB44C43"
+				}, 
+				{
+					"CurrentState": "P_TrialReady",
+					"NextState": "J_ConsoleHyp",
+					"Meaning": "-",
+					"Style": "Aggro",
+					"Utterance": "No! I am not ready at all! This can't be happening...",
+					"UtteranceId": "TTS-7C23F761E3AAC8412B3EA281352B5E09"
+				}, 
+				{
+					"CurrentState": "P_TrialReady",
+					"NextState": "J_ConsoleHyp",
+					"Meaning": "-",
+					"Style": "Uncertain",
+					"Utterance": "I'm not sure if I'm ready for this...",
+					"UtteranceId": "TTS-E39D6666C07A9D0E1F19701733C50799"
+				}, 
+				{
+					"CurrentState": "P_TrialReady",
+					"NextState": "J_Trial",
+					"Meaning": "-",
+					"Style": "Uncertain",
+					"Utterance": "I think I am ready...",
+					"UtteranceId": "TTS-0B91E281C2E1C80B673753ABCBE4A695"
+				}, 
+				{
+					"CurrentState": "P_TrialReady",
+					"NextState": "J_ConfidenceHyp",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "I am ready. Bring it on!",
+					"UtteranceId": "TTS-67BE133C1E7E52C2E1B03584A207E92E"
+				}, 
+				{
+					"CurrentState": "J_WhatNow",
+					"NextState": "P_TrialReady",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "This is your final Judgement. Hope you're ready to face it, human.",
+					"UtteranceId": "TTS-6D840A55ACA20C4E195CBFD12CAA6869"
+				}, 
+				{
+					"CurrentState": "J_WhatNow",
+					"NextState": "P_TrialReady",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "You are here because you are neither bad nor good.\nHence, you will need to face trial to determine your worth.\nAre you ready?",
+					"UtteranceId": "TTS-092F7BE9A7448A2A756603103951ABFE"
+				}, 
+				{
+					"CurrentState": "J_WhatNow",
+					"NextState": "P_TrialReady",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "You are here because you have tied between good and bad actions.\nIn these cases we need to have a way to decide.\nSo we will Judge you, and see if you are worthy of going to Heaven, or Hell.\nAre you ready?",
+					"UtteranceId": "TTS-ADC839EFDFA55E57201DA41DAA644E54"
+				}, 
+				{
+					"CurrentState": "P_WhatNow",
+					"NextState": "J_WhatNow",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "What's next then?",
+					"UtteranceId": "TTS-94C176116A8595B93789120EE2F1075B"
+				}, 
+				{
+					"CurrentState": "P_WhatNow",
+					"NextState": "J_WhatNow",
+					"Meaning": "-",
+					"Style": "Calm",
+					"Utterance": "What happens now then? Can you tell me?",
+					"UtteranceId": "TTS-97540825C0B5348A2510BB43133A7101"
+				}, 
+				{
+					"CurrentState": "J_Where2",
+					"NextState": "P_WhatNow",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "It doesn't matter now... You can't go back anyway.",
+					"UtteranceId": "TTS-5A096671E1C3E9031B39DE7068C93412"
+				}, 
+				{
+					"CurrentState": "J_Where2",
+					"NextState": "P_WhatNow",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "You are in Purgatory, haven't you realized by now?",
+					"UtteranceId": "TTS-823312E587D1C17BEE7276EE61BF78C6"
+				}, 
+				{
+					"CurrentState": "J_Where2",
+					"NextState": "P_WhatNow",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "You are in Purgatory. The hallway between Heaven and Hell, the passage to the eternal Afterlife",
+					"UtteranceId": "TTS-AB0A25C6EE96678B896BD3BC5601E4F8"
+				}, 
+				{
+					"CurrentState": "J_HowDie2",
+					"NextState": "P_WhatNow",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "You failed to open your parachute, resulting in a painful death.",
+					"UtteranceId": "TTS-AD24FC87396A348CF884FF5C81B05526"
+				}, 
+				{
+					"CurrentState": "J_HowDie2",
+					"NextState": "P_WhatNow",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Your parachute didn't open while you were skydiving.",
+					"UtteranceId": "TTS-219A6D0CD342D347B77F95601C6A1B42"
+				}, 
+				{
+					"CurrentState": "J_HowDie2",
+					"NextState": "P_WhatNow",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Your parachute didn't open while you were skydiving...\nThe paramedics still tried to ressurect you, but to no avail.",
+					"UtteranceId": "TTS-0FF8A3A5EE56F4CEC061BEAC650FB92F"
+				}, 
+				{
+					"CurrentState": "P_Where",
+					"NextState": "J_WhatNow",
+					"Meaning": "-",
+					"Style": "Confident",
+					"Utterance": "So what now?",
+					"UtteranceId": "TTS-76C4D5A5BD46391C6DDCAA6D074285F9"
+				}, 
+				{
+					"CurrentState": "P_Where",
+					"NextState": "J_WhatNow",
+					"Meaning": "-",
+					"Style": "Calm",
+					"Utterance": "Can you tell me what's going to happen now?",
+					"UtteranceId": "TTS-6050E44A3F5135B75E2CCE213D10C8ED"
+				}, 
+				{
+					"CurrentState": "P_Where",
+					"NextState": "J_HowDie2",
+					"Meaning": "Question",
+					"Style": "Aggro",
+					"Utterance": "How could I die!? I'm too young!",
+					"UtteranceId": "TTS-261109579E9927A1F0990E3CCD020836"
+				}, 
+				{
+					"CurrentState": "P_Where",
+					"NextState": "J_HowDie2",
+					"Meaning": "Question",
+					"Style": "Calm",
+					"Utterance": "And how did I end up dying?",
+					"UtteranceId": "TTS-500767777132E6CAB31B3F6B6DBD3199"
+				}, 
+				{
+					"CurrentState": "P_HowDie",
+					"NextState": "J_WhatNow",
+					"Meaning": "-",
+					"Style": "Uncertain",
+					"Utterance": "I can't believe it... So, is this when you send me to Heaven?",
+					"UtteranceId": "TTS-D2A8F1C8F51C5FDA21C6445B59644CBE"
+				}, 
+				{
+					"CurrentState": "P_HowDie",
+					"NextState": "J_WhatNow",
+					"Meaning": "-",
+					"Style": "Calm",
+					"Utterance": "So that's how... Wow... What is going to happen to me now?",
+					"UtteranceId": "TTS-F4F301FF9FF21574A6B4EA08CDF01102"
+				}, 
+				{
+					"CurrentState": "P_HowDie",
+					"NextState": "J_Where2",
+					"Meaning": "Question",
+					"Style": "Aggro",
+					"Utterance": "That can't be. Where the hell are we then?",
+					"UtteranceId": "TTS-5324F102965E2DA50E6B4E2B9EFA30C5"
+				}, 
+				{
+					"CurrentState": "P_HowDie",
+					"NextState": "J_Where2",
+					"Meaning": "Question",
+					"Style": "Calm",
+					"Utterance": "Thanks... Can you tell me where are we now though?",
+					"UtteranceId": "TTS-BF8BB8E7217C730A2FD899A444D0F535"
+				}, 
+				{
+					"CurrentState": "J_Where",
+					"NextState": "P_Where",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "It doesn't matter now... You can't go back anyway.",
+					"UtteranceId": "TTS-5A096671E1C3E9031B39DE7068C93412"
+				}, 
+				{
+					"CurrentState": "J_Where",
+					"NextState": "P_Where",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "You are in Purgatory, haven't you realized by now?",
+					"UtteranceId": "TTS-823312E587D1C17BEE7276EE61BF78C6"
+				}, 
+				{
+					"CurrentState": "J_Where",
+					"NextState": "P_Where",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "You are in Purgatory. The hallway between Heaven and Hell, the passage to the eternal Afterlife",
+					"UtteranceId": "TTS-AB0A25C6EE96678B896BD3BC5601E4F8"
+				}, 
+				{
+					"CurrentState": "J_HowDie",
+					"NextState": "P_HowDie",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "You failed to open your parachute, resulting in a painful death.",
+					"UtteranceId": "TTS-AD24FC87396A348CF884FF5C81B05526"
+				}, 
+				{
+					"CurrentState": "J_HowDie",
+					"NextState": "P_HowDie",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Your parachute didn't open while you were skydiving.",
+					"UtteranceId": "TTS-219A6D0CD342D347B77F95601C6A1B42"
+				}, 
+				{
+					"CurrentState": "J_HowDie",
+					"NextState": "P_HowDie",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Your parachute didn't open while you were skydiving... \nThe paramedics still tried to ressurect you, but to no avail.",
+					"UtteranceId": "TTS-0FF8A3A5EE56F4CEC061BEAC650FB92F"
+				}, 
+				{
+					"CurrentState": "P_Start",
+					"NextState": "J_Where",
+					"Meaning": "Question",
+					"Style": "Aggro",
+					"Utterance": "Damn!! Where am I right now??",
+					"UtteranceId": "TTS-1E6A1B4EAE9F9EB7CC989717C50F3751"
+				}, 
+				{
+					"CurrentState": "P_Start",
+					"NextState": "J_Where",
+					"Meaning": "Question",
+					"Style": "Calm",
+					"Utterance": "Wow! Where are we then?",
+					"UtteranceId": "TTS-751060D030C2CDBEAF1A10A137A830D6"
+				}, 
+				{
+					"CurrentState": "P_Start",
+					"NextState": "J_HowDie",
+					"Meaning": "Question",
+					"Style": "Aggro",
+					"Utterance": "What the hell?? How did that happen?",
+					"UtteranceId": "TTS-5D0195DBDA4A5773A508677145424452"
+				}, 
+				{
+					"CurrentState": "P_Start",
+					"NextState": "J_HowDie",
+					"Meaning": "Question",
+					"Style": "Calm",
+					"Utterance": "Oh my... Can you tell me what happened?",
+					"UtteranceId": "TTS-40B6806C97D573A0665E1AC9A5BACD3B"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "P_Start",
+					"Meaning": "-",
+					"Style": "Bad",
+					"Utterance": "Oh, hey. You're dead.",
+					"UtteranceId": "TTS-617268CAE2FB2C19837B4D87DA37E5DD"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "P_Start",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Hello. You, Player, are dead",
+					"UtteranceId": "TTS-A0CCB268AB3EEE9C73BB21E9DD89C33D"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "P_Start",
+					"Meaning": "-",
+					"Style": "Good",
+					"Utterance": "Welcome! I regret to inform you that you are dead.",
+					"UtteranceId": "TTS-E5DBACBC852163511FB2C900447F6927"
+				}, 
+				{
+					"CurrentState": "J_MDHappy",
+					"NextState": "P_PreHeaven",
+					"Meaning": "Heaven",
+					"Style": "Good",
+					"Utterance": "Your genuine happiness will be considered.\nI will now pass your sentence.",
+					"UtteranceId": "TTS-1DECDEAE16A7AFE2C9536CEB69530616"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

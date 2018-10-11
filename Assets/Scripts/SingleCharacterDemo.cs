@@ -60,11 +60,6 @@ public class SingleCharacterDemo : MonoBehaviour
     [SerializeField]
     private Transform m_dialogButtonZone = null;
 
-    [SerializeField]
-    private Transform m_scoreZone = null;
-
-    private GameObject score;
-
     [Space]
     [SerializeField]
     [Range(1, 60)]
@@ -77,9 +72,6 @@ public class SingleCharacterDemo : MonoBehaviour
     private Button m_menuButtonArchetype = null;
 
     public GameObject VersionMenu;
-    public GameObject ScoreTextPrefab;
-    private bool PJScenario;
-    private bool SpaceModulesScenario;
 
     [Header("Intro")]
     [SerializeField]
@@ -92,12 +84,17 @@ public class SingleCharacterDemo : MonoBehaviour
     private List<Button> m_buttonList = new List<Button>();
     private IntegratedAuthoringToolAsset _iat;
     private AgentControler _agentController;
-    private GameObject _finalScore;
+
+
     public Dictionary<string, string> alreadyUsedDialogs;
+
+
     private bool Initialized;
     private bool waitingforReply;
     private RolePlayCharacterAsset Player;
     private WorldModel.WorldModelAsset _wm;
+
+
     public GameObject _background;
     public Material activeBackgroundMaterial;
 
@@ -106,8 +103,6 @@ public class SingleCharacterDemo : MonoBehaviour
     {
         waitingforReply = false;
         Initialized = false;
-        _finalScore = GameObject.FindGameObjectWithTag("FinalScore");
-        _finalScore.SetActive(false);
         AssetManager.Instance.Bridge = new AssetManagerBridge();
 
         m_dialogController.AddDialogLine("Loading...");
@@ -214,7 +209,7 @@ public class SingleCharacterDemo : MonoBehaviour
         var characterSources = _iat.GetAllCharacterSources().ToList();
         foreach (var source in characterSources)
         {
-         //   Debug.Log("RPC source is here" + source.Source );
+           
             var rpc = RolePlayCharacterAsset.LoadFromFile(source.Source);
             rpc.LoadAssociatedAssets();
             _iat.BindToRegistry(rpc.DynamicPropertiesRegistry);
@@ -336,14 +331,14 @@ public class SingleCharacterDemo : MonoBehaviour
 
         if (_agentController.getJustReplied())
         {
-           // Debug.Log("we got a reply!");
+           
             var reply = _agentController.getReply();
 
             
        HandleEffects(new List<Name>{ EventHelper.ActionEnd(_agentController.RPC.CharacterName, (Name)("Speak(" + reply.CurrentState.ToString() + "," + reply.NextState.ToString() + "," + reply.Meaning.ToString() + "," + reply.Style.ToString() + ")"), (Name)"Player")});
 
 
-            // will probably need to launch a courotine
+          
           waitingforReply = false;
         }
 
@@ -415,7 +410,7 @@ public class SingleCharacterDemo : MonoBehaviour
 
         foreach(var eff in effects)
         {
-            Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
+       //     Debug.Log("Effect: " + eff.PropertyName + " " + eff.NewValue + " " + eff.ObserverAgent);
             if(eff.ObserverAgent.ToString() == "Player")
             {
                 Player.Perceive(EventHelper.PropertyChange(eff.PropertyName, eff.NewValue, (Name)"World"));

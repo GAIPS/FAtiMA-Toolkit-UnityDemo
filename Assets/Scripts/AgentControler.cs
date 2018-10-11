@@ -28,7 +28,6 @@ namespace Assets.Scripts
 		private float _previousMood;
 
 		private float _moodThresold = 0.001f;
-	    private GameObject _finalScore;
 		private SingleCharacterDemo.ScenarioData m_scenarioData;
 		private MonoBehaviour m_activeController;
 		private GameObject m_versionMenu;
@@ -121,8 +120,6 @@ namespace Assets.Scripts
 				if (action == null)
 					continue;
 
-			//	Debug.Log("Action Key: " + action.Key);
-
 				switch (action.Key.ToString())
 				{
 					case "Speak":
@@ -130,7 +127,7 @@ namespace Assets.Scripts
 
 						break;
 					case "Disconnect":
-                        m_activeController.StartCoroutine(newHandleDisconnect());
+                        m_activeController.StartCoroutine(HandleDisconnect());
                         m_dialogController.AddDialogLine(string.Format("- {0} disconnects -", m_rpc.CharacterName));
 
                         _currentCoroutine = null;
@@ -214,7 +211,6 @@ namespace Assets.Scripts
 				
 				}
 
-                  Debug.Log("Just talked");
                     reply = dialog;
                     just_talked = true;
                 
@@ -230,34 +226,11 @@ namespace Assets.Scripts
 
 		}
 
-		private IEnumerator HandleDisconnectAction(IAction actionRpc)
-		{
-			yield return null;
-			m_rpc.Perceive(new Name[] { EventHelper.ActionEnd(m_rpc.CharacterName.ToString(), actionRpc.Name.ToString(), IATConsts.PLAYER) });
-            AddEvent(EventHelper.PropertyChange(string.Format(IATConsts.DIALOGUE_STATE_PROPERTY,IATConsts.PLAYER),"Disconnected", "SELF").ToString());
-			if(_body)
-				_body.Hide();
-			yield return new WaitForSeconds(2);
-		    GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
-		    if (m_scenarioData.IAT.ScenarioName.Contains("PJ"))
-		    {
-		        _finalScore.SetActive(true);
-		        GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
-		    }
-		}
-
-
-	    private IEnumerator newHandleDisconnect()
+	    private IEnumerator HandleDisconnect()
 	    {
             if (_body)
                 _body.Hide();
             yield return new WaitForSeconds(2);
-            GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
-	        if (m_scenarioData.IAT.ScenarioName.Contains("PJ") || m_scenarioData.IAT.ScenarioName.Contains("Space"))
-	        {
-	            _finalScore.SetActive(true);
-	            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
-	        }
 	        m_dialogController.Clear();
         }
 
@@ -266,9 +239,6 @@ namespace Assets.Scripts
             if (_body)
                 _body.Hide();
           //  yield return new WaitForSeconds(2);
-            GameObject.Destroy(GameObject.FindGameObjectWithTag("Score"));
-            _finalScore.SetActive(true);
-            GameObject.FindGameObjectWithTag("FinalScoreText").GetComponent<FinalScoreScript>().FinalScore(RPC.Mood);
             m_dialogController.Clear();
 
         }

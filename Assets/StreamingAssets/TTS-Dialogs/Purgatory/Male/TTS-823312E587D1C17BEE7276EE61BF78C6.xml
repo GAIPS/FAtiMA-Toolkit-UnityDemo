@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LipSyncVisemes wavFile="TTS-823312E587D1C17BEE7276EE61BF78C6.wav">
+  <viseme type="6" time="0.1" duration="0.085" />
+  <viseme type="7" time="0.185" duration="0.08" />
+  <viseme type="2" time="0.265" duration="0.11" />
+  <viseme type="13" time="0.375" duration="0.08" />
+  <viseme type="6" time="0.455" duration="0.065" />
+  <viseme type="19" time="0.52" duration="0.07" />
+  <viseme type="21" time="0.59" duration="0.085" />
+  <viseme type="5" time="0.675" duration="0.055" />
+  <viseme type="13" time="0.73" duration="0.045" />
+  <viseme type="20" time="0.775" duration="0.045" />
+  <viseme type="1" time="0.82" duration="0.055" />
+  <viseme type="19" time="0.875" duration="0.105" />
+  <viseme type="3" time="0.98" duration="0.09" />
+  <viseme type="13" time="1.07" duration="0.09" />
+  <viseme type="6" time="1.16" duration="0.145" />
+  <viseme type="12" time="1.705" duration="0.095" />
+  <viseme type="1" time="1.8" duration="0.06" />
+  <viseme type="18" time="1.86" duration="0.05" />
+  <viseme type="1" time="1.91" duration="0.05" />
+  <viseme type="19" time="1.96" duration="0.045" />
+  <viseme type="19" time="2.005" duration="0.05" />
+  <viseme type="6" time="2.055" duration="0.065" />
+  <viseme type="7" time="2.12" duration="0.075" />
+  <viseme type="13" time="2.195" duration="0.065" />
+  <viseme type="6" time="2.26" duration="0.08" />
+  <viseme type="1" time="2.34" duration="0.07" />
+  <viseme type="14" time="2.41" duration="0.07" />
+  <viseme type="2" time="2.48" duration="0.075" />
+  <viseme type="6" time="2.555" duration="0.075" />
+  <viseme type="15" time="2.63" duration="0.075" />
+  <viseme type="19" time="2.705" duration="0.055" />
+  <viseme type="21" time="2.76" duration="0.055" />
+  <viseme type="2" time="2.815" duration="0.065" />
+  <viseme type="6" time="2.88" duration="0.065" />
+  <viseme type="19" time="2.945" duration="0.065" />
+  <viseme type="2" time="3.01" duration="0.1" />
+  <viseme type="4" time="3.11" duration="0.1" />
+</LipSyncVisemes>

@@ -1,0 +1,42 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"Effects":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+							"value": [
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[s]"
+								}, 
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "[t]",
+									"ObserverAgent": "*"
+								}]
+						}]
+				},
+			"Priorities":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+							"value": 1
+						}]
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "WorldModel.WorldModelAsset, World_Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

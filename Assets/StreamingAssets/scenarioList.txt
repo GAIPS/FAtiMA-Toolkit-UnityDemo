@@ -4,3 +4,5 @@
 	SpaceModules
 \Scenarios\EmotionalAppraisalDemo\EADemo.iat
 	EADemo
+\Scenarios\Purgatory\PurgatorySingleCharacter.iat
+	Purgatory

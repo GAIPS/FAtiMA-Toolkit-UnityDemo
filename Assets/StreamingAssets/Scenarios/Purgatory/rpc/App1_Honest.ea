@@ -1,0 +1,78 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"Description": null,
+			"AppraisalRules":
+				{
+					"AppraisalWeight": 1,
+					"Rules": [
+						{
+							"EventName": "Event(Action-End, [x], Speak(*, *, Apology, *), *)",
+							"Conditions":
+								{
+									"Set": ["Player = [x]"]
+								},
+							"Desirability": 4,
+							"Praiseworthiness": 2
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak(*, *, Honest, *), *)",
+							"Conditions":
+								{
+									"Set": ["Player = [x]"]
+								},
+							"Desirability": 3,
+							"Praiseworthiness": 5
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak(*, *, Lie, *), *)",
+							"Conditions":
+								{
+									"Set": ["Player = [x]"]
+								},
+							"Desirability": -3,
+							"Praiseworthiness": -5
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak(*, *, *, Aggro), *)",
+							"Conditions":
+								{
+									"Set": ["Player = [x]"]
+								},
+							"Desirability": -5,
+							"Praiseworthiness": -5
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak(*, *, *, Calm), *)",
+							"Conditions":
+								{
+									"Set": ["Player = [x]"]
+								},
+							"Desirability": 3,
+							"Praiseworthiness": 5
+						}, 
+						{
+							"EventName": "Event(Action-End, [x], Speak(*, *, *, Indifference), *)",
+							"Conditions":
+								{
+									"Set": ["Player = [x]"]
+								},
+							"Desirability": -4,
+							"Praiseworthiness": -2
+						}]
+				},
+			"EmotionDispositions": [
+				{
+					"Emotion": "*",
+					"Decay": 1,
+					"Threshold": 1
+				}],
+			"Goals": []
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "EmotionalAppraisal.EmotionalAppraisalAsset, EmotionalAppraisal, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

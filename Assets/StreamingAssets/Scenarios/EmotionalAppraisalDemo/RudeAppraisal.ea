@@ -8,7 +8,7 @@
 					"AppraisalWeight": 1,
 					"Rules": [
 						{
-							"EventName": "Event(Action-End, [s], Speak(*, *, *, Rude), SELF)",
+							"EventName": "Event(Action-End, [s], Speak(*, *, *, Polite), SELF)",
 							"Conditions":
 								{
 									"Set": []
@@ -19,7 +19,12 @@
 										{
 											"Name": "Desirability",
 											"Value": -5,
-											"Target": "[s]"
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 3,
+											"Target": "-"
 										}]
 								}
 						}]

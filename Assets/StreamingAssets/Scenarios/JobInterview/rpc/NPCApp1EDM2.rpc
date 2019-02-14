@@ -17,7 +17,7 @@
 				},
 			"BodyName": "Male",
 			"VoiceName": "Male",
-			"EmotionalAppraisalAssetSource": "Appraisal1.ea",
+			"EmotionalAppraisalAssetSource": "..\\..\\Interrogation\\rpc\\Appraisal1.ea",
 			"EmotionalDecisionMakingSource": "DecisionMaking2.edm",
 			"SocialImportanceAssetSource": "SocialImportance.si",
 			"CommeillFautAssetSource": "",
@@ -34,6 +34,13 @@
 							"MinimumMoodValueForInfluencingEmotions": 0.5,
 							"EmotionalHalfLifeDecayTime": 15,
 							"MoodHalfLifeDecayTime": 60
+						}
+				},
+			"WorkingMemory":
+				{
+					"Values":
+						{
+
 						}
 				},
 			"AutobiographicMemory":

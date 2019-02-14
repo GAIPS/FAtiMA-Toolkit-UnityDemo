@@ -13,8 +13,20 @@
 								{
 									"Set": ["Player = [x]"]
 								},
-							"Desirability": 4,
-							"Praiseworthiness": 2
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 4,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 2,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, [x], Speak(*, *, Honest, *), *)",
@@ -22,8 +34,20 @@
 								{
 									"Set": ["Player = [x]"]
 								},
-							"Desirability": 3,
-							"Praiseworthiness": 5
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 3,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 5,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, [x], Speak(*, *, Lie, *), *)",
@@ -31,8 +55,20 @@
 								{
 									"Set": ["Player = [x]"]
 								},
-							"Desirability": -3,
-							"Praiseworthiness": -5
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": -3,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": -5,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, [x], Speak(*, *, *, Aggro), *)",
@@ -40,8 +76,20 @@
 								{
 									"Set": ["Player = [x]"]
 								},
-							"Desirability": -5,
-							"Praiseworthiness": -5
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": -5,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": -5,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, [x], Speak(*, *, *, Calm), *)",
@@ -49,8 +97,20 @@
 								{
 									"Set": ["Player = [x]"]
 								},
-							"Desirability": 3,
-							"Praiseworthiness": 5
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 3,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 5,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, [x], Speak(*, *, *, Indifference), *)",
@@ -58,8 +118,15 @@
 								{
 									"Set": ["Player = [x]"]
 								},
-							"Desirability": -4,
-							"Praiseworthiness": -2
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": -2,
+											"Target": "-"
+										}]
+								}
 						}]
 				},
 			"EmotionDispositions": [

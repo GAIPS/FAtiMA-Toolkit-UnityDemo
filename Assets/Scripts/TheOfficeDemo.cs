@@ -328,10 +328,10 @@ public class TheOfficeDemo : MonoBehaviour {
 
          camera.transform.Rotate(new Vector3(15.0f,0.0f, 0));
    
-  //      var MouseLook = camera.GetComponent<MouseLookController>();
+        var MouseLook = camera.GetComponent<MouseLookController>();
 
-    //    MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _player.CharacterName).CharacterName.ToString()).transform.position;
-//        MouseLook.Online(true);
+        MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _player.CharacterName).CharacterName.ToString()).transform.position;
+       MouseLook.Online(true);
 
 
 

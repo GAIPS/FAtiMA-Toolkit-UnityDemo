@@ -16,7 +16,7 @@
 				},
 			"BodyName": "Female",
 			"VoiceName": "Female",
-			"EmotionalAppraisalAssetSource": "Appraisal2.ea",
+			"EmotionalAppraisalAssetSource": "..\\..\\Interrogation\\rpc\\Appraisal1.ea",
 			"EmotionalDecisionMakingSource": "DecisionMaking1.edm",
 			"SocialImportanceAssetSource": "",
 			"CommeillFautAssetSource": "..\\JobInterviewCIF.cif",
@@ -33,6 +33,13 @@
 							"MinimumMoodValueForInfluencingEmotions": 0.5,
 							"EmotionalHalfLifeDecayTime": 15,
 							"MoodHalfLifeDecayTime": 60
+						}
+				},
+			"WorkingMemory":
+				{
+					"Values":
+						{
+
 						}
 				},
 			"AutobiographicMemory":

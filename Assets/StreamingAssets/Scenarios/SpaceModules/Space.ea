@@ -13,17 +13,15 @@
 								{
 									"Set": ["[x] > 0"]
 								},
-							"Desirability": 5,
-							"Praiseworthiness": 0
-						}, 
-						{
-							"EventName": "Event(Action-Start, *, Speak(*, *, FAQ([x]), *), *)",
-							"Conditions":
+							"AppraisalVariables":
 								{
-									"Set": ["[x] < 0"]
-								},
-							"Desirability": -5,
-							"Praiseworthiness": -5
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 5,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-Start, *, Speak(*, *, Meanings(Empathy(-1), FAQ(-1)), Polite(1)), *)",
@@ -31,8 +29,20 @@
 								{
 									"Set": []
 								},
-							"Desirability": -5,
-							"Praiseworthiness": -5
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": -3,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 3,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-Start, *, Speak(*, *, *, Polite([x])), *)",
@@ -40,8 +50,15 @@
 								{
 									"Set": ["[x] > 0"]
 								},
-							"Desirability": 5,
-							"Praiseworthiness": 0
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": "[x]",
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-Start, *, Speak(*, *, *, Polite([x])), *)",
@@ -49,8 +66,15 @@
 								{
 									"Set": ["[x] < 0"]
 								},
-							"Desirability": -5,
-							"Praiseworthiness": -5
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": "[x]",
+											"Target": "-"
+										}]
+								}
 						}]
 				},
 			"EmotionDispositions": [

@@ -13,8 +13,20 @@
 								{
 									"Set": []
 								},
-							"Desirability": 5,
-							"Praiseworthiness": 0
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 5,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 0,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, SELF, Speak(A2, *, *, *), *)",
@@ -22,8 +34,20 @@
 								{
 									"Set": []
 								},
-							"Desirability": -6,
-							"Praiseworthiness": -6
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": -6,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": -6,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, SELf, Speak(A3, *, *, *), *)",
@@ -31,8 +55,20 @@
 								{
 									"Set": []
 								},
-							"Desirability": 9,
-							"Praiseworthiness": 9
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 9,
+											"Target": "-"
+										}, 
+										{
+											"Name": "Praiseworthiness",
+											"Value": 9,
+											"Target": "-"
+										}]
+								}
 						}, 
 						{
 							"EventName": "Event(Action-End, *, Speak(Start, *, *, *), *)",
@@ -40,8 +76,15 @@
 								{
 									"Set": []
 								},
-							"Desirability": 5,
-							"Praiseworthiness": 0
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 5,
+											"Target": "-"
+										}]
+								}
 						}]
 				},
 			"EmotionDispositions": [

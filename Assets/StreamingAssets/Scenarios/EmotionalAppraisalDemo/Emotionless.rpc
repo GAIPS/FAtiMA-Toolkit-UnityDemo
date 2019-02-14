@@ -15,7 +15,7 @@
 				},
 			"BodyName": "Female",
 			"VoiceName": "Female",
-			"EmotionalAppraisalAssetSource": "PoliteAppraisal.ea",
+			"EmotionalAppraisalAssetSource": "RudeAppraisal.ea",
 			"EmotionalDecisionMakingSource": "SingleResponse.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,

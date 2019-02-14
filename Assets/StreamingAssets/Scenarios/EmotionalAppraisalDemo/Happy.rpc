@@ -12,7 +12,7 @@
 				},
 			"BodyName": "Female",
 			"VoiceName": "Female",
-			"EmotionalAppraisalAssetSource": "",
+			"EmotionalAppraisalAssetSource": "PoliteAppraisal.ea",
 			"EmotionalDecisionMakingSource": "BadMoodGoodMood.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,

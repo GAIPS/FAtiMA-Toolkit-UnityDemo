@@ -38,6 +38,16 @@ public class SingleCharacterDemo : MonoBehaviour
     }
 
 
+  [Serializable]
+ public struct ScenarioBackground {
+     public string scenarioName;
+     public Material mat;
+ }
+
+        
+ public ScenarioBackground[] backgrounds;
+
+
     [Serializable]
     private struct BodyType
     {
@@ -229,8 +239,13 @@ public class SingleCharacterDemo : MonoBehaviour
                     _agentController.Start(this, VersionMenu);
 
                      _background.SetActive(true);
-                     if(activeBackgroundMaterial != null)
-                     _background.GetComponent<Renderer>().material = activeBackgroundMaterial;
+                     if(!backgrounds.IsEmpty()){
+                        if(!backgrounds.ToList().FindAll(x=>x.scenarioName == _iat.ScenarioName).IsEmpty())
+                        _background.GetComponent<Renderer>().material = backgrounds.ToList().Find(x=>x.scenarioName == _iat.ScenarioName).mat;
+                      else
+                            _background.GetComponent<Renderer>().material = activeBackgroundMaterial;
+                    }
+                     else    _background.GetComponent<Renderer>().material = activeBackgroundMaterial;
 
                 });
         }

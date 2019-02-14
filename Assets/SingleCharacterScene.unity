@@ -910,10 +910,10 @@ RectTransform:
   m_Father: {fileID: 1836109394}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.02756, y: -112.204865}
-  m_SizeDelta: {x: 184.05511, y: 179.95982}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &551096291
 MonoBehaviour:
@@ -2646,10 +2646,10 @@ RectTransform:
   m_Father: {fileID: 1836109394}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.02756, y: -11.112474}
-  m_SizeDelta: {x: 184.05511, y: 22.224949}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1588836034
 MonoBehaviour:
@@ -2921,8 +2921,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 418831448}
   m_HandleRect: {fileID: 418831447}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.9999999
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3217,7 +3217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: -0.000015258789}
   m_SizeDelta: {x: -18, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1797582498
@@ -3645,7 +3645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00000614193}
+  m_AnchoredPosition: {x: 0, y: -0.000030316502}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1998816783
@@ -3902,7 +3902,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1333213832}
   m_HandleRect: {fileID: 1333213831}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3976,6 +3976,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ea89e989683574cac77db6a45ddb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgrounds:
+  - scenarioName: Purgatory
+    mat: {fileID: 2100000, guid: f5e3a22dd3c8aae4bb8aa407c543901b, type: 2}
+  - scenarioName: Office
+    mat: {fileID: 2100000, guid: 60318746fc912384eb2954e04f68e4e1, type: 2}
   m_characterAnchor: {fileID: 1808916567}
   m_dialogController: {fileID: 433526443}
   m_bodies:
@@ -3999,7 +4004,7 @@ MonoBehaviour:
   _introPanel: {fileID: 2098785805}
   _introText: {fileID: 1162935416}
   _background: {fileID: 743052230}
-  activeBackgroundMaterial: {fileID: 2100000, guid: f5e3a22dd3c8aae4bb8aa407c543901b,
+  activeBackgroundMaterial: {fileID: 2100000, guid: 24a02006dbce9d4428277b62de8d3974,
     type: 2}
 --- !u!4 &2054510709
 Transform:

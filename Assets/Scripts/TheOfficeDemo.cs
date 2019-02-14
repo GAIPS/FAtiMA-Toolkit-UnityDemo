@@ -428,7 +428,7 @@ public class TheOfficeDemo : MonoBehaviour {
     private IEnumerator PlayerReplyAction(string replyActionName, Name target)
     {
        
-       HandleEffects(new List<Name>{ EventHelper.ActionEnd(IATConsts.PLAYER, replyActionName, target.ToString())});
+       HandleEffects(new List<Name>{ EventHelper.ActionEnd(_player.CharacterName.ToString(), replyActionName, target.ToString())});
 
           yield return new WaitForSeconds(0.5f);
     }

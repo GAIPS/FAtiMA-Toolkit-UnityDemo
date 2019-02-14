@@ -22,11 +22,6 @@
 									"PropertyName": "Has(Floor)",
 									"NewValue": "[t]",
 									"ObserverAgent": "*"
-								}, 
-								{
-									"PropertyName": "DialogueState([s])",
-									"NewValue": "[ns]",
-									"ObserverAgent": "[t]"
 								}]
 						}, 
 						{

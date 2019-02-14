@@ -219,7 +219,7 @@ public class SingleCharacterDemo : MonoBehaviour
                 Player = rpc;
                 continue;
             }
-            AddButton(characterSources.Count == 1 ? "Start" : rpc.CharacterName.ToString(),
+            AddButton(characterSources.Count <= 2 ? "Start" : rpc.CharacterName.ToString(),
                 () =>
                 {
                   

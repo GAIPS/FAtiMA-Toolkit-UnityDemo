@@ -1,0 +1,704 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "Police Interrogation",
+			"Description": "This scenario is a police interrogation. You play as one of 2 police officers interrogating a criminal. This criminal has been accused of murdering another man for simply being african-american. Take note that the officer helping you is also african-american.\r\n\r\nWorld Model rules:\r\n\r\nR = ricochet: A -> B R(C) = B -> C\r\nD = deviate A -> B D(C) = C -> A\r\nP = pass A -> B P(C) = C -> B\r\n",
+			"WorldModelSource": "JobInterviewWorldModel.wmo",
+			"CharacterSources": ["rpc\\player.rpc", "rpc\\NPCApp1EDM2.rpc", "rpc\\NPCApp2EDM1.rpc"],
+			"Dialogues": [
+				{
+					"CurrentState": "Start",
+					"NextState": "s1_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Come on! We haven't got all day.",
+					"UtteranceId": "TTS-C0A5B0EA4347E4E94D6D0A9C8539792D"
+				}, 
+				{
+					"CurrentState": "s1_b",
+					"NextState": "s3",
+					"Meaning": "R(Criminal)",
+					"Style": "Neutral",
+					"Utterance": "No, you handle this one.",
+					"UtteranceId": "TTS-B2A98DE1D3DFA8E784253F01F4CA0FF4"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "s1_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "You wanna take this?",
+					"UtteranceId": "TTS-41A92F36DD4D6075E0594268E0A2E7ED"
+				}, 
+				{
+					"CurrentState": "s3",
+					"NextState": "s4_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Now listen here buddy, you're going to answer some questions.",
+					"UtteranceId": "TTS-C32873AD2C2C5090EF40B8646FFF1B87"
+				}, 
+				{
+					"CurrentState": "s1_p",
+					"NextState": "s3",
+					"Meaning": "R(Criminal)",
+					"Style": "Neutral",
+					"Utterance": "Yeah, let's get this done.",
+					"UtteranceId": "TTS-D529D466203DC399468045183DD141B3"
+				}, 
+				{
+					"CurrentState": "s21_a",
+					"NextState": "s22",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "With some friends, down town.",
+					"UtteranceId": "TTS-3EC306C32DFD69554C2030445D5770CF"
+				}, 
+				{
+					"CurrentState": "s3",
+					"NextState": "s4_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Mr Armindo, we have some things to ask you.",
+					"UtteranceId": "TTS-16073A6291DD90C946406667E690E808"
+				}, 
+				{
+					"CurrentState": "s14",
+					"NextState": "s15_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Well, he's dead and you're our main suspect.",
+					"UtteranceId": "TTS-E70575FA75671A3C55626895F1D4C8D1"
+				}, 
+				{
+					"CurrentState": "s15_b",
+					"NextState": "s16_b",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "Me? I couldn't kill a fly if I wanted to! That's nonesense.",
+					"UtteranceId": "TTS-3D861CC110467AB2010ADCAF5FE5CD53"
+				}, 
+				{
+					"CurrentState": "s6",
+					"NextState": "s7",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "So you don't know why you are here?",
+					"UtteranceId": "TTS-B968E6B466D78D689BF31B83F116830B"
+				}, 
+				{
+					"CurrentState": "s4_b",
+					"NextState": "s6",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "What are my charges?",
+					"UtteranceId": "TTS-CE61A05B9C0797293FDC0EBDC4B18894"
+				}, 
+				{
+					"CurrentState": "s7",
+					"NextState": "s8",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "No I don't, you pigs just grabbed me from my home and brought me here!",
+					"UtteranceId": "TTS-D54B920E47BECAA9172253231AF66F39"
+				}, 
+				{
+					"CurrentState": "s9_n",
+					"NextState": "s10_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I'll call my lawyer and let him know of this!",
+					"UtteranceId": "TTS-A28F628BC47B5EAE477940F6C191E78F"
+				}, 
+				{
+					"CurrentState": "s8",
+					"NextState": "s9_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Listen here. Do you know someone called Gabriel Mendes?",
+					"UtteranceId": "TTS-CF83A5A5C9F7E4D4872C3257D80D3D2E"
+				}, 
+				{
+					"CurrentState": "s8",
+					"NextState": "s13",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Do you know someone called Gabriel Mendes?",
+					"UtteranceId": "TTS-2D8EADC3E7A690551F89EB555ED528E4"
+				}, 
+				{
+					"CurrentState": "s9_b",
+					"NextState": "s10_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I might, why do you ask?",
+					"UtteranceId": "TTS-89AF2CF04C765D0EE73934A20BCE254D"
+				}, 
+				{
+					"CurrentState": "s8",
+					"NextState": "s9_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Listen here punk, you better watch your damn tongue before I rip it from your mouth.",
+					"UtteranceId": "TTS-0308B44E403BD45E7F5EA456624458A4"
+				}, 
+				{
+					"CurrentState": "s10_n",
+					"NextState": "s11_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Call him then... We're not gonna get anything out of this fool!",
+					"UtteranceId": "TTS-97E96DBEB23D7EABECACDD44A23FD398"
+				}, 
+				{
+					"CurrentState": "s16_b",
+					"NextState": "s17",
+					"Meaning": "P(Player)",
+					"Style": "Neutral",
+					"Utterance": "Well that's what we're here to find out Mr Armindo",
+					"UtteranceId": "TTS-40EDC3E486F61FB2C27E59CA8F1BD661"
+				}, 
+				{
+					"CurrentState": "s10_n",
+					"NextState": "s13",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Listen, cooperate and you'll leave before your lawyer even gets here. Do you know Gabriel Mendes?",
+					"UtteranceId": "TTS-6E189A8DEE3383B686CF52F78ACC129A"
+				}, 
+				{
+					"CurrentState": "s1_n",
+					"NextState": "s3",
+					"Meaning": "R(Criminal)",
+					"Style": "Neutral",
+					"Utterance": "Alright! Jesus, calm down.",
+					"UtteranceId": "TTS-E092BD500B82CDAA820E20EFB6709435"
+				}, 
+				{
+					"CurrentState": "s11_n",
+					"NextState": "s12_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU LOST] - Mr Armindo called his lawyer!",
+					"UtteranceId": "TTS-3075DC8A9C02C377D2A504FD10225622"
+				}, 
+				{
+					"CurrentState": "s10_b",
+					"NextState": "s13",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Yes or No Mr Armindo?",
+					"UtteranceId": "TTS-B82E28C882B8C629497263C6FB559920"
+				}, 
+				{
+					"CurrentState": "s14",
+					"NextState": "s15_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Because Gabriel is cold dead and you are our only suspect!",
+					"UtteranceId": "TTS-85EC33D227A5A3AC4561D154D156E347"
+				}, 
+				{
+					"CurrentState": "s14",
+					"NextState": "s15_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "It would seem like Mr Gabriel is dead and all our leads point to you.",
+					"UtteranceId": "TTS-E0F284F0068F72FB7299AE72E8206FD9"
+				}, 
+				{
+					"CurrentState": "s13",
+					"NextState": "s14",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Yes, I do, why?",
+					"UtteranceId": "TTS-F2349B7F857D605CAEEC79A2BF25578E"
+				}, 
+				{
+					"CurrentState": "s18_b",
+					"NextState": "s20",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "Why is that important?",
+					"UtteranceId": "TTS-344F1DFF1050C89F89B26D617595C9D6"
+				}, 
+				{
+					"CurrentState": "s21",
+					"NextState": "s22",
+					"Meaning": "D(Player)",
+					"Style": "Neutral",
+					"Utterance": "With some friends, down town.",
+					"UtteranceId": "TTS-3EC306C32DFD69554C2030445D5770CF"
+				}, 
+				{
+					"CurrentState": "s15_p",
+					"NextState": "s17",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "What? That's not possible!",
+					"UtteranceId": "TTS-EEBA65CDC1620393DA204ABC920C5AD3"
+				}, 
+				{
+					"CurrentState": "s16_n",
+					"NextState": "s17_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU LOST] - Mr. Armindo refused to talk!",
+					"UtteranceId": "TTS-EE9CC63C0D6DB83709BEF244DA4BE320"
+				}, 
+				{
+					"CurrentState": "s15_n",
+					"NextState": "s16_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Are you saying I'm guilty? There's no point in this conversation then!",
+					"UtteranceId": "TTS-8FD213C006F1F17B84922C6A1576068E"
+				}, 
+				{
+					"CurrentState": "s4_n",
+					"NextState": "s5_n",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "I want my lawyer here, or else I ain't answering anything!",
+					"UtteranceId": "TTS-4F291919CC503837D48220E92C8AF8A2"
+				}, 
+				{
+					"CurrentState": "s17",
+					"NextState": "s18_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Witnesses tell me you weren't home 2 days ago at around 1 am, so where were you!?",
+					"UtteranceId": "TTS-91C0D310BE8BC39416CF16DEDA02002A"
+				}, 
+				{
+					"CurrentState": "s22",
+					"NextState": "s23_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Do you have any way to prove this?",
+					"UtteranceId": "TTS-69EBA9946D9EB92CF41A6E0E86E3BBB2"
+				}, 
+				{
+					"CurrentState": "s17",
+					"NextState": "s18_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Street cameras show you leaving your house at 6pm 2 days ago, so where were you at 2am the next day?",
+					"UtteranceId": "TTS-8AC0FA259E2DF8DB4330DC8B3CD3C07E"
+				}, 
+				{
+					"CurrentState": "s25_b",
+					"NextState": "s26",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "Call my friends, they'll tell you everything, but please calm down!",
+					"UtteranceId": "TTS-884BD9B51FBD55A43D4A6EAE8BF0F3C5"
+				}, 
+				{
+					"CurrentState": "s18_n",
+					"NextState": "s19_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I don't have to answer to anything!",
+					"UtteranceId": "TTS-56770961B91D33EFB401ECBB1B97F629"
+				}, 
+				{
+					"CurrentState": "s20",
+					"NextState": "s21",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Mr Gabriel was killed around that time.",
+					"UtteranceId": "TTS-281E3DE8FD2B4AADC8E5C686D64E1D47"
+				}, 
+				{
+					"CurrentState": "s19_n",
+					"NextState": "s21",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Can you please tell us where you were?",
+					"UtteranceId": "TTS-F4A3B935A472AC59B898E7F2516CCDBD"
+				}, 
+				{
+					"CurrentState": "s17",
+					"NextState": "s21_a",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Where were you 2 days ago at around 1 am?",
+					"UtteranceId": "TTS-98251E1CB6CF725B9149A2CC6D6891EF"
+				}, 
+				{
+					"CurrentState": "s19_n",
+					"NextState": "s21_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "You better talk, or I'll beat you until you do!",
+					"UtteranceId": "TTS-0ECD60BD32D48CCDC3F26768D2F8A49C"
+				}, 
+				{
+					"CurrentState": "s25_n",
+					"NextState": "s26_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU LOST] - You lost your cool and Mr. Armindo called his lawyer.",
+					"UtteranceId": "TTS-817584C6B2560CE0AD38F267B8CAF5D4"
+				}, 
+				{
+					"CurrentState": "s22",
+					"NextState": "s23_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "What friends?",
+					"UtteranceId": "TTS-A2BE17B72DE702AF373B0A4395B880B7"
+				}, 
+				{
+					"CurrentState": "s22",
+					"NextState": "s23_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Do you expect me to belive you?",
+					"UtteranceId": "TTS-D7349F47BB39B2FB96BBB2F908B880C9"
+				}, 
+				{
+					"CurrentState": "s24",
+					"NextState": "s25_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "What your mouth, before I shut it permanently, buddy!",
+					"UtteranceId": "TTS-C5288A8845DE900E97A0FA0CCDC314FD"
+				}, 
+				{
+					"CurrentState": "s23_b",
+					"NextState": "s26",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "Pedro and Gonçalo, give them a call. They'll tell you everything!",
+					"UtteranceId": "TTS-5BCB916697953B48D2B4D1EF6ED8DE89"
+				}, 
+				{
+					"CurrentState": "s24",
+					"NextState": "s25_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Listen here. First, we're not buddies, and second you better not test my patience!",
+					"UtteranceId": "TTS-8ED45ECA36DCC7CB37B1E35B0CBD79FF"
+				}, 
+				{
+					"CurrentState": "s27",
+					"NextState": "s28_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Listen here punk, I'm done with you waisting our time! They claim they weren't with you",
+					"UtteranceId": "TTS-C665C326B4918D846D91BC6A42B3EB02"
+				}, 
+				{
+					"CurrentState": "s23_n",
+					"NextState": "s24",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "What other choice do you have buddy?",
+					"UtteranceId": "TTS-068F04D13788A760976944D393FD9CF1"
+				}, 
+				{
+					"CurrentState": "s31_b",
+					"NextState": "s32_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Want me to refresh your memory the hard way?",
+					"UtteranceId": "TTS-462886090CF28E0D862ED1D129567C9D"
+				}, 
+				{
+					"CurrentState": "s26",
+					"NextState": "s27",
+					"Meaning": "P(Player)",
+					"Style": "Neutral",
+					"Utterance": "I just called your friends. They claim they weren't with you!",
+					"UtteranceId": "TTS-00A462B27A61EF0F463747AC37682205"
+				}, 
+				{
+					"CurrentState": "s30_p",
+					"NextState": "s33",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "I was at Amadora station",
+					"UtteranceId": "TTS-48E6BADE989E6999CEAB27460E04468D"
+				}, 
+				{
+					"CurrentState": "s32_p",
+					"NextState": "s33",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "Wait, I was at Amadora station, please calm down!",
+					"UtteranceId": "TTS-A5087987EAC96FAE9E6B0160304D1BA0"
+				}, 
+				{
+					"CurrentState": "s29_b",
+					"NextState": "s30_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Yes, we did, and we are more than sure that you are hiding something from us!",
+					"UtteranceId": "TTS-50D26926DF76FA30D220906F62702DD6"
+				}, 
+				{
+					"CurrentState": "s27",
+					"NextState": "s28_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "So, Pedro and Gonçalo are stating they weren't with you that day.",
+					"UtteranceId": "TTS-DA8F6F33881FB0C8DF6E2EAEED1793B2"
+				}, 
+				{
+					"CurrentState": "s38_p_p",
+					"NextState": "s39_won",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU WON] - Mr. Armindo confessed his crime!",
+					"UtteranceId": "TTS-93C853D0E2858BC9806D8A378740EF40"
+				}, 
+				{
+					"CurrentState": "s28_b",
+					"NextState": "s29_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "That's impossible, are you sure you called the right numbers?",
+					"UtteranceId": "TTS-789B73073650C3442E8B0A96D0E80D2F"
+				}, 
+				{
+					"CurrentState": "s31_b",
+					"NextState": "s32_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Well, sometimes people forget, that's fine.",
+					"UtteranceId": "TTS-2C89BB17E8B623BADF15C0A49467EDBA"
+				}, 
+				{
+					"CurrentState": "s28_p",
+					"NextState": "s29_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "No please, calm down, I'll tell you everything you want to know!",
+					"UtteranceId": "TTS-38101FAAFEBEED4F07E5428D6807A3FC"
+				}, 
+				{
+					"CurrentState": "s34",
+					"NextState": "s35_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Did you kill Gabriel Mendes, Mr Armindo?",
+					"UtteranceId": "TTS-35441448F476A32A72843AB6EEC6D748"
+				}, 
+				{
+					"CurrentState": "s32_n",
+					"NextState": "s32_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU LOST] - You failed to pressure Mr. Armindo to confess.",
+					"UtteranceId": "TTS-642A7EB02A03CDC468DE1B3076CAE88C"
+				}, 
+				{
+					"CurrentState": "s39",
+					"NextState": "s40",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Because we have some evidence that indicates you are racist Mr Armindo!",
+					"UtteranceId": "TTS-27237D30A9C436DA54CBE40DBCFF06F2"
+				}, 
+				{
+					"CurrentState": "s29_p",
+					"NextState": "s30_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Where were you at that time!?",
+					"UtteranceId": "TTS-BC392E5A4B4833D9B4F208008D4CF133"
+				}, 
+				{
+					"CurrentState": "s30_b",
+					"NextState": "s31_b",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I don't remember that night quite well...",
+					"UtteranceId": "TTS-592F189661AC13C8FC53DBDCF74E7F04"
+				}, 
+				{
+					"CurrentState": "s23_p",
+					"NextState": "s26",
+					"Meaning": "D(Officer2)",
+					"Style": "Neutral",
+					"Utterance": "Call them, they can confirm everything!",
+					"UtteranceId": "TTS-095DB04EFA7425522CD7F7AFB29A4095"
+				}, 
+				{
+					"CurrentState": "s33",
+					"NextState": "s34",
+					"Meaning": "P(Player)",
+					"Style": "Neutral",
+					"Utterance": "Interesting... That's where Gabriel was killed!",
+					"UtteranceId": "TTS-F5781A61C3E66E310CB5213E9B3955BE"
+				}, 
+				{
+					"CurrentState": "s34",
+					"NextState": "s35_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Why do I get the feeling that you are racist Mr Armindo?",
+					"UtteranceId": "TTS-8AABFBE924BECE2FE3667345ABA15A40"
+				}, 
+				{
+					"CurrentState": "s36_p",
+					"NextState": "s37_p_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "That's no way of talking about people of color! Why did you do that?!",
+					"UtteranceId": "TTS-760251B185E9F4F9847DC17659DB920F"
+				}, 
+				{
+					"CurrentState": "s35_p",
+					"NextState": "s36_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Why wouldn't I be? Those black folks oughta get back to where they came from, Hell!",
+					"UtteranceId": "TTS-6C17EB9B32ACBC58442F9187043302A5"
+				}, 
+				{
+					"CurrentState": "s37_p_p",
+					"NextState": "s38_p_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I killed Gabriel and I would do it again, that black bastard was asking for it a long time now!",
+					"UtteranceId": "TTS-C3CBD132A0B6B88190F91C1B2C3D01E6"
+				}, 
+				{
+					"CurrentState": "s36_p",
+					"NextState": "s37_p_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "You better start talking about what you did that night Mr Armindo!",
+					"UtteranceId": "TTS-4EC0ADC1A5E56E2303FB021627A86AEA"
+				}, 
+				{
+					"CurrentState": "s38_p_n",
+					"NextState": "s39_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU LOST] - Mr. Armindo refused to confess the truth.",
+					"UtteranceId": "TTS-EE6D3A8B912E206548D5928BA76AFF12"
+				}, 
+				{
+					"CurrentState": "s35_n",
+					"NextState": "s39",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Why would I kill him? Explain yourself!",
+					"UtteranceId": "TTS-2908C9F4F6EA259107819038720A35D8"
+				}, 
+				{
+					"CurrentState": "s37_p_n",
+					"NextState": "s38_p_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I don't have anything else to say to you!",
+					"UtteranceId": "TTS-7F3066DBEE2CE5399E5F92B28A5918A6"
+				}, 
+				{
+					"CurrentState": "s41",
+					"NextState": "s42_n",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Well, that could give you a reason to kill Gabriel Mendes.",
+					"UtteranceId": "TTS-1BBFE92A2E90AF123B96CD2FD4F9514A"
+				}, 
+				{
+					"CurrentState": "s40",
+					"NextState": "s41",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "And?...",
+					"UtteranceId": "TTS-E9BF9C5BE9081D1B76357B32BD162CB4"
+				}, 
+				{
+					"CurrentState": "s41",
+					"NextState": "s42_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "And that is enough of a reason for you to kill Gabriel Mendes!",
+					"UtteranceId": "TTS-31261DCCBC254080BC2FDF62F9B818CA"
+				}, 
+				{
+					"CurrentState": "s42_n",
+					"NextState": "s43_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Well you can't hold me here because I'm racist, I'm calling my lawyer!",
+					"UtteranceId": "TTS-7CC2F2DE323701E653180FD16043E5D8"
+				}, 
+				{
+					"CurrentState": "s43_lost",
+					"NextState": "s44_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU LOST] - You failed to pressure Mr. Armindo to confess.",
+					"UtteranceId": "TTS-642A7EB02A03CDC468DE1B3076CAE88C"
+				}, 
+				{
+					"CurrentState": "s43_p",
+					"NextState": "s44_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "So did you kill him Mr Armindo?",
+					"UtteranceId": "TTS-786E62E393EAEAD673B464CB8395DFAF"
+				}, 
+				{
+					"CurrentState": "s42_p",
+					"NextState": "s43_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "That loud bastard should have been dead a long time ago",
+					"UtteranceId": "TTS-84CFA45008E1143521491046F9F04CD8"
+				}, 
+				{
+					"CurrentState": "s45_p",
+					"NextState": "s46_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU WON] - Mr. Armindo confessed his crime!",
+					"UtteranceId": "TTS-93C853D0E2858BC9806D8A378740EF40"
+				}, 
+				{
+					"CurrentState": "s44_p",
+					"NextState": "s45_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "I did, and I would do it again!",
+					"UtteranceId": "TTS-43DC066F7ABF4F08635A0409599B0B6B"
+				}, 
+				{
+					"CurrentState": "s5_n",
+					"NextState": "s6",
+					"Meaning": "P(Player)",
+					"Style": "Neutral",
+					"Utterance": "Calm down friend, we just want some answers.",
+					"UtteranceId": "TTS-85FEE1415F1B2CE520D1756285B10425"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "s1_p",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "Are you ready to start this?",
+					"UtteranceId": "TTS-7CC1E56D71C233B758F21800A1A40B05"
+				}, 
+				{
+					"CurrentState": "s21_lost",
+					"NextState": "s20_lost",
+					"Meaning": "-",
+					"Style": "Neutral",
+					"Utterance": "[YOU LOST] - You lost your cool and Mr. Armindo called his lawyer.",
+					"UtteranceId": "TTS-817584C6B2560CE0AD38F267B8CAF5D4"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

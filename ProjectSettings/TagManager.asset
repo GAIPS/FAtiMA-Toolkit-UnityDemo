@@ -17,6 +17,11 @@ TagManager:
   - Mary
   - John
   - Boss
+  - Pharmacist
+  - Coach
+  - Patient
+  - Criminal
+  - Officer2
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,54 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"Effects":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+							"value": [
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], ChangeTarget([newtarget]), *), [t])",
+							"value": [
+								{
+									"PropertyName": "DialogueState([newtarget])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "-",
+									"ObserverAgent": "[s]"
+								}]
+						}]
+				},
+			"Priorities":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, *, *, *)",
+							"value": 0
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+							"value": 1
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], ChangeTarget([newtarget]), *), [t])",
+							"value": 2
+						}]
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "WorldModel.WorldModelAsset, World_Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

@@ -9,7 +9,7 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["Has(Floor) = SELF", "[x] != Sarah", "Mood(SELF) = [y]", "[y] < -2", "DialogueState([x]) = [cs]", "ValidDialogue([cs], [ns], [m], Negative) = True"]
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "[x] != Sarah", "Mood(SELF) = [y]", "[y] <= -2", "ValidDialogue([cs], [ns], [m], Negative) = True"]
 						},
 					"Priority": 1
 				}, 
@@ -19,7 +19,7 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], Positive) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] >= 2", "[x] != Sarah"]
+							"Set": ["DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] >= 2", "[x] != Sarah", "ValidDialogue([cs], [ns], [m], Positive) = True"]
 						},
 					"Priority": 1
 				}, 
@@ -29,7 +29,7 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], Neutral) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "Mood(SELF) = [y]", "[y] > -2", "[y] < 2", "[x] != Sarah"]
+							"Set": ["Has(Floor) = SELF", "Mood(SELF) = [y]", "DialogueState([x]) = [cs]", "[y] > -2", "[y] < 2", "[x] != Sarah", "ValidDialogue([cs], [ns], [m], Neutral) = True"]
 						},
 					"Priority": 1
 				}]

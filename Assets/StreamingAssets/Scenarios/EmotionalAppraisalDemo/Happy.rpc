@@ -12,7 +12,7 @@
 				},
 			"BodyName": "Female",
 			"VoiceName": "Female",
-			"EmotionalAppraisalAssetSource": "PoliteAppraisal.ea",
+			"EmotionalAppraisalAssetSource": "",
 			"EmotionalDecisionMakingSource": "BadMoodGoodMood.edm",
 			"SocialImportanceAssetSource": null,
 			"CommeillFautAssetSource": null,
@@ -29,6 +29,13 @@
 							"MinimumMoodValueForInfluencingEmotions": 0.5,
 							"EmotionalHalfLifeDecayTime": 15,
 							"MoodHalfLifeDecayTime": 60
+						}
+				},
+			"WorkingMemory":
+				{
+					"Values":
+						{
+
 						}
 				},
 			"AutobiographicMemory":

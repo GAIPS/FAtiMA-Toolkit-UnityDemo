@@ -1,0 +1,182 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"Effects":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], -, *), [t])",
+							"value": [
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[s]"
+								}, 
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "[t]",
+									"ObserverAgent": "*"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], R([target]), *), [t])",
+							"value": [
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "[t]",
+									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DialogueState([target])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "-",
+									"ObserverAgent": "[s]"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "-",
+									"ObserverAgent": "[t]"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], P([target]), *), [t])",
+							"value": [
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "[target]",
+									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[target]"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "-",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([t])",
+									"NewValue": "-",
+									"ObserverAgent": "[s]"
+								}]
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], D([target]), *), [t])",
+							"value": [
+								{
+									"PropertyName": "Has(Floor)",
+									"NewValue": "[target]",
+									"ObserverAgent": "*"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "[ns]",
+									"ObserverAgent": "[target]"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "-",
+									"ObserverAgent": "[t]"
+								}, 
+								{
+									"PropertyName": "DialogueState([s])",
+									"NewValue": "-",
+									"ObserverAgent": "[t]"
+								}]
+						}]
+				},
+			"Priorities":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], *, *), [t])",
+							"value": 1
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], DoesSport, *), [t])",
+							"value": 2
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], UnivTalk, *), [t])",
+							"value": 2
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], -, *), [t])",
+							"value": 1
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], SE(*, *), *), [t])",
+							"value": 3
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], SE(*, Finalize), *), [t])",
+							"value": 4
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], Off1, *), [t])",
+							"value": 0
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], Off2, *), [t])",
+							"value": 0
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], John, *), [t])",
+							"value": 2
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], Sarah, *), [t])",
+							"value": 0
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], Repeat, *), [t])",
+							"value": 0
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], M([tag], [target]), *), [t])",
+							"value": 3
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], M(Repeat, [target]), *), [t])",
+							"value": 3
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], M([target]), *), [t])",
+							"value": 4
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], N([target]), *), [t])",
+							"value": 2
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], R([target]), *), [t])",
+							"value": 2
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], P([target]), *), [t])",
+							"value": 4
+						}, 
+						{
+							"key": "Event(Action-End, [s], Speak([cs], [ns], D([target]), *), [t])",
+							"value": 3
+						}]
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "WorldModel.WorldModelAsset, World_Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

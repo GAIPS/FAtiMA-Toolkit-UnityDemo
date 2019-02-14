@@ -55,8 +55,6 @@ namespace Assets.Scripts
 			t.localRotation = Quaternion.identity;
 			t.localScale = Vector3.one;
 			m_dialogController.SetCharacterLabel(m_rpc.CharacterName.ToString());
-
-            m_rpc.Perceive(new Name[] { EventHelper.PropertyChange("DialogueState(Player)", "Start", "world")});
 		}
 
 		public void AddEvent(string eventName)

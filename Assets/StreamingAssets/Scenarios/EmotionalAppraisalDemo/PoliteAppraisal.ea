@@ -8,22 +8,20 @@
 					"AppraisalWeight": 1,
 					"Rules": [
 						{
-							"EventName": "Event(Action-End, Player, Speak(*, *, *, Polite), SELF)",
+							"EventName": "Event(Action-End, [s], Speak(*, *, *, Polite), SELF)",
 							"Conditions":
 								{
 									"Set": []
 								},
-							"Desirability": 3,
-							"Praiseworthiness": 3
-						}, 
-						{
-							"EventName": "Event(Action-End, SELF, Speak(*, *, CheckSolution, *), *)",
-							"Conditions":
+							"AppraisalVariables":
 								{
-									"Set": []
-								},
-							"Desirability": 10,
-							"Praiseworthiness": 0
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": -5,
+											"Target": "[s]"
+										}]
+								}
 						}]
 				},
 			"EmotionDispositions": [

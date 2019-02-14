@@ -11,9 +11,9 @@
 					"CurrentState": "Start",
 					"NextState": "AfterPlayerGreeting",
 					"Meaning": "Greeting",
-					"Style": "Rude",
-					"Utterance": "Hello, how may I help you?",
-					"UtteranceId": "TTS-BA73E69EBE8D88AAFAD0063947438E0C"
+					"Style": "Polite",
+					"Utterance": "Hello [[A]] , how may I help you ?",
+					"UtteranceId": "TTS-20C4571A04ADBDC1509172D810D38292"
 				}, 
 				{
 					"CurrentState": "Start",
@@ -86,14 +86,6 @@
 					"Style": "BadMood",
 					"Utterance": "You are useless! I hope you get fired!!",
 					"UtteranceId": "TTS-79C9F84F9810758D00515A412C021F08"
-				}, 
-				{
-					"CurrentState": "AfterPlayerGreeting",
-					"NextState": "GreetingEnd",
-					"Meaning": "Greeting",
-					"Style": "GoodMood",
-					"Utterance": "Good Day! How are you? I was wondering if you could help me...",
-					"UtteranceId": "TTS-FF10E9ABA33C8E96AC8C8CE844529C49"
 				}, 
 				{
 					"CurrentState": "AnythingElse",
@@ -214,6 +206,14 @@
 					"Style": "GoodMood",
 					"Utterance": "I am terribly sorry, what is the matter?",
 					"UtteranceId": ""
+				}, 
+				{
+					"CurrentState": "AfterPlayerGreeting",
+					"NextState": "GreetingEnd",
+					"Meaning": "Greeting",
+					"Style": "GoodMood",
+					"Utterance": "Good Day! How are you? I was wondering if you could help me [[B]]...",
+					"UtteranceId": "TTS-521DA1F5EB3E33F4A7373B5A6F2D4DC6"
 				}]
 		},
 	"types": [

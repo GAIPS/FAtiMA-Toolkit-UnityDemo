@@ -19,7 +19,7 @@
 					"Layer": "-",
 					"Conditions":
 						{
-							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF"]
+							"Set": ["ValidDialogue([cs], [ns], [m], [s]) = True", "DialogueState([x]) = [cs]", "Has(Floor) = SELF", "TellWM(A, OK) = OK"]
 						},
 					"Priority": 1
 				}]

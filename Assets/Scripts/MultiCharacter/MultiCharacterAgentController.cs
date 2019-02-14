@@ -154,7 +154,7 @@ public class MultiCharacterAgentController : MonoBehaviour {
         lastAction = action;
         if (action != null)
         {
-            Debug.Log(RPC.CharacterName.ToString() + " decision is:" + action.Name);
+            Debug.Log(RPC.CharacterName.ToString() + " decision is:" + action.Name + " towards " + action.Target);
 
             switch (action.Key.ToString())
             {

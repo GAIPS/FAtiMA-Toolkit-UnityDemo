@@ -29,27 +29,6 @@
 								}
 						}, 
 						{
-							"EventName": "Event(Action-End, SELF, Speak(A2, *, *, *), *)",
-							"Conditions":
-								{
-									"Set": []
-								},
-							"AppraisalVariables":
-								{
-									"AppraisalVariables": [
-										{
-											"Name": "Desirability",
-											"Value": -6,
-											"Target": "-"
-										}, 
-										{
-											"Name": "Praiseworthiness",
-											"Value": -6,
-											"Target": "-"
-										}]
-								}
-						}, 
-						{
 							"EventName": "Event(Action-End, SELf, Speak(A3, *, *, *), *)",
 							"Conditions":
 								{
@@ -60,12 +39,23 @@
 									"AppraisalVariables": [
 										{
 											"Name": "Desirability",
-											"Value": 9,
+											"Value": -9,
 											"Target": "-"
-										}, 
+										}]
+								}
+						}, 
+						{
+							"EventName": "Event(Action-End, SELF, Speak(A4, *, *, *), *)",
+							"Conditions":
+								{
+									"Set": []
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
 										{
-											"Name": "Praiseworthiness",
-											"Value": 9,
+											"Name": "Desirability",
+											"Value": 8,
 											"Target": "-"
 										}]
 								}

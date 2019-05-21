@@ -213,9 +213,18 @@ public class SingleCharacterDemo : MonoBehaviour
 
 
         if(_iat.m_worldModelSource != null)
-            if(!string.IsNullOrEmpty(_iat.m_worldModelSource.Source))
-        _wm = WorldModel.WorldModelAsset.LoadFromFile(_iat.GetWorldModelSource().Source);
+            if(!string.IsNullOrEmpty(_iat.m_worldModelSource.Source)){
+        
+                var wat = _iat.GetWorldModelSource();
 
+	     	string errorsOnLoad;
+
+              //  _wm = WorldModel.WorldModelAsset.LoadFromFile(_iat.GetWorldModelSource().RelativePath);
+               _wm = WorldModel.WorldModelAsset.LoadFromFile(_iat.GetWorldModelSource().Source, out errorsOnLoad);
+                            
+	            if (errorsOnLoad != null)
+		        throw new Exception(errorsOnLoad);
+            }
         var characterSources = _iat.GetAllCharacterSources().ToList();
         foreach (var source in characterSources)
         {

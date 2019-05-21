@@ -177,6 +177,6 @@
 	"types": [
 		{
 			"TypeId": 0,
-			"ClassName": "WorldModel.WorldModelAsset, World_Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+			"ClassName": "WorldModel.WorldModelAsset, WorldModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 		}]
 }

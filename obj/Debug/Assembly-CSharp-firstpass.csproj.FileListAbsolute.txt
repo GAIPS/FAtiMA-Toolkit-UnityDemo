@@ -87,7 +87,6 @@ C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\UnityScript.dll
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\UnityScript.Lang.dll
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\Utilities.dll
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\WellFormedNames.dll
-C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\World_Model.dll
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\Unity.Cecil.dll
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\Unity.SerializationLogic.dll
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\Unity.DataContract.dll
@@ -174,7 +173,6 @@ C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\MCTS.pdb
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\RolePlayCharacter.pdb
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\SocialImportanceAsset.pdb
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\WellFormedNames.pdb
-C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\World_Model.pdb
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
@@ -207,3 +205,5 @@ C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\UnityEngine.VFXMo
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\UnityEngine.TestRunner.xml
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\nunit.framework.xml
 C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\WorkingMemory.pdb
+C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\WorldModel.dll
+C:\Users\Manue\Documents\Work\FAtiMA-Unity-Demo\Temp\bin\Debug\WorldModel.pdb

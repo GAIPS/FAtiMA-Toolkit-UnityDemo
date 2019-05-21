@@ -17,14 +17,9 @@
 								{
 									"AppraisalVariables": [
 										{
-											"Name": "Desirability",
-											"Value": -5,
-											"Target": "-"
-										}, 
-										{
-											"Name": "Praiseworthiness",
-											"Value": 3,
-											"Target": "-"
+											"Name": "Goal Success Probablity",
+											"Value": 0,
+											"Target": "Life"
 										}]
 								}
 						}]
@@ -35,7 +30,12 @@
 					"Decay": 1,
 					"Threshold": 1
 				}],
-			"Goals": []
+			"Goals": [
+				{
+					"Name": "Life",
+					"Significance": 6,
+					"Likelihood": 0.2
+				}]
 		},
 	"types": [
 		{

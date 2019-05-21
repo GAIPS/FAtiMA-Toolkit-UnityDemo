@@ -9,6 +9,7 @@
 	<assembly fullname="Utilities" preserve="all"/>
 	<assembly fullname="EmotionalAppraisal" preserve="all"/>
 	<assembly fullname="EmotionalDecisionMaking" preserve="all"/>
+	<assembly fullname="WorldModel" preserve="all"/>
 	<assembly fullname="WellFormedNames" preserve="all"/>
 	<assembly fullname="Conditions" preserve="all"/>
 </linker>

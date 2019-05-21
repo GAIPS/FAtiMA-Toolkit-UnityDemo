@@ -1,0 +1,32 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"Effects":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, *, *, *)",
+							"value": [
+								{
+									"PropertyName": "Dialogue(State)",
+									"NewValue": "Start",
+									"ObserverAgent": "*"
+								}]
+						}]
+				},
+			"Priorities":
+				{
+					"dictionary": [
+						{
+							"key": "Event(Action-End, *, *, *)",
+							"value": 1
+						}]
+				}
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "WorldModel.WorldModelAsset, WorldModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

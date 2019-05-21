@@ -127,6 +127,22 @@
 											"Target": "-"
 										}]
 								}
+						}, 
+						{
+							"EventName": "Event(Action-End, *, *, *)",
+							"Conditions":
+								{
+									"Set": []
+								},
+							"AppraisalVariables":
+								{
+									"AppraisalVariables": [
+										{
+											"Name": "Desirability",
+											"Value": 5,
+											"Target": "SELF"
+										}]
+								}
 						}]
 				},
 			"EmotionDispositions": [

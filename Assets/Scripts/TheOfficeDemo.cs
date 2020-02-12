@@ -112,6 +112,8 @@ public class TheOfficeDemo : MonoBehaviour {
 
     public bool skipDescription;
 
+    private Transform playerAnchor;
+
 
     // Use this for initialization
     private IEnumerator Start()
@@ -146,7 +148,15 @@ public class TheOfficeDemo : MonoBehaviour {
             m_characterAnchors.Add(anc.transform);
         }
 
-        _agentControllers = new List<MultiCharacterAgentController>();
+
+        if (m_characterAnchors.Find(x => x.gameObject.name.Contains("Player")) != false){
+
+
+            playerAnchor = m_characterAnchors.Find(x => x.gameObject.name.Contains("Player"));
+
+        }
+
+_agentControllers = new List<MultiCharacterAgentController>();
         justSpokeAgent = null;
 
         var entries = www.text.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None);
@@ -249,7 +259,7 @@ public class TheOfficeDemo : MonoBehaviour {
         _iat = data.IAT;
 
 
-        if(skipDescription){
+        if(!skipDescription){
         _introPanel.SetActive(true);
         _introText.text = string.Format("<b>{0}</b>\n\n\n{1}", _iat.ScenarioName, _iat.ScenarioDescription);
         }
@@ -271,18 +281,22 @@ public class TheOfficeDemo : MonoBehaviour {
 
             UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
 
-           var r = UnityEngine.Random.Range(0, 30);
-            Debug.Log("Going to wait" + r);
-          StartCoroutine(JustWait(UnityEngine.Random.Range(0, 3)));
-           
-            _agentController = new MultiCharacterAgentController(data, rpc, _iat, body.CharaterArchtype, m_characterAnchors[CharacterCount], m_dialogController);
+          StartCoroutine(JustWait(UnityEngine.Random.Range(0, 2)));
+
+
+            var anchor = m_characterAnchors.Find(x => x.gameObject.name.Contains(rpc.CharacterName.ToString()));
+
+
+            if (rpc.CharacterName == _player.CharacterName)
+            {
+                _player = rpc;
+
+            }
+
+            _agentController = new MultiCharacterAgentController(data, rpc, _iat, body.CharaterArchtype, anchor, m_dialogController);
            // StopAllCoroutines();
             _agentControllers.Add(_agentController);
             
-
-            if(rpc.CharacterName == _player.CharacterName) _player = rpc;
-
-            CharacterCount++;
 
         }
 
@@ -322,16 +336,19 @@ public class TheOfficeDemo : MonoBehaviour {
         camera.transform.position = rpc.transform.position;
         camera.transform.rotation = rpc.transform.rotation;
 
-        camera.GetComponent<Camera>().fieldOfView = 40;
 
-        camera.transform.Translate(new Vector3(-0.02f, 1.475f, 0));
 
-         camera.transform.Rotate(new Vector3(15.0f,0.0f, 0));
+
+        camera.GetComponent<Camera>().fieldOfView = 30;
+
+        camera.transform.Translate(new Vector3(0.02f, 1.3f, 0));
+
+     //    camera.transform.Rotate(new Vector3(15.0f,0.0f, 0));
    
-        var MouseLook = camera.GetComponent<MouseLookController>();
+      //  var MouseLook = camera.GetComponent<MouseLookController>();
 
-        MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _player.CharacterName).CharacterName.ToString()).transform.position;
-       MouseLook.Online(true);
+       // MouseLook.target = GameObject.FindGameObjectWithTag(rpcList.Find(x=>x.CharacterName != _player.CharacterName).CharacterName.ToString()).transform.position;
+       // MouseLook.Online(true);
 
 
 

@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -87,7 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000002, guid: 1b518c178bb74b141b14f9999fd86ed6,
     type: 2}
   m_UseShadowmask: 1
@@ -205,6 +213,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -279,17 +288,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 51216775}
@@ -398,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 80138570}
   m_Layer: 5
-  m_Name: Anchor03
+  m_Name: PlayerAnchor
   m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80138569}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -0.691, y: -0.037, z: -1.12}
+  m_LocalPosition: {x: -0.76, y: 0, z: -1.11}
   m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 514232511}
@@ -481,6 +493,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!114 &84244069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +938,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1136,6 +1151,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1199,9 +1215,9 @@ MonoBehaviour:
     type: 3}
   _introPanel: {fileID: 887020135}
   _introText: {fileID: 456037782}
-  skipCharacterSelection: 0
-  skipScenarioSelection: 0
-  skipDescription: 0
+  skipCharacterSelection: 1
+  skipScenarioSelection: 1
+  skipDescription: 1
 --- !u!4 &526778172
 Transform:
   m_ObjectHideFlags: 0
@@ -1226,21 +1242,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 997909495}
     m_Modifications:
-    - target: {fileID: 100000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
-      propertyPath: m_Name
-      value: swivel-chair (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21022525
+      value: 0.213
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5561953
+      value: -0.636
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1285,6 +1297,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -10.267
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
+      propertyPath: m_Name
+      value: swivel-chair (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
@@ -1350,6 +1366,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &579724415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1667,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &639963372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,7 +2041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814048824}
   m_Layer: 5
-  m_Name: Anchor01
+  m_Name: John
   m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2035,7 +2055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814048823}
   m_LocalRotation: {x: 0, y: -0.7801521, z: 0, w: 0.62558997}
-  m_LocalPosition: {x: 0.762, y: 0, z: -0.633}
+  m_LocalPosition: {x: 1.011, y: 0, z: -0.673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1453235110}
@@ -2178,17 +2198,20 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 887020138}
@@ -2374,12 +2397,13 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909887632}
   m_Enabled: 1
-  serializedVersion: 8
+  serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 0.83216786, b: 0.3537736, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -2389,6 +2413,24 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -2396,12 +2438,15 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &914570117
@@ -2466,24 +2511,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 840871693}
   m_HandleRect: {fileID: 840871692}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.99999994
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2590,6 +2638,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!114 &957629837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2893,6 +2943,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!114 &1165573071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2986,9 +3038,10 @@ Camera:
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -3037,7 +3090,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210954773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f474d1474e279bf47adcb1298b6c96af, type: 3}
   m_Name: 
@@ -3128,6 +3181,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &1266369018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3210,17 +3265,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 893780808}
@@ -3275,10 +3333,10 @@ RectTransform:
   m_Father: {fileID: 1454116597}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 226.75482, y: -257.13553}
-  m_SizeDelta: {x: 453.50964, y: 514.27106}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1282406634
 MonoBehaviour:
@@ -3400,21 +3458,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 997909495}
     m_Modifications:
-    - target: {fileID: 100000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
-      propertyPath: m_Name
-      value: swivel-chair (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8658696
+      value: 0.924
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17299998
+      value: 0.173
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.59
+      value: -1.438
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3456,6 +3510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -159.164
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
+      propertyPath: m_Name
+      value: swivel-chair (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11712cacaa7a29a4da7070bf78c815cd, type: 3}
 --- !u!1 &1384157128
@@ -3492,7 +3550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: 503}
+  m_AnchoredPosition: {x: 21, y: 427}
   m_SizeDelta: {x: 750, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384157130
@@ -3737,7 +3795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1420586974}
   m_Layer: 5
-  m_Name: Anchor02
+  m_Name: Sarah
   m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3751,7 +3809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420586973}
   m_LocalRotation: {x: -0, y: -0.5314922, z: -0, w: 0.8470632}
-  m_LocalPosition: {x: 0.642, y: 0, z: -1.426}
+  m_LocalPosition: {x: 0.73, y: 0, z: -1.349}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 28692455}
@@ -3850,6 +3908,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3924,6 +3983,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1001 &1471751406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4095,6 +4156,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!4 &1564190767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd,
@@ -4314,6 +4377,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!4 &1750104273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 11712cacaa7a29a4da7070bf78c815cd,
@@ -4482,17 +4547,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 579724417}
@@ -4773,7 +4841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 60318746fc912384eb2954e04f68e4e1, type: 2}
+  - {fileID: 2100000, guid: a9a655d6c54edb24ba17e3efe9198445, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4781,6 +4849,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4808,13 +4877,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008709288}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 2.14, y: 1.013, z: -0.95}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.18, y: 1.013, z: -0.95}
   m_LocalScale: {x: 0.2, y: 3, z: 6}
   m_Children: []
   m_Father: {fileID: 997909495}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132990481
 GameObject:
   m_ObjectHideFlags: 0

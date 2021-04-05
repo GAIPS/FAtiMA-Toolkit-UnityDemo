@@ -1,0 +1,32 @@
+{
+	"root":
+		{
+			"classId": 0,
+			"ScenarioName": "asdasd",
+			"Description": "asdasd",
+			"WorldModelSource": "aaaaaaa.wmo",
+			"CharacterSources": ["ble.rpc", "t.rpc"],
+			"Dialogues": [
+				{
+					"CurrentState": "S1",
+					"NextState": "S2",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "aaaaaaaaaaaaaaaaa",
+					"UtteranceId": "TTS-88E42E96CC71151B6E1938A1699B0A27"
+				}, 
+				{
+					"CurrentState": "Start",
+					"NextState": "S1",
+					"Meaning": "-",
+					"Style": "-",
+					"Utterance": "sssssss",
+					"UtteranceId": "TTS-16FCB1091F8A0CC70C96E2FF97FDD213"
+				}]
+		},
+	"types": [
+		{
+			"TypeId": 0,
+			"ClassName": "IntegratedAuthoringTool.IntegratedAuthoringToolAsset, IntegratedAuthoringTool, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null"
+		}]
+}

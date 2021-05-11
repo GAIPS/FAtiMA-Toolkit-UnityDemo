@@ -1,10 +1,10 @@
 Using pre-set license
-Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19041.867; Version 2004; 64bit' Language: 'en' Physical Memory: 16257 MB
+Built from '2020.3/release' branch; Version is '2020.3.7f1 (dd97f2c94397) revision 14522354'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19041.928; Version 2004; 64bit' Language: 'en' Physical Memory: 16257 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.3.1f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,14 +15,14 @@ C:/Users/Manue/Work/FAtiMA-Toolkit-UnityDemo
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53505
+64393
 Successfully changed project path to: C:/Users/Manue/Work/FAtiMA-Toolkit-UnityDemo
 C:/Users/Manue/Work/FAtiMA-Toolkit-UnityDemo
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 82.33 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 116.28 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2020.3.1f1 (77a89f25062f)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
+Initialize engine version: 2020.3.7f1 (dd97f2c94397)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/Manue/Work/FAtiMA-Toolkit-UnityDemo/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
@@ -32,521 +32,175 @@ Direct3D:
     VRAM:     6052 MB
     Driver:   27.21.14.6192
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002755 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002969 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 61.83 ms, found 2 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 108.57 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.927 seconds
+- Completed reload, in  2.971 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.017631 seconds.
+Registered in 0.022376 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\GAIPS.Serialization.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\Utilities.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.04 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.931 seconds
+- Completed reload, in  1.354 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.38 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1389 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.8 MB.
-System memory in use after: 67.9 MB.
+Unloading 1633 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 74.0 MB.
+System memory in use after: 74.1 MB.
 
-Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 1828.
-Total: 2.825200 ms (FindLiveObjects: 0.381600 ms CreateObjectMapping: 0.120900 ms MarkObjects: 2.237500 ms  DeleteObjects: 0.083200 ms)
+Unloading 82 unused Assets to reduce memory usage. Loaded Objects now: 2056.
+Total: 7.735000 ms (FindLiveObjects: 0.235700 ms CreateObjectMapping: 0.188100 ms MarkObjects: 7.251400 ms  DeleteObjects: 0.058600 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes
-  artifactKey: Guid(b0097afe1bc57d84087985d4dce84d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(b0097afe1bc57d84087985d4dce84d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '823f832bb7d962f881662ed50df0973b') in 0.018732 seconds
-  Import took 0.023080 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/Scenes/SingleCharacterScene.unity
-  artifactKey: Guid(d64b813e710a6f34a9a97220c4715780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SingleCharacterScene.unity using Guid(d64b813e710a6f34a9a97220c4715780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee6a3fa9cf5ebb347b25b77a829384fa') in 0.015659 seconds
-  Import took 0.017963 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.030127 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\GAIPS.Serialization.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\Utilities.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.539 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.12 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.8 MB.
-System memory in use after: 67.9 MB.
-
-Unloading 62 unused Assets to reduce memory usage. Loaded Objects now: 1831.
-Total: 6.794200 ms (FindLiveObjects: 1.066300 ms CreateObjectMapping: 0.302200 ms MarkObjects: 5.370900 ms  DeleteObjects: 0.051300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.122890 seconds.
   path: Assets/Scenes/Office.unity
   artifactKey: Guid(8815b1c3f65aa484ab31d0cc7bc4eb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Office.unity using Guid(8815b1c3f65aa484ab31d0cc7bc4eb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47ffe361a1e5e869f97dabce44881de4') in 0.019535 seconds
-  Import took 0.022285 seconds .
+Start importing Assets/Scenes/Office.unity using Guid(8815b1c3f65aa484ab31d0cc7bc4eb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cb86e0747a68c1c3a07306154037aa2') in 0.020328 seconds
+  Import took 0.023920 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 40.59 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 77 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 43.3 MB.
+System memory in use after: 43.4 MB.
+
+Unloading 76 unused Assets to reduce memory usage. Loaded Objects now: 2056.
+Total: 6.300400 ms (FindLiveObjects: 0.178400 ms CreateObjectMapping: 0.064900 ms MarkObjects: 6.020400 ms  DeleteObjects: 0.035000 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.023084 seconds.
+Registered in 0.025142 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\GAIPS.Serialization.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\Utilities.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.80 ms, found 2 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 3.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.068 seconds
+- Completed reload, in  2.318 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.76 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.9 MB.
-System memory in use after: 68.0 MB.
+Unloading 1628 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 74.2 MB.
+System memory in use after: 74.3 MB.
 
-Unloading 62 unused Assets to reduce memory usage. Loaded Objects now: 1834.
-Total: 7.651700 ms (FindLiveObjects: 1.275900 ms CreateObjectMapping: 0.446800 ms MarkObjects: 5.791600 ms  DeleteObjects: 0.129400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.387297 seconds.
-  path: Assets/Prefabs/UI/DialogButton.prefab
-  artifactKey: Guid(a6dcc26afc01649428e68538c726131f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/UI/DialogButton.prefab using Guid(a6dcc26afc01649428e68538c726131f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73d389430e2218f8edcf43f0d17d3a62') in 0.111993 seconds
-  Import took 0.115771 seconds .
+Unloading 78 unused Assets to reduce memory usage. Loaded Objects now: 2059.
+Total: 8.085800 ms (FindLiveObjects: 0.205900 ms CreateObjectMapping: 0.066800 ms MarkObjects: 7.725700 ms  DeleteObjects: 0.084700 ms)
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.002203 seconds.
-  path: Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Shoes_Diffuse.png
-  artifactKey: Guid(6b5181763410fc645acd5d581d24bf9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Shoes_Diffuse.png using Guid(6b5181763410fc645acd5d581d24bf9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ac8373e628a98592c0e69dff23dbe49') in 0.099521 seconds
-  Import took 0.105466 seconds .
+Received Prepare
+Refreshing native plugins compatible for Editor in 25.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 77 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 43.5 MB.
+System memory in use after: 43.6 MB.
+
+Unloading 76 unused Assets to reduce memory usage. Loaded Objects now: 2059.
+Total: 8.017100 ms (FindLiveObjects: 0.165600 ms CreateObjectMapping: 0.068300 ms MarkObjects: 7.724000 ms  DeleteObjects: 0.057400 ms)
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000447 seconds.
-  path: Assets/Head Look Controller/Hero Artwork/Textures/diffuse_1.tga
-  artifactKey: Guid(0588dd87edc5244de8a2c55ae2120486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Head Look Controller/Hero Artwork/Textures/diffuse_1.tga using Guid(0588dd87edc5244de8a2c55ae2120486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '030418d89bdbd3bfe12d9e94ae547538') in 0.022538 seconds
-  Import took 0.025318 seconds .
+Received Prepare
+Refreshing native plugins compatible for Editor in 33.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 77 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 43.5 MB.
+System memory in use after: 43.6 MB.
+
+Unloading 76 unused Assets to reduce memory usage. Loaded Objects now: 2059.
+Total: 11.251400 ms (FindLiveObjects: 0.261600 ms CreateObjectMapping: 0.071900 ms MarkObjects: 10.717100 ms  DeleteObjects: 0.193900 ms)
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000201 seconds.
-  path: Assets/Materials/ryeddie_eyerefl01_1008.mat
-  artifactKey: Guid(20faa7b10b755194f80c40e46bc0a29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/ryeddie_eyerefl01_1008.mat using Guid(20faa7b10b755194f80c40e46bc0a29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c65c518da1bfcd5d5f35bf58b0f4e214') in 0.126881 seconds
-  Import took 0.129194 seconds .
+Received Prepare
+Refreshing native plugins compatible for Editor in 21.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 77 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 43.5 MB.
+System memory in use after: 43.6 MB.
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_face_1001.jpg
-  artifactKey: Guid(a2ca0f345de873140ad81b299bf36ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_face_1001.jpg using Guid(a2ca0f345de873140ad81b299bf36ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cb6c240cf4f245e2fdfc6917b6d006c') in 0.024981 seconds
-  Import took 0.028855 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000366 seconds.
-  path: Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_face_1001.jpg
-  artifactKey: Guid(d309fff86b9493c4dab23e751b7d498e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_face_1001.jpg using Guid(d309fff86b9493c4dab23e751b7d498e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25a72d31c61641f3b7404c41c67a200e') in 0.027927 seconds
-  Import took 0.033108 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000488 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/Malcom_Hair_Diffuse.mat
-  artifactKey: Guid(3e35b2f9a0657cc41b0e565676ec9ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/Malcom_Hair_Diffuse.mat using Guid(3e35b2f9a0657cc41b0e565676ec9ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c29c578f50ee294f0d6dd8af2f281b2') in 0.186979 seconds
-  Import took 0.191012 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000194 seconds.
-  path: Assets/Head Look Controller/Hero Artwork/Materials/diffuse_1.mat
-  artifactKey: Guid(2fbc7c70b457f425695256fa490bcf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Head Look Controller/Hero Artwork/Materials/diffuse_1.mat using Guid(2fbc7c70b457f425695256fa490bcf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '262266ff0fa6b85665c1d50867fcc95a') in 0.154981 seconds
-  Import took 0.157816 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000217 seconds.
-  path: Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Top_Diffuse.png
-  artifactKey: Guid(32f86e70d22a66c4d8573f1458bb9d26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Top_Diffuse.png using Guid(32f86e70d22a66c4d8573f1458bb9d26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83dd43980648734aafaaf7dfd3c26c49') in 0.021288 seconds
-  Import took 0.023644 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000326 seconds.
-  path: Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_eyes01_1007.jpg
-  artifactKey: Guid(61494357ab84e934385c48a67b3b47ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_eyes01_1007.jpg using Guid(61494357ab84e934385c48a67b3b47ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05089ff5a53d7597e1c856048699daf8') in 0.030083 seconds
-  Import took 0.032644 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000302 seconds.
-  path: Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_lashes_1006.jpg
-  artifactKey: Guid(bc8908fde1077544a91be77bfba2cef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_lashes_1006.jpg using Guid(bc8908fde1077544a91be77bfba2cef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9acf4f223df376fb712975f1054d45a') in 0.027927 seconds
-  Import took 0.030809 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000315 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_arms_1004.jpg
-  artifactKey: Guid(1c943be124c74bf4e92f497a350e8cc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_arms_1004.jpg using Guid(1c943be124c74bf4e92f497a350e8cc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92659aa72ff039f5819f12b6198732a1') in 0.029270 seconds
-  Import took 0.031740 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000251 seconds.
-  path: Assets/Materials/ryeddie_eyes01_1007.mat
-  artifactKey: Guid(8c689f6e40f83954ea4a9b0e823bad5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/ryeddie_eyes01_1007.mat using Guid(8c689f6e40f83954ea4a9b0e823bad5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1870711912f7e3fc340b10b786db620c') in 0.029872 seconds
-  Import took 0.033258 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000332 seconds.
-  path: Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Hair_Diffuse.png
-  artifactKey: Guid(dac1529665bd37d45bd761a65988449a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Hair_Diffuse.png using Guid(dac1529665bd37d45bd761a65988449a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58ac8ceaff5f6e02127605ae34c4051d') in 0.019010 seconds
-  Import took 0.021718 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000414 seconds.
-  path: Assets/Materials/ryeddie_lashes_1006.mat
-  artifactKey: Guid(bdd4011e8d2995749b8fbb415167d121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/ryeddie_lashes_1006.mat using Guid(bdd4011e8d2995749b8fbb415167d121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6607b2291ed3ff7e08335a6cb91a9a5') in 0.030348 seconds
-  Import took 0.035432 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000331 seconds.
-  path: Assets/Materials/ryeddie_arms_1004.mat
-  artifactKey: Guid(7af61d9fdeaa8784d952b261eeff3b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/ryeddie_arms_1004.mat using Guid(7af61d9fdeaa8784d952b261eeff3b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b01856e699ec88928f593133e67dd800') in 0.022018 seconds
-  Import took 0.025324 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000278 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_lashes_1006.tif
-  artifactKey: Guid(89c92bf7757cce24a8516f727081dc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_lashes_1006.tif using Guid(89c92bf7757cce24a8516f727081dc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '942455cea2a4413528d12fe2a6334d75') in 0.025014 seconds
-  Import took 0.028105 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.images/ryeddie_lashes_1006.tif
-  artifactKey: Guid(0ea02624b0e28d8499af27e389628078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.images/ryeddie_lashes_1006.tif using Guid(0ea02624b0e28d8499af27e389628078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8977c22d579bcc9b007a293478e7a088') in 0.017903 seconds
-  Import took 0.020217 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000556 seconds.
-  path: Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_lashes_1006.jpg
-  artifactKey: Guid(59102d35a5824744a9184f6f85956347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_lashes_1006.jpg using Guid(59102d35a5824744a9184f6f85956347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fc4cf481afe386c380e00b4c8fd8762') in 0.015800 seconds
-  Import took 0.018534 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_arms_1004.jpg
-  artifactKey: Guid(a886d7ad204651e429fab6b8440a936b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_arms_1004.jpg using Guid(a886d7ad204651e429fab6b8440a936b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fab6706f95e770f42f1586ef0896c0d6') in 0.023472 seconds
-  Import took 0.025578 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/RyEddie_face_1001.mat
-  artifactKey: Guid(cb5d9f9261393f94f92fc787039502f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/RyEddie_face_1001.mat using Guid(cb5d9f9261393f94f92fc787039502f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '710ef7455f5d1ffb556de688b6c96bd1') in 0.019457 seconds
-  Import took 0.021729 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000316 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/Malcom_Top_Diffuse.mat
-  artifactKey: Guid(4bb59bb39fb4ee8408c7da11464ad900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/Malcom_Top_Diffuse.mat using Guid(4bb59bb39fb4ee8408c7da11464ad900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78de654f13624d20456f402f53589ce') in 0.017527 seconds
-  Import took 0.019848 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000295 seconds.
-  path: Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_eyerefl01_1008.jpg
-  artifactKey: Guid(ee52b4b5e95eb7844b164cc1d3695c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_eyerefl01_1008.jpg using Guid(ee52b4b5e95eb7844b164cc1d3695c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c93e6b8177eaca9ecd3c8d23fc981267') in 0.029405 seconds
-  Import took 0.032685 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000235 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.images/ryeddie_eyes01_1007.jpg
-  artifactKey: Guid(45cb0b1ba59b57f47819fbab5c863ea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.images/ryeddie_eyes01_1007.jpg using Guid(45cb0b1ba59b57f47819fbab5c863ea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd39439986f91581aeba99f2a602e419') in 0.022455 seconds
-  Import took 0.026512 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000393 seconds.
-  path: Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Body_Diffuse.png
-  artifactKey: Guid(65633ef73e8fd6746afd417d6f152906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Body_Diffuse.png using Guid(65633ef73e8fd6746afd417d6f152906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5ce029d2f1c75718d770ae59059f505') in 0.024146 seconds
-  Import took 0.028782 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000835 seconds.
-  path: Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_arms_1004.jpg
-  artifactKey: Guid(a545d5e02090c854c84e6b7d24a786f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_arms_1004.jpg using Guid(a545d5e02090c854c84e6b7d24a786f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a18905e6d93098e455694b62d6c94794') in 0.021239 seconds
-  Import took 0.025299 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000332 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_eyerefl01_1008.tif
-  artifactKey: Guid(fb6577e3b683e084d9ba1a8455e1cfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_eyerefl01_1008.tif using Guid(fb6577e3b683e084d9ba1a8455e1cfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd20e10b44b031d2a22499d866bb8044c') in 0.021276 seconds
-  Import took 0.025478 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000497 seconds.
-  path: Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_face_1001.jpg
-  artifactKey: Guid(2caf8cfa2155228479125a7c284cd31f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_face_1001.jpg using Guid(2caf8cfa2155228479125a7c284cd31f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7bfb5041ea17a0d71d68601cf467429') in 0.017336 seconds
-  Import took 0.020988 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/Malcom_Hat_Diffuse.mat
-  artifactKey: Guid(1e7096ea4bed01244806f05244957be1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/Malcom_Hat_Diffuse.mat using Guid(1e7096ea4bed01244806f05244957be1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a63c7031c9afa9d3e4034f4d3dad41e0') in 0.134132 seconds
-  Import took 0.137176 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000326 seconds.
-  path: Assets/Head Look Controller/Hero Artwork/Materials/diffuse_2.mat
-  artifactKey: Guid(2a571b638e15546f09e0fa746a884b3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Head Look Controller/Hero Artwork/Materials/diffuse_2.mat using Guid(2a571b638e15546f09e0fa746a884b3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b14bd622cf2eb71ff1f4a823cf0d6dfd') in 0.023366 seconds
-  Import took 0.025688 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000311 seconds.
-  path: Assets/Content/MixamoModels/Animations/Gestures/dismissing_gesture.fbx
-  artifactKey: Guid(c66391577b9ff7d4a9002fc4e0ccd7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Animations/Gestures/dismissing_gesture.fbx using Guid(c66391577b9ff7d4a9002fc4e0ccd7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf62684db81f815ed8f60ffa257969ed') in 0.103037 seconds
-  Import took 0.106285 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000297 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/Malcom_Body_Diffuse.mat
-  artifactKey: Guid(14e8acb59a4d7ac4f8b30d643bdc66a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/Malcom_Body_Diffuse.mat using Guid(14e8acb59a4d7ac4f8b30d643bdc66a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20e5b22a0d5324336dd555d44ba1e73b') in 0.015618 seconds
-  Import took 0.018476 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000621 seconds.
-  path: Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Bottom_Diffuse.png
-  artifactKey: Guid(96fa286485ba7b041943a508dd39e393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Bottom_Diffuse.png using Guid(96fa286485ba7b041943a508dd39e393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4befccbe84e13806041e69c8d3d9733') in 0.026967 seconds
-  Import took 0.031044 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000333 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_eyes01_1007.jpg
-  artifactKey: Guid(f15c69a02f78f2e4cbc92b6001f2c4bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.fbm/ryeddie_eyes01_1007.jpg using Guid(f15c69a02f78f2e4cbc92b6001f2c4bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40460000d8e8a2bc860dee62ad580dce') in 0.023156 seconds
-  Import took 0.026279 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.images/ryeddie_face_1001.jpg
-  artifactKey: Guid(cdafc6736135bc34790a211959ff5e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.images/ryeddie_face_1001.jpg using Guid(cdafc6736135bc34790a211959ff5e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8775650d2cf8e3cc93df7129a9cd6ed4') in 0.015785 seconds
-  Import took 0.018998 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.images/ryeddie_arms_1004.jpg
-  artifactKey: Guid(21d8a83770e2bce4ea0cc5e33a535b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.images/ryeddie_arms_1004.jpg using Guid(21d8a83770e2bce4ea0cc5e33a535b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c231e38d1dda2da97bb984d44099caeb') in 0.023538 seconds
-  Import took 0.027603 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000464 seconds.
-  path: Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_eyes01_1007.jpg
-  artifactKey: Guid(1057f82d4bf61de43977ecd624966dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/randomDude.fbm/RyEddie_eyes01_1007.jpg using Guid(1057f82d4bf61de43977ecd624966dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19153c2a56702af2c4ab5a1d1bd096e0') in 0.019156 seconds
-  Import took 0.022981 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000353 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/Malcom_Bottom_Diffuse.mat
-  artifactKey: Guid(df5c4dfd637f3e144a765a2ff07018a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/Malcom_Bottom_Diffuse.mat using Guid(df5c4dfd637f3e144a765a2ff07018a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '867cf33f94bcc7ac98885a09f0fe1c32') in 0.036428 seconds
-  Import took 0.039005 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000318 seconds.
-  path: Assets/Content/MixamoModels/Models/Frank.images/ryeddie_eyerefl01_1008.tif
-  artifactKey: Guid(1c5ad4fe0d582294cb6b18a9744c3b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Frank.images/ryeddie_eyerefl01_1008.tif using Guid(1c5ad4fe0d582294cb6b18a9744c3b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64e1b02158644f019d285049a8e1c183') in 0.018404 seconds
-  Import took 0.020748 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000304 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/RyEddie_eyes01_1007.mat
-  artifactKey: Guid(b02490dfdaf76d349b98abe6e9cc5bf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/RyEddie_eyes01_1007.mat using Guid(b02490dfdaf76d349b98abe6e9cc5bf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a47274a451debb2e1abc60c02811c3c') in 0.020221 seconds
-  Import took 0.022728 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000304 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/RyEddie_arms_1004.mat
-  artifactKey: Guid(80df7e40d07a9bd42b5eb0ff18cf97a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/RyEddie_arms_1004.mat using Guid(80df7e40d07a9bd42b5eb0ff18cf97a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55eef341f17d01ecad89eb6dbb101bd7') in 0.021638 seconds
-  Import took 0.025481 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000455 seconds.
-  path: Assets/Content/MixamoModels/Models/Materials/Malcom_Shoes_Diffuse.mat
-  artifactKey: Guid(3ffa0eba1cdeb24468e88e9b07e76956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Materials/Malcom_Shoes_Diffuse.mat using Guid(3ffa0eba1cdeb24468e88e9b07e76956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38ce64d1673785a19025f97474235b76') in 0.022726 seconds
-  Import took 0.027544 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000366 seconds.
-  path: Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_eyerefl01_1008.jpg
-  artifactKey: Guid(dc1831c115c88a44980c9264f1212bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/GeorgeMichael.fbm/RyEddie_eyerefl01_1008.jpg using Guid(dc1831c115c88a44980c9264f1212bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf3a0753e88ae32d863b68f290c39579') in 0.010772 seconds
-  Import took 0.014013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000286 seconds.
-  path: Assets/Head Look Controller/Hero Artwork/Textures/diffuse_2.tga
-  artifactKey: Guid(76df8dffb27be49928f0bb9966993af7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Head Look Controller/Hero Artwork/Textures/diffuse_2.tga using Guid(76df8dffb27be49928f0bb9966993af7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59a285dba6fb4e9d5fcbf0f6da9cd07') in 0.023249 seconds
-  Import took 0.027695 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000320 seconds.
-  path: Assets/Materials/ryeddie_face_1001.mat
-  artifactKey: Guid(af2b62ca7b8ced74c92c6f0d2cd2ca54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/ryeddie_face_1001.mat using Guid(af2b62ca7b8ced74c92c6f0d2cd2ca54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59e313fc930373bdf7f53629b799f318') in 0.024140 seconds
-  Import took 0.027823 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000431 seconds.
-  path: Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Hat_Diffuse.png
-  artifactKey: Guid(0f0c500f57a63fd4fbd30d20f704d14d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Content/MixamoModels/Models/Malcolm.fbm/Malcom_Hat_Diffuse.png using Guid(0f0c500f57a63fd4fbd30d20f704d14d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f7cb87ec81ff5bdec82ce28f423938') in 0.020616 seconds
-  Import took 0.024582 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 31.517877 seconds.
-  path: Assets/Prefabs/UI/DialogButton.prefab
-  artifactKey: Guid(a6dcc26afc01649428e68538c726131f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/UI/DialogButton.prefab using Guid(a6dcc26afc01649428e68538c726131f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ffef8f8f45f6513e86a307fa693258d') in 0.008310 seconds
-  Import took 0.011261 seconds .
+Unloading 76 unused Assets to reduce memory usage. Loaded Objects now: 2059.
+Total: 6.888500 ms (FindLiveObjects: 0.386300 ms CreateObjectMapping: 0.094200 ms MarkObjects: 6.366800 ms  DeleteObjects: 0.036500 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.026734 seconds.
+Registered in 0.686618 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\GAIPS.Serialization.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\Utilities.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.66 ms, found 2 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.942 seconds
+- Completed reload, in  1.303 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.60 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.7 MB.
-System memory in use after: 71.8 MB.
+Unloading 1628 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 74.2 MB.
+System memory in use after: 74.3 MB.
 
-Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 1883.
-Total: 4.545900 ms (FindLiveObjects: 0.503800 ms CreateObjectMapping: 0.222100 ms MarkObjects: 3.691600 ms  DeleteObjects: 0.124200 ms)
+Unloading 78 unused Assets to reduce memory usage. Loaded Objects now: 2062.
+Total: 7.215000 ms (FindLiveObjects: 0.460200 ms CreateObjectMapping: 0.197000 ms MarkObjects: 6.513700 ms  DeleteObjects: 0.041700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.024744 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\GAIPS.Serialization.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Manue\Work\FAtiMA-Toolkit-UnityDemo\Assets\FAtiMA\Plugins\Utilities.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.119 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1628 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 74.2 MB.
+System memory in use after: 74.3 MB.
+
+Unloading 78 unused Assets to reduce memory usage. Loaded Objects now: 2065.
+Total: 6.197300 ms (FindLiveObjects: 0.262700 ms CreateObjectMapping: 0.097400 ms MarkObjects: 5.795300 ms  DeleteObjects: 0.040100 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 23.62 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 77 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 43.5 MB.
+System memory in use after: 43.6 MB.
+
+Unloading 76 unused Assets to reduce memory usage. Loaded Objects now: 2065.
+Total: 7.121100 ms (FindLiveObjects: 0.450400 ms CreateObjectMapping: 0.076500 ms MarkObjects: 6.513200 ms  DeleteObjects: 0.077700 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
